@@ -7,7 +7,7 @@ class Properties(object):
     urlNSPMED = "https://www.interceptmedinfo.com/"
     urlTest = "https://www.redbus.in/"
     urlGBT = "https://www.gbt.com/"
-    urlGBTtest = "https://gbtrctst:preview@gbt-tst.w2osys.com/"
+    # urlGBT = "https://gbtrctst:preview@gbt-tst.w2osys.com/"
     urlGalleri = "https://www.galleri.com/"
     urlKowaPharma = "https://kowapharma.com/"
     headless = "False"
