@@ -126,6 +126,14 @@ Click each link from list 0f links
         click link   ${element}
     END
 
+Click each element from list
+    [arguments]     ${nav}
+    ${element_list}=     get webelements     ${nav}
+    set selenium speed  0.2
+    FOR    ${element}   IN   @{element_list}
+        click element   ${element}
+    END
+
 Validate Text from links
     [arguments]     ${nav}  ${expectedText_list}
     ${element_list}=     get webelements     ${nav}

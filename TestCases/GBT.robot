@@ -8,19 +8,19 @@ Resource     ../GBT_PO/OurCommitmentPageGBT.robot
 Resource     ../GBT_PO/ResearchPageGBT.robot
 Resource     ../GBT_PO/OurMedicinePageGBT.robot
 Resource     ../GBT_PO/CareersPageGBT.robot
-#Suite Teardown   Close All Browsers
+Suite Teardown   Close All Browsers
 
 *** Test Cases ***
 HomePageTest
     [Tags]  Regression
-    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBTtest}
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBT}
     maximize browser window
     LoginPageGBT.Assert the logos in Landing Page
     LoginPageGBT.Get All links in homepage and Validate it
 
 AboutPageTest
     [Tags]  Regression
-    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBTtest}
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBT}
     maximize browser window
     AboutPageGBT.Get AboutHomePage validated
     AboutPageGBT.Get AboutOurCompanyPage validated
@@ -30,7 +30,7 @@ AboutPageTest
 
 OurCommitmentPageTest
     [Tags]  Regression
-    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBTtest}
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBT}
     maximize browser window
     OurCommitmentPageGBT.Get OurCommitmentHomePage validated
     OurCommitmentPageGBT.Get OurCommitmentPAPage validated
@@ -42,7 +42,7 @@ OurCommitmentPageTest
 
 ResearchPageTest
     [Tags]  Regression
-    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBTtest}
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBT}
     maximize browser window
     ResearchPageGBT.Get ResearchHomePage validated
     ResearchPageGBT.Get ResearchSCDPage validated
@@ -53,13 +53,13 @@ ResearchPageTest
 
 OurMedicinePageTest
     [Tags]  Regression
-    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBTtest}
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBT}
     maximize browser window
     OurMedicinePageGBT.Get OurMedicineHomePage validated
 
 CareersPageTest
     [Tags]  Regression
-    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBTtest}
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGBT}
     maximize browser window
     CareersPageGBT.Get CareersHomePage validated
     CareersPageGBT.Get CareersJobsPage validated
