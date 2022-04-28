@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220404 16:13:44.076" rpa="false" schemaversion="2">
+<suite id="s1" name="InterceptPharma" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharma.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220404 16:13:44.367" level="INFO">
+</msg>
+<msg timestamp="20220404 16:13:44.367" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220404 16:13:45.025" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220404 16:13:45.025" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220404 16:13:56.453" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220404 16:13:58.660" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 16:13:58.660" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220404 16:13:58.661" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 16:13:58.661" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220404 16:13:44.366" endtime="20220404 16:13:58.662"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220404 16:13:58.662" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000022522578BB0&gt;</msg>
+<status status="PASS" starttime="20220404 16:13:58.662" endtime="20220404 16:13:58.662"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220404 16:13:58.663" endtime="20220404 16:13:58.663"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220404 16:13:58.663" endtime="20220404 16:13:58.663"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${options}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220404 16:13:58.664" level="INFO">${options} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['headless', 'disable-gpu']}}</msg>
+<status status="PASS" starttime="20220404 16:13:58.664" endtime="20220404 16:13:58.664"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>desired_capabilities=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220404 16:13:58.664" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220404 16:13:58.664" endtime="20220404 16:13:59.918"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220404 16:13:59.919" level="INFO">Opening url 'https://www.interceptpharma.com/'</msg>
+<status status="PASS" starttime="20220404 16:13:59.919" endtime="20220404 16:14:24.528"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>loginpage</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 16:14:24.660" level="INFO" html="true">&lt;a href="loginpage_21.jpg"&gt;&lt;img src="loginpage_21.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 16:14:24.528" endtime="20220404 16:14:24.660"/>
+</kw>
+<status status="PASS" starttime="20220404 16:13:44.366" endtime="20220404 16:14:24.660"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220404 16:14:24.661" endtime="20220404 16:14:24.789"/>
+</kw>
+<kw name="Assert the logos in homepage" library="LoginPageICPT">
+<kw name="Assert the logos" library="Generic">
+<arg>${header logo}</arg>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220404 16:14:24.830" level="INFO">Current page contains image 'xpath://nav//a/img[@class='logo']'.</msg>
+<status status="PASS" starttime="20220404 16:14:24.792" endtime="20220404 16:14:24.830"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220404 16:14:24.856" level="INFO">Element 'xpath://nav//a/img[@class='logo']' is displayed.</msg>
+<status status="PASS" starttime="20220404 16:14:24.830" endtime="20220404 16:14:24.856"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${beforetitle}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220404 16:14:24.865" level="INFO">${beforetitle} = Homepage - Non USA - Intercept Pharmaceuticals</msg>
+<status status="PASS" starttime="20220404 16:14:24.857" endtime="20220404 16:14:24.865"/>
+</kw>
+<kw name="Click Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<msg timestamp="20220404 16:14:24.865" level="INFO">Clicking image 'xpath://nav//a/img[@class='logo']'.</msg>
+<status status="PASS" starttime="20220404 16:14:24.865" endtime="20220404 16:14:29.931"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${beforetitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220404 16:14:29.947" level="INFO">Page title is 'Homepage - Non USA - Intercept Pharmaceuticals'.</msg>
+<status status="PASS" starttime="20220404 16:14:29.931" endtime="20220404 16:14:29.947"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>logo</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 16:14:30.036" level="INFO" html="true">&lt;a href="logo_5.jpg"&gt;&lt;img src="logo_5.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 16:14:29.948" endtime="20220404 16:14:30.036"/>
+</kw>
+<status status="PASS" starttime="20220404 16:14:24.791" endtime="20220404 16:14:30.038"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${footer logo}</arg>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220404 16:14:30.063" level="INFO">Current page contains image 'xpath://footer//a/img[@class='footer-logo']'.</msg>
+<status status="PASS" starttime="20220404 16:14:30.038" endtime="20220404 16:14:30.063"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220404 16:14:30.098" level="INFO">Element 'xpath://footer//a/img[@class='footer-logo']' is displayed.</msg>
+<status status="PASS" starttime="20220404 16:14:30.063" endtime="20220404 16:14:30.098"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${beforetitle}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220404 16:14:30.108" level="INFO">${beforetitle} = Homepage - Non USA - Intercept Pharmaceuticals</msg>
+<status status="PASS" starttime="20220404 16:14:30.098" endtime="20220404 16:14:30.108"/>
+</kw>
+<kw name="Click Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<msg timestamp="20220404 16:14:30.109" level="INFO">Clicking image 'xpath://footer//a/img[@class='footer-logo']'.</msg>
+<status status="PASS" starttime="20220404 16:14:30.109" endtime="20220404 16:14:36.047"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${beforetitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220404 16:14:36.063" level="INFO">Page title is 'Homepage - Non USA - Intercept Pharmaceuticals'.</msg>
+<status status="PASS" starttime="20220404 16:14:36.047" endtime="20220404 16:14:36.063"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>logo</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 16:14:36.144" level="INFO" html="true">&lt;a href="logo_6.jpg"&gt;&lt;img src="logo_6.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 16:14:36.063" endtime="20220404 16:14:36.144"/>
+</kw>
+<status status="PASS" starttime="20220404 16:14:30.038" endtime="20220404 16:14:36.145"/>
+</kw>
+<status status="PASS" starttime="20220404 16:14:24.791" endtime="20220404 16:14:36.145"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" starttime="20220404 16:13:44.365" endtime="20220404 16:14:36.146"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220404 16:14:36.150" endtime="20220404 16:14:38.323"/>
+</kw>
+<status status="PASS" starttime="20220404 16:13:44.078" endtime="20220404 16:14:38.323"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="InterceptPharma">InterceptPharma</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

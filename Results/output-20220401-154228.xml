@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 15:42:28.912" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="OurFocusTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220401 15:42:29.184" level="INFO">
+</msg>
+<msg timestamp="20220401 15:42:29.184" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220401 15:42:29.806" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220401 15:42:29.806" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220401 15:42:30.265" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220401 15:42:33.351" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 15:42:33.352" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220401 15:42:33.352" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 15:42:33.353" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220401 15:42:29.184" endtime="20220401 15:42:33.353"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220401 15:42:33.353" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220401 15:42:33.353" endtime="20220401 15:42:34.543"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220401 15:42:34.544" level="INFO">Opening url 'https://www.interceptpharma.com/homepage-non-usa/'</msg>
+<status status="PASS" starttime="20220401 15:42:34.543" endtime="20220401 15:42:51.189"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:29.183" endtime="20220401 15:42:51.189"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220401 15:42:51.190" endtime="20220401 15:42:51.316"/>
+</kw>
+<kw name="Get OurFocusHomePage validated" library="OurFocusPageICPT">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${ourFocus}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220401 15:42:51.318" endtime="20220401 15:42:51.361"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220401 15:42:51.362" level="INFO">Clicking element 'xpath://ul[@id='menu-primary-menu']//a[.='Our Focus']'.</msg>
+<status status="PASS" starttime="20220401 15:42:51.361" endtime="20220401 15:42:53.971"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:51.317" endtime="20220401 15:42:53.971"/>
+</kw>
+<kw name=" Validate the string" library="Generic">
+<arg>${breadCrumbs}</arg>
+<arg>${eBreadCrumbsHome}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${aResult}</var>
+<arg>${elementLocator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220401 15:42:54.008" level="INFO">${aResult} = Home &gt; Our Focus</msg>
+<status status="PASS" starttime="20220401 15:42:53.972" endtime="20220401 15:42:54.008"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${aResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 15:42:54.008" level="INFO">Home &gt; Our Focus</msg>
+<status status="PASS" starttime="20220401 15:42:54.008" endtime="20220401 15:42:54.008"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${eResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 15:42:54.009" level="INFO">Home &gt; Our Focus</msg>
+<status status="PASS" starttime="20220401 15:42:54.009" endtime="20220401 15:42:54.009"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aResult}</arg>
+<arg>${eResult}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220401 15:42:54.009" endtime="20220401 15:42:54.009"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:53.972" endtime="20220401 15:42:54.009"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${sideBarHome}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220401 15:42:54.024" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="5f9cdb32a6e50f9e4e8c4a949842a939", element="47eeff7d-9097-4181-b1eb-6b598d9ad6e5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220401 15:42:54.010" endtime="20220401 15:42:54.024"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.062" level="INFO">${href_list} = ['https://www.interceptpharma.com/our-focus/pbc/', 'https://www.interceptpharma.com/our-focus/nash/', 'https://www.interceptpharma.com/our-focus/patient-resources/']</msg>
+<status status="PASS" starttime="20220401 15:42:54.024" endtime="20220401 15:42:54.062"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 15:42:54.062" level="INFO">['https://www.interceptpharma.com/our-focus/pbc/', 'https://www.interceptpharma.com/our-focus/nash/', 'https://www.interceptpharma.com/our-focus/patient-resources/']</msg>
+<status status="PASS" starttime="20220401 15:42:54.062" endtime="20220401 15:42:54.063"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220401 15:42:54.064" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/homepage-non-usa/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220401 15:42:54.063" endtime="20220401 15:42:54.064"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/pbc/</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${uri}</var>
+<arg>'${element_href}' != 'None'</arg>
+<arg>Remove String</arg>
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Remove String" library="String">
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" starttime="20220401 15:42:54.065" endtime="20220401 15:42:54.066"/>
+</kw>
+<msg timestamp="20220401 15:42:54.066" level="INFO">${uri} = https://www.interceptpharma.com/our-focus/pbc/</msg>
+<status status="PASS" starttime="20220401 15:42:54.065" endtime="20220401 15:42:54.066"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_base_url}</var>
+<arg>"${url}" in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.067" level="INFO">${contains_base_url} = False</msg>
+<status status="PASS" starttime="20220401 15:42:54.066" endtime="20220401 15:42:54.067"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_base_url}</arg>
+<arg>Get Request</arg>
+<arg>testing</arg>
+<arg>${uri}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220401 15:42:54.067" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220401 15:42:54.067" endtime="20220401 15:42:54.067"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_base_url}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220401 15:42:54.067" endtime="20220401 15:42:54.067"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:54.064" endtime="20220401 15:42:54.067"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/nash/</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${uri}</var>
+<arg>'${element_href}' != 'None'</arg>
+<arg>Remove String</arg>
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Remove String" library="String">
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" starttime="20220401 15:42:54.068" endtime="20220401 15:42:54.068"/>
+</kw>
+<msg timestamp="20220401 15:42:54.068" level="INFO">${uri} = https://www.interceptpharma.com/our-focus/nash/</msg>
+<status status="PASS" starttime="20220401 15:42:54.067" endtime="20220401 15:42:54.068"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_base_url}</var>
+<arg>"${url}" in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.069" level="INFO">${contains_base_url} = False</msg>
+<status status="PASS" starttime="20220401 15:42:54.068" endtime="20220401 15:42:54.069"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_base_url}</arg>
+<arg>Get Request</arg>
+<arg>testing</arg>
+<arg>${uri}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220401 15:42:54.069" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220401 15:42:54.069" endtime="20220401 15:42:54.069"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_base_url}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220401 15:42:54.069" endtime="20220401 15:42:54.069"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:54.067" endtime="20220401 15:42:54.069"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/patient-resources/</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${uri}</var>
+<arg>'${element_href}' != 'None'</arg>
+<arg>Remove String</arg>
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Remove String" library="String">
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" starttime="20220401 15:42:54.070" endtime="20220401 15:42:54.070"/>
+</kw>
+<msg timestamp="20220401 15:42:54.070" level="INFO">${uri} = https://www.interceptpharma.com/our-focus/patient-resources/</msg>
+<status status="PASS" starttime="20220401 15:42:54.070" endtime="20220401 15:42:54.070"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_base_url}</var>
+<arg>"${url}" in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.071" level="INFO">${contains_base_url} = False</msg>
+<status status="PASS" starttime="20220401 15:42:54.070" endtime="20220401 15:42:54.071"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_base_url}</arg>
+<arg>Get Request</arg>
+<arg>testing</arg>
+<arg>${uri}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220401 15:42:54.071" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220401 15:42:54.071" endtime="20220401 15:42:54.071"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_base_url}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220401 15:42:54.071" endtime="20220401 15:42:54.071"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:54.069" endtime="20220401 15:42:54.071"/>
+</iter>
+<status status="PASS" starttime="20220401 15:42:54.064" endtime="20220401 15:42:54.072"/>
+</for>
+<status status="PASS" starttime="20220401 15:42:54.009" endtime="20220401 15:42:54.072"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${sideBarHome}</arg>
+<arg>${eSidebarListHome}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220401 15:42:54.080" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="5f9cdb32a6e50f9e4e8c4a949842a939", element="47eeff7d-9097-4181-b1eb-6b598d9ad6e5")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220401 15:42:54.072" endtime="20220401 15:42:54.080"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${actualText_list}</var>
+<arg>[item.get_attribute('text') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.111" level="INFO">${actualText_list} = ['PBC', 'NASH', 'Patient Resources']</msg>
+<status status="PASS" starttime="20220401 15:42:54.080" endtime="20220401 15:42:54.111"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${actualText_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 15:42:54.112" level="INFO">['PBC', 'NASH', 'Patient Resources']</msg>
+<status status="PASS" starttime="20220401 15:42:54.112" endtime="20220401 15:42:54.113"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${expectedText_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 15:42:54.113" level="INFO">['PBC', 'NASH', 'Patient Resources']</msg>
+<status status="PASS" starttime="20220401 15:42:54.113" endtime="20220401 15:42:54.113"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${actualText_list}</arg>
+<arg>${expectedText_list}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220401 15:42:54.113" endtime="20220401 15:42:54.113"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:54.072" endtime="20220401 15:42:54.114"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${contentLinkOurFocus}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220401 15:42:54.143" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="5f9cdb32a6e50f9e4e8c4a949842a939", element="7e1d8c7a-0222-47dd-8fc5-e8ac75970b70")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220401 15:42:54.115" endtime="20220401 15:42:54.143"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.165" level="INFO">${href_list} = ['https://www.interceptpharma.com/our-focus/pbc/', 'https://www.interceptpharma.com/our-focus/nash/', 'https://www.interceptpharma.com/our-focus/patient-resources/']</msg>
+<status status="PASS" starttime="20220401 15:42:54.143" endtime="20220401 15:42:54.166"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 15:42:54.166" level="INFO">['https://www.interceptpharma.com/our-focus/pbc/', 'https://www.interceptpharma.com/our-focus/nash/', 'https://www.interceptpharma.com/our-focus/patient-resources/']</msg>
+<status status="PASS" starttime="20220401 15:42:54.166" endtime="20220401 15:42:54.166"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220401 15:42:54.166" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/homepage-non-usa/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220401 15:42:54.166" endtime="20220401 15:42:54.166"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/pbc/</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${uri}</var>
+<arg>'${element_href}' != 'None'</arg>
+<arg>Remove String</arg>
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Remove String" library="String">
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" starttime="20220401 15:42:54.167" endtime="20220401 15:42:54.167"/>
+</kw>
+<msg timestamp="20220401 15:42:54.167" level="INFO">${uri} = https://www.interceptpharma.com/our-focus/pbc/</msg>
+<status status="PASS" starttime="20220401 15:42:54.167" endtime="20220401 15:42:54.167"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_base_url}</var>
+<arg>"${url}" in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.168" level="INFO">${contains_base_url} = False</msg>
+<status status="PASS" starttime="20220401 15:42:54.167" endtime="20220401 15:42:54.168"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_base_url}</arg>
+<arg>Get Request</arg>
+<arg>testing</arg>
+<arg>${uri}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220401 15:42:54.168" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220401 15:42:54.168" endtime="20220401 15:42:54.168"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_base_url}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220401 15:42:54.168" endtime="20220401 15:42:54.168"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:54.167" endtime="20220401 15:42:54.168"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/nash/</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${uri}</var>
+<arg>'${element_href}' != 'None'</arg>
+<arg>Remove String</arg>
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Remove String" library="String">
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" starttime="20220401 15:42:54.168" endtime="20220401 15:42:54.169"/>
+</kw>
+<msg timestamp="20220401 15:42:54.169" level="INFO">${uri} = https://www.interceptpharma.com/our-focus/nash/</msg>
+<status status="PASS" starttime="20220401 15:42:54.168" endtime="20220401 15:42:54.169"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_base_url}</var>
+<arg>"${url}" in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.170" level="INFO">${contains_base_url} = False</msg>
+<status status="PASS" starttime="20220401 15:42:54.169" endtime="20220401 15:42:54.170"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_base_url}</arg>
+<arg>Get Request</arg>
+<arg>testing</arg>
+<arg>${uri}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220401 15:42:54.170" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220401 15:42:54.170" endtime="20220401 15:42:54.170"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_base_url}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220401 15:42:54.170" endtime="20220401 15:42:54.170"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:54.168" endtime="20220401 15:42:54.170"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/patient-resources/</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${uri}</var>
+<arg>'${element_href}' != 'None'</arg>
+<arg>Remove String</arg>
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Remove String" library="String">
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" starttime="20220401 15:42:54.170" endtime="20220401 15:42:54.171"/>
+</kw>
+<msg timestamp="20220401 15:42:54.171" level="INFO">${uri} = https://www.interceptpharma.com/our-focus/patient-resources/</msg>
+<status status="PASS" starttime="20220401 15:42:54.170" endtime="20220401 15:42:54.171"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_base_url}</var>
+<arg>"${url}" in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 15:42:54.171" level="INFO">${contains_base_url} = False</msg>
+<status status="PASS" starttime="20220401 15:42:54.171" endtime="20220401 15:42:54.171"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_base_url}</arg>
+<arg>Get Request</arg>
+<arg>testing</arg>
+<arg>${uri}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220401 15:42:54.171" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220401 15:42:54.171" endtime="20220401 15:42:54.171"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_base_url}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220401 15:42:54.171" endtime="20220401 15:42:54.172"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:54.170" endtime="20220401 15:42:54.172"/>
+</iter>
+<status status="PASS" starttime="20220401 15:42:54.166" endtime="20220401 15:42:54.172"/>
+</for>
+<status status="PASS" starttime="20220401 15:42:54.114" endtime="20220401 15:42:54.172"/>
+</kw>
+<status status="PASS" starttime="20220401 15:42:51.317" endtime="20220401 15:42:54.172"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220401 15:42:29.183" endtime="20220401 15:42:54.172"/>
+</test>
+<status status="PASS" starttime="20220401 15:42:28.914" endtime="20220401 15:42:54.173"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

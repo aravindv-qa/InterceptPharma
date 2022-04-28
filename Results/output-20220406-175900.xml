@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220406 17:59:00.880" rpa="false" schemaversion="2">
+<suite id="s1" name="NSPharma" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\NSPharma.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220406 17:59:01.243" endtime="20220406 17:59:01.243"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220406 17:59:01.243" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220406 17:59:01.243" endtime="20220406 17:59:01.243"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220406 17:59:01.243" level="INFO">
+</msg>
+<msg timestamp="20220406 17:59:01.243" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220406 17:59:02.025" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220406 17:59:02.025" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220406 17:59:02.281" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220406 17:59:04.917" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:59:04.917" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220406 17:59:04.917" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:59:04.917" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220406 17:59:01.243" endtime="20220406 17:59:04.917"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:59:04.917" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002BBCA99AD30&gt;</msg>
+<status status="PASS" starttime="20220406 17:59:04.917" endtime="20220406 17:59:04.917"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:59:04.917" endtime="20220406 17:59:04.917"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220406 17:59:04.917" endtime="20220406 17:59:04.925"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:59:04.925" endtime="20220406 17:59:04.925"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:59:04.925" endtime="20220406 17:59:04.925"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 17:59:04.925" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 17:59:04.925" endtime="20220406 17:59:06.442"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220406 17:59:06.442" endtime="20220406 17:59:06.568"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 17:59:06.568" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220406 17:59:06.568" endtime="20220406 17:59:51.138"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:59:51.469" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220406 17:59:51.469" level="INFO">c:\users\aravind.v\pycharmprojects\automationproject\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py:1315: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  warnings.warn("name used for saved screenshot does not match file "</msg>
+<status status="PASS" starttime="20220406 17:59:51.138" endtime="20220406 17:59:51.469"/>
+</kw>
+<status status="PASS" starttime="20220406 17:59:01.243" endtime="20220406 17:59:51.469"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 17:59:51.469" endtime="20220406 17:59:51.596"/>
+</kw>
+<kw name="Assert the logos in homepage" library="LoginPageNSP">
+<kw name="Assert the logos" library="Generic">
+<arg>${NSP_header logo}</arg>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220406 17:59:51.621" level="INFO">Current page contains image 'css:div.flex-nav-wrapper&gt;div&gt;a&gt;img'.</msg>
+<status status="PASS" starttime="20220406 17:59:51.604" endtime="20220406 17:59:51.621"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220406 17:59:51.644" level="INFO">Element 'css:div.flex-nav-wrapper&gt;div&gt;a&gt;img' is displayed.</msg>
+<status status="PASS" starttime="20220406 17:59:51.621" endtime="20220406 17:59:51.644"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${beforetitle}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220406 17:59:51.652" level="INFO">${beforetitle} = NS Pharma - Building A Healthier Future Powered by Science</msg>
+<status status="PASS" starttime="20220406 17:59:51.644" endtime="20220406 17:59:51.652"/>
+</kw>
+<kw name="Click Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<msg timestamp="20220406 17:59:51.652" level="INFO">Clicking image 'css:div.flex-nav-wrapper&gt;div&gt;a&gt;img'.</msg>
+<status status="PASS" starttime="20220406 17:59:51.652" endtime="20220406 17:59:53.196"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${beforetitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220406 17:59:53.204" level="INFO">Page title is 'NS Pharma - Building A Healthier Future Powered by Science'.</msg>
+<status status="PASS" starttime="20220406 17:59:53.196" endtime="20220406 17:59:53.204"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>logo</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:59:53.776" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="logo"&gt;&lt;img src="logo" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:59:53.204" endtime="20220406 17:59:53.776"/>
+</kw>
+<status status="PASS" starttime="20220406 17:59:51.604" endtime="20220406 17:59:53.776"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${NSP_footer logo}</arg>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220406 17:59:53.809" level="INFO">Current page contains image 'css:div.footer-wrapper&gt;div.logo&gt;a&gt;img'.</msg>
+<status status="PASS" starttime="20220406 17:59:53.776" endtime="20220406 17:59:53.809"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220406 17:59:53.845" level="INFO">Element 'css:div.footer-wrapper&gt;div.logo&gt;a&gt;img' is displayed.</msg>
+<status status="PASS" starttime="20220406 17:59:53.809" endtime="20220406 17:59:53.845"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${beforetitle}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220406 17:59:53.855" level="INFO">${beforetitle} = NS Pharma - Building A Healthier Future Powered by Science</msg>
+<status status="PASS" starttime="20220406 17:59:53.845" endtime="20220406 17:59:53.855"/>
+</kw>
+<kw name="Click Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<msg timestamp="20220406 17:59:53.855" level="INFO">Clicking image 'css:div.footer-wrapper&gt;div.logo&gt;a&gt;img'.</msg>
+<msg timestamp="20220406 17:59:55.080" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220406 17:59:55.084" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;img src="/img/global/NS_Pharma_LOGO_KO.svg" alt="NS Pharma Logo"&gt; is not clickable at point (981, 539). Other element would receive the click: &lt;button id="onetrust-reject-all-handler"&gt;...&lt;/button&gt;
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00457413+2389011]
+	Ordinal0 [0x003E9F61+1941345]
+	Ordinal0 [0x002DC658+837208]
+	Ordinal0 [0x0030F8AF+1046703]
+	Ordinal0 [0x0030D8D6+1038550]
+	Ordinal0 [0x0030B5EB+1029611]
+	Ordinal0 [0x0030A359+1024857]
+	Ordinal0 [0x002FFF93+982931]
+	Ordinal0 [0x0032414C+1130828]
+	Ordinal0 [0x002FF974+981364]
+	Ordinal0 [0x00324364+1131364]
+	Ordinal0 [0x00334302+1196802]
+	Ordinal0 [0x00323F66+1130342]
+	Ordinal0 [0x002FE546+976198]
+	Ordinal0 [0x002FF456+980054]
+	GetHandleVerifier [0x00609632+1727522]
+	GetHandleVerifier [0x006BBA4D+2457661]
+	GetHandleVerifier [0x004EEB81+569713]
+	GetHandleVerifier [0x004EDD76+566118]
+	Ordinal0 [0x003F0B2B+1968939]
+	Ordinal0 [0x003F5988+1989000]
+	Ordinal0 [0x003F5A75+1989237]
+	Ordinal0 [0x003FECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220406 17:59:53.855" endtime="20220406 17:59:55.084"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${beforetitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" starttime="20220406 17:59:55.084" endtime="20220406 17:59:55.084"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>logo</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20220406 17:59:55.084" endtime="20220406 17:59:55.084"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:59:53.776" endtime="20220406 17:59:55.086"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click button" library="Generic">
+<arg>${NSP_buttonAcceptCookies}</arg>
+<status status="NOT RUN" starttime="20220406 17:59:55.086" endtime="20220406 17:59:55.086"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:59:51.604" endtime="20220406 17:59:55.086"/>
+</kw>
+<kw name="Get All links in homepage and Validate it" library="LoginPageNSP">
+<status status="NOT RUN" starttime="20220406 17:59:55.087" endtime="20220406 17:59:55.087"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220406 17:59:01.243" endtime="20220406 17:59:55.087">ElementClickInterceptedException: Message: element click intercepted: Element &lt;img src="/img/global/NS_Pharma_LOGO_KO.svg" alt="NS Pharma Logo"&gt; is not clickable at point (981, 539). Other element would receive the click: &lt;button id="onetrust-reject-all-handler"&gt;...&lt;/button&gt;
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00457413+2389011]
+	Ordinal0 [0x003E9F61+1941345]
+	Ordinal0 [0x002DC658+837208]
+	Ordinal0 [0x0030F8AF+1046703]
+	Ordinal0 [0x0030D8D6+1038550]
+	Ordinal0 [0x0030B5EB+1029611]
+	Ordinal0 [0x0030A359+1024857]
+	Ordinal0 [0x002FFF93+982931]
+	Ordinal0 [0x0032414C+1130828]
+	Ordinal0 [0x002FF974+981364]
+	Ordinal0 [0x00324364+1131364]
+	Ordinal0 [0x00334302+1196802]
+	Ordinal0 [0x00323F66+1130342]
+	Ordinal0 [0x002FE546+976198]
+	Ordinal0 [0x002FF456+980054]
+	GetHandleVerifier [0x00609632+1727522]
+	GetHandleVerifier [0x006BBA4D+2457661]
+	GetHandleVerifier [0x004EEB81+569713]
+	GetHandleVerifier [0x004EDD76+566118]
+	Ordinal0 [0x003F0B2B+1968939]
+	Ordinal0 [0x003F5988+1989000]
+	Ordinal0 [0x003F5A75+1989237]
+	Ordinal0 [0x003FECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20220406 17:59:00.880" endtime="20220406 17:59:55.092"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="NSPharma">NSPharma</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

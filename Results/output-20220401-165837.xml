@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 16:58:37.837" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220401 16:58:38.221" level="INFO">
+</msg>
+<msg timestamp="20220401 16:58:38.221" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220401 16:58:39.079" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220401 16:58:39.079" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220401 16:58:39.502" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220401 16:58:45.795" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 16:58:45.798" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220401 16:58:45.799" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 16:58:45.799" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220401 16:58:38.220" endtime="20220401 16:58:45.799"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220401 16:58:45.800" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220401 16:58:45.799" endtime="20220401 16:58:47.723"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220401 16:58:47.724" level="INFO">Opening url 'https://www.interceptpharma.com/'</msg>
+<status status="PASS" starttime="20220401 16:58:47.723" endtime="20220401 16:59:03.383"/>
+</kw>
+<status status="PASS" starttime="20220401 16:58:38.220" endtime="20220401 16:59:03.383"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220401 16:59:03.383" endtime="20220401 16:59:03.519"/>
+</kw>
+<kw name="Get All links in homepage and Validate it" library="LoginPageICPT">
+<kw name="Get All links test" library="Generic">
+<arg>${mainNav}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220401 16:59:03.531" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1ace5a155e018987ff6bd9495522e41c", element="bddab1c8-6735-4b3e-9a2b-b234bb7d9f24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220401 16:59:03.520" endtime="20220401 16:59:03.531"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 16:59:03.574" level="INFO">${href_list} = ['https://www.interceptpharma.com/our-focus/', 'https://www.interceptpharma.com/our-research/', 'http://www.ocaliva.com/', 'https://www.interceptpharma.com/our-story/']</msg>
+<status status="PASS" starttime="20220401 16:59:03.531" endtime="20220401 16:59:03.574"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 16:59:03.574" level="INFO">['https://www.interceptpharma.com/our-focus/', 'https://www.interceptpharma.com/our-research/', 'http://www.ocaliva.com/', 'https://www.interceptpharma.com/our-story/']</msg>
+<status status="PASS" starttime="20220401 16:59:03.574" endtime="20220401 16:59:03.574"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220401 16:59:03.575" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220401 16:59:03.574" endtime="20220401 16:59:03.575"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element_href}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 16:59:03.575" level="INFO">https://www.interceptpharma.com/our-focus/</msg>
+<status status="PASS" starttime="20220401 16:59:03.575" endtime="20220401 16:59:03.575"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220401 16:59:05.209" level="INFO">GET Request : url=https://www.interceptpharma.com/our-focus/ 
+ path_url=/our-focus/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220401 16:59:05.209" level="INFO">GET Response : url=https://www.interceptpharma.com/our-focus/ 
+ status=403, reason=Forbidden 
+ headers={'Server': 'nginx', 'Date': 'Fri, 01 Apr 2022 11:29:04 GMT', 'Content-Type': 'text/html', 'Content-Length': '146', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Vary': 'Accept-Encoding'} 
+ body=&lt;html&gt;
+&lt;head&gt;&lt;title&gt;403 Forbidden&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;403 Forbidden&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220401 16:59:05.216" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/our-focus/</msg>
+<status status="FAIL" starttime="20220401 16:59:03.575" endtime="20220401 16:59:05.216"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>OK</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220401 16:59:05.217" endtime="20220401 16:59:05.217"/>
+</kw>
+<status status="FAIL" starttime="20220401 16:59:03.575" endtime="20220401 16:59:05.217"/>
+</iter>
+<status status="FAIL" starttime="20220401 16:59:03.575" endtime="20220401 16:59:05.217"/>
+</for>
+<status status="FAIL" starttime="20220401 16:59:03.519" endtime="20220401 16:59:05.217"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${mainNav}</arg>
+<arg>${eTextMain_list}</arg>
+<status status="NOT RUN" starttime="20220401 16:59:05.218" endtime="20220401 16:59:05.218"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${footerNav_href}</arg>
+<status status="NOT RUN" starttime="20220401 16:59:05.218" endtime="20220401 16:59:05.218"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${footerNav}</arg>
+<arg>${eTextFoot_list}</arg>
+<status status="NOT RUN" starttime="20220401 16:59:05.218" endtime="20220401 16:59:05.218"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${topNav~search}</arg>
+<status status="NOT RUN" starttime="20220401 16:59:05.218" endtime="20220401 16:59:05.218"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${tn~social/search}</arg>
+<arg>${eTextTop_list}</arg>
+<status status="NOT RUN" starttime="20220401 16:59:05.218" endtime="20220401 16:59:05.218"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${contentLink}</arg>
+<status status="NOT RUN" starttime="20220401 16:59:05.218" endtime="20220401 16:59:05.218"/>
+</kw>
+<status status="FAIL" starttime="20220401 16:59:03.519" endtime="20220401 16:59:05.218"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220401 16:58:38.219" endtime="20220401 16:59:05.219">HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/our-focus/</status>
+</test>
+<status status="FAIL" starttime="20220401 16:58:37.839" endtime="20220401 16:59:05.221"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

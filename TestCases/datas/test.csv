@@ -1,0 +1,2 @@
+***Test Cases***,${country},${salutation},${FirstName},${LastName},${Degree},${ContactMethod},${PrimaryPhone},${EmailAdress},${Address1},${Address2},${City},${State},${Zipcode},${Inquiry},${DigitalSignature}
+Submit MEDICAL INFORMATION REQUESTS form,United States,Mr,fnMIR,lnMIR,MD;DO,Phone;Email,7373252303,sentester2@gmail.com,FirstAddress,SecondAddress,testCity,Alabama,95001,Test submit-Automation,Yes

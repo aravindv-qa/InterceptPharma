@@ -1,0 +1,2 @@
+***Test Cases***,${MainPage},${SubPage},${SubNav},${FirstName},${LastName},${Email},${Phone},${Contactmethod},${AdditionalMessage}
+GalleriTest KeepInTheKnow form_Patients,Patients,Support,share-your-experience,testPatientsFN,testPatientsLN,testPatientsFN@gmail.com,7373252303,phone,AdditionalMessage SYE

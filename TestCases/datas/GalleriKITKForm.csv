@@ -1,0 +1,3 @@
+***Test Cases***,${Page},${FirstName},${LastName},${Email},${Radio}
+GalleriTest KeepInTheKnow form_Patients,Patients,testPatientsFN,testPatientsLN,testPatientsFN@gmail.com,hcp
+GalleriTest KeepInTheKnow form_Providers,Providers,testProvidersFN,testProvidersLN,testProvidersFN@gmail.com,patient

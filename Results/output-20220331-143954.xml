@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220331 14:39:54.848" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="LoginTestChrome">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220331 14:39:55.141" level="INFO">
+</msg>
+<msg timestamp="20220331 14:39:55.141" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220331 14:39:55.754" level="INFO">Current google-chrome version is 99.0.4844</msg>
+<msg timestamp="20220331 14:39:55.754" level="INFO">Get LATEST chromedriver version for 99.0.4844 google-chrome</msg>
+<msg timestamp="20220331 14:39:56.303" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/99.0.4844.51/chromedriver_win32.zip</msg>
+<msg timestamp="20220331 14:40:00.612" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\99.0.4844.51]</msg>
+<msg timestamp="20220331 14:40:00.612" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe</msg>
+<msg timestamp="20220331 14:40:00.612" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST chromedriver version for 99.0.4844 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/99.0.4844.51/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\99.0.4844.51]</msg>
+<msg timestamp="20220331 14:40:00.612" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe</msg>
+<status status="PASS" starttime="20220331 14:39:55.141" endtime="20220331 14:40:00.612"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220331 14:40:00.612" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220331 14:40:00.612" endtime="20220331 14:40:01.890"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220331 14:40:01.890" level="INFO">Opening url 'https://www.interceptpharma.com/homepage-non-usa/'</msg>
+<status status="PASS" starttime="20220331 14:40:01.890" endtime="20220331 14:40:16.650"/>
+</kw>
+<status status="PASS" starttime="20220331 14:39:55.141" endtime="20220331 14:40:16.650"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220331 14:40:16.651" endtime="20220331 14:40:16.769"/>
+</kw>
+<kw name="And Get All links in homepage and Validate it" library="LoginPage">
+<kw name="Validate search icon" library="Generic">
+<arg>${topnavsearch}</arg>
+<arg>${inputSearch}</arg>
+<arg>${inputText}</arg>
+<arg>${buttonSearch}</arg>
+<arg>${searchResult}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${searchIcon}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220331 14:40:16.772" endtime="20220331 14:40:16.808"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${searchIcon}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220331 14:40:16.809" level="INFO">Clicking link 'css:nav.row.row-top-nav li&gt;a[class='search-icon']'.</msg>
+<status status="PASS" starttime="20220331 14:40:16.809" endtime="20220331 14:40:16.864"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${searchArea}</arg>
+<arg>${input}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220331 14:40:16.865" level="INFO">Typing text 'LEADERSHIP' into text field 'css:input[type=search]'.</msg>
+<status status="PASS" starttime="20220331 14:40:16.864" endtime="20220331 14:40:16.933"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${searchButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220331 14:40:16.933" level="INFO">Clicking button 'css:input[type=submit]'.</msg>
+<status status="PASS" starttime="20220331 14:40:16.933" endtime="20220331 14:40:20.039"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${actaulSize}</var>
+<arg>${result}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220331 14:40:20.050" level="INFO">${actaulSize} = 2</msg>
+<status status="PASS" starttime="20220331 14:40:20.039" endtime="20220331 14:40:20.050"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${actaulSize}</arg>
+<arg>2</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20220331 14:40:20.050" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220331 14:40:20.050" endtime="20220331 14:40:20.050"/>
+</kw>
+<status status="PASS" starttime="20220331 14:40:16.770" endtime="20220331 14:40:20.050"/>
+</kw>
+<status status="PASS" starttime="20220331 14:40:16.770" endtime="20220331 14:40:20.050"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220331 14:39:55.141" endtime="20220331 14:40:20.051"/>
+</test>
+<status status="PASS" starttime="20220331 14:39:54.848" endtime="20220331 14:40:20.051"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

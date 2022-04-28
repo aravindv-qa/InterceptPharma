@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220404 14:51:46.196" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="OurStoryPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220404 14:51:46.521" level="INFO">
+</msg>
+<msg timestamp="20220404 14:51:46.521" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220404 14:51:47.219" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220404 14:51:47.220" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220404 14:51:58.772" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220404 14:52:00.772" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 14:52:00.772" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220404 14:52:00.773" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 14:52:00.773" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220404 14:51:46.521" endtime="20220404 14:52:00.773"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220404 14:52:00.774" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220404 14:52:00.774" endtime="20220404 14:52:02.033"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220404 14:52:02.035" level="INFO">Opening url 'https://www.interceptpharma.com/'</msg>
+<status status="PASS" starttime="20220404 14:52:02.034" endtime="20220404 14:52:24.140"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>loginpage</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 14:52:24.261" level="INFO" html="true">&lt;a href="loginpage_6.jpg"&gt;&lt;img src="loginpage_6.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:24.140" endtime="20220404 14:52:24.261"/>
+</kw>
+<status status="PASS" starttime="20220404 14:51:46.521" endtime="20220404 14:52:24.262"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220404 14:52:24.263" endtime="20220404 14:52:24.424"/>
+</kw>
+<kw name="Get OurStoryHomePage validated" library="OurStoryPageICPT">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${OurStory}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220404 14:52:24.426" endtime="20220404 14:52:24.475"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220404 14:52:24.475" level="INFO">Clicking element 'xpath://ul[@id='menu-primary-menu']//a[.='Our Story']'.</msg>
+<status status="PASS" starttime="20220404 14:52:24.475" endtime="20220404 14:52:27.313"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>elementfound</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 14:52:27.389" level="INFO" html="true">&lt;a href="elementfound_2.jpg"&gt;&lt;img src="elementfound_2.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:27.313" endtime="20220404 14:52:27.390"/>
+</kw>
+<status status="PASS" starttime="20220404 14:52:24.426" endtime="20220404 14:52:27.390"/>
+</kw>
+<kw name="Validate the string" library="Generic">
+<arg>${breadCrumbsGlobal}</arg>
+<arg>${eBreadCrumbsOS}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${aResult}</var>
+<arg>${elementLocator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220404 14:52:27.420" level="INFO">${aResult} = Home &gt; Our Story</msg>
+<status status="PASS" starttime="20220404 14:52:27.391" endtime="20220404 14:52:27.420"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${aResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 14:52:27.421" level="INFO">Home &gt; Our Story</msg>
+<status status="PASS" starttime="20220404 14:52:27.421" endtime="20220404 14:52:27.421"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${eResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 14:52:27.422" level="INFO">Home &gt; Our Story</msg>
+<status status="PASS" starttime="20220404 14:52:27.421" endtime="20220404 14:52:27.422"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aResult}</arg>
+<arg>${eResult}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220404 14:52:27.422" endtime="20220404 14:52:27.422"/>
+</kw>
+<status status="PASS" starttime="20220404 14:52:27.390" endtime="20220404 14:52:27.422"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Get All links test</arg>
+<arg>${sideBarOS}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${sideBarOS}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${sideBarOS}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220404 14:52:27.437" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="44f2797e81607f3c49cb1d5de90a39a7", element="8e26a1fa-ba31-41f2-b054-78361f7ed92f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220404 14:52:27.424" endtime="20220404 14:52:27.437"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220404 14:52:27.481" level="INFO">${href_list} = ['http://ir.interceptpharma.com/corporate-governance/management', 'http://ir.interceptpharma.com/corporate-governance/board-of-directors', 'https://www.interceptpharma.com/our-story/locations/']</msg>
+<status status="PASS" starttime="20220404 14:52:27.437" endtime="20220404 14:52:27.481"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 14:52:27.481" level="INFO">['http://ir.interceptpharma.com/corporate-governance/management', 'http://ir.interceptpharma.com/corporate-governance/board-of-directors', 'https://www.interceptpharma.com/our-story/locations/']</msg>
+<status status="PASS" starttime="20220404 14:52:27.481" endtime="20220404 14:52:27.481"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220404 14:52:27.482" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220404 14:52:27.482" endtime="20220404 14:52:27.482"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">http://ir.interceptpharma.com/corporate-governance/management</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220404 14:52:33.536" level="INFO">GET Request : url=http://ir.interceptpharma.com/corporate-governance/management (redirected) 
+ path_url=/corporate-governance/management 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220404 14:52:33.537" level="INFO">GET Response : url=https://ir.interceptpharma.com/corporate-governance/management 
+ status=200, reason=OK 
+ headers={'Accept-Ranges': 'bytes', 'Content-Encoding': 'gzip', 'Content-Language': 'en', 'Content-Type': 'text/html; charset=UTF-8', 'device': 'desktop', 'ETag': '"1649064152"', 'Expect-CT': 'max-age=0, report-uri="/report-expect-ct-violation"', 'Feature-Policy': "accelerometer 'none';ambient-light-sensor 'none';autoplay 'self';camera 'none';encrypted-media 'none';fullscreen 'self';geolocation 'self';gyroscope 'none';magnetometer 'none';microphone 'none';midi 'none';payment 'none';picture-in-picture 'none';speaker 'self';sync-xhr 'self';usb 'none';vibrate 'none';vr 'none'", 'From-Origin': 'same', 'Last-Modified': 'Mon, 04 Apr 2022 09:22:32 GMT', 'Link': '&lt;https://ir.interceptpharma.com/corporate-governance/management&gt;; rel="alternate"; hreflang="en", &lt;https://ir.interceptpharma.com/corporate-governance/management&gt;; rel="canonical", &lt;https://ir.interceptpharma.com/node/5846&gt;; rel="shortlink", &lt;https://ir.interceptpharma.com/corporate-governance/management&gt;; rel="revision"', 'Permissions-Policy': 'interest-cohort=()', 'Referrer-Policy': 'no-referrer-when-downgrade', 'Strict-Transport-Security': 'max-age=31536000', 'X-Age': '0', 'X-Content-Type-Options': 'nosniff', 'X-Drupal-Dynamic-Cache': 'UNCACHEABLE', 'X-Frame-Options': 'SAMEORIGIN', 'X-Request-ID': 'v-c1a4f856-b3f8-11ec-a544-830aa1fe217f', 'X-UA-Compatible': 'IE=edge', 'X-XSS-Protection': '1; mode=block', 'Content-Length': '16455', 'X-EdgeConnect-MidMile-RTT': '178, 180, 180', 'X-EdgeConnect-Origin-MEX-Latency': '785, 785, 785', 'Cache-Control': 'public, max-age=0, s-maxage=2700', 'Expires': 'Mon, 04 Apr 2022 09:22:33 GMT', 'Date': 'Mon, 04 Apr 2022 09:22:33 GMT', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Set-Cookie': 'DrupalVisitorMobile=0; path=/; Secure; HttpOnly'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;&lt;script type="text/javascript"&gt;(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"761e715901",applicationID:"35893545"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&amp;&amp;(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r&lt;n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&amp;&amp;l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length&gt;0){var r=n[n.length-1];if(u&amp;&amp;u&lt;r.startTime)return;var i=[r],o=a({});o&amp;&amp;i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&amp;&amp;(t["net-type"]=e.type),e.effectiveType&amp;&amp;(t["net-etype"]=e.effectiveType),e.rtt&amp;&amp;(t["net-rtt"]=e.rtt),e.downlink&amp;&amp;(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&amp;&amp;!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e&lt;=v.now()?n.fid=v.now()-e:e&gt;v.offset&amp;&amp;e&lt;=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&amp;&amp;(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&amp;&amp;document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&amp;&amp;a&amp;&amp;document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&amp;&amp;(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&amp;&amp;(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&amp;&amp;t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&amp;&amp;(a=!0),!l.aborted||o){t&amp;&amp;a&amp;&amp;t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s&lt;u;s++)f[s].apply(c,r);var p=d[w[n]];return p&amp;&amp;p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r&lt;n.length;r++)n[r]===e&amp;&amp;n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&amp;&amp;(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&amp;&amp;"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&amp;&amp;t.licenseKey&amp;&amp;t.applicationID&amp;&amp;e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&amp;&amp;w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&amp;&amp;b&amp;&amp;b[y]&amp;&amp;!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u&lt;e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&amp;&amp;Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&amp;&amp;(e[a]=t[a]);return ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220404 14:52:33.538" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:27.483" endtime="20220404 14:52:33.538"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220404 14:52:33.541" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:33.538" endtime="20220404 14:52:33.541"/>
+</kw>
+<status status="PASS" starttime="20220404 14:52:27.483" endtime="20220404 14:52:33.541"/>
+</iter>
+<iter>
+<var name="${element_href}">http://ir.interceptpharma.com/corporate-governance/board-of-directors</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220404 14:52:37.751" level="INFO">GET Request : url=http://ir.interceptpharma.com/corporate-governance/board-of-directors (redirected) 
+ path_url=/corporate-governance/board-of-directors 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220404 14:52:37.751" level="INFO">GET Response : url=https://ir.interceptpharma.com/corporate-governance/board-of-directors 
+ status=200, reason=OK 
+ headers={'Accept-Ranges': 'bytes', 'Content-Encoding': 'gzip', 'Content-Language': 'en', 'Content-Type': 'text/html; charset=UTF-8', 'device': 'desktop', 'ETag': '"1649064157"', 'Expect-CT': 'max-age=0, report-uri="/report-expect-ct-violation"', 'Feature-Policy': "accelerometer 'none';ambient-light-sensor 'none';autoplay 'self';camera 'none';encrypted-media 'none';fullscreen 'self';geolocation 'self';gyroscope 'none';magnetometer 'none';microphone 'none';midi 'none';payment 'none';picture-in-picture 'none';speaker 'self';sync-xhr 'self';usb 'none';vibrate 'none';vr 'none'", 'From-Origin': 'same', 'Last-Modified': 'Mon, 04 Apr 2022 09:22:37 GMT', 'Link': '&lt;https://ir.interceptpharma.com/corporate-governance/board-of-directors&gt;; rel="alternate"; hreflang="en", &lt;https://ir.interceptpharma.com/corporate-governance/board-of-directors&gt;; rel="canonical", &lt;https://ir.interceptpharma.com/node/5841&gt;; rel="shortlink", &lt;https://ir.interceptpharma.com/corporate-governance/board-of-directors&gt;; rel="revision"', 'Permissions-Policy': 'interest-cohort=()', 'Referrer-Policy': 'no-referrer-when-downgrade', 'Strict-Transport-Security': 'max-age=31536000', 'X-Age': '0', 'X-Content-Type-Options': 'nosniff', 'X-Drupal-Dynamic-Cache': 'HIT', 'X-Frame-Options': 'SAMEORIGIN', 'X-Request-ID': 'v-c4a56464-b3f8-11ec-9c5a-2b490733dd2b', 'X-UA-Compatible': 'IE=edge', 'X-XSS-Protection': '1; mode=block', 'Content-Length': '18158', 'X-EdgeConnect-MidMile-RTT': '21, 198, 21, 28', 'X-EdgeConnect-Origin-MEX-Latency': '268, 268, 268, 268', 'Cache-Control': 'public, max-age=0, s-maxage=2700', 'Expires': 'Mon, 04 Apr 2022 09:22:37 GMT', 'Date': 'Mon, 04 Apr 2022 09:22:37 GMT', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Set-Cookie': 'DrupalVisitorMobile=0; path=/; Secure; HttpOnly'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;&lt;script type="text/javascript"&gt;(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"761e715901",applicationID:"35893545"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&amp;&amp;(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r&lt;n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&amp;&amp;l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length&gt;0){var r=n[n.length-1];if(u&amp;&amp;u&lt;r.startTime)return;var i=[r],o=a({});o&amp;&amp;i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&amp;&amp;(t["net-type"]=e.type),e.effectiveType&amp;&amp;(t["net-etype"]=e.effectiveType),e.rtt&amp;&amp;(t["net-rtt"]=e.rtt),e.downlink&amp;&amp;(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&amp;&amp;!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e&lt;=v.now()?n.fid=v.now()-e:e&gt;v.offset&amp;&amp;e&lt;=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&amp;&amp;(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&amp;&amp;document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&amp;&amp;a&amp;&amp;document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&amp;&amp;(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&amp;&amp;(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&amp;&amp;t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&amp;&amp;(a=!0),!l.aborted||o){t&amp;&amp;a&amp;&amp;t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s&lt;u;s++)f[s].apply(c,r);var p=d[w[n]];return p&amp;&amp;p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r&lt;n.length;r++)n[r]===e&amp;&amp;n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&amp;&amp;(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&amp;&amp;"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&amp;&amp;t.licenseKey&amp;&amp;t.applicationID&amp;&amp;e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&amp;&amp;w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&amp;&amp;b&amp;&amp;b[y]&amp;&amp;!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u&lt;e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&amp;&amp;Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&amp;&amp;(e[a]=t[a]);return ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220404 14:52:37.752" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:33.542" endtime="20220404 14:52:37.752"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220404 14:52:37.754" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:37.752" endtime="20220404 14:52:37.754"/>
+</kw>
+<status status="PASS" starttime="20220404 14:52:33.541" endtime="20220404 14:52:37.754"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-story/locations/</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220404 14:52:39.285" level="INFO">GET Request : url=https://www.interceptpharma.com/our-story/locations/ 
+ path_url=/our-story/locations/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220404 14:52:39.285" level="INFO">GET Response : url=https://www.interceptpharma.com/our-story/locations/ 
+ status=403, reason=Forbidden 
+ headers={'Server': 'nginx', 'Date': 'Mon, 04 Apr 2022 09:22:38 GMT', 'Content-Type': 'text/html', 'Content-Length': '146', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Vary': 'Accept-Encoding'} 
+ body=&lt;html&gt;
+&lt;head&gt;&lt;title&gt;403 Forbidden&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;403 Forbidden&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220404 14:52:39.290" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/our-story/locations/</msg>
+<status status="FAIL" starttime="20220404 14:52:37.754" endtime="20220404 14:52:39.290"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220404 14:52:39.290" endtime="20220404 14:52:39.291"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:52:37.754" endtime="20220404 14:52:39.291"/>
+</iter>
+<status status="FAIL" starttime="20220404 14:52:27.482" endtime="20220404 14:52:39.291"/>
+</for>
+<status status="FAIL" starttime="20220404 14:52:27.423" endtime="20220404 14:52:39.292"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:52:27.423" endtime="20220404 14:52:39.292"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:52:27.423" endtime="20220404 14:52:39.292"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${sideBarOS}</arg>
+<arg>${eSidebarListOS}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220404 14:52:39.299" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="44f2797e81607f3c49cb1d5de90a39a7", element="8e26a1fa-ba31-41f2-b054-78361f7ed92f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220404 14:52:39.292" endtime="20220404 14:52:39.299"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${actualText_list}</var>
+<arg>[item.get_attribute('text') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220404 14:52:39.329" level="INFO">${actualText_list} = ['Leadership', 'Board', 'Locations']</msg>
+<status status="PASS" starttime="20220404 14:52:39.299" endtime="20220404 14:52:39.329"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${actualText_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 14:52:39.330" level="INFO">['Leadership', 'Board', 'Locations']</msg>
+<status status="PASS" starttime="20220404 14:52:39.329" endtime="20220404 14:52:39.330"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${expectedText_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 14:52:39.330" level="INFO">['Leadership', 'Board', 'Locations']</msg>
+<status status="PASS" starttime="20220404 14:52:39.330" endtime="20220404 14:52:39.330"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${actualText_list}</arg>
+<arg>${expectedText_list}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220404 14:52:39.330" endtime="20220404 14:52:39.330"/>
+</kw>
+<status status="PASS" starttime="20220404 14:52:39.292" endtime="20220404 14:52:39.330"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Get All links test</arg>
+<arg>${contentLinkGlobal}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${contentLinkGlobal}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${contentLinkGlobal}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220404 14:52:39.341" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="44f2797e81607f3c49cb1d5de90a39a7", element="2be89d39-f287-4ea8-ba71-3ccdad62957d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220404 14:52:39.331" endtime="20220404 14:52:39.341"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220404 14:52:39.378" level="INFO">${href_list} = ['https://www.interceptpharma.com/our-story/#', 'http://ir.interceptpharma.com/corporate-governance/management', 'http://ir.interceptpharma.com/corporate-governance/board-of-directors', 'https://www.i...</msg>
+<status status="PASS" starttime="20220404 14:52:39.342" endtime="20220404 14:52:39.378"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 14:52:39.379" level="INFO">['https://www.interceptpharma.com/our-story/#', 'http://ir.interceptpharma.com/corporate-governance/management', 'http://ir.interceptpharma.com/corporate-governance/board-of-directors', 'https://www.interceptpharma.com/our-story/locations/']</msg>
+<status status="PASS" starttime="20220404 14:52:39.378" endtime="20220404 14:52:39.379"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220404 14:52:39.379" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220404 14:52:39.379" endtime="20220404 14:52:39.379"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-story/#</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220404 14:52:41.536" level="INFO">GET Request : url=https://www.interceptpharma.com/our-story/ 
+ path_url=/our-story/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220404 14:52:41.537" level="INFO">GET Response : url=https://www.interceptpharma.com/our-story/ 
+ status=403, reason=Forbidden 
+ headers={'Server': 'nginx', 'Date': 'Mon, 04 Apr 2022 09:22:40 GMT', 'Content-Type': 'text/html', 'Content-Length': '146', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Vary': 'Accept-Encoding'} 
+ body=&lt;html&gt;
+&lt;head&gt;&lt;title&gt;403 Forbidden&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;403 Forbidden&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220404 14:52:41.537" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/our-story/</msg>
+<status status="FAIL" starttime="20220404 14:52:39.379" endtime="20220404 14:52:41.537"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220404 14:52:41.538" endtime="20220404 14:52:41.538"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:52:39.379" endtime="20220404 14:52:41.538"/>
+</iter>
+<status status="FAIL" starttime="20220404 14:52:39.379" endtime="20220404 14:52:41.538"/>
+</for>
+<status status="FAIL" starttime="20220404 14:52:39.331" endtime="20220404 14:52:41.538"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:52:39.330" endtime="20220404 14:52:41.539"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:52:39.330" endtime="20220404 14:52:41.539"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${OurStory}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220404 14:52:41.545" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="44f2797e81607f3c49cb1d5de90a39a7", element="d19b21cc-a780-4461-b276-ab90ac37999d")&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:41.539" endtime="20220404 14:52:41.545"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220404 14:52:41.553" level="INFO">${prop_val} = 2px solid rgb(136, 174, 179)</msg>
+<status status="PASS" starttime="20220404 14:52:41.545" endtime="20220404 14:52:41.553"/>
+</kw>
+<msg timestamp="20220404 14:52:41.553" level="INFO">${aColorHighlighted} = 2px solid rgb(136, 174, 179)</msg>
+<status status="PASS" starttime="20220404 14:52:41.539" endtime="20220404 14:52:41.553"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220404 14:52:41.553" endtime="20220404 14:52:41.554"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:52:24.425" endtime="20220404 14:52:41.554"/>
+</kw>
+<kw name="Get OurStoryLeadershipPage validated" library="OurStoryPageICPT">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${OurStory}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220404 14:52:41.556" endtime="20220404 14:52:41.573"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220404 14:52:41.574" level="INFO">Clicking element 'xpath://ul[@id='menu-primary-menu']//a[.='Our Story']'.</msg>
+<status status="PASS" starttime="20220404 14:52:41.573" endtime="20220404 14:52:44.969"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>elementfound</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 14:52:45.027" level="INFO" html="true">&lt;a href="elementfound_3.jpg"&gt;&lt;img src="elementfound_3.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:44.969" endtime="20220404 14:52:45.027"/>
+</kw>
+<status status="PASS" starttime="20220404 14:52:41.555" endtime="20220404 14:52:45.027"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${linkLeadership}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220404 14:52:45.027" endtime="20220404 14:52:45.053"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220404 14:52:45.054" level="INFO">Clicking element 'xpath://aside//ul[@class='nav sidebar-menu']//a[.='Leadership']'.</msg>
+<status status="PASS" starttime="20220404 14:52:45.053" endtime="20220404 14:52:58.389"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>elementfound</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 14:52:58.426" level="INFO" html="true">&lt;a href="elementfound_4.jpg"&gt;&lt;img src="elementfound_4.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 14:52:58.389" endtime="20220404 14:52:58.426"/>
+</kw>
+<status status="PASS" starttime="20220404 14:52:45.027" endtime="20220404 14:52:58.426"/>
+</kw>
+<kw name="Validate the string" library="Generic">
+<arg>${breadCrumbsIAM}</arg>
+<arg>${eBreadCrumbsLeadership}</arg>
+<msg timestamp="20220404 14:52:58.428" level="FAIL">Variable '${eBreadCrumbsLeadership}' not found.</msg>
+<status status="FAIL" starttime="20220404 14:52:58.426" endtime="20220404 14:52:58.428"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${sideBarIAM}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220404 14:52:58.428" endtime="20220404 14:52:58.428"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${sideBarIAM}</arg>
+<arg>${eSidebarListIAM}</arg>
+<status status="NOT RUN" starttime="20220404 14:52:58.428" endtime="20220404 14:52:58.428"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:52:41.555" endtime="20220404 14:52:58.428"/>
+</kw>
+<kw name="Get OurStoryBoardOfDirectorsPage validated" library="OurStoryPageICPT">
+<status status="NOT RUN" starttime="20220404 14:52:58.429" endtime="20220404 14:52:58.429"/>
+</kw>
+<kw name="Get OurStoryLocationsPage validated" library="OurStoryPageICPT">
+<status status="NOT RUN" starttime="20220404 14:52:58.430" endtime="20220404 14:52:58.430"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220404 14:51:46.520" endtime="20220404 14:52:58.431">Several failures occurred:
+
+1) HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/our-story/locations/
+
+2) HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/our-story/
+
+3) Variable '${eBreadCrumbsLeadership}' not found.</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220404 14:52:58.434" endtime="20220404 14:53:00.613"/>
+</kw>
+<status status="FAIL" starttime="20220404 14:51:46.198" endtime="20220404 14:53:00.613"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

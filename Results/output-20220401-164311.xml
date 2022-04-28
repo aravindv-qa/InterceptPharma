@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 16:43:11.094" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220401 16:43:11.431" level="INFO">
+</msg>
+<msg timestamp="20220401 16:43:11.431" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220401 16:43:12.732" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220401 16:43:12.732" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220401 16:43:13.086" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220401 16:43:16.548" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 16:43:16.550" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220401 16:43:16.550" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 16:43:16.552" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220401 16:43:11.431" endtime="20220401 16:43:16.552"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220401 16:43:16.553" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220401 16:43:16.552" endtime="20220401 16:43:21.194"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220401 16:43:21.194" level="INFO">Opening url 'https://www.interceptpharma.com/'</msg>
+<status status="PASS" starttime="20220401 16:43:21.194" endtime="20220401 16:43:37.664"/>
+</kw>
+<status status="PASS" starttime="20220401 16:43:11.431" endtime="20220401 16:43:37.664"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220401 16:43:37.665" endtime="20220401 16:43:37.797"/>
+</kw>
+<kw name="Get All links in homepage and Validate it" library="LoginPageICPT">
+<kw name="Get All links test" library="Generic">
+<arg>${mainNav}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220401 16:43:37.829" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1d12e57f58f3c4680ee001722c44a162", element="ab739170-4ddd-46ac-8cfe-cf6b4d836d78")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220401 16:43:37.800" endtime="20220401 16:43:37.829"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 16:43:37.880" level="INFO">${href_list} = ['https://www.interceptpharma.com/our-focus/', 'https://www.interceptpharma.com/our-research/', 'http://www.ocaliva.com/', 'https://www.interceptpharma.com/our-story/']</msg>
+<status status="PASS" starttime="20220401 16:43:37.829" endtime="20220401 16:43:37.880"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 16:43:37.880" level="INFO">['https://www.interceptpharma.com/our-focus/', 'https://www.interceptpharma.com/our-research/', 'http://www.ocaliva.com/', 'https://www.interceptpharma.com/our-story/']</msg>
+<status status="PASS" starttime="20220401 16:43:37.880" endtime="20220401 16:43:37.880"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220401 16:43:37.881" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220401 16:43:37.881" endtime="20220401 16:43:37.881"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${uri}</var>
+<arg>'${element_href}' != 'None'</arg>
+<arg>Remove String</arg>
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Remove String" library="String">
+<arg>${element_href}</arg>
+<arg>${url}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" starttime="20220401 16:43:37.881" endtime="20220401 16:43:37.881"/>
+</kw>
+<msg timestamp="20220401 16:43:37.881" level="INFO">${uri} = our-focus/</msg>
+<status status="PASS" starttime="20220401 16:43:37.881" endtime="20220401 16:43:37.881"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_base_url}</var>
+<arg>"${url}" in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 16:43:37.882" level="INFO">${contains_base_url} = True</msg>
+<status status="PASS" starttime="20220401 16:43:37.881" endtime="20220401 16:43:37.882"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>testing</arg>
+<arg>${uri}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20220401 16:43:37.882" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20220401 16:43:39.539" level="INFO">GET Request : url=https://www.interceptpharma.com/our-focus/ 
+ path_url=/our-focus/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220401 16:43:39.540" level="INFO">GET Response : url=https://www.interceptpharma.com/our-focus/ 
+ status=403, reason=Forbidden 
+ headers={'Server': 'nginx', 'Date': 'Fri, 01 Apr 2022 11:13:39 GMT', 'Content-Type': 'text/html', 'Content-Length': '146', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Vary': 'Accept-Encoding'} 
+ body=&lt;html&gt;
+&lt;head&gt;&lt;title&gt;403 Forbidden&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;403 Forbidden&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220401 16:43:39.540" level="INFO">c:\users\aravind.v\pycharmprojects\automationproject\venv\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.interceptpharma.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220401 16:43:39.542" level="INFO">${response} = &lt;Response [403]&gt;</msg>
+<status status="PASS" starttime="20220401 16:43:37.882" endtime="20220401 16:43:39.542"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_base_url}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220401 16:43:39.544" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20220401 16:43:39.546" level="FAIL">403 != 200</msg>
+<status status="FAIL" starttime="20220401 16:43:39.543" endtime="20220401 16:43:39.546"/>
+</kw>
+<status status="FAIL" starttime="20220401 16:43:39.542" endtime="20220401 16:43:39.546"/>
+</kw>
+<status status="FAIL" starttime="20220401 16:43:37.881" endtime="20220401 16:43:39.547"/>
+</iter>
+<status status="FAIL" starttime="20220401 16:43:37.881" endtime="20220401 16:43:39.547"/>
+</for>
+<status status="FAIL" starttime="20220401 16:43:37.799" endtime="20220401 16:43:39.547"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${mainNav}</arg>
+<arg>${eTextMain_list}</arg>
+<status status="NOT RUN" starttime="20220401 16:43:39.548" endtime="20220401 16:43:39.548"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${footerNav_href}</arg>
+<status status="NOT RUN" starttime="20220401 16:43:39.548" endtime="20220401 16:43:39.548"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${footerNav}</arg>
+<arg>${eTextFoot_list}</arg>
+<status status="NOT RUN" starttime="20220401 16:43:39.548" endtime="20220401 16:43:39.548"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${topNav~search}</arg>
+<status status="NOT RUN" starttime="20220401 16:43:39.548" endtime="20220401 16:43:39.548"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${tn~social/search}</arg>
+<arg>${eTextTop_list}</arg>
+<status status="NOT RUN" starttime="20220401 16:43:39.549" endtime="20220401 16:43:39.549"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${contentLink}</arg>
+<status status="NOT RUN" starttime="20220401 16:43:39.549" endtime="20220401 16:43:39.549"/>
+</kw>
+<status status="FAIL" starttime="20220401 16:43:37.798" endtime="20220401 16:43:39.549"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220401 16:43:11.430" endtime="20220401 16:43:39.551">403 != 200</status>
+</test>
+<status status="FAIL" starttime="20220401 16:43:11.099" endtime="20220401 16:43:39.556"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220401 16:43:37.882" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+</errors>
+</robot>

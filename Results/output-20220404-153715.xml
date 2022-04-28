@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220404 15:37:15.094" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="CareersPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220404 15:37:15.372" level="INFO">
+</msg>
+<msg timestamp="20220404 15:37:15.372" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220404 15:37:16.304" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220404 15:37:16.304" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220404 15:37:27.839" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220404 15:37:30.983" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 15:37:30.984" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220404 15:37:30.984" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 15:37:30.985" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220404 15:37:15.372" endtime="20220404 15:37:30.985"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220404 15:37:30.986" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220404 15:37:30.985" endtime="20220404 15:37:34.519"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220404 15:37:34.520" level="INFO">Opening url 'https://www.interceptpharma.com/'</msg>
+<status status="PASS" starttime="20220404 15:37:34.519" endtime="20220404 15:38:04.912"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>loginpage</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 15:38:05.056" level="INFO" html="true">&lt;a href="loginpage_10.jpg"&gt;&lt;img src="loginpage_10.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 15:38:04.913" endtime="20220404 15:38:05.057"/>
+</kw>
+<status status="PASS" starttime="20220404 15:37:15.371" endtime="20220404 15:38:05.057"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220404 15:38:05.058" endtime="20220404 15:38:05.228"/>
+</kw>
+<kw name="Get CareersHomePage validated" library="CareersPageICPT">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${Careers}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220404 15:38:05.231" endtime="20220404 15:38:05.277"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220404 15:38:05.278" level="INFO">Clicking element 'xpath://ul[@id='menu-top-menu']//a[.='Careers']'.</msg>
+<status status="PASS" starttime="20220404 15:38:05.277" endtime="20220404 15:38:17.532"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>elementfound</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 15:38:17.624" level="INFO" html="true">&lt;a href="elementfound_15.jpg"&gt;&lt;img src="elementfound_15.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 15:38:17.532" endtime="20220404 15:38:17.624"/>
+</kw>
+<status status="PASS" starttime="20220404 15:38:05.230" endtime="20220404 15:38:17.624"/>
+</kw>
+<kw name="Validate the string" library="Generic">
+<arg>${breadCrumbsGlobal}</arg>
+<arg>${eBreadCrumbsCareers}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${aResult}</var>
+<arg>${elementLocator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220404 15:38:17.655" level="INFO">${aResult} = Home &gt; Careers</msg>
+<status status="PASS" starttime="20220404 15:38:17.626" endtime="20220404 15:38:17.655"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${aResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 15:38:17.656" level="INFO">Home &gt; Careers</msg>
+<status status="PASS" starttime="20220404 15:38:17.656" endtime="20220404 15:38:17.656"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${eResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 15:38:17.657" level="INFO">Home &gt; Careers</msg>
+<status status="PASS" starttime="20220404 15:38:17.656" endtime="20220404 15:38:17.657"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aResult}</arg>
+<arg>${eResult}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220404 15:38:17.657" endtime="20220404 15:38:17.657"/>
+</kw>
+<status status="PASS" starttime="20220404 15:38:17.625" endtime="20220404 15:38:17.657"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${sideBarCareers}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${sideBarCareers}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220404 15:38:17.673" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="7cea03208dcf43fd53065ed1db6bb310", element="0e256d3f-66e2-49f1-8c44-4d184d9aa217")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220404 15:38:17.659" endtime="20220404 15:38:17.673"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220404 15:38:17.725" level="INFO">${href_list} = ['https://interceptpharma.submit4jobs.com/', 'https://www.interceptpharma.com/careers/culture/', 'https://www.interceptpharma.com/careers/benefits/']</msg>
+<status status="PASS" starttime="20220404 15:38:17.674" endtime="20220404 15:38:17.725"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 15:38:17.725" level="INFO">['https://interceptpharma.submit4jobs.com/', 'https://www.interceptpharma.com/careers/culture/', 'https://www.interceptpharma.com/careers/benefits/']</msg>
+<status status="PASS" starttime="20220404 15:38:17.725" endtime="20220404 15:38:17.725"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220404 15:38:17.726" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220404 15:38:17.725" endtime="20220404 15:38:17.726"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://interceptpharma.submit4jobs.com/</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220404 15:38:20.011" level="INFO">GET Request : url=https://interceptpharma.submit4jobs.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220404 15:38:20.011" level="INFO">GET Response : url=https://interceptpharma.submit4jobs.com/ 
+ status=200, reason=OK 
+ headers={'Transfer-Encoding': 'chunked', 'Content-Type': 'text/html;charset=UTF-8', 'Server': 'Microsoft-IIS/7.5', 'Set-Cookie': 'CFID=79944180; Expires=Wed, 27-Mar-2052 10:09:04 GMT; Path=/; HttpOnly;SameSite=None;secure, CFTOKEN=c573dab029ad59df-887EA018-155D-0A5C-046E6766B236A2A8; Expires=Wed, 27-Mar-2052 10:09:04 GMT; Path=/; HttpOnly;SameSite=None;secure, CAREEROPS=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/;SameSite=None;secure, MOBILE=; Max-Age=946080000; Path=/;SameSite=None;secure, CFCLIENT_CAREERHOSTING=customf%3D1%23initialized%3DNo%23company%5Fid%3D%2D1%23session%5Fexpire%3D44655%2E2590741%23int%3D0%23companyname%3DIntercept%20Pharmaceuticals%23cid%3D85486%23; Expires=Wed, 27-Mar-2052 10:09:04 GMT; Path=/;SameSite=None;secure, CFGLOBALS=urltoken%3DCFID%23%3D79944180%26CFTOKEN%23%3Dc573dab029ad59df%2D887EA018%2D155D%2D0A5C%2D046E6766B236A2A8%23lastvisit%3D%7Bts%20%272022%2D04%2D04%2006%3A09%3A04%27%7D%23hitcount%3D2%23timecreated%3D%7Bts%20%272022%2D04%2D04%2006%3A09%3A04%27%7D%23cftoken%3Dc573dab029ad59df%2D887EA018%2D155D%2D0A5C%2D046E6766B236A2A8%23cfid%3D79944180%23; Expires=Wed, 27-Mar-2052 10:09:04 GMT; Path=/; HttpOnly;SameSite=None;secure', 'X-Powered-By': 'ASP.NET', 'Date': 'Mon, 04 Apr 2022 10:09:04 GMT'} 
+ body=
+		
+		&lt;!DOCTYPE html&gt;
+&lt;html prefix="og: http://ogp.me/ns#" lang="en-US"&gt;&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta http-equiv="x-ua-compatible" content="ie=edge"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;meta name="google-site-verification" content="zstO3nGUcigrCEFe5QN666jUdfejaZQdp7Y8xJqslAs"&gt;
+  &lt;link rel="icon" type="image/x-ico" href="https://www.interceptpharma.com/wp-content/themes/interceptpharma/dist/images/favicon.ico"&gt;
+  &lt;title&gt;Job Postings - Intercept Pharmaceuticals&lt;/title&gt;
+
+&lt;!-- This site is optimized with the Yoast SEO plugin v7.5.1 - https://yoast.com/wordpress/plugins/seo/ --&gt;
+&lt;link rel="canonical" href="https://www.interceptpharma.com/careers/job-postings/"&gt;
+&lt;meta property="og:locale" content="en_US"&gt;
+&lt;meta property="og:type" content="article"&gt;
+&lt;meta property="og:title" content="Job Postings - Intercept Pharmaceuticals"&gt;
+&lt;meta property="og:description" content="We value people who share our passion. Intercept is a company growing exponentially, yet we retain an entrepreneurial spirit. Everyone we hire is crucial to our company's success. Intercept is a place where we are all connected... to each other, to our patients and their caregivers, and to our families. So once you get here, … Continued"&gt;
+&lt;meta property="og:url" content="https://www.interceptpharma.com/careers/job-postings/"&gt;
+&lt;meta property="og:site_name" content="Intercept Pharmaceuticals"&gt;
+&lt;meta property="og:image" content="https://interceptpharm.wpengine.com/wp-content/uploads/2018/01/768x450_0.0.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://interceptpharm.wpengine.com/wp-content/uploads/2018/01/768x450_0.0.jpg"&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:description" content="We value people who share our passion. Intercept is a company growing exponentially, yet we retain an entrepreneurial spirit. Everyone we hire is crucial to our company's success. Intercept is a place where we are all connected... to each other, to our patients and their caregivers, and to our families. So once you get here, … Continued"&gt;
+&lt;meta name="twitter:title" content="Job Postings - Intercept Pharmaceuticals"&gt;
+&lt;meta name="twitter:image" content="https://interceptpharm.wpengine.com/wp-content/uploads/2018/01/768x450_0.0.jpg"&gt;
+&lt;!-- / Yoast SEO plugin. --&gt;
+
+&lt;link rel="dns-prefetch" href="https://s.w.org/"&gt;
+	
+&lt;link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"&gt;
+&lt;link rel="stylesheet" id="contact-form-7-css" href="/85486/website/images/styles.css" type="text/css" media="all"&gt;
+&lt;link rel="stylesheet" id="siteorigin-panels-front-css" href="/85486/website/images/front-flex.css" type="text/css" media="all"&gt;
+&lt;link rel="stylesheet" id="sage/css-css" href="/85486/website/images/main.css" type="text/css" media="all"&gt;
+&lt;script type="text/javascript" src="/85486/website/images/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/85486/website/images/jquery-migrate.js"&gt;&lt;/script&gt;
+&lt;link rel="https://api.w.org/" href="https://www.interceptpharma.com/wp-json/"&gt;
+&lt;link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.interceptpharma.com/xmlrpc.php?rsd"&gt;
+&lt;link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.interceptpharma.com/wp-includes/wlwmanifest.xml"&gt; 
+&lt;link rel="shortlink" href="https://www.interceptpharma.com/?p=38"&gt;
+&lt;link rel="alternate" type="application/json+oembed" href="https://www.interceptpharma.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.interceptpharma.com%2Fcareers%2Fjob-postings%2F"&gt;
+&lt;link rel="alternate" type="text/xml+oembed" href="https://www.interceptpharma.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.interceptpharma.com%2Fcareers%2Fjob-postings%2F&amp;amp;format=xml"&gt;
+				&lt;style type="text/css" media="all" id="siteorigin-panels-layouts-head"&gt;/* Layout 38 */ #pgc-38-0-0 { width:100%;width:calc(100% - ( 0 * 30px ) ) } #pl-38 .so-panel { margin-bottom:30px } #pl-38 .so-panel:last-child { margin-bottom:0px } @media (max-width:767px){ #pg-38-0.panel-no-style, #pg-38-0.panel-has-style &gt; .panel-row-style { -webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column } #pg-38-0 .panel-grid-cell { margin-right:0 } #pg-38-0 .panel-grid-cell { width:100% } #pl-38 .panel-grid-cell { padding:0 } #pl-38 .panel-grid .panel-grid-cell-empty { display:none } #pl-38 .panel-grid .panel-grid-cell-mobile-last { margin-bottom:0px }  } &lt;/style&gt;  &lt;!-- Google Tag Manager --&gt;
+	&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-57M3R2H');&lt;/script&gt;
+  &lt;!-- End Google Tag Manager --&gt;
+&lt;/head&gt;
+	
+
+&lt;script type="text/javascript"&gt; _linkedin_partner_id = "2088948"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); &lt;/script&gt;&lt;script type="text/javascript"&gt; (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); &lt;/script&gt; &lt;noscript&gt; &lt;img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2088948&amp;fmt=gif" /&gt; &lt;/noscript&gt;  
+  &lt;body class="page-template page-template-template-job-postings page-template-template-job-postings-php page page-id-38 page-child parent-pageid-11 siteorigin-panels  job-postings sidebar-primary"&gt;
+
+  &lt;!-- Google Tag Manager (noscript
+  &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57M3R2H"
+  height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;) --&gt;
+  &lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    &lt;!--[if IE]&gt;
+      &lt;div class="alert alert-warning"&gt;
+        You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.      &lt;/div&gt;
+    &lt;![endif]--&gt;
+    &lt;div class="search-bar"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col"&gt;
+          &lt;a class="brand" href="https://www.interceptpharma.com/"&gt;&lt;img class="logo" src="/85486/website/images/footer_logo.svg"&gt;&lt;/a&gt;
+          &lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;form role="search" method="get" class="search-form" action="https://www.interceptpharma.com/"&gt;
+				&lt;label&gt;
+					&lt;span class="screen-reader-text"&gt;Search for:&lt;/span&gt;
+					&lt;input class="search-field" placeholder="SEARCH INTERCEPTPHARMA.COM" name="s" type="search"&gt;
+				&lt;/label&gt;
+				&lt;input class="search-submit" value="Search" type="submit"&gt;&lt;i class="fa fa-angle-right" aria-hidden="false"&gt;&lt;/i&gt;
+			&lt;/form&gt;          &lt;button type="button" class="close"&gt;?&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;header class="banner"&gt;
+  &lt;div class="container"&gt;
+    
+    &lt;div class="row row-top-nav"&gt;
+      &lt;div class="col"&gt;
+        &lt;a href="#" class="search-icon"&gt;&lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div class="menu-top-menu-container"&gt;&lt;ul id="menu-top-menu" class="nav top-nav"&gt;&lt;li id="menu-item-88" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88"&gt;&lt;a href="https://www.interceptpharma.com/our-research/clinical-trials/"&gt;Clinical Trials&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu-item-89" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-89"&gt;&lt;a href="http://ir.interceptpharma.com/"&gt;Investors &amp;amp; Media&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-90"&gt;&lt;a href="https://www.interceptpharma.com/careers/"&gt;Careers&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"&gt;&lt;a href="https://www.interceptpharma.com/contact-us/"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="row row-primary-nav"&gt;
+      &lt;div class="col"&gt;
+        &lt;a class="brand" href="https://www.interceptpharma.com/"&gt;&lt;img class="logo" src="/85486/website/images/logo.svg"&gt;&lt;/a&gt;
+        &lt;a class="btn-menu d-inline-block d-md-none collapsed" data-toggle="collapse" href="#" aria-expanded="false" data-target=".menu-primary-menu-container"&gt;
+          &lt;div class="closed"&gt;&lt;span&gt;Menu&lt;/span&gt;&lt;i class="fa fa-bars" aria-hidden="true"&gt;&lt;/i&gt;&lt;/div&gt;
+          &lt;div class="open"&gt;&lt;span&gt;Close&lt;/span&gt;&lt;button type="button" class="close"&gt;?&lt;/button&gt;&lt;/div&gt;
+        &lt;/a&gt;
+  
+        &lt;div class="menu-primary-menu-container"&gt;&lt;ul id="menu-primary-menu" class="nav primary-nav d-none d-md-flex"&gt;&lt;li id="menu-item-84" class="main-menu-item menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-84"&gt;&lt;a href="https://www.interceptpharma.com/our-focus/"&gt;Our Focus&lt;/a&gt;
+&lt;ul class="sub-menu"&gt;
+	&lt;li id="menu-item-197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-197"&gt;&lt;a href="https://www.interceptpharma.com/our-focus/pbc/"&gt;PBC&lt;/a&gt;
+	&lt;ul class="sub-menu"&gt;
+		&lt;li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198"&gt;&lt;a href="https://www.interceptpharma.com/our-focus/pbc/meet-ally/"&gt;Meet Ally&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+	&lt;li id="menu-item-199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-199"&gt;&lt;a href="https://www.interceptpharma.com/our-focus/nash/"&gt;NASH&lt;/a&gt;&lt;/li&gt;
+	&lt;li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220404 15:38:20.012" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220404 15:38:17.727" endtime="20220404 15:38:20.012"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220404 15:38:20.015" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220404 15:38:20.013" endtime="20220404 15:38:20.015"/>
+</kw>
+<status status="PASS" starttime="20220404 15:38:17.726" endtime="20220404 15:38:20.015"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/careers/culture/</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220404 15:38:21.960" level="INFO">GET Request : url=https://www.interceptpharma.com/careers/culture/ 
+ path_url=/careers/culture/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220404 15:38:21.961" level="INFO">GET Response : url=https://www.interceptpharma.com/careers/culture/ 
+ status=403, reason=Forbidden 
+ headers={'Server': 'nginx', 'Date': 'Mon, 04 Apr 2022 10:08:21 GMT', 'Content-Type': 'text/html', 'Content-Length': '146', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Vary': 'Accept-Encoding'} 
+ body=&lt;html&gt;
+&lt;head&gt;&lt;title&gt;403 Forbidden&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;403 Forbidden&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220404 15:38:21.966" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/careers/culture/</msg>
+<status status="FAIL" starttime="20220404 15:38:20.016" endtime="20220404 15:38:21.967"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220404 15:38:21.968" endtime="20220404 15:38:21.968"/>
+</kw>
+<status status="FAIL" starttime="20220404 15:38:20.016" endtime="20220404 15:38:21.968"/>
+</iter>
+<status status="FAIL" starttime="20220404 15:38:17.726" endtime="20220404 15:38:21.969"/>
+</for>
+<status status="FAIL" starttime="20220404 15:38:17.658" endtime="20220404 15:38:21.972"/>
+</kw>
+<status status="FAIL" starttime="20220404 15:38:17.658" endtime="20220404 15:38:21.973"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${sideBarCareers}</arg>
+<arg>${eSidebarListCareers}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220404 15:38:21.991" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="7cea03208dcf43fd53065ed1db6bb310", element="0e256d3f-66e2-49f1-8c44-4d184d9aa217")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220404 15:38:21.975" endtime="20220404 15:38:21.991"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${actualText_list}</var>
+<arg>[item.get_attribute('text') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220404 15:38:22.041" level="INFO">${actualText_list} = ['Job Postings', 'Culture', 'US Benefits']</msg>
+<status status="PASS" starttime="20220404 15:38:21.991" endtime="20220404 15:38:22.041"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${actualText_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 15:38:22.042" level="INFO">['Job Postings', 'Culture', 'US Benefits']</msg>
+<status status="PASS" starttime="20220404 15:38:22.041" endtime="20220404 15:38:22.042"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${expectedText_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 15:38:22.042" level="INFO">['Job Postings', 'Culture', 'US Benefits']</msg>
+<status status="PASS" starttime="20220404 15:38:22.042" endtime="20220404 15:38:22.042"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${actualText_list}</arg>
+<arg>${expectedText_list}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20220404 15:38:22.043" endtime="20220404 15:38:22.043"/>
+</kw>
+<status status="PASS" starttime="20220404 15:38:21.974" endtime="20220404 15:38:22.043"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${contentLinkGlobal}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${contentLinkGlobal}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220404 15:38:22.060" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="7cea03208dcf43fd53065ed1db6bb310", element="da958eb7-0b0b-4ac8-b3ac-17ee8ae6f693")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220404 15:38:22.045" endtime="20220404 15:38:22.060"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220404 15:38:22.109" level="INFO">${href_list} = ['https://interceptpharma.submit4jobs.com/', 'https://www.interceptpharma.com/careers/culture/', 'https://www.interceptpharma.com/careers/benefits/']</msg>
+<status status="PASS" starttime="20220404 15:38:22.061" endtime="20220404 15:38:22.109"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 15:38:22.110" level="INFO">['https://interceptpharma.submit4jobs.com/', 'https://www.interceptpharma.com/careers/culture/', 'https://www.interceptpharma.com/careers/benefits/']</msg>
+<status status="PASS" starttime="20220404 15:38:22.110" endtime="20220404 15:38:22.110"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220404 15:38:22.111" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220404 15:38:22.110" endtime="20220404 15:38:22.111"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://interceptpharma.submit4jobs.com/</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220404 15:38:24.933" level="INFO">GET Request : url=https://interceptpharma.submit4jobs.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220404 15:38:24.934" level="INFO">GET Response : url=https://interceptpharma.submit4jobs.com/ 
+ status=200, reason=OK 
+ headers={'Transfer-Encoding': 'chunked', 'Content-Type': 'text/html;charset=UTF-8', 'Server': 'Microsoft-IIS/7.5', 'Set-Cookie': 'CFID=79944181; Expires=Wed, 27-Mar-2052 10:09:09 GMT; Path=/; HttpOnly;SameSite=None;secure, CFTOKEN=d17291100e060060-887F6091-155D-0A5C-0436A8D615F8E054; Expires=Wed, 27-Mar-2052 10:09:09 GMT; Path=/; HttpOnly;SameSite=None;secure, CAREEROPS=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/;SameSite=None;secure, MOBILE=; Max-Age=946080000; Path=/;SameSite=None;secure, CFCLIENT_CAREERHOSTING=customf%3D1%23initialized%3DNo%23company%5Fid%3D%2D1%23session%5Fexpire%3D44655%2E2591319%23int%3D0%23companyname%3DIntercept%20Pharmaceuticals%23cid%3D85486%23; Expires=Wed, 27-Mar-2052 10:09:09 GMT; Path=/;SameSite=None;secure, CFGLOBALS=urltoken%3DCFID%23%3D79944181%26CFTOKEN%23%3Dd17291100e060060%2D887F6091%2D155D%2D0A5C%2D0436A8D615F8E054%23lastvisit%3D%7Bts%20%272022%2D04%2D04%2006%3A09%3A09%27%7D%23hitcount%3D2%23timecreated%3D%7Bts%20%272022%2D04%2D04%2006%3A09%3A09%27%7D%23cftoken%3Dd17291100e060060%2D887F6091%2D155D%2D0A5C%2D0436A8D615F8E054%23cfid%3D79944181%23; Expires=Wed, 27-Mar-2052 10:09:09 GMT; Path=/; HttpOnly;SameSite=None;secure', 'X-Powered-By': 'ASP.NET', 'Date': 'Mon, 04 Apr 2022 10:09:09 GMT'} 
+ body=
+		
+		&lt;!DOCTYPE html&gt;
+&lt;html prefix="og: http://ogp.me/ns#" lang="en-US"&gt;&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta http-equiv="x-ua-compatible" content="ie=edge"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;meta name="google-site-verification" content="zstO3nGUcigrCEFe5QN666jUdfejaZQdp7Y8xJqslAs"&gt;
+  &lt;link rel="icon" type="image/x-ico" href="https://www.interceptpharma.com/wp-content/themes/interceptpharma/dist/images/favicon.ico"&gt;
+  &lt;title&gt;Job Postings - Intercept Pharmaceuticals&lt;/title&gt;
+
+&lt;!-- This site is optimized with the Yoast SEO plugin v7.5.1 - https://yoast.com/wordpress/plugins/seo/ --&gt;
+&lt;link rel="canonical" href="https://www.interceptpharma.com/careers/job-postings/"&gt;
+&lt;meta property="og:locale" content="en_US"&gt;
+&lt;meta property="og:type" content="article"&gt;
+&lt;meta property="og:title" content="Job Postings - Intercept Pharmaceuticals"&gt;
+&lt;meta property="og:description" content="We value people who share our passion. Intercept is a company growing exponentially, yet we retain an entrepreneurial spirit. Everyone we hire is crucial to our company's success. Intercept is a place where we are all connected... to each other, to our patients and their caregivers, and to our families. So once you get here, … Continued"&gt;
+&lt;meta property="og:url" content="https://www.interceptpharma.com/careers/job-postings/"&gt;
+&lt;meta property="og:site_name" content="Intercept Pharmaceuticals"&gt;
+&lt;meta property="og:image" content="https://interceptpharm.wpengine.com/wp-content/uploads/2018/01/768x450_0.0.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://interceptpharm.wpengine.com/wp-content/uploads/2018/01/768x450_0.0.jpg"&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:description" content="We value people who share our passion. Intercept is a company growing exponentially, yet we retain an entrepreneurial spirit. Everyone we hire is crucial to our company's success. Intercept is a place where we are all connected... to each other, to our patients and their caregivers, and to our families. So once you get here, … Continued"&gt;
+&lt;meta name="twitter:title" content="Job Postings - Intercept Pharmaceuticals"&gt;
+&lt;meta name="twitter:image" content="https://interceptpharm.wpengine.com/wp-content/uploads/2018/01/768x450_0.0.jpg"&gt;
+&lt;!-- / Yoast SEO plugin. --&gt;
+
+&lt;link rel="dns-prefetch" href="https://s.w.org/"&gt;
+	
+&lt;link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"&gt;
+&lt;link rel="stylesheet" id="contact-form-7-css" href="/85486/website/images/styles.css" type="text/css" media="all"&gt;
+&lt;link rel="stylesheet" id="siteorigin-panels-front-css" href="/85486/website/images/front-flex.css" type="text/css" media="all"&gt;
+&lt;link rel="stylesheet" id="sage/css-css" href="/85486/website/images/main.css" type="text/css" media="all"&gt;
+&lt;script type="text/javascript" src="/85486/website/images/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/85486/website/images/jquery-migrate.js"&gt;&lt;/script&gt;
+&lt;link rel="https://api.w.org/" href="https://www.interceptpharma.com/wp-json/"&gt;
+&lt;link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.interceptpharma.com/xmlrpc.php?rsd"&gt;
+&lt;link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.interceptpharma.com/wp-includes/wlwmanifest.xml"&gt; 
+&lt;link rel="shortlink" href="https://www.interceptpharma.com/?p=38"&gt;
+&lt;link rel="alternate" type="application/json+oembed" href="https://www.interceptpharma.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.interceptpharma.com%2Fcareers%2Fjob-postings%2F"&gt;
+&lt;link rel="alternate" type="text/xml+oembed" href="https://www.interceptpharma.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.interceptpharma.com%2Fcareers%2Fjob-postings%2F&amp;amp;format=xml"&gt;
+				&lt;style type="text/css" media="all" id="siteorigin-panels-layouts-head"&gt;/* Layout 38 */ #pgc-38-0-0 { width:100%;width:calc(100% - ( 0 * 30px ) ) } #pl-38 .so-panel { margin-bottom:30px } #pl-38 .so-panel:last-child { margin-bottom:0px } @media (max-width:767px){ #pg-38-0.panel-no-style, #pg-38-0.panel-has-style &gt; .panel-row-style { -webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column } #pg-38-0 .panel-grid-cell { margin-right:0 } #pg-38-0 .panel-grid-cell { width:100% } #pl-38 .panel-grid-cell { padding:0 } #pl-38 .panel-grid .panel-grid-cell-empty { display:none } #pl-38 .panel-grid .panel-grid-cell-mobile-last { margin-bottom:0px }  } &lt;/style&gt;  &lt;!-- Google Tag Manager --&gt;
+	&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-57M3R2H');&lt;/script&gt;
+  &lt;!-- End Google Tag Manager --&gt;
+&lt;/head&gt;
+	
+
+&lt;script type="text/javascript"&gt; _linkedin_partner_id = "2088948"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); &lt;/script&gt;&lt;script type="text/javascript"&gt; (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); &lt;/script&gt; &lt;noscript&gt; &lt;img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2088948&amp;fmt=gif" /&gt; &lt;/noscript&gt;  
+  &lt;body class="page-template page-template-template-job-postings page-template-template-job-postings-php page page-id-38 page-child parent-pageid-11 siteorigin-panels  job-postings sidebar-primary"&gt;
+
+  &lt;!-- Google Tag Manager (noscript
+  &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57M3R2H"
+  height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;) --&gt;
+  &lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    &lt;!--[if IE]&gt;
+      &lt;div class="alert alert-warning"&gt;
+        You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.      &lt;/div&gt;
+    &lt;![endif]--&gt;
+    &lt;div class="search-bar"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col"&gt;
+          &lt;a class="brand" href="https://www.interceptpharma.com/"&gt;&lt;img class="logo" src="/85486/website/images/footer_logo.svg"&gt;&lt;/a&gt;
+          &lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;form role="search" method="get" class="search-form" action="https://www.interceptpharma.com/"&gt;
+				&lt;label&gt;
+					&lt;span class="screen-reader-text"&gt;Search for:&lt;/span&gt;
+					&lt;input class="search-field" placeholder="SEARCH INTERCEPTPHARMA.COM" name="s" type="search"&gt;
+				&lt;/label&gt;
+				&lt;input class="search-submit" value="Search" type="submit"&gt;&lt;i class="fa fa-angle-right" aria-hidden="false"&gt;&lt;/i&gt;
+			&lt;/form&gt;          &lt;button type="button" class="close"&gt;?&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;header class="banner"&gt;
+  &lt;div class="container"&gt;
+    
+    &lt;div class="row row-top-nav"&gt;
+      &lt;div class="col"&gt;
+        &lt;a href="#" class="search-icon"&gt;&lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div class="menu-top-menu-container"&gt;&lt;ul id="menu-top-menu" class="nav top-nav"&gt;&lt;li id="menu-item-88" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88"&gt;&lt;a href="https://www.interceptpharma.com/our-research/clinical-trials/"&gt;Clinical Trials&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu-item-89" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-89"&gt;&lt;a href="http://ir.interceptpharma.com/"&gt;Investors &amp;amp; Media&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-90"&gt;&lt;a href="https://www.interceptpharma.com/careers/"&gt;Careers&lt;/a&gt;&lt;/li&gt;
+&lt;li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"&gt;&lt;a href="https://www.interceptpharma.com/contact-us/"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="row row-primary-nav"&gt;
+      &lt;div class="col"&gt;
+        &lt;a class="brand" href="https://www.interceptpharma.com/"&gt;&lt;img class="logo" src="/85486/website/images/logo.svg"&gt;&lt;/a&gt;
+        &lt;a class="btn-menu d-inline-block d-md-none collapsed" data-toggle="collapse" href="#" aria-expanded="false" data-target=".menu-primary-menu-container"&gt;
+          &lt;div class="closed"&gt;&lt;span&gt;Menu&lt;/span&gt;&lt;i class="fa fa-bars" aria-hidden="true"&gt;&lt;/i&gt;&lt;/div&gt;
+          &lt;div class="open"&gt;&lt;span&gt;Close&lt;/span&gt;&lt;button type="button" class="close"&gt;?&lt;/button&gt;&lt;/div&gt;
+        &lt;/a&gt;
+  
+        &lt;div class="menu-primary-menu-container"&gt;&lt;ul id="menu-primary-menu" class="nav primary-nav d-none d-md-flex"&gt;&lt;li id="menu-item-84" class="main-menu-item menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-84"&gt;&lt;a href="https://www.interceptpharma.com/our-focus/"&gt;Our Focus&lt;/a&gt;
+&lt;ul class="sub-menu"&gt;
+	&lt;li id="menu-item-197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-197"&gt;&lt;a href="https://www.interceptpharma.com/our-focus/pbc/"&gt;PBC&lt;/a&gt;
+	&lt;ul class="sub-menu"&gt;
+		&lt;li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198"&gt;&lt;a href="https://www.interceptpharma.com/our-focus/pbc/meet-ally/"&gt;Meet Ally&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+	&lt;li id="menu-item-199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-199"&gt;&lt;a href="https://www.interceptpharma.com/our-focus/nash/"&gt;NASH&lt;/a&gt;&lt;/li&gt;
+	&lt;li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220404 15:38:24.935" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220404 15:38:22.112" endtime="20220404 15:38:24.935"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220404 15:38:24.937" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220404 15:38:24.935" endtime="20220404 15:38:24.937"/>
+</kw>
+<status status="PASS" starttime="20220404 15:38:22.111" endtime="20220404 15:38:24.937"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/careers/culture/</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220404 15:38:26.921" level="INFO">GET Request : url=https://www.interceptpharma.com/careers/culture/ 
+ path_url=/careers/culture/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220404 15:38:26.921" level="INFO">GET Response : url=https://www.interceptpharma.com/careers/culture/ 
+ status=403, reason=Forbidden 
+ headers={'Server': 'nginx', 'Date': 'Mon, 04 Apr 2022 10:08:26 GMT', 'Content-Type': 'text/html', 'Content-Length': '146', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Vary': 'Accept-Encoding'} 
+ body=&lt;html&gt;
+&lt;head&gt;&lt;title&gt;403 Forbidden&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;403 Forbidden&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220404 15:38:26.924" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/careers/culture/</msg>
+<status status="FAIL" starttime="20220404 15:38:24.938" endtime="20220404 15:38:26.924"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220404 15:38:26.925" endtime="20220404 15:38:26.925"/>
+</kw>
+<status status="FAIL" starttime="20220404 15:38:24.937" endtime="20220404 15:38:26.925"/>
+</iter>
+<status status="FAIL" starttime="20220404 15:38:22.111" endtime="20220404 15:38:26.926"/>
+</for>
+<status status="FAIL" starttime="20220404 15:38:22.044" endtime="20220404 15:38:26.928"/>
+</kw>
+<status status="FAIL" starttime="20220404 15:38:22.044" endtime="20220404 15:38:26.928"/>
+</kw>
+<status status="FAIL" starttime="20220404 15:38:05.228" endtime="20220404 15:38:26.930"/>
+</kw>
+<kw name="Get CareersJobPostingsPage validated" library="CareersPageICPT">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${Careers}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220404 15:38:26.933" endtime="20220404 15:38:26.967"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220404 15:38:26.968" level="INFO">Clicking element 'xpath://ul[@id='menu-top-menu']//a[.='Careers']'.</msg>
+<status status="PASS" starttime="20220404 15:38:26.967" endtime="20220404 15:38:29.757"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>elementfound</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 15:38:29.831" level="INFO" html="true">&lt;a href="elementfound_16.jpg"&gt;&lt;img src="elementfound_16.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 15:38:29.757" endtime="20220404 15:38:29.832"/>
+</kw>
+<status status="PASS" starttime="20220404 15:38:26.932" endtime="20220404 15:38:29.832"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${linkJP}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220404 15:38:29.833" endtime="20220404 15:38:29.860"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220404 15:38:29.861" level="INFO">Clicking element 'xpath://aside//ul[@class='nav sidebar-menu']//a[.='Job Postings']'.</msg>
+<status status="PASS" starttime="20220404 15:38:29.861" endtime="20220404 15:38:46.850"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>elementfound</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 15:38:46.929" level="INFO" html="true">&lt;a href="elementfound_17.jpg"&gt;&lt;img src="elementfound_17.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 15:38:46.851" endtime="20220404 15:38:46.930"/>
+</kw>
+<status status="PASS" starttime="20220404 15:38:29.832" endtime="20220404 15:38:46.930"/>
+</kw>
+<kw name="Validate the string" library="Generic">
+<arg>${breadCrumbsGlobal}</arg>
+<arg>${eBreadCrumbsJP}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${aResult}</var>
+<arg>${elementLocator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220404 15:38:46.970" level="INFO">${aResult} = Home &gt; Careers &gt; Job Postings</msg>
+<status status="PASS" starttime="20220404 15:38:46.931" endtime="20220404 15:38:46.970"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${aResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 15:38:46.971" level="INFO">Home &gt; Careers &gt; Job Postings</msg>
+<status status="PASS" starttime="20220404 15:38:46.971" endtime="20220404 15:38:46.971"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${eResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220404 15:38:46.971" level="INFO">['Home &gt; Careers &gt; Job Postings']</msg>
+<status status="PASS" starttime="20220404 15:38:46.971" endtime="20220404 15:38:46.972"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aResult}</arg>
+<arg>${eResult}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220404 15:38:46.972" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'list'&gt;</msg>
+<msg timestamp="20220404 15:38:46.973" level="FAIL">Home &gt; Careers &gt; Job Postings != ['Home &gt; Careers &gt; Job Postings']</msg>
+<status status="FAIL" starttime="20220404 15:38:46.972" endtime="20220404 15:38:46.973"/>
+</kw>
+<status status="FAIL" starttime="20220404 15:38:46.930" endtime="20220404 15:38:46.974"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${contentLinkGlobal}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220404 15:38:46.975" endtime="20220404 15:38:46.975"/>
+</kw>
+<status status="FAIL" starttime="20220404 15:38:26.931" endtime="20220404 15:38:46.975"/>
+</kw>
+<kw name="Get CareersCulturePage validated" library="CareersPageICPT">
+<status status="NOT RUN" starttime="20220404 15:38:46.977" endtime="20220404 15:38:46.977"/>
+</kw>
+<kw name="Get CareersUSBenefitsPage validated" library="CareersPageICPT">
+<status status="NOT RUN" starttime="20220404 15:38:46.978" endtime="20220404 15:38:46.978"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220404 15:37:15.371" endtime="20220404 15:38:46.978">Several failures occurred:
+
+1) HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/careers/culture/
+
+2) HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/careers/culture/
+
+3) Home &gt; Careers &gt; Job Postings != ['Home &gt; Careers &gt; Job Postings']</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220404 15:38:46.982" endtime="20220404 15:38:49.168"/>
+</kw>
+<status status="FAIL" starttime="20220404 15:37:15.095" endtime="20220404 15:38:49.169"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

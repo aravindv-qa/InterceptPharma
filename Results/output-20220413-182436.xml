@@ -1,0 +1,2121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220413 18:24:36.795" rpa="false" schemaversion="2">
+<suite id="s1" name="NSPharma" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\NSPharma.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 18:24:37.242" endtime="20220413 18:24:37.242"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220413 18:24:37.242" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220413 18:24:37.242" endtime="20220413 18:24:37.242"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220413 18:24:37.242" level="INFO">
+</msg>
+<msg timestamp="20220413 18:24:37.242" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220413 18:24:38.155" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220413 18:24:38.155" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220413 18:24:39.079" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220413 18:24:45.628" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 18:24:45.628" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220413 18:24:45.628" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 18:24:45.628" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220413 18:24:37.242" endtime="20220413 18:24:45.628"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:24:45.628" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002E6F9624C10&gt;</msg>
+<status status="PASS" starttime="20220413 18:24:45.628" endtime="20220413 18:24:45.628"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:24:45.628" endtime="20220413 18:24:45.628"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:24:45.628" endtime="20220413 18:24:45.628"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:24:45.628" endtime="20220413 18:24:45.628"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:24:45.628" endtime="20220413 18:24:45.628"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220413 18:24:45.628" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220413 18:24:45.628" endtime="20220413 18:24:47.052"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220413 18:24:47.052" endtime="20220413 18:24:47.190"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 18:24:47.192" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220413 18:24:47.192" endtime="20220413 18:24:54.123"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:24:54.540" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220413 18:24:54.540" level="INFO">c:\users\aravind.v\pycharmprojects\automationproject\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py:1315: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  warnings.warn("name used for saved screenshot does not match file "</msg>
+<status status="PASS" starttime="20220413 18:24:54.123" endtime="20220413 18:24:54.540"/>
+</kw>
+<status status="PASS" starttime="20220413 18:24:37.240" endtime="20220413 18:24:54.540"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 18:24:54.540" endtime="20220413 18:24:54.688"/>
+</kw>
+<kw name="Assert the logos in homepage" library="LoginPageNSP">
+<kw name="Wait Until element passed is located on Page" library="Generic">
+<arg>${NSP_buttonAcceptCookies}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 18:24:54.688" endtime="20220413 18:24:59.104"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>elementFound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:24:59.820" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="elementFound"&gt;&lt;img src="elementFound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:24:59.104" endtime="20220413 18:24:59.820"/>
+</kw>
+<status status="PASS" starttime="20220413 18:24:54.688" endtime="20220413 18:24:59.820"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and JSclick element" library="Generic">
+<arg>${NSP_id}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById('${page_locator}').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220413 18:24:59.828" level="INFO">Executing JavaScript:
+document.getElementById('onetrust-accept-btn-handler').click()
+Without any arguments.</msg>
+<status status="PASS" starttime="20220413 18:24:59.820" endtime="20220413 18:24:59.864"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>elementFound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:25:00.397" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="elementFound"&gt;&lt;img src="elementFound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:24:59.864" endtime="20220413 18:25:00.397"/>
+</kw>
+<status status="PASS" starttime="20220413 18:24:59.820" endtime="20220413 18:25:00.397"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${NSP_buttonCookieSetting}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220413 18:25:06.046" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220413 18:25:06.054" level="FAIL">Element 'css:button#onetrust-pc-btn-handler' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20220413 18:25:00.403" endtime="20220413 18:25:06.054"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220413 18:25:06.062" endtime="20220413 18:25:06.062"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220413 18:25:06.062" endtime="20220413 18:25:06.062"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>elementFound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20220413 18:25:06.062" endtime="20220413 18:25:06.062"/>
+</kw>
+<status status="FAIL" starttime="20220413 18:25:00.397" endtime="20220413 18:25:06.062"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${NSP_buttonRejectCookies}</arg>
+<status status="NOT RUN" starttime="20220413 18:25:06.062" endtime="20220413 18:25:06.062"/>
+</kw>
+<kw name="Validate Moseover highlights the link" library="Generic">
+<arg>${NSP_mainNav}</arg>
+<arg>${css-attributeGlobal}</arg>
+<arg>${e_color_value}</arg>
+<status status="NOT RUN" starttime="20220413 18:25:06.062" endtime="20220413 18:25:06.062"/>
+</kw>
+<kw name="Validate Moseover highlights the link" library="Generic">
+<arg>${NSP_topNav Social}</arg>
+<arg>${css-attributeGlobal}</arg>
+<arg>${e_color_value}</arg>
+<status status="NOT RUN" starttime="20220413 18:25:06.062" endtime="20220413 18:25:06.062"/>
+</kw>
+<kw name="Validate Moseover highlights the link" library="Generic">
+<arg>${NSP_footerNav1}</arg>
+<arg>${css-attributeGlobal}</arg>
+<arg>${e_color_value}</arg>
+<status status="NOT RUN" starttime="20220413 18:25:06.062" endtime="20220413 18:25:06.070"/>
+</kw>
+<kw name="Validate Moseover highlights the link" library="Generic">
+<arg>${NSP_footerNav2}</arg>
+<arg>${css-attributeGlobal}</arg>
+<arg>${e_color_value}</arg>
+<status status="NOT RUN" starttime="20220413 18:25:06.070" endtime="20220413 18:25:06.070"/>
+</kw>
+<kw name="Validate Moseover highlights the link" library="Generic">
+<arg>${NSP_footerSocial}</arg>
+<arg>${css-attributeGlobal}</arg>
+<arg>${e_color_value}</arg>
+<status status="NOT RUN" starttime="20220413 18:25:06.070" endtime="20220413 18:25:06.072"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${NSP_header logo}</arg>
+<status status="NOT RUN" starttime="20220413 18:25:06.072" endtime="20220413 18:25:06.072"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${NSP_footer logo}</arg>
+<status status="NOT RUN" starttime="20220413 18:25:06.072" endtime="20220413 18:25:06.072"/>
+</kw>
+<status status="FAIL" starttime="20220413 18:24:54.688" endtime="20220413 18:25:06.072"/>
+</kw>
+<kw name="Get All links in homepage and Validate it" library="LoginPageNSP">
+<status status="NOT RUN" starttime="20220413 18:25:06.072" endtime="20220413 18:25:06.072"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220413 18:24:37.237" endtime="20220413 18:25:06.072">Element 'css:button#onetrust-pc-btn-handler' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t2" name="WhoWeArePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 18:25:06.080" endtime="20220413 18:25:06.088"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220413 18:25:06.088" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220413 18:25:06.088" endtime="20220413 18:25:06.088"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220413 18:25:06.088" level="INFO">
+</msg>
+<msg timestamp="20220413 18:25:06.088" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220413 18:25:07.074" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220413 18:25:07.074" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220413 18:25:08.069" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220413 18:25:13.495" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 18:25:13.495" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220413 18:25:13.495" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220413 18:25:06.088" endtime="20220413 18:25:13.495"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:13.495" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002E6F96022E0&gt;</msg>
+<status status="PASS" starttime="20220413 18:25:13.495" endtime="20220413 18:25:13.495"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:13.495" endtime="20220413 18:25:13.495"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:13.495" endtime="20220413 18:25:13.503"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:13.503" endtime="20220413 18:25:13.503"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:13.503" endtime="20220413 18:25:13.503"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220413 18:25:13.503" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220413 18:25:13.503" endtime="20220413 18:25:14.963"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220413 18:25:14.968" endtime="20220413 18:25:15.098"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 18:25:15.099" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220413 18:25:15.098" endtime="20220413 18:25:21.880"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:25:22.278" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:25:21.880" endtime="20220413 18:25:22.278"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:06.080" endtime="20220413 18:25:22.278"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 18:25:22.278" endtime="20220413 18:25:22.431"/>
+</kw>
+<kw name="Get WhoWeArePage validated" library="WhoWeArePageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${WhoWeAre}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 18:25:22.433" endtime="20220413 18:25:22.473"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220413 18:25:22.473" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' WHO WE ARE ']'.</msg>
+<status status="PASS" starttime="20220413 18:25:22.473" endtime="20220413 18:25:30.805"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:25:31.461" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:25:30.813" endtime="20220413 18:25:31.462"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:22.432" endtime="20220413 18:25:31.462"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_contentLink}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220413 18:25:31.487" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="f5bba4b82b77729c850ebcf9cdf9770c", element="c4bcb3dc-71ec-4dd3-923a-8e7073773741")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220413 18:25:31.462" endtime="20220413 18:25:31.487"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.628" level="INFO">${href_list} = ['https://www.viltepso.com/', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information', 'https://www.n...</msg>
+<status status="PASS" starttime="20220413 18:25:31.487" endtime="20220413 18:25:31.628"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220413 18:25:31.628" level="INFO">['https://www.viltepso.com/', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information', 'https://www.nippon-shinyaku.co.jp/english/', 'https://www.nspharma.com/corporate-compliance']</msg>
+<status status="PASS" starttime="20220413 18:25:31.628" endtime="20220413 18:25:31.628"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220413 18:25:31.628" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220413 18:25:31.628" endtime="20220413 18:25:31.628"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.636" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.636" endtime="20220413 18:25:31.636"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.636" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.636" endtime="20220413 18:25:31.636"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.636" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.636" endtime="20220413 18:25:31.636"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:25:31.636" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:25:31.636" endtime="20220413 18:25:31.636"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:31.636" endtime="20220413 18:25:31.644"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:31.628" endtime="20220413 18:25:31.644"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/prescribing-information</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.644" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.644" endtime="20220413 18:25:31.644"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.644" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.644" endtime="20220413 18:25:31.644"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.644" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.644" endtime="20220413 18:25:31.644"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:25:31.644" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:25:31.644" endtime="20220413 18:25:31.644"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:31.644" endtime="20220413 18:25:31.644"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:31.644" endtime="20220413 18:25:31.644"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/prescribing-information</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.652" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.644" endtime="20220413 18:25:31.652"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.652" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.652" endtime="20220413 18:25:31.652"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.652" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.652" endtime="20220413 18:25:31.652"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:25:31.652" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:25:31.652" endtime="20220413 18:25:31.652"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:31.652" endtime="20220413 18:25:31.652"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:31.644" endtime="20220413 18:25:31.652"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/prescribing-information</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.652" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.652" endtime="20220413 18:25:31.652"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.652" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.652" endtime="20220413 18:25:31.652"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.660" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.652" endtime="20220413 18:25:31.660"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:25:31.660" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:25:31.660" endtime="20220413 18:25:31.660"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:31.660" endtime="20220413 18:25:31.660"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:31.652" endtime="20220413 18:25:31.660"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.nippon-shinyaku.co.jp/english/</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.660" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.660" endtime="20220413 18:25:31.660"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.660" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.660" endtime="20220413 18:25:31.660"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.660" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.660" endtime="20220413 18:25:31.660"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:25:31.660" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:25:31.660" endtime="20220413 18:25:31.660"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:31.668" endtime="20220413 18:25:31.668"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:31.660" endtime="20220413 18:25:31.668"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.nspharma.com/corporate-compliance</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.668" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.668" endtime="20220413 18:25:31.668"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.668" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.668" endtime="20220413 18:25:31.668"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:31.668" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:25:31.668" endtime="20220413 18:25:31.668"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:25:31.668" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:25:31.668" endtime="20220413 18:25:31.668"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:31.668" endtime="20220413 18:25:31.668"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:31.668" endtime="20220413 18:25:31.668"/>
+</iter>
+<status status="PASS" starttime="20220413 18:25:31.628" endtime="20220413 18:25:31.668"/>
+</for>
+<status status="PASS" starttime="20220413 18:25:31.462" endtime="20220413 18:25:31.668"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:31.462" endtime="20220413 18:25:31.668"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${WhoWeAre}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220413 18:25:31.694" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="f5bba4b82b77729c850ebcf9cdf9770c", element="472d402c-ee82-48c0-914c-866648f80825")&gt;</msg>
+<status status="PASS" starttime="20220413 18:25:31.677" endtime="20220413 18:25:31.694"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220413 18:25:31.710" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220413 18:25:31.694" endtime="20220413 18:25:31.710"/>
+</kw>
+<msg timestamp="20220413 18:25:31.710" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220413 18:25:31.668" endtime="20220413 18:25:31.710"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220413 18:25:31.710" endtime="20220413 18:25:31.710"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:22.432" endtime="20220413 18:25:31.710"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" starttime="20220413 18:25:06.080" endtime="20220413 18:25:31.718"/>
+</test>
+<test id="s1-t3" name="OurTeamPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 18:25:31.726" endtime="20220413 18:25:31.736"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220413 18:25:31.736" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220413 18:25:31.736" endtime="20220413 18:25:31.736"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220413 18:25:31.736" level="INFO">
+</msg>
+<msg timestamp="20220413 18:25:31.736" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220413 18:25:32.825" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220413 18:25:32.825" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220413 18:25:33.834" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220413 18:25:39.574" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 18:25:39.575" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220413 18:25:39.576" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220413 18:25:31.736" endtime="20220413 18:25:39.576"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:39.577" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002E6F96D9DF0&gt;</msg>
+<status status="PASS" starttime="20220413 18:25:39.576" endtime="20220413 18:25:39.577"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:39.577" endtime="20220413 18:25:39.577"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:39.577" endtime="20220413 18:25:39.579"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:39.579" endtime="20220413 18:25:39.580"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:39.580" endtime="20220413 18:25:39.580"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220413 18:25:39.581" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220413 18:25:39.580" endtime="20220413 18:25:41.065"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220413 18:25:41.066" endtime="20220413 18:25:41.205"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 18:25:41.205" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<msg timestamp="20220413 18:25:46.679" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C520+836896]
+	Ordinal0 [0x01020682+788098]
+	Ordinal0 [0x01020EB8+790200]
+	Ordinal0 [0x01022752+796498]
+	Ordinal0 [0x0101C0D9+770265]
+	Ordinal0 [0x0102D9D0+842192]
+	Ordinal0 [0x01083AE2+1194722]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220413 18:25:46.696" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C658+837208]
+	Ordinal0 [0x0101E87E+780414]
+	Ordinal0 [0x0101E46F+779375]
+	Ordinal0 [0x0101DA86+776838]
+	Ordinal0 [0x0101C995+772501]
+	Ordinal0 [0x0101CF98+774040]
+	Ordinal0 [0x01028C20+822304]
+	Ordinal0 [0x0101E27D+778877]
+	Ordinal0 [0x0101EE3D+781885]
+	Ordinal0 [0x0101E48A+779402]
+	Ordinal0 [0x0101DA86+776838]
+	Ordinal0 [0x0101C995+772501]
+	Ordinal0 [0x0101CE6D+773741]
+	Ordinal0 [0x0102DE5A+843354]
+	Ordinal0 [0x010849BD+1198525]
+	Ordinal0 [0x0107414C+1130828]
+	Ordinal0 [0x01084302+1196802]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220413 18:25:41.205" endtime="20220413 18:25:46.697"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20220413 18:25:46.698" endtime="20220413 18:25:46.698"/>
+</kw>
+<status status="FAIL" starttime="20220413 18:25:31.718" endtime="20220413 18:25:46.698"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220413 18:25:46.700" endtime="20220413 18:25:46.700"/>
+</kw>
+<kw name="Get OurTeamPage validated" library="OurTeamPageNSP">
+<status status="NOT RUN" starttime="20220413 18:25:46.702" endtime="20220413 18:25:46.702"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220413 18:25:31.718" endtime="20220413 18:25:46.702">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C658+837208]
+	Ordinal0 [0x0101E87E+780414]
+	Ordinal0 [0x0101E46F+779375]
+	Ordinal0 [0x0101DA86+776838]
+	Ordinal0 [0x0101C995+772501]
+	Ordinal0 [0x0101CF98+774040]
+	Ordinal0 [0x01028C20+822304]
+	Ordinal0 [0x0101E27D+778877]
+	Ordinal0 [0x0101EE3D+781885]
+	Ordinal0 [0x0101E48A+779402]
+	Ordinal0 [0x0101DA86+776838]
+	Ordinal0 [0x0101C995+772501]
+	Ordinal0 [0x0101CE6D+773741]
+	Ordinal0 [0x0102DE5A+843354]
+	Ordinal0 [0x010849BD+1198525]
+	Ordinal0 [0x0107414C+1130828]
+	Ordinal0 [0x01084302+1196802]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<test id="s1-t4" name="PipelinePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 18:25:46.720" endtime="20220413 18:25:46.732"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220413 18:25:46.732" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220413 18:25:46.732" endtime="20220413 18:25:46.732"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220413 18:25:46.732" level="INFO">
+</msg>
+<msg timestamp="20220413 18:25:46.732" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220413 18:25:47.660" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220413 18:25:47.660" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220413 18:25:48.559" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220413 18:25:57.019" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 18:25:57.019" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220413 18:25:57.019" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220413 18:25:46.732" endtime="20220413 18:25:57.019"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:25:57.019" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002E6FA6C1CA0&gt;</msg>
+<status status="PASS" starttime="20220413 18:25:57.019" endtime="20220413 18:25:57.019"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:57.019" endtime="20220413 18:25:57.019"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:25:57.019" endtime="20220413 18:25:57.019"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:57.019" endtime="20220413 18:25:57.019"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:25:57.019" endtime="20220413 18:25:57.019"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220413 18:25:57.019" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220413 18:25:57.019" endtime="20220413 18:25:58.443"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220413 18:25:58.443" endtime="20220413 18:25:58.610"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 18:25:58.610" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220413 18:25:58.610" endtime="20220413 18:26:05.832"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:26:06.204" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:26:05.832" endtime="20220413 18:26:06.204"/>
+</kw>
+<status status="PASS" starttime="20220413 18:25:46.711" endtime="20220413 18:26:06.204"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 18:26:06.213" endtime="20220413 18:26:06.382"/>
+</kw>
+<kw name="Get PipelinePage validated" library="PipelinePageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${Pipeline}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 18:26:06.382" endtime="20220413 18:26:06.419"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220413 18:26:06.419" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' PIPELINE ']'.</msg>
+<status status="PASS" starttime="20220413 18:26:06.419" endtime="20220413 18:26:10.958"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:26:11.410" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:26:10.958" endtime="20220413 18:26:11.410"/>
+</kw>
+<status status="PASS" starttime="20220413 18:26:06.382" endtime="20220413 18:26:11.410"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_contentLink}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220413 18:26:11.445" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="770efa6810e3e7e266d530c41f1064ca", element="77dc2dff-a8b5-43e7-87a8-43bda87d7001")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220413 18:26:11.410" endtime="20220413 18:26:11.445"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${href_list} = ['https://www.viltepso.com/', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information']</msg>
+<status status="PASS" starttime="20220413 18:26:11.446" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">['https://www.viltepso.com/', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information']</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/prescribing-information</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:26:11.502" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.502"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:26:11.510" endtime="20220413 18:26:11.511"/>
+</kw>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.511"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/prescribing-information</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.511" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.511" endtime="20220413 18:26:11.511"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.511" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.511" endtime="20220413 18:26:11.511"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:11.511" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:26:11.511" endtime="20220413 18:26:11.511"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:26:11.511" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:26:11.511" endtime="20220413 18:26:11.511"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:26:11.511" endtime="20220413 18:26:11.511"/>
+</kw>
+<status status="PASS" starttime="20220413 18:26:11.511" endtime="20220413 18:26:11.511"/>
+</iter>
+<status status="PASS" starttime="20220413 18:26:11.502" endtime="20220413 18:26:11.511"/>
+</for>
+<status status="PASS" starttime="20220413 18:26:11.410" endtime="20220413 18:26:11.511"/>
+</kw>
+<status status="PASS" starttime="20220413 18:26:11.410" endtime="20220413 18:26:11.511"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${Pipeline}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220413 18:26:11.532" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="770efa6810e3e7e266d530c41f1064ca", element="0fb41962-77b4-43af-a05c-3a820a91ff6b")&gt;</msg>
+<status status="PASS" starttime="20220413 18:26:11.520" endtime="20220413 18:26:11.533"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220413 18:26:11.550" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220413 18:26:11.533" endtime="20220413 18:26:11.550"/>
+</kw>
+<msg timestamp="20220413 18:26:11.551" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220413 18:26:11.511" endtime="20220413 18:26:11.551"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220413 18:26:11.551" endtime="20220413 18:26:11.551"/>
+</kw>
+<status status="PASS" starttime="20220413 18:26:06.382" endtime="20220413 18:26:11.551"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" starttime="20220413 18:25:46.711" endtime="20220413 18:26:11.552"/>
+</test>
+<test id="s1-t5" name="PartnershipPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 18:26:11.557" endtime="20220413 18:26:11.560"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220413 18:26:11.560" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220413 18:26:11.560" endtime="20220413 18:26:11.560"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220413 18:26:11.560" level="INFO">
+</msg>
+<msg timestamp="20220413 18:26:11.560" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220413 18:26:12.567" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220413 18:26:12.567" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220413 18:26:13.416" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220413 18:26:19.613" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 18:26:19.614" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220413 18:26:19.614" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220413 18:26:11.560" endtime="20220413 18:26:19.614"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:19.614" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002E6FA6C91F0&gt;</msg>
+<status status="PASS" starttime="20220413 18:26:19.614" endtime="20220413 18:26:19.614"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:26:19.614" endtime="20220413 18:26:19.614"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:26:19.614" endtime="20220413 18:26:19.616"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:26:19.616" endtime="20220413 18:26:19.616"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:26:19.617" endtime="20220413 18:26:19.617"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220413 18:26:19.617" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220413 18:26:19.617" endtime="20220413 18:26:21.041"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220413 18:26:21.041" endtime="20220413 18:26:21.161"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 18:26:21.161" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220413 18:26:21.161" endtime="20220413 18:26:26.519"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:26:27.541" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:26:26.519" endtime="20220413 18:26:27.541"/>
+</kw>
+<status status="PASS" starttime="20220413 18:26:11.554" endtime="20220413 18:26:27.541"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 18:26:27.541" endtime="20220413 18:26:27.676"/>
+</kw>
+<kw name="Get PartnershipPage validated" library="PartnershipPageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${Partnership}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 18:26:27.676" endtime="20220413 18:26:27.749"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220413 18:26:27.749" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' PARTNERSHIP ']'.</msg>
+<status status="PASS" starttime="20220413 18:26:27.749" endtime="20220413 18:26:28.057"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:26:44.301" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C520+836896]
+	Ordinal0 [0x01020682+788098]
+	Ordinal0 [0x01020EB8+790200]
+	Ordinal0 [0x01022752+796498]
+	Ordinal0 [0x0101C0D9+770265]
+	Ordinal0 [0x0102D9D0+842192]
+	Ordinal0 [0x01083AE2+1194722]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220413 18:26:44.323" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C520+836896]
+	Ordinal0 [0x01020682+788098]
+	Ordinal0 [0x010213FF+791551]
+	Ordinal0 [0x01022752+796498]
+	Ordinal0 [0x0101C0D9+770265]
+	Ordinal0 [0x0102D9D0+842192]
+	Ordinal0 [0x01083AE2+1194722]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220413 18:26:28.058" endtime="20220413 18:26:44.323"/>
+</kw>
+<status status="FAIL" starttime="20220413 18:26:27.676" endtime="20220413 18:26:44.323"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220413 18:26:44.323" endtime="20220413 18:26:44.323"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${Partnership}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<status status="NOT RUN" starttime="20220413 18:26:44.323" endtime="20220413 18:26:44.323"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220413 18:26:44.323" endtime="20220413 18:26:44.323"/>
+</kw>
+<status status="FAIL" starttime="20220413 18:26:27.676" endtime="20220413 18:26:44.323"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220413 18:26:11.554" endtime="20220413 18:26:44.323">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C520+836896]
+	Ordinal0 [0x01020682+788098]
+	Ordinal0 [0x010213FF+791551]
+	Ordinal0 [0x01022752+796498]
+	Ordinal0 [0x0101C0D9+770265]
+	Ordinal0 [0x0102D9D0+842192]
+	Ordinal0 [0x01083AE2+1194722]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<test id="s1-t6" name="ContactUsPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 18:26:44.323" endtime="20220413 18:26:44.341"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220413 18:26:44.342" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220413 18:26:44.342" endtime="20220413 18:26:44.342"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220413 18:26:44.344" level="INFO">
+</msg>
+<msg timestamp="20220413 18:26:44.344" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220413 18:26:45.160" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220413 18:26:45.160" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220413 18:26:46.017" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220413 18:26:51.727" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 18:26:51.727" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220413 18:26:51.727" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220413 18:26:44.342" endtime="20220413 18:26:51.727"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:26:51.727" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002E6F9602D60&gt;</msg>
+<status status="PASS" starttime="20220413 18:26:51.727" endtime="20220413 18:26:51.727"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:26:51.727" endtime="20220413 18:26:51.727"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:26:51.727" endtime="20220413 18:26:51.743"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:26:51.743" endtime="20220413 18:26:51.743"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:26:51.743" endtime="20220413 18:26:51.743"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220413 18:26:51.743" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220413 18:26:51.743" endtime="20220413 18:26:53.087"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220413 18:26:53.087" endtime="20220413 18:26:53.221"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 18:26:53.221" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220413 18:26:53.221" endtime="20220413 18:26:59.889"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:27:00.247" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:26:59.889" endtime="20220413 18:27:00.247"/>
+</kw>
+<status status="PASS" starttime="20220413 18:26:44.323" endtime="20220413 18:27:00.247"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 18:27:00.247" endtime="20220413 18:27:00.382"/>
+</kw>
+<kw name="Get ContactUsPage validated" library="ContactUsPageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${Contact Us}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 18:27:00.382" endtime="20220413 18:27:00.438"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220413 18:27:00.438" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' CONTACT US ']'.</msg>
+<status status="PASS" starttime="20220413 18:27:00.438" endtime="20220413 18:27:01.916"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:27:02.056" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:27:01.916" endtime="20220413 18:27:02.056"/>
+</kw>
+<status status="PASS" starttime="20220413 18:27:00.382" endtime="20220413 18:27:02.056"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_contentLink}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220413 18:27:02.080" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="131d2a33fe9a37da4e20aede553672db", element="25ed50c7-637c-42bd-843a-ba71499af590")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220413 18:27:02.056" endtime="20220413 18:27:02.080"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${href_list} = ['https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e2...</msg>
+<status status="PASS" starttime="20220413 18:27:02.080" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">['https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525', 'mailto:info@nspharma.com', 'mailto:trialinfo@nspharma.com', 'tel:+18336778778']</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22d...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</iter>
+<iter>
+<var name="${element_href}">mailto:info@nspharma.com</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_mailto} = False</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</iter>
+<iter>
+<var name="${element_href}">mailto:trialinfo@nspharma.com</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_tel} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_mailto} = False</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</iter>
+<iter>
+<var name="${element_href}">tel:+18336778778</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_tel}</var>
+<arg>"tel" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_tel} = False</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${response}</var>
+<arg>${contains_tel} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Get</arg>
+<arg>${element_href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220413 18:27:02.146" level="INFO">${response} = None</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_tel} == 'True' and ${contains_linkedin} == 'True' and ${contains_mailto} == 'True'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</kw>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</iter>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.146"/>
+</for>
+<status status="PASS" starttime="20220413 18:27:02.056" endtime="20220413 18:27:02.146"/>
+</kw>
+<status status="PASS" starttime="20220413 18:27:02.056" endtime="20220413 18:27:02.146"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${Contact Us}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220413 18:27:02.167" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="131d2a33fe9a37da4e20aede553672db", element="01217f41-7356-4071-b38e-e3debd584ea1")&gt;</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.167"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220413 18:27:02.183" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220413 18:27:02.167" endtime="20220413 18:27:02.183"/>
+</kw>
+<msg timestamp="20220413 18:27:02.183" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220413 18:27:02.146" endtime="20220413 18:27:02.183"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220413 18:27:02.183" endtime="20220413 18:27:02.183"/>
+</kw>
+<status status="PASS" starttime="20220413 18:27:00.382" endtime="20220413 18:27:02.183"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" starttime="20220413 18:26:44.323" endtime="20220413 18:27:02.183"/>
+</test>
+<test id="s1-t7" name="CareersPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 18:27:02.183" endtime="20220413 18:27:02.191"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220413 18:27:02.191" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220413 18:27:02.191" endtime="20220413 18:27:02.191"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220413 18:27:02.191" level="INFO">
+</msg>
+<msg timestamp="20220413 18:27:02.199" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220413 18:27:03.055" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220413 18:27:03.055" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220413 18:27:03.898" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220413 18:27:10.510" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 18:27:10.510" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220413 18:27:10.510" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220413 18:27:02.191" endtime="20220413 18:27:10.510"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 18:27:10.510" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002E6F95EFE50&gt;</msg>
+<status status="PASS" starttime="20220413 18:27:10.510" endtime="20220413 18:27:10.510"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:27:10.510" endtime="20220413 18:27:10.510"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 18:27:10.510" endtime="20220413 18:27:10.510"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:27:10.510" endtime="20220413 18:27:10.510"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 18:27:10.510" endtime="20220413 18:27:10.510"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220413 18:27:10.510" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220413 18:27:10.510" endtime="20220413 18:27:11.853"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220413 18:27:11.853" endtime="20220413 18:27:11.982"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 18:27:11.982" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220413 18:27:11.982" endtime="20220413 18:27:18.371"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:27:18.688" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 18:27:18.371" endtime="20220413 18:27:18.688"/>
+</kw>
+<status status="PASS" starttime="20220413 18:27:02.183" endtime="20220413 18:27:18.688"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 18:27:18.688" endtime="20220413 18:27:18.827"/>
+</kw>
+<kw name="Get CareersPage validated" library="CareersPageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${Careers}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 18:27:18.827" endtime="20220413 18:27:18.874"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220413 18:27:18.874" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' CAREERS ']'.</msg>
+<status status="PASS" starttime="20220413 18:27:18.874" endtime="20220413 18:27:26.237"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 18:27:26.253" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C658+837208]
+	Ordinal0 [0x01014480+738432]
+	Ordinal0 [0x01076999+1141145]
+	Ordinal0 [0x01083AA2+1194658]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220413 18:27:26.258" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C658+837208]
+	Ordinal0 [0x01014480+738432]
+	Ordinal0 [0x01076999+1141145]
+	Ordinal0 [0x01083AA2+1194658]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220413 18:27:26.237" endtime="20220413 18:27:26.258"/>
+</kw>
+<status status="FAIL" starttime="20220413 18:27:18.827" endtime="20220413 18:27:26.258"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220413 18:27:26.262" endtime="20220413 18:27:26.262"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${Careers}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<status status="NOT RUN" starttime="20220413 18:27:26.263" endtime="20220413 18:27:26.263"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220413 18:27:26.263" endtime="20220413 18:27:26.263"/>
+</kw>
+<status status="FAIL" starttime="20220413 18:27:18.827" endtime="20220413 18:27:26.264"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220413 18:27:02.183" endtime="20220413 18:27:26.265">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C658+837208]
+	Ordinal0 [0x01014480+738432]
+	Ordinal0 [0x01076999+1141145]
+	Ordinal0 [0x01083AA2+1194658]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20220413 18:24:36.795" endtime="20220413 18:27:26.272"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="4" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="3" fail="4" skip="0" id="s1" name="NSPharma">NSPharma</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220413 18:25:46.679" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C520+836896]
+	Ordinal0 [0x01020682+788098]
+	Ordinal0 [0x01020EB8+790200]
+	Ordinal0 [0x01022752+796498]
+	Ordinal0 [0x0101C0D9+770265]
+	Ordinal0 [0x0102D9D0+842192]
+	Ordinal0 [0x01083AE2+1194722]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220413 18:26:44.301" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C520+836896]
+	Ordinal0 [0x01020682+788098]
+	Ordinal0 [0x01020EB8+790200]
+	Ordinal0 [0x01022752+796498]
+	Ordinal0 [0x0101C0D9+770265]
+	Ordinal0 [0x0102D9D0+842192]
+	Ordinal0 [0x01083AE2+1194722]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220413 18:27:26.253" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C658+837208]
+	Ordinal0 [0x01014480+738432]
+	Ordinal0 [0x01076999+1141145]
+	Ordinal0 [0x01083AA2+1194658]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+</errors>
+</robot>

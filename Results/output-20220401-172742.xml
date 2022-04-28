@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 17:27:42.515" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="GoogleTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${urlTest}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220401 17:27:42.838" level="INFO">
+</msg>
+<msg timestamp="20220401 17:27:42.838" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220401 17:27:43.509" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220401 17:27:43.509" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220401 17:27:43.795" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220401 17:27:47.605" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 17:27:47.605" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220401 17:27:47.605" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 17:27:47.613" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220401 17:27:42.838" endtime="20220401 17:27:47.613"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220401 17:27:47.613" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220401 17:27:47.613" endtime="20220401 17:27:48.889"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220401 17:27:48.889" level="INFO">Opening url 'https://www.redbus.in/'</msg>
+<status status="PASS" starttime="20220401 17:27:48.889" endtime="20220401 17:27:50.581"/>
+</kw>
+<status status="PASS" starttime="20220401 17:27:42.838" endtime="20220401 17:27:50.581"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>css:nav.product-nav.fl a</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220401 17:27:50.599" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="b4b0c15b1908cb24b779d743b87416d2", element="8e9749c9-64f7-4f00-bff3-f1bfa693ca83")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220401 17:27:50.581" endtime="20220401 17:27:50.599"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 17:27:50.650" level="INFO">${href_list} = ['https://www.redbus.in/bus-tickets/', 'https://www.redbus.in/ryde/', 'https://www.redbus.in/redRail', 'https://www.redbus.in/rPool/']</msg>
+<status status="PASS" starttime="20220401 17:27:50.606" endtime="20220401 17:27:50.650"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 17:27:50.650" level="INFO">['https://www.redbus.in/bus-tickets/', 'https://www.redbus.in/ryde/', 'https://www.redbus.in/redRail', 'https://www.redbus.in/rPool/']</msg>
+<status status="PASS" starttime="20220401 17:27:50.650" endtime="20220401 17:27:50.650"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220401 17:27:50.650" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220401 17:27:50.650" endtime="20220401 17:27:50.650"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.redbus.in/bus-tickets/</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element_href}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 17:27:50.650" level="INFO">https://www.redbus.in/bus-tickets/</msg>
+<status status="PASS" starttime="20220401 17:27:50.650" endtime="20220401 17:27:50.650"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220401 17:27:51.182" level="INFO">GET Request : url=https://www.redbus.in/bus-tickets/ 
+ path_url=/bus-tickets/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220401 17:27:51.182" level="INFO">GET Response : url=https://www.redbus.in/bus-tickets/ 
+ status=200, reason=OK 
+ headers={'Content-Type': 'text/html; charset=utf-8', 'Server': 'hello', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'content-type', 'ETag': 'W/"22931-HjJpW2ZgpfzBjpD3j6ZmcqWSGlk"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'X-Frame-Options': 'SAMEORIGIN', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Strict-Transport-Security': 'max-age=31536000', 'Content-Security-Policy': "frame-ancestors 'self' https://m-redbus-id.cdn.ampproject.org https://www.google.com https://www.google.co.id https://m.redbus.id https://seocms.redbus.com; default-src 'self' firebasestorage.googleapis.com c.riskified.com wss://*.firebaseio.com wss://rbpub.redbus.com wss://ssbk2-uk.gsecondscreen.com wss://ssbk4-uk.gsecondscreen.com wss://evbk.gamooga.com https://h.online-metrix.net https://s3.rdbuz.com https://evbk.gamooga.com https://*.doubleclick.net https://graph.facebook.com https://cdn-jp.gsecondscreen.com https://*.redbus.in  https://*.redbus.com https://*.googleapis.com https://www.google-analytics.com http://www.googletagmanager.com https://*.google.com https://*.google.co.in https://*.facebook.net http://www.googleadservices.com https://www.facebook.com https://recorder.sessionstack.com https://o2.mouseflow.com/; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.conveythis.com *.googleoptimize.com app.link cdn.branch.io beacon.riskified.com tags.tiqcdn.com cdn-akamai.mookie1.com *.firebaseio.com h.online-metrix.net *.twitter.com static.ads-twitter.com *.googletagservices.com bam.nr-data.net *.doubleclick.net evbk.gamooga.com maxcdn.bootstrapcdn.com *.google.com cdn.jsdelivr.net sslwidget.criteo.com static.criteo.net cdn.mouseflow.com bat.bing.com maps.googleapis.com ae.gsecondscreen.com sg-pl.vizury.com cdnjs.cloudflare.com cdn-jp.gsecondscreen.com adservice.google.co.in ssl.google-analytics.com pagead2.googlesyndication.com www.google-analytics.com cdn.sessionstack.com www.googletagmanager.com connect.facebook.net *.googleadservices.com *.rdbuz.com *.redbus.in www.gstatic.com; img-src 'self' data: blob: gos3.ibcdn.com lh3.googleusercontent.com i.ytimg.com img.riskified.com web-elb *.online-metrix.net *.goibibo.com barcode-latam.s3.amazonaws.com t.co www.googletagmanager.com *.doubleclick.net tpc.googlesyndication.com maps.gstatic.com maps.googleapis.com rb-plus.s3.ap-southeast-1.amazonaws.com s3-ap-southeast-1.amazonaws.com *.s3-ap-southeast-1.amazonaws.com h.online-metrix.net bat.bing.com www.google.co.in evbk.gamooga.com *.redbus.in cdn-jp.gsecondscreen.com  *.google.com www.google-analytics.com  ssl.google-analytics.com *.facebook.com *.rdbuz.com cdn-jp.gsecondscreen.com api.midtrans.com www.glassdoor.co.in; style-src 'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com https://*.google.com https://cdnjs.cloudflare.com https://www.w3schools.com http://fonts.googleapis.com https://fonts.googleapis.com https://*.rdbuz.com https://st.redbus.in  http://*.rdbuz.com http://st.redbus.in; font-src 'self' data: https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com http://fonts.gstatic.com http://*.rdbuz.com http://st.redbus.in https://fonts.gstatic.com https://*.rdbuz.com https://st.redbus.in; frame-src 'self' covid-19.riskline.com covid19-riskline.com www.youtube-nocookie.com https://*.firebaseapp.com https://*.firebaseio.com  https://www.surveymonkey.com https://*.google.com https://isb.au1.qualtrics.com https://www.googletagservices.com/ https://*.redbus.com https://h.online-metrix.net https://checkout.payulatam.com/ https://*.doubleclick.net http://in-tags.vizury.com http://sg-pl.vizury.com https://xds.gsecondscreen.com https://*.facebook.com https://www.youtube.com https://dis.as.criteo.com; object-src 'self'; connect-src 'self' *.conveythis.com gsecondscreen.com *.gsecondscreen.com *.gamooga.com api2.branch.io wss://rbpub.redbus.com *.googleapis.com o2.mouseflow.com *.redbus.com *.doubleclick.net *.riskified.com wss://*.gamooga.com www.google-analytics.com graph.facebook.com accounts.google.com", 'Content-Length': '31755', 'Date': 'Fri, 01 Apr 2022 11:57:51 GMT', 'Connection': 'keep-alive', 'Set-Cookie': 'AWSALBTG=QAnZ4TX47ri2eUyN77lyoV8XyKsF8SzYyPXKUBjBcTIjS9g/cylH/VYUEVYJKKCBkr614dXkGzGuUn6Emzt/5ZDqYu6Z1SUrNCB3BV08/xl4EDbZlQvP4bweJKi/T2eacYzMzHQz1b5fYbycHbbrOYDJLvw54CxGEyiqK0sfpXR1F5oGa3E=; Expires=Fri, 08 Apr 2022 11:57:51 GMT; Path=/, AWSALBTGCORS=QAnZ4TX47ri2eUyN77lyoV8XyKsF8SzYyPXKUBjBcTIjS9g/cylH/VYUEVYJKKCBkr614dXkGzGuUn6Emzt/5ZDqYu6Z1SUrNCB3BV08/xl4EDbZlQvP4bweJKi/T2eacYzMzHQz1b5fYbycHbbrOYDJLvw54CxGEyiqK0sfpXR1F5oGa3E=; Expires=Fri, 08 Apr 2022 11:57:51 GMT; Path=/; SameSite=None, language=en; Path=/; Secure'} 
+ body=&lt;html&gt;
+        &lt;head&gt;
+               &lt;title&gt;Online Bus Tickets Booking: Book Bus Ticket and Bus Reservation -redBus India&lt;/title&gt;
+               &lt;script src="https://www.google.com/recaptcha/api.js" async defer&gt;&lt;/script&gt;
+               &lt;link rel="canonical" href="https://www.redbus.in/bus-tickets" /&gt;
+               &lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+               &lt;meta name="viewport" content="initial-scale=1.0"&gt;
+               &lt;meta name="description" content="Book Bus tickets with the largest bus booking company in India and save upto Rs. 250/- . Find 70K+ routes &amp; 2300+ Operators to choose bus seat with confirmed reservation. Use coupon code and find big discounts instantly."&gt;
+                
+                
+                
+                &lt;link rel="shortcut icon" type="image/ico" href="/seoassets/favicon.ico" /&gt;
+                &lt;link rel="preload" href="/seoassets/fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin&gt;
+                &lt;link rel="preload" href="/seoassets/fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin&gt;
+                &lt;link rel="preconnect" href="https://www.google-analytics.com" crossorigin&gt;
+                &lt;link rel="preload" as="font" href="/seoassets/fonts/icomoon.woff?ge98hm" type="font/woff2" crossorigin="anonymous"&gt;
+                &lt;script src="/seoassets/dcr_standalone_page.js?v=1647415020726" defer&gt;&lt;/script&gt;
+                &lt;script src="https://accounts.google.com/gsi/client" defer&gt;&lt;/script&gt;
+
+                &lt;link rel="alternate" media="only screen and (max-width:640px)"  href="https://m.redbus.in/bus-tickets" /&gt;
+                &lt;link rel="alternate" hreflang="en-ID" href="https://www.redbus.id/en/bus/ticket-bus-online" /&gt;&lt;link rel="alternate" hreflang="id-ID" href="https://www.redbus.id/bis/tiket-bus-online" /&gt;&lt;link rel="alternate" hreflang="ms-MY" href="https://www.redbus.my/ms/bas/tiket-bas-online" /&gt;&lt;link rel="alternate" hreflang="en-MY" href="https://www.redbus.my/bus/bus-online-ticket" /&gt;&lt;link rel="alternate" hreflang="en-SG" href="https://www.redbus.sg/bus/bus-online-ticket" /&gt;&lt;link rel="alternate" hreflang="en-IN" href="https://www.redbus.in/bus-tickets" /&gt;
+                
+                &lt;link rel="amphtml" href="https://m.redbus.in/amp/bus-tickets" /&gt;
+            &lt;link rel="preload stylesheet" as="style" href="/seoassets/dcr_standalone_page.css?v=1647415020726" /&gt;
+            &lt;style&gt;*{margin:0;padding:0;font-family:Lato,sans-serif}#c_scrollToTop{position:fixed;right:10px;bottom:10px;z-index:9999;cursor:pointer;width:50px;height:50px;background-color:#3498db;text-indent:-9999px;display:none;-webkit-border-radius:60px;-moz-border-radius:60px;border-radius:60px}#c_scrollToTop&gt;span{position:absolute;top:50%;left:50%;margin-left:-8px;margin-top:-12px;height:0;width:0;border:8px solid transparent;border-bottom-color:#fff}&lt;/style&gt;
+            
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div id="root"&gt;&lt;div data-reactroot=""&gt;&lt;div&gt;&lt;header class="D121_header"&gt;&lt;div class="D121_header_container"&gt;&lt;div class="head-wrap"&gt;&lt;a href="https://www.redbus.in/" style="height:51px;text-decoration:none;flex-grow:1"&gt; &lt;i class="icon icon-redBus_Logo D121_logo_main"&gt;&lt;/i&gt; &lt;/a&gt;&lt;nav class="D121_product_nav mob-hide" style="height:0px;width:0px"&gt;&lt;a class="D121_product_nav_a" href="https://www.redbus.in/bus-tickets"&gt; &lt;!-- --&gt;BUS TICKETS&lt;!-- --&gt; &lt;/a&gt;&lt;a class="D121_product_nav_a" href="https://www.redbus.in/ryde"&gt; &lt;!-- --&gt;Ryde&lt;!-- --&gt; &lt;sup style="font-weight:bold"&gt;New&lt;/sup&gt; &lt;/a&gt;&lt;a class="D121_product_nav_a" href="https://www.redbus.in/redRail"&gt; &lt;!-- --&gt;redRail&lt;!-- --&gt; &lt;sup style="font-weight:bold"&gt;New&lt;/sup&gt; &lt;/a&gt;&lt;a class="D121_product_nav_a" href="https://www.redbus.in/rPool"&gt; &lt;!-- --&gt;rPool&lt;!-- --&gt; &lt;/a&gt;&lt;/nav&gt;&lt;nav class="D121_options_nav options-nav mob-hide"&gt;&lt;a class="D121_options_nav_a" href="https://www.redbus.in/info/redcare"&gt; &lt;!-- --&gt;Help&lt;!-- --&gt; &lt;/a&gt;&lt;a class="D121_options_nav_a" href="https://www.redbus.in/Home/PrintTicket"&gt; &lt;!-- --&gt;Print/SMS Ticket&lt;!-- --&gt; &lt;/a&gt;&lt;a class="D121_options_nav_a" href="https://www.redbus.in/Cancellation"&gt; &lt;!-- --&gt;Cancel Ticket&lt;!-- --&gt; &lt;/a&gt;&lt;a class="D121_options_nav_a"&gt;&lt;i class="icon D121_icon_userlogo icon-userprofile"&gt;&lt;/i&gt;&lt;i class="icon icon-down D121_icon_down"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/nav&gt;&lt;div id="D121_dropPopover" class="D121_dropPopover "&gt;&lt;/div&gt;&lt;div id="D121_signupDrop" class="D121_signupDrop "&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="D121_iframe_modal D121_iframe_hide"&gt;&lt;div class="D121_modal_bg"&gt;&lt;/div&gt;&lt;div class="D121_login_frame"&gt;&lt;div class="D121_frame_pos"&gt;&lt;div class="D121_set_frame"&gt;&lt;div class="D121_frame_close"&gt;&lt;i class="icon icon-cross"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class="D121_frame_content"&gt;&lt;iframe class="D121_iframe" src="https://www.redbus.in/account?pageName=Seo"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/header&gt;&lt;section class="C122_breadCrumb"&gt;&lt;div class="C122_headerContainer"&gt;&lt;ul itemscope="" itemType="https://schema.org/BreadcrumbList"&gt;&lt;li itemProp="itemListElement" itemscope="" itemType="https://schema.org/ListItem"&gt;&lt;a itemProp="item" href="https://www.redbus.in/"&gt;&lt;span itemProp="name"&gt;Home&lt;/span&gt;&lt;/a&gt;&lt;meta itemProp="position" content="1"/&gt;&lt;/li&gt;&lt;li itemProp="itemListElement" itemscope="" itemType="https://schema.org/ListItem"&gt;&lt;span itemProp="name"&gt;bus tickets&lt;/span&gt;&lt;meta itemProp="position" content="2"/&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class="C122_fareStarts"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;&lt;div class="D120_search_container" style="background-image:url(https://st.redbus.in/Images/INDOFFER/Heroimage/sftyka3.png);background-color:#b63e43"&gt;&lt;div class="D120_search_h1_wrap"&gt;&lt;div&gt;&lt;h1 class ="D120_search_h1" &gt; Bus Ticket Booking Online &lt;/h1&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="D120_search_h2_wrap"&gt;&lt;div&gt;&lt;h2 class ="D120_search_h2" &gt; Book Bus Tickets in India &lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="D120_search_widget"&gt;&lt;div class="D120_search_input_wrap" style="width:28%;position:relative"&gt; &lt;span class="D120_icon_input icon icon-city"&gt;&lt;/span&gt;&lt;input type="text" autoComplete="off" value="" id="txtSource" style="position:absolute;height:98%;padding-left:35px;border:none;outline:none" placeholder="FROM"/&gt;&lt;input type="hidden" id="srcid"/&gt;&lt;/div&gt;&lt;div class="D120_search_input_wrap" style="width:28%;position:relative"&gt; &lt;span class="D120_icon_input icon icon-city"&gt;&lt;/span&gt;&lt;input type="text" autoComplete="off" value="" id="txtDestination" style="position:absolute;height:98%;padding-left:35px;border:none;outline:none" placeholder="TO"/&gt;&lt;input type="hidden" id="destid"/&gt;&lt;/div&gt;&lt;div class="D120_search_input_wrap" style="width:28%"&gt;&lt;span class="D120_icon_input icon icon-calendar"&gt;&lt;/span&gt;&lt;input type="text" id="txtOnwardCalendar" autoComplete="off" style="position:absolute;height:98%;padding-left:35px;border:none;outline:none" placeholder="ONWARD DATE" value=""/&gt;&lt;div id="onward" style="position:absolute;top:48px;left:570px;width:35%;background-color:#ffffff;z-index:9999"&gt;&lt;/div&gt;&lt;/div&gt;&lt;button class="D120_search_btn searchBuses" style="width:15.7% !important"&gt; &lt;!-- --&gt;Search Buses&lt;!-- --&gt; &lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="D116_offer"&gt;&lt;/div&gt;&lt;div class="D151_outerContainer"&gt;&lt;div&gt;&lt;h2 class ="D151_heading" &gt; Why redBus for Bus Booking? &lt;/h2&gt;&lt;/div&gt;&lt;div class="D151_container"&gt;&lt;div class="D151_promiseContainer"&gt;&lt;div class="D151_imageContainer"&gt;&lt;img class="D151_image" src="//s3.rdbuz.com/Images/safety/srp/safety.svg "/&gt;&lt;/div&gt;&lt;div class="D151_promiseTitle"&gt;SAFETY +&lt;/div&gt;&lt;div class="D151_promiseText"&gt;With Safety+ we have brought in a set of measures like Sanitized buses, mandatory masks etc. to ensure you travel safely in India.&lt;/div&gt;&lt;/div&gt;&lt;div class="D151_promiseContainer"&gt;&lt;div class="D151_imageContainer"&gt;&lt;img class="D151_image" src="//s1.rdbuz.com/web/images/home/customer_care.png"/&gt;&lt;/div&gt;&lt;div class="D151_promiseTitle"&gt;SUPERIOR CUSTOMER SERVICE&lt;/div&gt;&lt;div class="D151_promiseText"&gt;We put our experience and relationships to good use and are available to solve your bus travel issues.&lt;/div&gt;&lt;/div&gt;&lt;div class="D151_promiseContainer"&gt;&lt;div class="D151_imageContainer"&gt;&lt;img class="D151_image" src="//s1.rdbuz.com/web/images/home/lowest_Fare.png"/&gt;&lt;/div&gt;&lt;div class="D151_promiseTitle"&gt;LOWEST PRICES&lt;/div&gt;&lt;div class="D151_promiseText"&gt;We always give you the lowest price with the best partner offers.&lt;/div&gt;&lt;/div&gt;&lt;div class="D151_promiseContainer"&gt;&lt;div class="D151_imageContainer"&gt;&lt;img class="D151_image" src="//s2.rdbuz.com/web/images/home/benefits.png"/&gt;&lt;/div&gt;&lt;div class="D151_promiseTitle"&gt;UNMATCHED BENEFITS&lt;/div&gt;&lt;div class="D151_promiseText"&gt;We take care of your travel beyond ticketing by providing you with innovative and unique benefits.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="DC_215_container" style="max-width:1013px;margin:0 auto"&gt;&lt;div class="D215_heading"&gt;&lt;div&gt;&lt;h2  style="font-size:24px; font-weight: 700"&gt; How to Book a Bus Online on redBus? &lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="DC_215_content"&gt;&lt;div class="DC_215_description"&gt; &lt;!-- --&gt;Bus Booking | A to Z of Booking Online Bus Tickets&lt;!-- --&gt; &lt;/div&gt;&lt;ul class="DC_215_list"&gt;&lt;li class="DC215_howTo_step"&gt; &lt;!-- --&gt;Enter the Source and Destination locations in the “From” and “To” tab respectively.&lt;!-- --&gt; &lt;/li&gt;&lt;li class="DC215_howTo_step"&gt; &lt;!-- --&gt;Enter the “Date of Journey” and hit the “Search” button to check available bus tickets online.&lt;!-- --&gt; &lt;/li&gt;&lt;li class="DC215_howTo_step"&gt; &lt;!-- --&gt;Select a bus of your choice from the list of buses that are displayed.&lt;!-- --&gt; &lt;/li&gt;&lt;li class="DC215_howTo_step"&gt; &lt;!-- --&gt;Select a seat, boarding, and dropping points and hit “Proceed to Book” for final bus booking.&lt;!-- --&gt; &lt;/li&gt;&lt;li class="DC215_howTo_step"&gt; &lt;!-- --&gt;Fill in the “Passenger Information” and “Contact Information”.&lt;!-- --&gt; &lt;/li&gt;&lt;li class="DC215_howTo_step"&gt; &lt;!-- --&gt;You can even choose to insure your bus booking so that you will be covered in case of an accident or loss of luggage and then click “Proceed to Pay”.&lt;!-- --&gt; &lt;/li&gt;&lt;li class="DC215_howTo_step"&gt; &lt;!-- --&gt;Enter the offer code (if applicable), select your mode of payment and complete the payment procedure for bus tickets online.&lt;!-- --&gt; &lt;/li&gt;&lt;li class="DC215_howTo_step"&gt; &lt;!-- --&gt;Once this is done, you will receive an M-ticket on your mobi... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220401 17:27:51.182" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220401 17:27:50.650" endtime="20220401 17:27:51.182"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220401 17:27:51.189" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220401 17:27:51.182" endtime="20220401 17:27:51.189"/>
+</kw>
+<status status="PASS" starttime="20220401 17:27:50.650" endtime="20220401 17:27:51.189"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.redbus.in/ryde/</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element_href}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 17:27:51.190" level="INFO">https://www.redbus.in/ryde/</msg>
+<status status="PASS" starttime="20220401 17:27:51.190" endtime="20220401 17:27:51.190"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220401 17:27:51.569" level="INFO">GET Request : url=https://www.redbus.in/ryde/ 
+ path_url=/ryde/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220401 17:27:51.569" level="INFO">GET Response : url=https://www.redbus.in/ryde/ 
+ status=200, reason=OK 
+ headers={'Content-Type': 'text/html; charset=utf-8', 'Server': 'hello', 'X-Powered-By': 'Express', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN, SAMEORIGIN', 'strict-transport-security': 'max-age=5184000000; includeSubDomains, max-age=31536000', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff, nosniff', 'referrer-policy': 'no-referrer', 'ETag': 'W/"52e1-rz1hNIyd+4Tyu373w6S1yjH17eA"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'X-XSS-Protection': '1; mode=block', 'Content-Security-Policy': "frame-ancestors 'self' https://m-redbus-id.cdn.ampproject.org https://www.google.com https://www.google.co.id https://m.redbus.id https://seocms.redbus.com; default-src 'self' firebasestorage.googleapis.com c.riskified.com wss://*.firebaseio.com wss://rbpub.redbus.com wss://ssbk2-uk.gsecondscreen.com wss://ssbk4-uk.gsecondscreen.com wss://evbk.gamooga.com https://h.online-metrix.net https://s3.rdbuz.com https://evbk.gamooga.com https://*.doubleclick.net https://graph.facebook.com https://cdn-jp.gsecondscreen.com https://*.redbus.in  https://*.redbus.com https://*.googleapis.com https://www.google-analytics.com http://www.googletagmanager.com https://*.google.com https://*.google.co.in https://*.facebook.net http://www.googleadservices.com https://www.facebook.com https://recorder.sessionstack.com https://o2.mouseflow.com/; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.conveythis.com *.googleoptimize.com app.link cdn.branch.io beacon.riskified.com tags.tiqcdn.com cdn-akamai.mookie1.com *.firebaseio.com h.online-metrix.net *.twitter.com static.ads-twitter.com *.googletagservices.com bam.nr-data.net *.doubleclick.net evbk.gamooga.com maxcdn.bootstrapcdn.com *.google.com cdn.jsdelivr.net sslwidget.criteo.com static.criteo.net cdn.mouseflow.com bat.bing.com maps.googleapis.com ae.gsecondscreen.com sg-pl.vizury.com cdnjs.cloudflare.com cdn-jp.gsecondscreen.com adservice.google.co.in ssl.google-analytics.com pagead2.googlesyndication.com www.google-analytics.com cdn.sessionstack.com www.googletagmanager.com connect.facebook.net *.googleadservices.com *.rdbuz.com *.redbus.in www.gstatic.com; img-src 'self' data: blob: gos3.ibcdn.com lh3.googleusercontent.com i.ytimg.com img.riskified.com web-elb *.online-metrix.net *.goibibo.com barcode-latam.s3.amazonaws.com t.co www.googletagmanager.com *.doubleclick.net tpc.googlesyndication.com maps.gstatic.com maps.googleapis.com rb-plus.s3.ap-southeast-1.amazonaws.com s3-ap-southeast-1.amazonaws.com *.s3-ap-southeast-1.amazonaws.com h.online-metrix.net bat.bing.com www.google.co.in evbk.gamooga.com *.redbus.in cdn-jp.gsecondscreen.com  *.google.com www.google-analytics.com  ssl.google-analytics.com *.facebook.com *.rdbuz.com cdn-jp.gsecondscreen.com api.midtrans.com www.glassdoor.co.in; style-src 'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com https://*.google.com https://cdnjs.cloudflare.com https://www.w3schools.com http://fonts.googleapis.com https://fonts.googleapis.com https://*.rdbuz.com https://st.redbus.in  http://*.rdbuz.com http://st.redbus.in; font-src 'self' data: https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com http://fonts.gstatic.com http://*.rdbuz.com http://st.redbus.in https://fonts.gstatic.com https://*.rdbuz.com https://st.redbus.in; frame-src 'self' covid-19.riskline.com covid19-riskline.com www.youtube-nocookie.com https://*.firebaseapp.com https://*.firebaseio.com  https://www.surveymonkey.com https://*.google.com https://isb.au1.qualtrics.com https://www.googletagservices.com/ https://*.redbus.com https://h.online-metrix.net https://checkout.payulatam.com/ https://*.doubleclick.net http://in-tags.vizury.com http://sg-pl.vizury.com https://xds.gsecondscreen.com https://*.facebook.com https://www.youtube.com https://dis.as.criteo.com; object-src 'self'; connect-src 'self' *.conveythis.com gsecondscreen.com *.gsecondscreen.com *.gamooga.com api2.branch.io wss://rbpub.redbus.com *.googleapis.com o2.mouseflow.com *.redbus.com *.doubleclick.net *.riskified.com wss://*.gamooga.com www.google-analytics.com graph.facebook.com accounts.google.com", 'Content-Length': '6652', 'Date': 'Fri, 01 Apr 2022 11:57:51 GMT', 'Connection': 'keep-alive', 'Set-Cookie': 'rb_uuid=f50df370-b1b2-11ec-b147-55c8af0e288f; Max-Age=604800; Path=/; Expires=Fri, 08 Apr 2022 11:57:51 GMT; HttpOnly; Secure, country=IND; Max-Age=900; Path=/; Expires=Fri, 01 Apr 2022 12:12:51 GMT; HttpOnly; Secure, language=en; Max-Age=900; Path=/; Expires=Fri, 01 Apr 2022 12:12:51 GMT; HttpOnly; Secure'} 
+ body=&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "w3.org/TR/html4/strict.dtd"&gt;&lt;html lang=en&gt;&lt;head&gt;&lt;meta charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content="IE=edge"&gt;&lt;meta http-equiv=Cache-Control content="no-cache, no-store, must-revalidate"&gt;&lt;meta http-equiv=Pragma content=no-cache&gt;&lt;meta http-equiv=Expires content=0&gt;&lt;meta name=viewport content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,minimum-scale=1"&gt;&lt;meta name=description content="Get car rentals and bus rentals online at the best price! Book Sedan, SUV car, Hatchback, mini bus, volvo buses, or tempo traveller on rent. Get quotations from the best operators in Bangalore, Mumbai, Pune, Chennai, Hyderabad, Delhi, Ahmedabad, Madurai, Mysore, Visakhapatnam, Surat and Vadodara."&gt;&lt;link rel=icon href="/bushire/static/img/favicon.ico?v=3"&gt;&lt;title&gt;Ryde: Car Rentals, Mini Buses, Bus Rentals &amp; Tempo Traveller on Rent&lt;/title&gt;&lt;link rel=canonical href=https://www.redbus.in/ryde/ &gt;&lt;link rel=alternate media="only screen and (max-width:640px)" href=https://m.redbus.in/ryde/ &gt;&lt;link rel=stylesheet href="/bushire/static/stylesheets/ryde_dhomebundle.css?v=8"&gt;&lt;link rel=prerender href=/bushire/localtrip.html&gt;&lt;link rel=prerender href=/bushire/outstation.html&gt;&lt;link rel=prerender href=/bushire/airport.html&gt;&lt;link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie_light.min.js as=script&gt;&lt;link rel=preconnect href=https://www.google-analytics.com&gt;&lt;link rel=precoonnect href=https://www.googletagmanager.com&gt;&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCFTX7" height=0 width=0 style="display: none; visibility: hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;&lt;script async&gt;(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TCFTX7');&lt;/script&gt;&lt;style&gt;.async-hide { opacity: 0 !important}&lt;/style&gt;&lt;script&gt;(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+            h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+            (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',4000,
+            {'GTM-TCFTX7':true});&lt;/script&gt;&lt;script&gt;dataLayer.push({"design": "desktopDesignRevised"})&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCFTX7" height=0 width=0 style="display: none; visibility: hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;&lt;div id=reactContentMount&gt;&lt;/div&gt;&lt;div id=reactContentMountLogin&gt;&lt;/div&gt;&lt;script&gt;function IgnoreTimeZone(date){
+        var date = new Date(date);
+        var userTimezoneOffset = date.getTimezoneOffset() * 60000;
+        var convertedDate = new Date(date.getTime() + userTimezoneOffset);
+        return convertedDate;
+    }
+    var pageData ={"isLoggedIn":false,"languageConfig":{"page":{"_id":"5b99f4e89633964e0e2a731a","KeyName":"Home","KeyValue":{"NAME":"amit","BannerTitle":"Travelling Together Is Easy","BannerSubTittle":"Hire Buses, Tempo Travellers and Cars at your convenience","CityOfHireLbl":"CITY OF HIRE","StartingPointLbl":"STARTING POINT","DestinationLbl":"DESTINATION - Local or Outstation","HireBtnLbl":"HIRE","KeyfeatureLbl":"KEY FEATURES","How_it_worksLbl":"How it works :","How_it_worksLbl1":"You give us your trip details.","How_it_worksLbl2":"We work with the best operators to get you the best prices.","How_it_worksLbl3":"Select the operator of your choice and go on your trip.","InventoryLbl":"Inventory","InventorySubLbl":"Access to leading vehicle providers in your city.","Choose_vehicleLbl":"Choose your vehicle","Choose_vehicleSubLbl":"Look at vehicle images before making a choice","ZeroBkLbl":"Zero booking fees","ZeroBkSubLbl":"Transparent all inclusive pricing. No hidden cost.","sourceCityPlaceholder":"eg: Mumbai","destinationPlaceholder":"eg: Airport/Pune","pickUpPlaceholder":"eg: Railway Station","TrustedServiceLbl":"TRUSTED SERVICE","WellMaintainedLbl":"WELL MAINTAINED","WellMaintainedDiscription":"We promise to provide you with a neat and well-maintained bus with a reliable driver.","OntimeLbl":"ON TIME","OntimeDiscription":"We value your time, which is why we make sure that your bus will arrive as scheduled.","VerifiedPaymentLbl":"VERIFIED PAYMENT","VerifiedPaymentDiscription":"Our payment system allows you to pay for your rented vehicle in a secure and safe way.","ServiceLbl":"SERVICE GUARANTEE","ServiceDiscription":"If you are not satisfied with our service, we promise to refund 20% of your payment back to you.","CustomerReviewsLbl":"CUSTOMER REVIEWS","OverallExpLbl":"Overall good experience.","OperatorLbl":"Interested in becoming an operator","TripRequestLbl":"Trip Requests","SignInTextSbLbl":"Sign in to view quotes for your requests.","SignInBtnLbl":"Sign In","NoExistingTripTxt":"You dont have any trip requests currently.","NumOfQuotesLbl":"quotes received","SingleQuoteLbl":"quote received","StartingFromLbl":"Starting from","NoQuotationsLbl":"No quotations","PerKmSbLbl":"/km","IsKeyFeaturesSectionEnabled":true,"IsTrustedServiceSectionEnabled":true,"IsCustomerServiceSectionEnabled":true,"IsOperatorOnboardingSectionEnabled":true,"IsFaqSectionEnabled":true,"IsSeoSectionEnabled":true,"IsFooterSectionEnabled":true,"IsTripHistoryEnabled":true,"TripStatusLbl":"Trip Status","ViewAllLbl":"View All","InTripFeedbackLbl":"In Trip Feedback","BusBookedLbl":"Bus Booked","DriverAllottedLbl":"Driver Allotted","VehicleAssignedLbl":"Vehicle Assigned","TripDetailsLbl":"Trip Details","InvoiceGeneratedLbl":"Invoice Generated","DownloadTicketLbl":"Download Ticket","NotAvlbl":"Not Available","StartOtpLbl":"Start OTP","EndOtpLbl":"End OTP","NAlbl":"NA"},"DataType":"JSON","CreatedBy":"Amit Kumar","CountryName":"IND","Partner":[{"Name":"MakeMyTrip","PartnerSupported":true},{"Name":"Ibibo","PartnerSupported":false}],"BU":"BUSHIRE","Language":"en","DefaultLanguage":"en","BussinessUnit":"RB_IND_BUSHIRE_WEB","IsActive":true},"layout":{"_id":"5b58998e9633964e0e2a72d5","KeyName":"Layout","KeyValue":{"title":"Hire: Hire Volvos, AC buses, Chartered buses, Mini Buses, Tempo Travellers &amp; Innova Cars- redBus.in","canonical":"https://www.redbus.in/bushire/","alternate":"https://m.redbus.in/bushire/","description":"Travelling as a group? Hire buses, coaches, tempo travellers and volvos for corporate or personal use. Get quotations from the best operators in Bangalore, Mumbai, Pune, Chennai, Hyderabad, Delhi, Ahmedabad, Madurai, Mysore, Visakhapatnam, Surat and Vadodara.","activeSections":[{"name":"KeyFeatures","status":true},{"name":"TrustedService","status":true},{"name":"Reviews","status":true},{"name":"Operator","status":true},{"name":"Faq","status":false},{"name":"SeoSection","status":false},{"name":"Footer","status":true}]},"DataType":"JSON","CreatedBy":"Amit Kumar","CountryName":"IND","Partner":[{"Name":"MakeMyTrip","PartnerSupported":true},{"Name":"Ibibo","PartnerSupported":false}],"Language":"en","DefaultLanguage":"en","BussinessUnit":"RB_IND_BUSHIRE_WEB","IsActive":true,"featureConfig":{"personalizationEnabled":true,"headerVerticcalEnabled":true,"IspoweredBy":false}},"theme":"","BaseUrl":"/ryde"},"FAQList":[{"Data":"rYde helps you rent a vehicle from the best operators in your city.","Header":"What is rYde?","id":1},{"Data":"We ask you a few simple questions regarding your trip. We work with the best operators in your city to get you detailed quotations so that you get the best deal.","Header":"How does it work?","id":2},{"Data":"We are currently operational in many cities such as  Bangalore, Mumbai, Pune, Chennai, Hyderabad, Delhi, Ahmedabad, Madurai, Mysore, Visakhapatnam, Surat, Vadodara, Vijayawada, Coimbatore, Goa, Pondicherry, Erode, Ooty, Udaipur, Jaipur, Guwahati, Trichy, Kolkata, and many more.","Header":"Which cities are you operational in?","id":3},{"Data":"Since we work with the best operators, the vehicles are usually reliable. In case of a breakdown, it is the operator's responsibility to replace the vehicle during the journey.","Header":"What happens if the vehicle breaks down?","id":4},{"Data":"The 'Kilometers' are calculated based on the return trip distance between the boarding point and the destination. Any additional distance covered within the city between the Garage and the pickup point is also included in it.","Header":"How are the Kilometers calculated?","id":5},{"Data":"You can write to us at ryde@redbus.in. Alternatively, you can request a call back by clicking on the 'Request a Callback' button on any of the quotes you've received. One of our customer service executives will reach out to you.","Header":"Whom do I contact if I have additional questions?","id":6},{"Data":"You can confirm your reservation by paying a small booking fee, typically up to to 25% of the base fare. The balance can be paid directly to us through online modes till two days before the start of the journey or to the operator in cash at the time of boarding.","Header":"What are the payment terms?","id":7},{"Data":"The cancellation policy is specific to each operator and is listed against the quotes on the quotations page.","Header":"What if I need to cancel my trip?","id":8},{"Data":"Tolls and Interstate taxes are best estimates only. If these amounts are included in the fare, you'll be charged/reimbursed for any difference between the actuals and estimates, as applicable.","Header":"How are tolls &amp; taxes calculated?","id":9}],"Footer":{"Links":[{"Heading":"Book","Links":[{"Name":"Bus Tickets","Url":"/bus-tickets/"},{"Name":"Ryde","Url":"/ryde/"},{"Name":"Tempo Traveller","Url":"/tempo-traveller/"},{"Name":"Car Rentals","Url":"/car-rental/"}]},{"Heading"... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220401 17:27:51.572" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220401 17:27:51.190" endtime="20220401 17:27:51.572"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220401 17:27:51.575" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220401 17:27:51.573" endtime="20220401 17:27:51.577"/>
+</kw>
+<status status="PASS" starttime="20220401 17:27:51.190" endtime="20220401 17:27:51.577"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.redbus.in/redRail</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element_href}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 17:27:51.577" level="INFO">https://www.redbus.in/redRail</msg>
+<status status="PASS" starttime="20220401 17:27:51.577" endtime="20220401 17:27:51.577"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220401 17:27:52.410" level="INFO">GET Request : url=https://www.redbus.in/redRail 
+ path_url=/redRail 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220401 17:27:52.410" level="INFO">GET Response : url=https://www.redbus.in/redRail 
+ status=200, reason=OK 
+ headers={'Content-Type': 'text/html', 'Server': 'hello', 'Accept-Ranges': 'bytes', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'max-age=86400,Private', 'ETag': '"75703a5d7138d81:0"', 'Last-Modified': 'Tue, 15 Mar 2022 13:34:15 GMT', 'X-Frame-Options': 'SAMEORIGIN', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Strict-Transport-Security': 'max-age=31536000', 'Content-Security-Policy': "frame-ancestors 'self' https://m-redbus-id.cdn.ampproject.org https://www.google.com https://www.google.co.id https://m.redbus.id https://seocms.redbus.com; default-src 'self' firebasestorage.googleapis.com c.riskified.com wss://*.firebaseio.com wss://rbpub.redbus.com wss://ssbk2-uk.gsecondscreen.com wss://ssbk4-uk.gsecondscreen.com wss://evbk.gamooga.com https://h.online-metrix.net https://s3.rdbuz.com https://evbk.gamooga.com https://*.doubleclick.net https://graph.facebook.com https://cdn-jp.gsecondscreen.com https://*.redbus.in  https://*.redbus.com https://*.googleapis.com https://www.google-analytics.com http://www.googletagmanager.com https://*.google.com https://*.google.co.in https://*.facebook.net http://www.googleadservices.com https://www.facebook.com https://recorder.sessionstack.com https://o2.mouseflow.com/; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.conveythis.com *.googleoptimize.com app.link cdn.branch.io beacon.riskified.com tags.tiqcdn.com cdn-akamai.mookie1.com *.firebaseio.com h.online-metrix.net *.twitter.com static.ads-twitter.com *.googletagservices.com bam.nr-data.net *.doubleclick.net evbk.gamooga.com maxcdn.bootstrapcdn.com *.google.com cdn.jsdelivr.net sslwidget.criteo.com static.criteo.net cdn.mouseflow.com bat.bing.com maps.googleapis.com ae.gsecondscreen.com sg-pl.vizury.com cdnjs.cloudflare.com cdn-jp.gsecondscreen.com adservice.google.co.in ssl.google-analytics.com pagead2.googlesyndication.com www.google-analytics.com cdn.sessionstack.com www.googletagmanager.com connect.facebook.net *.googleadservices.com *.rdbuz.com *.redbus.in www.gstatic.com; img-src 'self' data: blob: gos3.ibcdn.com lh3.googleusercontent.com i.ytimg.com img.riskified.com web-elb *.online-metrix.net *.goibibo.com barcode-latam.s3.amazonaws.com t.co www.googletagmanager.com *.doubleclick.net tpc.googlesyndication.com maps.gstatic.com maps.googleapis.com  rb-plus.s3.ap-southeast-1.amazonaws.com s3-ap-southeast-1.amazonaws.com *.s3-ap-southeast-1.amazonaws.com h.online-metrix.net bat.bing.com www.google.co.in evbk.gamooga.com *.redbus.in cdn-jp.gsecondscreen.com  *.google.com www.google-analytics.com  ssl.google-analytics.com *.facebook.com *.rdbuz.com cdn-jp.gsecondscreen.com api.midtrans.com www.glassdoor.co.in; style-src 'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com https://*.google.com https://cdnjs.cloudflare.com https://www.w3schools.com http://fonts.googleapis.com https://fonts.googleapis.com https://*.rdbuz.com https://st.redbus.in  http://*.rdbuz.com http://st.redbus.in; font-src 'self' data: https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com http://fonts.gstatic.com http://*.rdbuz.com http://st.redbus.in https://fonts.gstatic.com https://*.rdbuz.com https://st.redbus.in; frame-src 'self' covid-19.riskline.com covid19-riskline.com www.youtube-nocookie.com https://*.firebaseapp.com https://*.firebaseio.com  https://www.surveymonkey.com https://*.google.com https://isb.au1.qualtrics.com https://www.googletagservices.com/ https://*.redbus.com https://h.online-metrix.net https://checkout.payulatam.com/ https://*.doubleclick.net http://in-tags.vizury.com http://sg-pl.vizury.com https://xds.gsecondscreen.com https://*.facebook.com https://www.youtube.com https://dis.as.criteo.com; object-src 'self'; connect-src 'self' *.conveythis.com gsecondscreen.com *.gsecondscreen.com *.gamooga.com api2.branch.io wss://rbpub.redbus.com *.googleapis.com o2.mouseflow.com *.redbus.com *.doubleclick.net *.riskified.com wss://*.gamooga.com www.google-analytics.com graph.facebook.com accounts.google.com", 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Date': 'Fri, 01 Apr 2022 11:57:52 GMT', 'Content-Length': '8325', 'Connection': 'keep-alive'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="preconnect" href="https://www.googletagmanager.com" crossorigin/&gt;
+    &lt;link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"&gt;
+    &lt;title&gt;redRail&lt;/title&gt;
+     &lt;!-- Google Tag Manager --&gt;
+     &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TCFTX7');&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;style&gt;
+    .loader_wrap_main {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .loader_wrap {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(204, 204, 204, 0);
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .g-loader-anm {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0px auto;
+        width: 30px;
+    }
+
+    .circular-anm {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #loaderCircle {
+        stroke: #EA4C53;
+    }
+&lt;/style&gt;
+
+&lt;body style="margin: 0;background-color: #ffffff;font-family: Montserrat; overflow-x: hidden;"&gt;
+    &lt;div class="loader_wrap_main" id="loader-id"&gt;
+        &lt;div class="loader_wrap"&gt;
+            &lt;div class="g-loader-anm"&gt;
+                &lt;svg class="circular-anm" viewBox="25 25 50 50" transform-origin="center center"&gt;
+                    &lt;circle id="loaderCircle" class="path-anm" cx="50" cy="50" r="20" fill="none" stroke-width="4"
+                        stroke-miterlimit="10"&gt;&lt;/circle&gt;
+                    &lt;animate xlink:href="#loaderCircle" attributeName="stroke-dasharray" values="1, 200;89, 200;89, 200"
+                        begin="0s" dur="1.5s" repeatCount="indefinite"&gt;&lt;/animate&gt;
+                    &lt;animate xlink:href="#loaderCircle" attributeName="stroke-dashoffset" values="0;-35;-124" begin="0s"
+                        dur="1.5s" repeatCount="indefinite"&gt;&lt;/animate&gt;
+                &lt;/svg&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style="display: none;" id="content-id"&gt;
+        &lt;div class="header" style="position: fixed; z-index: 100; width: 100%;"&gt;
+            &lt;div style="background-color: #D84E55; height: 54px;padding: 1rem 2rem;"&gt;
+                &lt;a href="https://www.redbus.in/" style="text-decoration: none;margin-right: 25px;"&gt;
+                    &lt;img src="https://st.redbus.in/Images/redrail/r_logo.png" alt="redbus_logo" /&gt;
+                &lt;/a&gt;
+                &lt;span style="position: absolute;padding-top: 0.5rem;"&gt;
+                    &lt;a href="https://www.redbus.in/bus-tickets/"
+                        style="font-size: 16px; line-height: 20px;text-decoration: none;color: #FFFFFF;padding: 0.5rem;"&gt;BUS
+                        TICKETS&lt;/a&gt;
+                    &lt;a href="https://www.redbus.in/ryde/"
+                        style="font-size: 16px; line-height: 20px;text-decoration: none;color: #FFFFFF;padding: 0.5rem;"&gt;ryde&lt;/a&gt;
+                    &lt;a href=""
+                        style="font-size: 16px; line-height: 20px;font-weight: 700;text-decoration: none;color: #FFFFFF;padding: 0.5rem;border-bottom: 2px solid #FFFFFF;"&gt;redRail&lt;/a&gt;
+                    &lt;a href="https://www.redbus.in/rPool/"
+                        style="padding: 0.5rem;font-size: 16px; line-height: 20px;font-weight: 400;text-decoration: none;color: #FFFFFF;"&gt;rPool&lt;/a&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style="height: 16px;background-color: #D84E55"&gt;&lt;/div&gt;
+        &lt;!-- &lt;div style="position: relative; top: 5rem; left: 0; width: 30%; float: right;z-index: 99;"&gt;
+            &lt;img src="https://st.redbus.in/Images/redrail/mob1_cont.png" alt="rail-home"
+                style="position: relative; top: 0.5rem; left: -45%;" /&gt;
+        &lt;/div&gt; --&gt;
+
+        &lt;div style="background-color: #D84E55; position: absolute;width: 100%;margin-top: 4.3rem;"&gt;
+            &lt;div
+                style="font-size: 21px; line-height: 36px; color:#FFFFFF;padding-left: 10%; padding-right: 10%; margin-bottom: -1.5rem;"&gt;
+                &lt;!-- &lt;div
+                    style="background-color: #F7F7F7; width: 33%; position: absolute;top: 36px;border-radius: 0px 30px 10px 0px; padding: 20px 0 8px 28px;"&gt;
+                    &lt;img src="https://st.redbus.in/Images/redrail/rail_logo.png" alt="rail_logo"
+                        style="margin-right: 36px" /&gt;
+                    &lt;div style="position: absolute;display: inline-block;margin-top: 1.5%;"&gt;
+                        &lt;img src="https://st.redbus.in/Images/irctcLogo.png" alt="irctc_logo"
+                            style="width: 31px;height: 38px;padding-right: 12px;border-right: 1px solid #DDDDDD;" /&gt;
+                        &lt;span
+                            style="margin-top: 25%; position: absolute; width: 100vw;padding-left: 12px;font-size: 16px;line-height: 20px;color: #3E3E52;"&gt;&lt;span
+                                style="font-weight: 700"&gt;Authorised&lt;/span&gt; &lt;b&gt;IRCTC Partner&lt;/b&gt; &lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt; --&gt;
+                &lt;img src="https://st.redbus.in/Images/redRail/illustration2.gif" /&gt;
+                &lt;div style="width: 70%;margin-bottom: 24px;"&gt;Now book &lt;b&gt;IRCTC Train Tickets&lt;/b&gt; on redRail and get
+                    10 % off upto Rs. 50 along with No Service Fee + No PG Charges. Use coupon code &lt;b&gt;LOVERAIL&lt;/b&gt;.
+                    &lt;div&gt;Download the redBus App now.&lt;/div&gt;&lt;/div&gt;
+                &lt;a
+                    href='https://play.google.com/store/apps/details?id=in.redbus.android&amp;utm_source=rb&amp;utm_campaign=redRail_home&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'&gt;&lt;img
+                        alt='Get it on Google Play'
+                        src='https://lh3.googleusercontent.com/cjsqrWQKJQp9RFO7-hJ9AfpKzbUb_Y84vXfjlP0iRHBvladwAfXih984olktDhPnFqyZ0nu9A5jvFwOEQPXzv7hr3ce3QVsLN8kQ2Ao=s0'
+                        style="margin-bottom: 65px;" /&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div style="display: flex; margin-top: 42rem;background: #F7F7F7; padding: 0 10%;"&gt;
+            &lt;div
+                style="padding: 0 24px; margin: 46px 38px 40px 0;display: inline-block; min-width: 320px;"&gt;
+               &lt;a href='https://play.google.com/store/apps/details?id=in.redbus.android&amp;utm_source=rb&amp;utm_campaign=redRail_home&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'&gt;
+                &lt;img style="width: 110%;min-height: 95%;" src="https://st.redbus.in/Images/redrail/loverail.png" alt="offer_image" /&gt;&lt;/a&gt; 
+            &lt;/div&gt;
+            &lt;div
+                style="padding: 16px 24px 24px; margin: 48px 30px 48px 0; color: #FFFFFF;line-height: 20px;background: linear-gradient(92.73deg, #38B87C 0%, #195C72 98.44%);border-radius: 8px;display: inline-block; width: 320px;"&gt;
+                &lt;img src="https://st.redbus.in/Images/redrail/clock.png" alt="clock"
+                    style="margin-right: 8px; position: relative; top: 4px;" /&gt;
+                &lt;div
+                    style="display: inline-block; padding: 0 4px; font-weight: bold; font-size: 12px; margin-bottom: 10px; color: #3E3E52; letter-spacing: 0.1em;background: #FFFFFF; border-radius: 4px;"&gt;
+                    LIMITED TIME OFFER&lt;/div&gt;
+                &lt;div
+                    style="font-weight: bold; font-size: 20px; padding-bottom: 16px; text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);"&gt;
+                    Zero Service Fee&lt;/div&gt;
+                &lt;div style="font-size: 16px;max-width: 99%;text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);"&gt;Book your
+                    tickets
+                    with 0 service fee. No coupon code required.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div
+                style="padding: 16px 24px 24px; margin: 48px 0; color: #FFFFFF;line-height: 20px;background: linear-gradient(92.73deg, #86003E 0%, #2D1250 100%);border-radius: 8px;display: inline-block; width: 320px;"&gt;
+                &lt;img src="https://st.redbus.in/Images/redrail/clock.png" alt="clock"
+                    style="margin-right: 8px; position: relative; top: 4px;" /&gt;
+                &lt;div
+                    style="display: inline-block; padding: 0 4px; font-weight: bold; font-size: 12px; margin-bottom: 10px; color: #3E3E52; letter-spacing: 0.1em; background: #FFFFFF; border-radius: 4px;"&gt;
+                    LIMITED TIME OFFER&lt;/div&gt;
+                &lt;div
+                    style="font-weight: bold; font-size: 20px; padding-bottom: 16px; text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);"&gt;
+                    No PG Charges&lt;/div&gt;
+                &lt;div style="font-size: 16px;max-width: 86%;text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);"&gt;No Payment
+                    Gateway
+                    Charges. No coupon code required.&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div style="padding: 48px 0 48px"&gt;
+            &lt;div
+                style="font-weight: bold; font-size: 28px; line-height: 34px; color: #3E3E52;text-align: center; padding-bottom: 3rem;"&gt;
+                Why
+                book with us?&lt;/div&gt;
+            &lt;div style="display: flex;"&gt;
+                &lt;div
+                    style="font-size: 16px; line-height: 20px;color: #000000; width: calc(100vw / 3);text-align: center; margin-left: 10%;"&gt;
+                    &lt;div style="display: flex; justify-content: center;"&gt;
+                        &lt;div style="width: 96px; height: 96px; margin-bottom: 2rem; position: relative;"&gt;
+                            &lt;img src="https://st.redbus.in/Images/redrail/auth_path.png" alt="partner-logo"
+                   ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220401 17:27:52.410" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220401 17:27:51.577" endtime="20220401 17:27:52.410"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220401 17:27:52.418" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220401 17:27:52.410" endtime="20220401 17:27:52.418"/>
+</kw>
+<status status="PASS" starttime="20220401 17:27:51.577" endtime="20220401 17:27:52.418"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.redbus.in/rPool/</var>
+<kw name="Log" library="BuiltIn">
+<arg>${element_href}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 17:27:52.418" level="INFO">https://www.redbus.in/rPool/</msg>
+<status status="PASS" starttime="20220401 17:27:52.418" endtime="20220401 17:27:52.418"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220401 17:27:52.831" level="INFO">GET Request : url=https://www.redbus.in/rPool/ 
+ path_url=/rPool/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220401 17:27:52.831" level="INFO">GET Response : url=https://www.redbus.in/rPool/ 
+ status=200, reason=OK 
+ headers={'Content-Type': 'text/html; charset=utf-8', 'Server': 'hello', 'X-Powered-By': 'Express', 'ETag': 'W/"1e553-uffiquMUyogGhOKwTUfFQDjl6uU"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'X-Frame-Options': 'SAMEORIGIN', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Strict-Transport-Security': 'max-age=31536000', 'Content-Security-Policy': "frame-ancestors 'self' https://m-redbus-id.cdn.ampproject.org https://www.google.com https://www.google.co.id https://m.redbus.id https://seocms.redbus.com; default-src 'self' firebasestorage.googleapis.com c.riskified.com wss://*.firebaseio.com wss://rbpub.redbus.com wss://ssbk2-uk.gsecondscreen.com wss://ssbk4-uk.gsecondscreen.com wss://evbk.gamooga.com https://h.online-metrix.net https://s3.rdbuz.com https://evbk.gamooga.com https://*.doubleclick.net https://graph.facebook.com https://cdn-jp.gsecondscreen.com https://*.redbus.in  https://*.redbus.com https://*.googleapis.com https://www.google-analytics.com http://www.googletagmanager.com https://*.google.com https://*.google.co.in https://*.facebook.net http://www.googleadservices.com https://www.facebook.com https://recorder.sessionstack.com https://o2.mouseflow.com/; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.conveythis.com *.googleoptimize.com app.link cdn.branch.io beacon.riskified.com tags.tiqcdn.com cdn-akamai.mookie1.com *.firebaseio.com h.online-metrix.net *.twitter.com static.ads-twitter.com *.googletagservices.com bam.nr-data.net *.doubleclick.net evbk.gamooga.com maxcdn.bootstrapcdn.com *.google.com cdn.jsdelivr.net sslwidget.criteo.com static.criteo.net cdn.mouseflow.com bat.bing.com maps.googleapis.com ae.gsecondscreen.com sg-pl.vizury.com cdnjs.cloudflare.com cdn-jp.gsecondscreen.com adservice.google.co.in ssl.google-analytics.com pagead2.googlesyndication.com www.google-analytics.com cdn.sessionstack.com www.googletagmanager.com connect.facebook.net *.googleadservices.com *.rdbuz.com *.redbus.in www.gstatic.com; img-src 'self' data: blob: gos3.ibcdn.com lh3.googleusercontent.com i.ytimg.com img.riskified.com web-elb *.online-metrix.net *.goibibo.com barcode-latam.s3.amazonaws.com t.co www.googletagmanager.com *.doubleclick.net tpc.googlesyndication.com maps.gstatic.com maps.googleapis.com  rb-plus.s3.ap-southeast-1.amazonaws.com s3-ap-southeast-1.amazonaws.com *.s3-ap-southeast-1.amazonaws.com h.online-metrix.net bat.bing.com www.google.co.in evbk.gamooga.com *.redbus.in cdn-jp.gsecondscreen.com  *.google.com www.google-analytics.com  ssl.google-analytics.com *.facebook.com *.rdbuz.com cdn-jp.gsecondscreen.com api.midtrans.com www.glassdoor.co.in; style-src 'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com https://*.google.com https://cdnjs.cloudflare.com https://www.w3schools.com http://fonts.googleapis.com https://fonts.googleapis.com https://*.rdbuz.com https://st.redbus.in  http://*.rdbuz.com http://st.redbus.in; font-src 'self' data: https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com http://fonts.gstatic.com http://*.rdbuz.com http://st.redbus.in https://fonts.gstatic.com https://*.rdbuz.com https://st.redbus.in; frame-src 'self' covid-19.riskline.com covid19-riskline.com www.youtube-nocookie.com https://*.firebaseapp.com https://*.firebaseio.com  https://www.surveymonkey.com https://*.google.com https://isb.au1.qualtrics.com https://www.googletagservices.com/ https://*.redbus.com https://h.online-metrix.net https://checkout.payulatam.com/ https://*.doubleclick.net http://in-tags.vizury.com http://sg-pl.vizury.com https://xds.gsecondscreen.com https://*.facebook.com https://www.youtube.com https://dis.as.criteo.com; object-src 'self'; connect-src 'self' *.conveythis.com gsecondscreen.com *.gsecondscreen.com *.gamooga.com api2.branch.io wss://rbpub.redbus.com *.googleapis.com o2.mouseflow.com *.redbus.com *.doubleclick.net *.riskified.com wss://*.gamooga.com www.google-analytics.com graph.facebook.com accounts.google.com", 'Content-Length': '24627', 'Date': 'Fri, 01 Apr 2022 11:57:52 GMT', 'Connection': 'keep-alive'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /&gt;
+  &lt;head&gt;
+    &lt;!-- Google Tag Manager --&gt;
+
+    &lt;!-- &lt;link rel="preload" importance="high" href="/public/scripts/vendor.js" as="script"&gt; --&gt;
+    &lt;script&gt;
+      (function(w, d, s, l, i) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const utm_source = urlParams.get('utm_source');
+        const utm_medium = urlParams.get('utm_medium');
+        const utm_campaign = urlParams.get('utm_campaign');
+        const url = "https://logs.redbus.com/logger/postErr";
+        if (utm_source!=null &amp;&amp; utm_medium!=null &amp;&amp; utm_campaign!=null){
+        const data = {
+          "Agent": "RPOOLCLM",
+          "logType": "info",
+          "ntSrc":utm_source,
+          "ntType":utm_medium,
+          "ntIdentifier":utm_campaign,
+          "emailId" : "",
+          "mobileNo": "",
+          "userId": "" 
+          };
+        const other_params = {
+            headers : { "content-type" : "application/json; charset=UTF-8"},
+            body : JSON.stringify(data),
+            method : "POST",
+            mode : "cors"
+        };
+        fetch(url, other_params)
+            .then(function(response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Could not reach the API: " + response.statusText);
+            }
+        }).then(function(data) {
+            
+        }).catch(function(error) {
+            
+        });
+        }
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&amp;l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TCFTX7");
+    &lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+
+    &lt;link
+      rel="stylesheet"
+      type="text/css"
+      href="../../r-pool/customstyle/Montserrat.css"
+    /&gt;
+    &lt;style&gt;
+      html {
+        font-family: "Montserrat";
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Montserrat";
+      }
+    &lt;/style&gt;
+    &lt;title&gt;rPool - India’s new Carpool &amp;amp; Bikepool mobile app&lt;/title&gt;
+    &lt;meta name="description" content="Reduce fuel costs, do your bit for the environment, and connect with like-minded people on your way to and back from work. Now available in Delhi, Bangalore, Kolkata, Mumbai, Chennai, Hyderabad, and Pune." /&gt;
+    &lt;link rel="canonical" href=https://www.redbus.in/rpool&gt;
+    &lt;link rel="alternate" href="https://m.redbus.in/rpool" /&gt;
+
+    &lt;meta name="viewport" content="initial-scale=1.0" /&gt;
+    &lt;link
+      rel="stylesheet"
+      type="text/css"
+      href="../../r-pool/stylesheets/layoutWeb.9fe2e06c924eeb3d9348.css?v=yz789"
+    /&gt;
+
+    &lt;!--linklayoutstylesend--&gt;
+    
+&lt;link rel="stylesheet" type="text/css" href="../../r-pool/stylesheets/webCarpoolHome.90fe301c52858d2ff39f.css?v=yz789"&gt;
+
+    &lt;!-- &lt;script type="text/javascript" src="/public/scripts/vendor.js"&gt;&lt;/script&gt; --&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+    &lt;noscript
+      &gt;&lt;iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TCFTX7"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+        title="gtm"
+      &gt;&lt;/iframe
+    &gt;&lt;/noscript&gt;
+    &lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+&lt;div id="reactContentMount"&gt;&lt;div class="page-container" style="position:relative" data-reactroot=""&gt;&lt;div class="content-block"&gt;&lt;div class="navigation-bar"&gt;&lt;div class="nav-container"&gt;&lt;a href="https://www.redbus.in" class="redbus-logo"&gt;redbus&lt;/a&gt;&lt;div class="nav-menu"&gt;&lt;nav&gt;&lt;ul class="nav-ul"&gt;&lt;li class="nav-li"&gt;&lt;a href="https://www.redbus.in/bus-tickets"&gt;BUS TICKETS&lt;/a&gt;&lt;/li&gt;&lt;li class="nav-li nav-rpool"&gt;&lt;a href="/rpool"&gt;rPool&lt;/a&gt;&lt;/li&gt;&lt;li class="nav-li"&gt;&lt;a href="/bushire"&gt;BUS HIRE&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;/div&gt;&lt;/div&gt;&lt;script type="application/ld+json"&gt;[{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.redbus.in/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.redbus.in/r-pool/","name":"rPool"}}]}]&lt;/script&gt;&lt;/div&gt;&lt;div class="banner-block"&gt;&lt;div class="banner-bg-img"&gt;&lt;div title="rpool-banner" class="banner-inner-container" style="background-color:#d84f57"&gt;&lt;div style="display:flex;background-color:white;border-radius:5px"&gt;&lt;div style="flex:1;border-right:1px #d8d8d8 solid;padding-bottom:1em;padding-top:3em"&gt;&lt;div class="intraCitySubHeading"&gt;Commuting within the City?&lt;/div&gt;&lt;img src="https://st.redbus.in/Images/rpools/rPoolIntracity.svg"/&gt;&lt;/div&gt;&lt;div style="flex:1;padding-bottom:1em"&gt;&lt;div class="outstationSubHeading1"&gt;Introducing Outstation&lt;/div&gt;&lt;div class="intraCitySubHeading"&gt;Travelling out of town?&lt;/div&gt;&lt;img src="https://st.redbus.in/Images/rpools/rPoolOutstation.svg"/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="banner-inner"&gt;&lt;div style="flex:7"&gt;&lt;div style="display:inline-flex"&gt;&lt;div class="banner-heading"&gt;Share your rides on rPool, &lt;/div&gt;&lt;div class="banner-sub-heading"&gt;Bikepool &amp;amp; Carpool for Professionals&lt;/div&gt;&lt;/div&gt;&lt;div class="banner-sub-note" style="margin-top:0.5em"&gt;Intra-City services currently live in BANGALORE, HYDERABAD, PUNE, NEW DELHI – NCR and CHENNAI&lt;/div&gt;&lt;div class="banner-sub-note"&gt;Outstation services currently live across India&lt;/div&gt;&lt;/div&gt;&lt;div class="download-button"&gt;&lt;div&gt;&lt;a href="https://play.google.com/store/apps/details?id=in.redbus.android.rpool" rel="noopener" target="_blank"&gt;&lt;img class="banner-download-button" alt="play store link" src="/r-pool/images/googleplay.svg"/&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style="margin-top:0.5em"&gt;&lt;a href="https://apps.apple.com/in/app/rpool/id1548438985" rel="noopener" target="_blank"&gt;&lt;img class="banner-download-button" alt="app store link" src="/r-pool/images/ic_appstore.svg"/&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="color:white;background-color:#3e3e52;font-weight:bold;font-size:14px;padding:1.5em 7em"&gt;&lt;div style="display:inline-flex;width:100%"&gt;&lt;div class="toolbar"&gt;&lt;a href="#howItWorks"&gt;How it works&lt;/a&gt;&lt;/div&gt;&lt;div class="toolbar"&gt;&lt;a href="#aboutRpool"&gt;What is rPool&lt;/a&gt;&lt;/div&gt;&lt;div class="toolbar"&gt;&lt;a href="#corporate"&gt;Corporate+&lt;/a&gt;&lt;/div&gt;&lt;div class="toolbar"&gt;&lt;a href="#rwa"&gt;rPool for RWAs&lt;/a&gt;&lt;/div&gt;&lt;div class="toolbar"&gt;&lt;a href="#whyRpool"&gt;Why rPool&lt;/a&gt;&lt;/div&gt;&lt;div class="toolbar"&gt;&lt;a href="#reviews"&gt;Customer Review&lt;/a&gt;&lt;/div&gt;&lt;div class="toolbar"&gt;&lt;a href="#faqs"&gt;FAQs&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id="howItWorks"&gt;&lt;div class="how-it-works-block"&gt;&lt;div class="how-it-works-container" title="How Rpool Works" style="background-image:url(https://s2.rdbuz.com/rbpool/how_it_works/screens/bc_img_find_active.png )"&gt;&lt;h2 class="block-heading"&gt;How it works&lt;/h2&gt;&lt;div class="ride-type-switch"&gt;&lt;span class="ride-type-active"&gt;Find Ride&lt;/span&gt;&lt;span class="" style="float:right"&gt;Offer Ride&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div class="tab-selector"&gt;&lt;div class="rideselect selectedTab"&gt;&lt;div class="numberCircle selection-tab-num-active"&gt;1&lt;/div&gt;&lt;div class="tab-text  selection-tab-text-active"&gt;&lt;span class="up_txt "&gt;&lt;b&gt;Activate&lt;/b&gt; account.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="rideselect"&gt;&lt;div class="numberCircle"&gt;2&lt;/div&gt;&lt;div class="tab-text"&gt;&lt;span class="up_txt "&gt;&lt;b&gt;Request&lt;/b&gt; a ride.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="rideselect"&gt;&lt;div class="numberCircle"&gt;3&lt;/div&gt;&lt;div class="tab-text"&gt;&lt;span class="up_txt "&gt;&lt;b&gt;Choose&lt;/b&gt; from ride.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="rideselect"&gt;&lt;div class="numberCircle"&gt;4&lt;/div&gt;&lt;div class="tab-text"&gt;&lt;span class="up_txt "&gt;&lt;b&gt;Pay&lt;/b&gt; using points.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div class="tab-content"&gt;&lt;div class="upper-tab"&gt;&lt;div&gt;&lt;ul class="tab-selector-ul"&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Open / Download redbus App&lt;/span&gt;&lt;/li&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Go to rPool tab and activate your account&lt;/span&gt;&lt;/li&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Verify your account by your official mail ID&lt;/span&gt;&lt;/li&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Use this account to find / offer ride&lt;/span&gt;&lt;/li&gt; &lt;/ul&gt;&lt;/div&gt;&lt;div title='ride rewards'  style="background:#fff url(https://s2.rdbuz.com/rbpool//how_it_works/img_rewards.svg) 0 0 no-repeat;" class="tab-selector-offer"&gt;&lt;div class="dashed_brdr"&gt;&lt;b&gt;50% off&lt;/b&gt; on first 5 Rides upto Rs. 25/-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="overflow:hidden;height:0"&gt;&lt;div class="tab-content"&gt;&lt;div class="upper-tab"&gt;&lt;div&gt;&lt;ul class="tab-selector-ul"&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Tell us your start point and destination&lt;/span&gt;&lt;/li&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Choose no. of seats, date and time&lt;/span&gt;&lt;/li&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Schedule repeat rides for easy use&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div title='recurring ride' style="background:#fff url(https://s2.rdbuz.com/rbpool//how_it_works/img_recurring.svg) 0 0 no-repeat;" class="tab-selector-offer"&gt;&lt;div class="dashed_brdr"&gt;Bikepool or Carpool easier by setting &lt;b&gt;recurring rides&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="overflow:hidden;height:0"&gt;&lt;div class="tab-content"&gt;&lt;div class="upper-tab"&gt;&lt;div&gt;&lt;ul class="tab-selector-ul"&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Choose from a list of verified bike or car owners to pool with&lt;/span&gt;&lt;/li&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Contact your rider without sharing number&lt;/span&gt;&lt;/li&gt;&lt;li class="fl w-50 upper-tab-li"&gt;&lt;span class="circle fl"&gt;&lt;/span&gt;&lt;span class="point_list fl"&gt;Track you... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220401 17:27:52.831" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220401 17:27:52.418" endtime="20220401 17:27:52.831"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220401 17:27:52.831" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220401 17:27:52.831" endtime="20220401 17:27:52.831"/>
+</kw>
+<status status="PASS" starttime="20220401 17:27:52.418" endtime="20220401 17:27:52.831"/>
+</iter>
+<status status="PASS" starttime="20220401 17:27:50.650" endtime="20220401 17:27:52.831"/>
+</for>
+<status status="PASS" starttime="20220401 17:27:50.581" endtime="20220401 17:27:52.831"/>
+</kw>
+<status status="PASS" starttime="20220401 17:27:42.838" endtime="20220401 17:27:52.831"/>
+</test>
+<status status="PASS" starttime="20220401 17:27:42.523" endtime="20220401 17:27:52.841"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

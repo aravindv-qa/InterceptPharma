@@ -1,0 +1,1736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220405 15:17:13.779" rpa="false" schemaversion="2">
+<suite id="s1" name="NSPharma" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\NSPharma.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220405 15:17:14.055" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220405 15:17:14.055" endtime="20220405 15:17:14.055"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220405 15:17:14.055" level="INFO">
+</msg>
+<msg timestamp="20220405 15:17:14.055" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220405 15:17:14.678" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220405 15:17:14.678" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220405 15:17:15.261" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220405 15:17:17.677" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220405 15:17:17.677" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220405 15:17:17.677" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220405 15:17:17.677" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220405 15:17:14.055" endtime="20220405 15:17:17.677"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220405 15:17:17.677" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002129B2D5D90&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:17.677" endtime="20220405 15:17:17.677"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220405 15:17:17.677" endtime="20220405 15:17:17.677"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220405 15:17:17.677" endtime="20220405 15:17:17.677"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220405 15:17:17.677" endtime="20220405 15:17:17.677"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220405 15:17:17.677" endtime="20220405 15:17:17.677"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220405 15:17:17.677" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220405 15:17:17.677" endtime="20220405 15:17:18.949"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220405 15:17:18.949" endtime="20220405 15:17:19.061"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220405 15:17:19.061" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220405 15:17:19.061" endtime="20220405 15:17:27.944"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220405 15:17:28.559" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220405 15:17:28.559" level="INFO">c:\users\aravind.v\pycharmprojects\automationproject\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py:1315: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  warnings.warn("name used for saved screenshot does not match file "</msg>
+<status status="PASS" starttime="20220405 15:17:27.944" endtime="20220405 15:17:28.559"/>
+</kw>
+<status status="PASS" starttime="20220405 15:17:14.047" endtime="20220405 15:17:28.559"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220405 15:17:28.559" endtime="20220405 15:17:28.709"/>
+</kw>
+<kw name="Get All links in homepage and Validate it" library="LoginPageNSP">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_footerNav1}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_footerNav1}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220405 15:17:28.726" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="f45c7037c9964c3942047a7c691b1e79", element="8d0028ea-9681-4b92-b70b-98dd57a6ca2c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220405 15:17:28.709" endtime="20220405 15:17:28.726"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220405 15:17:28.808" level="INFO">${href_list} = ['https://www.nspharma.com/who-we-are', 'https://www.nspharma.com/our-team', 'https://www.nspharma.com/pipeline', 'https://www.nspharma.com/partnership', 'https://www.nspharma.com/contact', 'https://w...</msg>
+<status status="PASS" starttime="20220405 15:17:28.726" endtime="20220405 15:17:28.808"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220405 15:17:28.808" level="INFO">['https://www.nspharma.com/who-we-are', 'https://www.nspharma.com/our-team', 'https://www.nspharma.com/pipeline', 'https://www.nspharma.com/partnership', 'https://www.nspharma.com/contact', 'https://www.nspharma.com/careers']</msg>
+<status status="PASS" starttime="20220405 15:17:28.808" endtime="20220405 15:17:28.808"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220405 15:17:28.808" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220405 15:17:28.808" endtime="20220405 15:17:28.808"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.nspharma.com/who-we-are</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220405 15:17:30.828" level="INFO">GET Request : url=https://www.nspharma.com/who-we-are 
+ path_url=/who-we-are 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220405 15:17:30.828" level="INFO">GET Response : url=https://www.nspharma.com/who-we-are 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.12.2', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Date': 'Tue, 05 Apr 2022 09:47:30 GMT', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6Ik5MaDN3eUQ0SmRtVmx5VFllM1g3VFE9PSIsInZhbHVlIjoibVJFMlYwSEFmb08rSWU1aUp6U25yWFJRdkplc3ZxQXUySFRZUHhRN0JBR0p2eHlvSlhBd3RkbXFaZEJrc2tWRG5WektsYWtURkU1MFJucGRCNFNEeGdQdWN5QjNLWkRUYTByejFkZFlaVGdiQkI4cnNNUGxTUWhrckpWMVhzWFUiLCJtYWMiOiJmOWE4YWU1NTUzMjkwMTM4MmYzZDExZmJjZTBmZDNjNjhmMjZjMTI3MWQ4OWY0YmM2NjMyY2RkYmZmMGVjMjYxIn0%3D; expires=Tue, 05-Apr-2022 11:47:30 GMT; Max-Age=7200; path=/; samesite=lax, nspharma_corporate_site_session=eyJpdiI6InFBZWx6V0tzbEx0Z0ZHYWg2bktPL1E9PSIsInZhbHVlIjoiMWtzWWpxYlZIaGZGanExMFFxQWxVQXpqR3k4SkRmZkFmcW85SWZyZjNYbURsNGtINGtqRDRyNkFMSlhCckRCa21GR3RlUG10TjFCT2ZtWDg1ZTdZZWNwUDZ1ZU0vcnRwV3YxcTVYZU1tdU81S2JINllkOUROZnlubVBhR0k1ZWEiLCJtYWMiOiI2MzI2NDdlYjgzYzU5OTNjMDlmNTVlNDZjNzY4MzkzZjk4ODFkODY2M2VjZGJiYzdiM2IzYTczYmM5YWUyNDk1In0%3D; expires=Tue, 05-Apr-2022 11:47:30 GMT; Max-Age=7200; path=/; httponly; samesite=lax'} 
+ body=&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Who we Are - NS Pharma&lt;/title&gt;
+    &lt;!-- Google Tag Manager --&gt;
+    &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NKC8WRV');&lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+    
+    &lt;meta name="description" content='NS Pharma is dedicated to improving patient outcomes and raising the bar in the fight against DMD and other rare diseases.'&gt;
+    &lt;link rel="canonical" href=''/&gt;
+    &lt;meta property="og:title" content='Who we Are - NS Pharma' /&gt;
+    &lt;meta property="og:description" content='NS Pharma is dedicated to improving patient outcomes and raising the bar in the fight against DMD and other rare diseases.' /&gt;
+    
+    &lt;link rel="shortcut icon" href="https://www.nspharma.com/img/favicon.ico"&gt;
+    &lt;link rel="stylesheet" media="screen" href=/css/app.css&gt;
+    &lt;meta name="csrf-token" content="wTZx1sj4tbwDexgsmL7EaazJKdsBYoUmokwuDGYf"&gt;
+    
+&lt;/head&gt;
+&lt;body class='who-we-are'&gt;
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+    &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC8WRV"
+                      height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+    &lt;!-- End Google Tag Manager (noscript) --&gt;
+    
+    &lt;nav&gt;
+    &lt;div class="mobile-nav-bar"&gt;
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="mobile-menu-btn"&gt;
+            &lt;img src="/img/global/menu-open-btn.svg" class="open-nav"&gt;
+            &lt;img src="/img/global/menu-close-btn.svg" class="close-nav"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-nav-wrapper"&gt;
+        
+
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="nav-wrapper"&gt;
+            
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://twitter.com/NSPharmaInc" title="Twitter" target="_blank"&gt;
+                    &lt;svg id="twitter" xmlns="http://www.w3.org/2000/svg" width="19.73" height="16.184" viewBox="0 0 19.73 16.184"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="twitter-2" data-name="twitter" class="cls-1" d="M-436.3-246.494a8.869,8.869,0,0,0,5.672-1.618,4.444,4.444,0,0,1-3.546-2.821l1.506-.173a4.352,4.352,0,0,1-3-3.982l1.646.4a4.449,4.449,0,0,1-1.07-5.448,11.81,11.81,0,0,0,8.293,4.247,15.781,15.781,0,0,1,.1-1.616,3.985,3.985,0,0,1,6.02-2.771,2.345,2.345,0,0,0,2.719.13,1.126,1.126,0,0,1,.781-.106l-1.239,1.851,1.848-.462a5.332,5.332,0,0,1-.873,1.032c-1.065.684-1.1,1.711-1.251,2.835A11.458,11.458,0,0,1-436.3-246.494Z" transform="translate(436.299 260.899)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+                &lt;a href="https://www.linkedin.com/company/ns-pharma-inc/" title="LinkedIn" target="_blank"&gt;
+                    &lt;svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="16.352" height="16.391" viewBox="0 0 16.352 16.391"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="Path_28" data-name="Path 28" class="cls-1" d="M-123.344-253.182c0,2.207.006,4.413,0,6.619,0,1.133-.359,1.524-1.493,1.528q-6.669.024-13.339,0c-1.1,0-1.505-.424-1.508-1.533q-.015-6.67,0-13.339c0-1.127.373-1.5,1.511-1.5q6.669-.015,13.339,0c1.158,0,1.486.342,1.491,1.505C-123.337-257.662-123.344-255.422-123.344-253.182Zm-9.851-2.075v7.689h2.289c0-.468,0-.865,0-1.261.011-1.069-.01-2.14.051-3.207a1.263,1.263,0,0,1,1.442-1.313c.854.018,1.165.539,1.223,1.292.036.466.055.934.059,1.4.009,1.028,0,2.056,0,3.087h2.315c0-1.778.079-3.485-.019-5.181a2.709,2.709,0,0,0-4.151-2.361,9.424,9.424,0,0,0-.935.694l-.163-.841Zm-1.745,7.705v-7.672h-2.243v7.672Zm.268-10.1a1.418,1.418,0,0,0-1.211-1.474,1.435,1.435,0,0,0-1.541,1.25,1.443,1.443,0,0,0,1.318,1.484A1.417,1.417,0,0,0-134.672-257.648Z" transform="translate(139.694 261.413)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="main-nav"&gt;
+                
+                &lt;a href="/"
+                   class="nav-link "
+                   title="Home"&gt; HOME &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;a href="/who-we-are"
+                   class="nav-link  active "
+                   title="Who We Are"&gt; WHO WE ARE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/our-team"
+                   class="nav-link "
+                   title="Our Team"&gt; OUR TEAM &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/pipeline"
+                   class="nav-link "
+                   title="Pipeline"&gt; PIPELINE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/partnership"
+                   class="nav-link "
+                   title="Partnership"&gt; PARTNERSHIP &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/contact"
+                   class="nav-link "
+                   title="Contact Us"&gt; CONTACT US &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/careers"
+                   class="nav-link "
+                   title="Careers"&gt; CAREERS &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+    
+    &lt;div class="content-wrapper"&gt;
+            &lt;div class="hero-wrapper who-we-are-hero"&gt;
+        &lt;div class="max-width-wrapper"&gt;
+            &lt;div class="hero-flex-wrapper"&gt;
+                &lt;div class="hero-flex"&gt;
+                    &lt;h1 class="blue spacing"&gt;
+                        OUR FOCUS
+                    &lt;/h1&gt;
+                    &lt;p&gt;
+                        At NS Pharma we believe in the potential of new therapies, such as our exon-skipping technology for DMD, to redefine the way patients and healthcare providers fight rare diseases.
+                    &lt;/p&gt;
+                    &lt;p class="no-padding-bottom"&gt;
+                        We take pride in our drive for future innovation and commitment to &lt;span class="bold-italic teal"&gt;helping patients live healthier, happier lives.&lt;/span&gt;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="hero-flex blank"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;section class="blue-bg our-commitment"&gt;
+        &lt;div class="max-width-wrapper"&gt;
+            &lt;div class="flex-wrapper"&gt;
+                &lt;div class="flex-item icon"&gt;
+                    &lt;div class="img-wrapper"&gt;
+                        &lt;img class="desktop" src="/img/who-we-are/icon-microscope.png" title="Microscope Icon" alt="Microscope Icon"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="flex-item"&gt;
+                    &lt;h1 class="white spacing"&gt;
+                        OUR COMMITMENT
+                    &lt;/h1&gt;
+                    &lt;p class="subheader"&gt;
+                        Dedicated to improving patient outcomes&lt;img class="mobile" src="/img/who-we-are/icon-microscope.png" title="Microscope Icon" alt="Microscope Icon"&gt;
+                    &lt;/p&gt;
+                    &lt;p class="padding-bottom"&gt;
+                        We recognize the urgent unmet need of those affected by rare diseases like DMD and are committed to fulfilling the promise of exon-skipping technology. We aim to offer healthier futures to more patients by:
+                    &lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            Conducting rigorous clinical research to continue validating patient outcomes with comprehensive endpoints
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            Developing treatments that offer tangible value to those living with DMD and other rare diseases
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            Fostering a culture of scientific innovation, integrity, and continuous improvement
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="white-bg"&gt;
+        &lt;div class="max-width-wrapper"&gt;
+            &lt;h1 class="blue spacing"&gt;
+                OUR PRODUCTS
+            &lt;/h1&gt;
+            &lt;div class="padding-bottom"&gt;
+                &lt;p class="black padding-bottom"&gt;
+                    Our focus is on researching and developing life-changing medicines for people affected by rare diseases in several therapeutic areas, including hematologic malignancies and intractable/orphan diseases.
+                &lt;/p&gt;
+                &lt;p class="black padding-bottom"&gt;
+                    NS Pharma, Inc. has been developing products to change the way patients and doctors ﬁght rare diseases. VILTEPSO&amp;reg; (viltolarsen), an exon-skipping therapy designed for patients with Duchenne muscular dystrophy (DMD), was granted accelerated approval by the FDA. There is an ongoing study to conﬁrm the clinical beneﬁt of VILTEPSO.
+                &lt;/p&gt;
+            &lt;/div&gt;... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220405 15:17:30.828" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:28.808" endtime="20220405 15:17:30.828"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220405 15:17:30.828" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:30.828" endtime="20220405 15:17:30.828"/>
+</kw>
+<status status="PASS" starttime="20220405 15:17:28.808" endtime="20220405 15:17:30.828"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.nspharma.com/our-team</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220405 15:17:32.362" level="INFO">GET Request : url=https://www.nspharma.com/our-team 
+ path_url=/our-team 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220405 15:17:32.362" level="INFO">GET Response : url=https://www.nspharma.com/our-team 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.12.2', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Date': 'Tue, 05 Apr 2022 09:47:31 GMT', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6Im1WeUU2emI5cWpMWWtGTjlyWW9SUXc9PSIsInZhbHVlIjoidXowQWRweGtqRVhQRUlRVU1tQ053cVo4bWw4ZTY3Qzh3bGtmS1loTVVaR0R2Zkg0Tks0VFZjanhzdmhEZDJiQVFOMm5uSXA2T3VEaHliUDR1ZnBrVnlJUXF3ZlpJeG1BMmdnN0w4THA4RURNRmxkZnVPK0JVNkVLR0gxMno5dkIiLCJtYWMiOiIxOGI4YjY4ZjkwMGI0NzBmZjkyMDFiMzg0MWI3NGIyNjliYWE1ZGYyZTljOTY2NWFmNTk3NzkyODkxZGNlYTI1In0%3D; expires=Tue, 05-Apr-2022 11:47:31 GMT; Max-Age=7200; path=/; samesite=lax, nspharma_corporate_site_session=eyJpdiI6InBKMm5LYWpmU01RM3ZtOERXNHVML0E9PSIsInZhbHVlIjoicDBOamRpdWgyUnJBclEyVk1RYk53QU1MdkNIWXlWQ2ovcWZZSXhmNWVlYzdqRnhmYUllUk1oSDIrSjh3U3JrZE12OW9LTXdDNjNQVFFaVGVGclRlL2hkZG5Hb1RzNDRwTk53TVlubHE2bXJ2ajF1aFRYeDdaS2U5M2NqdGdmNkEiLCJtYWMiOiIzOTJiY2YxZGE4Yzc2YmFhMzFhYWM5NDcxYzBmYTAwZTY0ZDBhMTliZjUyY2E5ZWEwMmNlZjk1YzE2MWNhMjkzIn0%3D; expires=Tue, 05-Apr-2022 11:47:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax'} 
+ body=&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Leadership Team - NS Pharma&lt;/title&gt;
+    &lt;!-- Google Tag Manager --&gt;
+    &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NKC8WRV');&lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+    
+    &lt;meta name="description" content='Meet the leadership team behind NS Pharma. With Years of combined experience in the pharmaceutical therapeutics industry.'&gt;
+    &lt;link rel="canonical" href=''/&gt;
+    &lt;meta property="og:title" content='Leadership Team - NS Pharma' /&gt;
+    &lt;meta property="og:description" content='Meet the leadership team behind NS Pharma. With Years of combined experience in the pharmaceutical therapeutics industry.' /&gt;
+    
+    &lt;link rel="shortcut icon" href="https://www.nspharma.com/img/favicon.ico"&gt;
+    &lt;link rel="stylesheet" media="screen" href=/css/app.css&gt;
+    &lt;meta name="csrf-token" content="nX2NXYkzhwQZZwe0BiApWhuNsbA6xtuGSfvEaGuP"&gt;
+    
+&lt;/head&gt;
+&lt;body class='our-team'&gt;
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+    &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC8WRV"
+                      height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+    &lt;!-- End Google Tag Manager (noscript) --&gt;
+    
+    &lt;nav&gt;
+    &lt;div class="mobile-nav-bar"&gt;
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="mobile-menu-btn"&gt;
+            &lt;img src="/img/global/menu-open-btn.svg" class="open-nav"&gt;
+            &lt;img src="/img/global/menu-close-btn.svg" class="close-nav"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-nav-wrapper"&gt;
+        
+
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="nav-wrapper"&gt;
+            
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://twitter.com/NSPharmaInc" title="Twitter" target="_blank"&gt;
+                    &lt;svg id="twitter" xmlns="http://www.w3.org/2000/svg" width="19.73" height="16.184" viewBox="0 0 19.73 16.184"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="twitter-2" data-name="twitter" class="cls-1" d="M-436.3-246.494a8.869,8.869,0,0,0,5.672-1.618,4.444,4.444,0,0,1-3.546-2.821l1.506-.173a4.352,4.352,0,0,1-3-3.982l1.646.4a4.449,4.449,0,0,1-1.07-5.448,11.81,11.81,0,0,0,8.293,4.247,15.781,15.781,0,0,1,.1-1.616,3.985,3.985,0,0,1,6.02-2.771,2.345,2.345,0,0,0,2.719.13,1.126,1.126,0,0,1,.781-.106l-1.239,1.851,1.848-.462a5.332,5.332,0,0,1-.873,1.032c-1.065.684-1.1,1.711-1.251,2.835A11.458,11.458,0,0,1-436.3-246.494Z" transform="translate(436.299 260.899)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+                &lt;a href="https://www.linkedin.com/company/ns-pharma-inc/" title="LinkedIn" target="_blank"&gt;
+                    &lt;svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="16.352" height="16.391" viewBox="0 0 16.352 16.391"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="Path_28" data-name="Path 28" class="cls-1" d="M-123.344-253.182c0,2.207.006,4.413,0,6.619,0,1.133-.359,1.524-1.493,1.528q-6.669.024-13.339,0c-1.1,0-1.505-.424-1.508-1.533q-.015-6.67,0-13.339c0-1.127.373-1.5,1.511-1.5q6.669-.015,13.339,0c1.158,0,1.486.342,1.491,1.505C-123.337-257.662-123.344-255.422-123.344-253.182Zm-9.851-2.075v7.689h2.289c0-.468,0-.865,0-1.261.011-1.069-.01-2.14.051-3.207a1.263,1.263,0,0,1,1.442-1.313c.854.018,1.165.539,1.223,1.292.036.466.055.934.059,1.4.009,1.028,0,2.056,0,3.087h2.315c0-1.778.079-3.485-.019-5.181a2.709,2.709,0,0,0-4.151-2.361,9.424,9.424,0,0,0-.935.694l-.163-.841Zm-1.745,7.705v-7.672h-2.243v7.672Zm.268-10.1a1.418,1.418,0,0,0-1.211-1.474,1.435,1.435,0,0,0-1.541,1.25,1.443,1.443,0,0,0,1.318,1.484A1.417,1.417,0,0,0-134.672-257.648Z" transform="translate(139.694 261.413)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="main-nav"&gt;
+                
+                &lt;a href="/"
+                   class="nav-link "
+                   title="Home"&gt; HOME &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;a href="/who-we-are"
+                   class="nav-link "
+                   title="Who We Are"&gt; WHO WE ARE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/our-team"
+                   class="nav-link  active "
+                   title="Our Team"&gt; OUR TEAM &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/pipeline"
+                   class="nav-link "
+                   title="Pipeline"&gt; PIPELINE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/partnership"
+                   class="nav-link "
+                   title="Partnership"&gt; PARTNERSHIP &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/contact"
+                   class="nav-link "
+                   title="Contact Us"&gt; CONTACT US &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/careers"
+                   class="nav-link "
+                   title="Careers"&gt; CAREERS &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+    
+    &lt;div class="content-wrapper"&gt;
+            &lt;div class="max-width-wrapper"&gt;
+        
+        &lt;h1 class="blue spacing"&gt;
+            OUR TEAM
+        &lt;/h1&gt;
+        
+        &lt;div class="teams-flex-wrapper"&gt;
+            &lt;div class="teams-flex-item"&gt;
+                &lt;div class="img-wrapper"&gt;
+                    &lt;img src="/img/our-team/icon1.svg" title=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text-wrapper"&gt;
+                    &lt;p class="lg-font bold teal"&gt;
+                        Tsugio Tanaka, MSc
+                    &lt;/p&gt;
+                    &lt;p class="bold"&gt;
+                        President
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="teams-flex-item"&gt;
+                &lt;div class="img-wrapper"&gt;
+                    &lt;img src="/img/our-team/icon2.svg" title=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text-wrapper"&gt;
+                    &lt;p class="lg-font bold teal"&gt;
+                        Takeshi Seita
+                    &lt;/p&gt;
+                    &lt;p class="bold"&gt;
+                        Vice President
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Research &amp; Development
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="teams-flex-wrapper"&gt;
+            &lt;div class="teams-flex-item"&gt;
+                &lt;div class="img-wrapper"&gt;
+                    &lt;img src="/img/our-team/icon3.svg" title=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text-wrapper"&gt;
+                    &lt;p class="lg-font bold teal"&gt;
+                        Leslie Magnus, MD
+                    &lt;/p&gt;
+                    &lt;p class="bold"&gt;
+                        Vice President
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Medical Affairs
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="teams-flex-item"&gt;
+                &lt;div class="img-wrapper"&gt;
+                    &lt;img src="/img/our-team/icon4.svg" title=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text-wrapper"&gt;
+                    &lt;p class="lg-font bold teal"&gt;
+                        Gardner Gendron
+                    &lt;/p&gt;
+                    &lt;p class="bold"&gt;
+                        Vice President
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Commercial
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="teams-flex-wrapper"&gt;
+            &lt;div class="teams-flex-item"&gt;
+                &lt;div class="img-wrapper"&gt;
+                    &lt;img src="/img/our-team/icon5.svg" title=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text-wrapper"&gt;
+                    &lt;p class="lg-font bold teal"&gt;
+                        Eita Kitayama, MSc
+                    &lt;/p&gt;
+                    &lt;p class="bold"&gt;
+                        Vice President
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Business Development
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="teams-flex-item"&gt;
+                &lt;div class="img-wrapper"&gt;
+                    &lt;img src="/img/our-team/icon6.svg" title=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text-wrapper"&gt;
+                    &lt;p class="lg-font bold teal"&gt;
+                        Ora-Anne Jarvis, JD, MBA
+                    &lt;/p&gt;
+                    &lt;p class="bold"&gt;
+                        Legal Counsel
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;footer&gt;
+    &lt;div class="flex-footnote-wrapper"&gt;
+        &lt;di... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220405 15:17:32.362" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:30.828" endtime="20220405 15:17:32.362"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220405 15:17:32.362" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:32.362" endtime="20220405 15:17:32.362"/>
+</kw>
+<status status="PASS" starttime="20220405 15:17:30.828" endtime="20220405 15:17:32.362"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.nspharma.com/pipeline</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220405 15:17:33.894" level="INFO">GET Request : url=https://www.nspharma.com/pipeline 
+ path_url=/pipeline 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220405 15:17:33.894" level="INFO">GET Response : url=https://www.nspharma.com/pipeline 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.12.2', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Date': 'Tue, 05 Apr 2022 09:47:33 GMT', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6Ii9YeVZ4OTNWRnQ0aDcvQnFkZXFIMkE9PSIsInZhbHVlIjoiMTVDeGhQSUNibHZHUFVGUThqMHRldm1zdG0vWGwzZ3ljU1ExWVRRd2JEK2xOWXhuREFuNVFhenNvQXVpSnRrS3Z1bTBXcUlOU0JySmttbFlCQThQa1hiZ29MODQ4cU1kVlVqb0wzYVNTdTNobW5BMUFRZ2l0aWdudEhHdDF2RTEiLCJtYWMiOiJhYTBhOWFiN2Y4N2ZkNzZlZGQwMmEwMWE2OGJhN2IxODViNDVjZTkwNmZjZGRkNzhlMjA2ZTM4NmNiN2EzNDE4In0%3D; expires=Tue, 05-Apr-2022 11:47:33 GMT; Max-Age=7200; path=/; samesite=lax, nspharma_corporate_site_session=eyJpdiI6IjZPTlp5VDh6SGp3cjRBMTdTbXBFbWc9PSIsInZhbHVlIjoiZjJFMExIWWYzZXFtb1BKZ3BrL2lBMk9nSmhidkEzemxEN3dja292T1J1RmVtcXYvdE1nUHB5Tkh5aytIZmt3TXpmY01qSkt2WmtFZ0VLQlZxMHhUay84Nmh3UjlJYkI0MjNCWHQvbUhxWWJXYWtYUnI4bEtFWmF1NEJ0clM3aGQiLCJtYWMiOiJmZDI5ZWQyODc5Y2VhYWUxMDNhNTA0OWZmOWNmMzNjMGY5Nzg0YWI3OWRmOWZiNTQzN2M3NWM4MTk2NzYwNWQyIn0%3D; expires=Tue, 05-Apr-2022 11:47:33 GMT; Max-Age=7200; path=/; httponly; samesite=lax'} 
+ body=&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Pipeline Developments - NS Pharma&lt;/title&gt;
+    &lt;!-- Google Tag Manager --&gt;
+    &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NKC8WRV');&lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+    
+    &lt;meta name="description" content='NS Pharma inc has been focused on developing the NS-018 compound for the treatment of myelofibrosis and NS-065/NCNP-01 for Duchenne muscular dystrophy.'&gt;
+    &lt;link rel="canonical" href=''/&gt;
+    &lt;meta property="og:title" content='Pipeline Developments - NS Pharma' /&gt;
+    &lt;meta property="og:description" content='NS Pharma inc has been focused on developing the NS-018 compound for the treatment of myelofibrosis and NS-065/NCNP-01 for Duchenne muscular dystrophy.' /&gt;
+    
+    &lt;link rel="shortcut icon" href="https://www.nspharma.com/img/favicon.ico"&gt;
+    &lt;link rel="stylesheet" media="screen" href=/css/app.css&gt;
+    &lt;meta name="csrf-token" content="aPx5l4fR1YQptTWZj2ZxMr81acc8q8HpM0nQcYXJ"&gt;
+    
+&lt;/head&gt;
+&lt;body class='pipeline'&gt;
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+    &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC8WRV"
+                      height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+    &lt;!-- End Google Tag Manager (noscript) --&gt;
+    
+    &lt;nav&gt;
+    &lt;div class="mobile-nav-bar"&gt;
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="mobile-menu-btn"&gt;
+            &lt;img src="/img/global/menu-open-btn.svg" class="open-nav"&gt;
+            &lt;img src="/img/global/menu-close-btn.svg" class="close-nav"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-nav-wrapper"&gt;
+        
+
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="nav-wrapper"&gt;
+            
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://twitter.com/NSPharmaInc" title="Twitter" target="_blank"&gt;
+                    &lt;svg id="twitter" xmlns="http://www.w3.org/2000/svg" width="19.73" height="16.184" viewBox="0 0 19.73 16.184"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="twitter-2" data-name="twitter" class="cls-1" d="M-436.3-246.494a8.869,8.869,0,0,0,5.672-1.618,4.444,4.444,0,0,1-3.546-2.821l1.506-.173a4.352,4.352,0,0,1-3-3.982l1.646.4a4.449,4.449,0,0,1-1.07-5.448,11.81,11.81,0,0,0,8.293,4.247,15.781,15.781,0,0,1,.1-1.616,3.985,3.985,0,0,1,6.02-2.771,2.345,2.345,0,0,0,2.719.13,1.126,1.126,0,0,1,.781-.106l-1.239,1.851,1.848-.462a5.332,5.332,0,0,1-.873,1.032c-1.065.684-1.1,1.711-1.251,2.835A11.458,11.458,0,0,1-436.3-246.494Z" transform="translate(436.299 260.899)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+                &lt;a href="https://www.linkedin.com/company/ns-pharma-inc/" title="LinkedIn" target="_blank"&gt;
+                    &lt;svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="16.352" height="16.391" viewBox="0 0 16.352 16.391"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="Path_28" data-name="Path 28" class="cls-1" d="M-123.344-253.182c0,2.207.006,4.413,0,6.619,0,1.133-.359,1.524-1.493,1.528q-6.669.024-13.339,0c-1.1,0-1.505-.424-1.508-1.533q-.015-6.67,0-13.339c0-1.127.373-1.5,1.511-1.5q6.669-.015,13.339,0c1.158,0,1.486.342,1.491,1.505C-123.337-257.662-123.344-255.422-123.344-253.182Zm-9.851-2.075v7.689h2.289c0-.468,0-.865,0-1.261.011-1.069-.01-2.14.051-3.207a1.263,1.263,0,0,1,1.442-1.313c.854.018,1.165.539,1.223,1.292.036.466.055.934.059,1.4.009,1.028,0,2.056,0,3.087h2.315c0-1.778.079-3.485-.019-5.181a2.709,2.709,0,0,0-4.151-2.361,9.424,9.424,0,0,0-.935.694l-.163-.841Zm-1.745,7.705v-7.672h-2.243v7.672Zm.268-10.1a1.418,1.418,0,0,0-1.211-1.474,1.435,1.435,0,0,0-1.541,1.25,1.443,1.443,0,0,0,1.318,1.484A1.417,1.417,0,0,0-134.672-257.648Z" transform="translate(139.694 261.413)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="main-nav"&gt;
+                
+                &lt;a href="/"
+                   class="nav-link "
+                   title="Home"&gt; HOME &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;a href="/who-we-are"
+                   class="nav-link "
+                   title="Who We Are"&gt; WHO WE ARE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/our-team"
+                   class="nav-link "
+                   title="Our Team"&gt; OUR TEAM &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/pipeline"
+                   class="nav-link  active "
+                   title="Pipeline"&gt; PIPELINE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/partnership"
+                   class="nav-link "
+                   title="Partnership"&gt; PARTNERSHIP &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/contact"
+                   class="nav-link "
+                   title="Contact Us"&gt; CONTACT US &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/careers"
+                   class="nav-link "
+                   title="Careers"&gt; CAREERS &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+    
+    &lt;div class="content-wrapper"&gt;
+            &lt;section&gt;
+        &lt;div class="max-width-wrapper"&gt;
+            &lt;h1 class="blue padding-bottom spacing"&gt;
+                PIPELINE
+            &lt;/h1&gt;
+            &lt;p class="max-width"&gt;
+                Nippon Shinyaku Co., Ltd. has been developing compounds in several therapeutic fields, including hematologic malignancies and intractable/orphan diseases. &lt;span class="no-break"&gt;NS Pharma, Inc.&lt;/span&gt; has been developing &lt;span class="no-break"&gt;NS-018&lt;/span&gt; &lt;span class="no-break"&gt;(for myelofibrosis)&lt;/span&gt; and &lt;span class="no-break"&gt;NS-065/NCNP-01&lt;/span&gt; (for Duchenne muscular dystrophy) on behalf of Nippon Shinyaku Co., Ltd.
+            &lt;/p&gt;
+            &lt;div class="flex-wrapper"&gt;
+                &lt;div class="flex-item"&gt;
+                    &lt;p class="bold blue"&gt;
+                        STAGE
+                    &lt;/p&gt;
+                    &lt;p class="bold blue"&gt;
+                        CODE
+                    &lt;/p&gt;
+                    &lt;p class="bold blue"&gt;
+                        FIELD
+                    &lt;/p&gt;
+                    &lt;p class="bold blue"&gt;
+                        INDICATION
+                    &lt;/p&gt;
+                    &lt;p class="bold blue"&gt;
+                        MECHANISM
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="flex-item bordered"&gt;
+                    &lt;p&gt;
+                        US: Phase II
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        NS-018
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Hematologic &lt;br&gt;malignancies
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Myelofibrosis
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Selective &lt;span class="italic"&gt;JAK2&lt;/span&gt; &lt;br&gt;inhibition
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="flex-item mobile"&gt;
+                    &lt;p class="bold blue"&gt;
+                        STAGE
+                    &lt;/p&gt;
+                    &lt;p class="bold blue"&gt;
+                        CODE
+                    &lt;/p&gt;
+                    &lt;p class="bold blue"&gt;
+                        FIELD
+                    &lt;/p&gt;
+                    &lt;p class="bold blue"&gt;
+                        INDICATION
+                    &lt;/p&gt;
+                    &lt;p class="bold blue"&gt;
+                        MECHANISM
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="flex-item bordered"&gt;
+                    &lt;p&gt;
+                        US: Phase III
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        NS 065/NCNP-01 &lt;br&gt;(viltolarsen)*
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Neurology
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Duchenne muscular&lt;br&gt;dystrophy
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Exon 53 &lt;br&gt;skipping
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+            &lt;div class="footnote-wrapper"&gt;
+                &lt;p&gt;
+                    *Viltepso (viltolarsen) injection was approved in the United States on August 12, 2020 (accelerated approval); approved in Japan (conditional approval).&lt;br&gt;
+                    NCNP=National Center of Neurology and Psychiatry.
+
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="flex-wrapper" id="logo-btns"&gt;
+                &lt;div class="flex-item"&gt;
+                    &lt;img src="/img/global/Viltepso-logo.svg"&gt;
+                    &lt;div class="button-wrapper" &gt;
+                        &lt;a href="... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220405 15:17:33.894" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:32.362" endtime="20220405 15:17:33.894"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220405 15:17:33.894" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:33.894" endtime="20220405 15:17:33.894"/>
+</kw>
+<status status="PASS" starttime="20220405 15:17:32.362" endtime="20220405 15:17:33.894"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.nspharma.com/partnership</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220405 15:17:35.535" level="INFO">GET Request : url=https://www.nspharma.com/partnership 
+ path_url=/partnership 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220405 15:17:35.535" level="INFO">GET Response : url=https://www.nspharma.com/partnership 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.12.2', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Date': 'Tue, 05 Apr 2022 09:47:35 GMT', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6Ijg2NUhDV3RpMWdjKzJwRG9TblM5c3c9PSIsInZhbHVlIjoiWE9uYWxKNzk3Y2t5bXY5cEd3WXpPZmhmdWcwaGN3Z2tmODZENjd1dUMrSThoa3hrU1cvNzlmUzJNN1g4MHVDckYyRFcyelBLbm5KOFlrdUJDWFN0aFdxK08rbW1kNWVGMkcrNFIrNmZIS1UvbjVYazQ5UEpSU0lKNFFEa2RHRFgiLCJtYWMiOiIyZmU5NTcyZjcyMzEwZmY5MmQ3YWI3ZjkyMWFmZDc0ZjY2N2EwMzIyZWZlMDMzMTZmNTU4MDQxMzYwNjYzY2M4In0%3D; expires=Tue, 05-Apr-2022 11:47:35 GMT; Max-Age=7200; path=/; samesite=lax, nspharma_corporate_site_session=eyJpdiI6ImFWcm1EN0JtWUNwZ1o2UUdEYnlQRGc9PSIsInZhbHVlIjoiakthbmx2ZnBWRUU4YStwdXA0UU53M2ZWdWZldU1WYW00dkFlSmVKVnlMRHlWT0F1ZGMzM0RtWks0WGY3VklQa2ZDUFVURlJYeHBUMEtVK2JhQkI0L0F1b3pSNExsZm1icnQwQXBzNVFmWHNZRW8rYlZ5Z2xiK2pqa3FUSEZMK3QiLCJtYWMiOiJmOWNiZGM4MDM0N2NlMjI0MjEzNDU4ODZlNDc2ZjQ4OGNmNGQ2OTIyZGYzODhlNTNlZTkzNzdhOWZmMGU0Nzk0In0%3D; expires=Tue, 05-Apr-2022 11:47:35 GMT; Max-Age=7200; path=/; httponly; samesite=lax'} 
+ body=&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Partnerships - NS Pharma&lt;/title&gt;
+    &lt;!-- Google Tag Manager --&gt;
+    &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NKC8WRV');&lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+    
+    &lt;meta name="description" content='At NS Pharma we are focused on creating partnerships with others around the world to provide patients with timely access to the drug products they need.'&gt;
+    &lt;link rel="canonical" href=''/&gt;
+    &lt;meta property="og:title" content='Partnerships - NS Pharma' /&gt;
+    &lt;meta property="og:description" content='At NS Pharma we are focused on creating partnerships with others around the world to provide patients with timely access to the drug products they need.' /&gt;
+    
+    &lt;link rel="shortcut icon" href="https://www.nspharma.com/img/favicon.ico"&gt;
+    &lt;link rel="stylesheet" media="screen" href=/css/app.css&gt;
+    &lt;meta name="csrf-token" content="rBP6I8g1TWHiB3xod7XzsCrCAYr5fYjLSRH0zjLJ"&gt;
+    
+&lt;/head&gt;
+&lt;body class='partnership'&gt;
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+    &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC8WRV"
+                      height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+    &lt;!-- End Google Tag Manager (noscript) --&gt;
+    
+    &lt;nav&gt;
+    &lt;div class="mobile-nav-bar"&gt;
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="mobile-menu-btn"&gt;
+            &lt;img src="/img/global/menu-open-btn.svg" class="open-nav"&gt;
+            &lt;img src="/img/global/menu-close-btn.svg" class="close-nav"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-nav-wrapper"&gt;
+        
+
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="nav-wrapper"&gt;
+            
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://twitter.com/NSPharmaInc" title="Twitter" target="_blank"&gt;
+                    &lt;svg id="twitter" xmlns="http://www.w3.org/2000/svg" width="19.73" height="16.184" viewBox="0 0 19.73 16.184"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="twitter-2" data-name="twitter" class="cls-1" d="M-436.3-246.494a8.869,8.869,0,0,0,5.672-1.618,4.444,4.444,0,0,1-3.546-2.821l1.506-.173a4.352,4.352,0,0,1-3-3.982l1.646.4a4.449,4.449,0,0,1-1.07-5.448,11.81,11.81,0,0,0,8.293,4.247,15.781,15.781,0,0,1,.1-1.616,3.985,3.985,0,0,1,6.02-2.771,2.345,2.345,0,0,0,2.719.13,1.126,1.126,0,0,1,.781-.106l-1.239,1.851,1.848-.462a5.332,5.332,0,0,1-.873,1.032c-1.065.684-1.1,1.711-1.251,2.835A11.458,11.458,0,0,1-436.3-246.494Z" transform="translate(436.299 260.899)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+                &lt;a href="https://www.linkedin.com/company/ns-pharma-inc/" title="LinkedIn" target="_blank"&gt;
+                    &lt;svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="16.352" height="16.391" viewBox="0 0 16.352 16.391"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="Path_28" data-name="Path 28" class="cls-1" d="M-123.344-253.182c0,2.207.006,4.413,0,6.619,0,1.133-.359,1.524-1.493,1.528q-6.669.024-13.339,0c-1.1,0-1.505-.424-1.508-1.533q-.015-6.67,0-13.339c0-1.127.373-1.5,1.511-1.5q6.669-.015,13.339,0c1.158,0,1.486.342,1.491,1.505C-123.337-257.662-123.344-255.422-123.344-253.182Zm-9.851-2.075v7.689h2.289c0-.468,0-.865,0-1.261.011-1.069-.01-2.14.051-3.207a1.263,1.263,0,0,1,1.442-1.313c.854.018,1.165.539,1.223,1.292.036.466.055.934.059,1.4.009,1.028,0,2.056,0,3.087h2.315c0-1.778.079-3.485-.019-5.181a2.709,2.709,0,0,0-4.151-2.361,9.424,9.424,0,0,0-.935.694l-.163-.841Zm-1.745,7.705v-7.672h-2.243v7.672Zm.268-10.1a1.418,1.418,0,0,0-1.211-1.474,1.435,1.435,0,0,0-1.541,1.25,1.443,1.443,0,0,0,1.318,1.484A1.417,1.417,0,0,0-134.672-257.648Z" transform="translate(139.694 261.413)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="main-nav"&gt;
+                
+                &lt;a href="/"
+                   class="nav-link "
+                   title="Home"&gt; HOME &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;a href="/who-we-are"
+                   class="nav-link "
+                   title="Who We Are"&gt; WHO WE ARE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/our-team"
+                   class="nav-link "
+                   title="Our Team"&gt; OUR TEAM &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/pipeline"
+                   class="nav-link "
+                   title="Pipeline"&gt; PIPELINE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/partnership"
+                   class="nav-link  active "
+                   title="Partnership"&gt; PARTNERSHIP &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/contact"
+                   class="nav-link "
+                   title="Contact Us"&gt; CONTACT US &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/careers"
+                   class="nav-link "
+                   title="Careers"&gt; CAREERS &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+    
+    &lt;div class="content-wrapper"&gt;
+            &lt;section&gt;
+        &lt;div class="max-width-wrapper"&gt;
+            &lt;h1 class="blue padding-bottom spacing"&gt;
+                PARTNERSHIP
+            &lt;/h1&gt;
+            &lt;p class="padding-bottom"&gt;
+                With a strong belief in the importance of contributing to human health, we at NS Pharma, Inc. are dedicated to the sure and speedy delivery of opportunities to bring drugs to patients in need, not only from the United States to the European Union and Asia, but also from Japan to the United States and the European Union.
+            &lt;/p&gt;
+            &lt;p class="padding-bottom"&gt;
+                For almost a century our parent company, &lt;a href="https://www.nippon-shinyaku.co.jp/english/" title="Nippon Shinyaku Site" target="_blank"&gt;Nippon Shinyaku Co., Ltd.&lt;/a&gt;, has been cultivating comprehensive expertise, wide experience, and extensive know-how toward the development of pharmaceutical drugs, and maintains a strong and robust presence in specific areas of the Japanese market.
+            &lt;/p&gt;
+            &lt;p class="extra-padding-bottom"&gt;
+                We look forward to being a good partner for your future business.
+            &lt;/p&gt;
+            &lt;p class="subheader padding-bottom"&gt;
+                Therapeutic areas of expertise
+            &lt;/p&gt;
+            &lt;p class="padding-bottom"&gt;
+                Nippon Shinyaku’s principal areas of therapeutic contribution are:
+            &lt;/p&gt;
+            &lt;div class="flex-wrapper"&gt;
+                &lt;div class="flex-item"&gt;
+                    &lt;img src="/img/partnership/hematology.png" alt="Hematology icon"&gt;
+                    &lt;p class="bold blue"&gt;
+                        HEMATOLOGY
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="flex-item"&gt;
+                    &lt;img src="/img/partnership/orphan-diseases.png" alt="Orphan Diseases icon"&gt;
+                    &lt;p class="bold blue"&gt;
+                        ORPHAN &lt;br&gt;DISEASES
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="flex-item"&gt;
+                    &lt;img src="/img/partnership/urology.png" alt="Urology icon"&gt;
+                    &lt;p class="bold blue"&gt;
+                        UROLOGY
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="flex-item"&gt;
+                    &lt;img src="/img/partnership/gynecology.png" alt="Gynecology icon"&gt;
+                    &lt;p class="bold blue"&gt;
+                        GYNECOLOGY
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+    &lt;/section&gt;
+    &lt;section class="blue-bg"&gt;
+        &lt;div class="max-width-wrapper"&gt;
+            &lt;h1 class="white padding-bottom spacing"&gt;
+                SEEKING PARTNERS FOR PRODUCTS
+            &lt;/h1&gt;
+            &lt;p class="extra-padding-bottom"&gt;
+                We partner with others around the world to develop and distribute our promising products for patients who need them, especially in areas with less opportunity for drug development.
+            &lt;/p&gt;
+            &lt;p class="subheader extra-padding-bottom"&gt;
+                Contact
+            &lt;/p&gt;
+            &lt;p class="padding-bottom"&gt;
+                Our Global Business Development team is committed to partnering that emphasizes open communication&amp;mdash;particularly with academia, bioventure companies, and industries based in the United States and the European Union. We believe that the best way to develop a win-win partnership to help patients is to get to know each other. We will work hard to establish a sound relationship with you.
+            &lt;/p&gt;
+           ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220405 15:17:35.535" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:33.894" endtime="20220405 15:17:35.535"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220405 15:17:35.535" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:35.535" endtime="20220405 15:17:35.535"/>
+</kw>
+<status status="PASS" starttime="20220405 15:17:33.894" endtime="20220405 15:17:35.535"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.nspharma.com/contact</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220405 15:17:37.169" level="INFO">GET Request : url=https://www.nspharma.com/contact 
+ path_url=/contact 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220405 15:17:37.169" level="INFO">GET Response : url=https://www.nspharma.com/contact 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.12.2', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Date': 'Tue, 05 Apr 2022 09:47:36 GMT', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6InNwT0ZCUkpFVnlHZmU0VkpyNDB5TVE9PSIsInZhbHVlIjoiL1RaTml6eVdaYUswakRJVUZnNStpQnhmMUl5S3JHUnhOcExmcWJXa1pTSk5wdHVKdkxhZjZvWVQ3cHNtT1pwSlhOd0tkai83aEl0VTlxOUJLRXNQSG00ZmZCY05zemdONjlJcFUxblcza1cxMER4NERhdDYvaUQ1VW1McnA1YTEiLCJtYWMiOiJmNTNhOTcxMzg2MjdjMTc2MWYxYjY3NTFmMjcwZGM2YTcwZGNlNDUzMTJkMGMwYzM0NmM5ZGQ0YzM5NDQ3NGY4In0%3D; expires=Tue, 05-Apr-2022 11:47:36 GMT; Max-Age=7200; path=/; samesite=lax, nspharma_corporate_site_session=eyJpdiI6IkQxTlU5UTRyR3UyYW9LUTJwMVU2Nnc9PSIsInZhbHVlIjoidEVBQTNqYjVJSkMzVjc2eWV1ZlVCZzRLRDMzMS82d2tsaHhiQUt4cEdDWlc1Y3NhUjFCTHNrVWxLTzlTZzFMK1NpeWJyamhWMjRuMkpZRytGMHRzK2paNGx1ZlYvd0JUUG00a0hqMVpvc1FKOGFySVdSaUtNaHhlU2hLd2YwNlUiLCJtYWMiOiJmYjU0NjA2MjY5YzVkZmI0NzMyMDQ1NDY3MjQ5ZDM2MTc5MTgxZmY0NTc1NTk1NWM0MjQyNjY4ODk0OGEwNWY0In0%3D; expires=Tue, 05-Apr-2022 11:47:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax'} 
+ body=&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Contact Us - NS Pharma&lt;/title&gt;
+    &lt;!-- Google Tag Manager --&gt;
+    &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NKC8WRV');&lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+    
+    &lt;meta name="description" content='Contact NS Pharma with general questions or inquiries. To find more information on ongoing clinical trials for DMD visit our contact us page.'&gt;
+    &lt;link rel="canonical" href=''/&gt;
+    &lt;meta property="og:title" content='Contact Us - NS Pharma' /&gt;
+    &lt;meta property="og:description" content='Contact NS Pharma with general questions or inquiries. To find more information on ongoing clinical trials for DMD visit our contact us page.' /&gt;
+    
+    &lt;link rel="shortcut icon" href="https://www.nspharma.com/img/favicon.ico"&gt;
+    &lt;link rel="stylesheet" media="screen" href=/css/app.css&gt;
+    &lt;meta name="csrf-token" content="b2rhg3MErPTjOcGLh1NVGSSngyvroyS6rwtdoHmY"&gt;
+    
+&lt;/head&gt;
+&lt;body class='contact'&gt;
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+    &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC8WRV"
+                      height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+    &lt;!-- End Google Tag Manager (noscript) --&gt;
+    
+    &lt;nav&gt;
+    &lt;div class="mobile-nav-bar"&gt;
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="mobile-menu-btn"&gt;
+            &lt;img src="/img/global/menu-open-btn.svg" class="open-nav"&gt;
+            &lt;img src="/img/global/menu-close-btn.svg" class="close-nav"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-nav-wrapper"&gt;
+        
+
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="nav-wrapper"&gt;
+            
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://twitter.com/NSPharmaInc" title="Twitter" target="_blank"&gt;
+                    &lt;svg id="twitter" xmlns="http://www.w3.org/2000/svg" width="19.73" height="16.184" viewBox="0 0 19.73 16.184"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="twitter-2" data-name="twitter" class="cls-1" d="M-436.3-246.494a8.869,8.869,0,0,0,5.672-1.618,4.444,4.444,0,0,1-3.546-2.821l1.506-.173a4.352,4.352,0,0,1-3-3.982l1.646.4a4.449,4.449,0,0,1-1.07-5.448,11.81,11.81,0,0,0,8.293,4.247,15.781,15.781,0,0,1,.1-1.616,3.985,3.985,0,0,1,6.02-2.771,2.345,2.345,0,0,0,2.719.13,1.126,1.126,0,0,1,.781-.106l-1.239,1.851,1.848-.462a5.332,5.332,0,0,1-.873,1.032c-1.065.684-1.1,1.711-1.251,2.835A11.458,11.458,0,0,1-436.3-246.494Z" transform="translate(436.299 260.899)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+                &lt;a href="https://www.linkedin.com/company/ns-pharma-inc/" title="LinkedIn" target="_blank"&gt;
+                    &lt;svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="16.352" height="16.391" viewBox="0 0 16.352 16.391"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="Path_28" data-name="Path 28" class="cls-1" d="M-123.344-253.182c0,2.207.006,4.413,0,6.619,0,1.133-.359,1.524-1.493,1.528q-6.669.024-13.339,0c-1.1,0-1.505-.424-1.508-1.533q-.015-6.67,0-13.339c0-1.127.373-1.5,1.511-1.5q6.669-.015,13.339,0c1.158,0,1.486.342,1.491,1.505C-123.337-257.662-123.344-255.422-123.344-253.182Zm-9.851-2.075v7.689h2.289c0-.468,0-.865,0-1.261.011-1.069-.01-2.14.051-3.207a1.263,1.263,0,0,1,1.442-1.313c.854.018,1.165.539,1.223,1.292.036.466.055.934.059,1.4.009,1.028,0,2.056,0,3.087h2.315c0-1.778.079-3.485-.019-5.181a2.709,2.709,0,0,0-4.151-2.361,9.424,9.424,0,0,0-.935.694l-.163-.841Zm-1.745,7.705v-7.672h-2.243v7.672Zm.268-10.1a1.418,1.418,0,0,0-1.211-1.474,1.435,1.435,0,0,0-1.541,1.25,1.443,1.443,0,0,0,1.318,1.484A1.417,1.417,0,0,0-134.672-257.648Z" transform="translate(139.694 261.413)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="main-nav"&gt;
+                
+                &lt;a href="/"
+                   class="nav-link "
+                   title="Home"&gt; HOME &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;a href="/who-we-are"
+                   class="nav-link "
+                   title="Who We Are"&gt; WHO WE ARE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/our-team"
+                   class="nav-link "
+                   title="Our Team"&gt; OUR TEAM &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/pipeline"
+                   class="nav-link "
+                   title="Pipeline"&gt; PIPELINE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/partnership"
+                   class="nav-link "
+                   title="Partnership"&gt; PARTNERSHIP &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/contact"
+                   class="nav-link  active "
+                   title="Contact Us"&gt; CONTACT US &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/careers"
+                   class="nav-link "
+                   title="Careers"&gt; CAREERS &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+    
+    &lt;div class="content-wrapper"&gt;
+            &lt;section&gt;
+        &lt;div class="max-width-wrapper"&gt;
+            &lt;h1 class="blue padding-bottom spacing"&gt;
+                CONTACT US
+            &lt;/h1&gt;
+            &lt;div class="flex-wrapper"&gt;
+                &lt;div class="flex-item with-border"&gt;
+                    &lt;p class="bold md-font a-little-more-padding-bottom"&gt;
+                        NS Pharma, Inc.&lt;br&gt;
+                        &lt;a href="https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525" target ="_blank"&gt; 140 East Ridgewood Ave, Suite 280S&lt;br&gt;Paramus, NJ 07652&lt;/a&gt;
+                    &lt;/p&gt;
+                    &lt;p class="a-little-more-padding-bottom"&gt;
+                        For general information about NS Pharma:&lt;br&gt;&lt;br&gt;
+                        &lt;span class = "bold"&gt;Phone: 1-866-NSPHARM (1-866-677-4276)&lt;br&gt;
+                                             Email: &lt;a href="mailto:info@nspharma.com" class="black"&gt;info@nspharma.com&lt;/a&gt;&lt;/span&gt;
+                    &lt;/p&gt;
+
+                    &lt;p class="a-little-more-padding-bottom"&gt;
+                        &lt;span class="no-break mobile-break"&gt;For general inquiries on DMD clinical trials with viltolarsen:&lt;/span&gt;&lt;br&gt; &lt;span class="no-break bold"&gt;Email: &lt;a href="mailto:trialinfo@nspharma.com" class="black"&gt;trialinfo@nspharma.com&lt;/a&gt;&lt;/span&gt;
+                    &lt;/p&gt;
+
+
+                &lt;/div&gt;
+                &lt;div class="flex-item"&gt;
+                    &lt;div class="img-wrapper padding-bottom"&gt;
+                        &lt;img src="/img/contact-us/ns-support-logo-updated.png" style="max-width: 100%;"&gt;
+                    &lt;/div&gt;
+                    &lt;p class="padding-bottom"&gt;
+                        Comprehensive care coordination and resources for patients, caregivers, and healthcare providers.
+                    &lt;/p&gt;
+                    &lt;a href="tel:+18336778778" class="contact-btn"&gt;1-833-NSSUPRT (1-833-677-8778)&lt;/a&gt;
+                    &lt;p class="padding-left"&gt;
+                        Monday–Friday, 8 &lt;span class="small"&gt;AM&lt;/span&gt;–8 &lt;span class="small"&gt;PM&lt;/span&gt; ET
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;/div&gt;
+    
+    &lt;footer&gt;
+    &lt;div class="flex-footnote-wrapper"&gt;
+        &lt;div class="footer-wrapper"&gt;
+            &lt;div class="logo mobile-only"&gt;
+                &lt;img src="/img/global/NS_Pharma_LOGO_KO.svg" alt="NS Pharma Logo"&gt;
+            &lt;/div&gt;
+            &lt;div class="footer-nav"&gt;
+                &lt;a href="/who-we-are" class="footer-nav-link" title="Who We Are"&gt;
+                    WHO WE ARE
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/our-team" class="footer-nav-link" title="Our Team"&gt;
+                    OUR TEAM
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/pipeline" class="footer-nav-link" title="Pipeline"&gt;
+                    PIPELINE
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/partnership" class="footer-nav-link" title="Partnership"&gt;
+                    PARTNERSHIP
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                 ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220405 15:17:37.178" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:35.535" endtime="20220405 15:17:37.178"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220405 15:17:37.178" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:37.178" endtime="20220405 15:17:37.178"/>
+</kw>
+<status status="PASS" starttime="20220405 15:17:35.535" endtime="20220405 15:17:37.178"/>
+</iter>
+<iter>
+<var name="${element_href}">https://www.nspharma.com/careers</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220405 15:17:39.015" level="INFO">GET Request : url=https://www.nspharma.com/careers 
+ path_url=/careers 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220405 15:17:39.015" level="INFO">GET Response : url=https://www.nspharma.com/careers 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.12.2', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.3.17', 'Cache-Control': 'no-cache, private', 'Date': 'Tue, 05 Apr 2022 09:47:38 GMT', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6IjNiVHVycFhyM1d0MlhTNmtjT1o1aWc9PSIsInZhbHVlIjoiUk1wdmU3SzZwbHhLNTNyVS9reWtGYWNaR2FGQytJYXRwczY2WkppVGgrOHN5Mk9ZL1oyQWw0U1J3UmtpemRYV2I0b2JDTkJhQUt2SWloanNNaFB0K0VuaFZ3RjRiLzFEQitET01JaUZaRjN1TTZwLytJcm1zMXZ3UjNDZW1LenAiLCJtYWMiOiI2MGZmMDM3YWQzYmExNzY5MjFlYzhmM2NkZmMwZDZjNzk3Y2U4MmM4NjRjODI1ZWQ3NmQ5MjI1MTdlNGZiMzlhIn0%3D; expires=Tue, 05-Apr-2022 11:47:38 GMT; Max-Age=7200; path=/; samesite=lax, nspharma_corporate_site_session=eyJpdiI6IkNYcDJsTU11eHJ0aTYrN1NPOGphYWc9PSIsInZhbHVlIjoiU0RqNisrajkyTG8yQmcxcDFTU2liSlB0WW05aXAwSHdBKzk4NUNFY2FVbXNwUXdhaytoVXRqeS9oa3FoekpIOVg3MEtoNndMcVQrOTdadUx5QXVyaDVkUjRtSHRlcjllNXpKOUkyUmNZRHlBcERvL2hEUk5DUURpdmRzWTFXdDIiLCJtYWMiOiJkOWQ5MmM4ZDE0YzBlOGQ0YWIyZDYwYmM4MDIzMDg1OTZjM2ZjZjkyNWEyMDA0YTc1OWYwMzAyN2NjMzgwMzJiIn0%3D; expires=Tue, 05-Apr-2022 11:47:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'} 
+ body=&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Join The Team - NS Pharma Careers&lt;/title&gt;
+    &lt;!-- Google Tag Manager --&gt;
+    &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NKC8WRV');&lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+    
+    &lt;meta name="description" content='View a list of current job opportunities available at NS Pharma. Visit our careers page and apply for open positions online.'&gt;
+    &lt;link rel="canonical" href=''/&gt;
+    &lt;meta property="og:title" content='Join The Team - NS Pharma Careers' /&gt;
+    &lt;meta property="og:description" content='View a list of current job opportunities available at NS Pharma. Visit our careers page and apply for open positions online.' /&gt;
+    
+    &lt;link rel="shortcut icon" href="https://www.nspharma.com/img/favicon.ico"&gt;
+    &lt;link rel="stylesheet" media="screen" href=/css/app.css&gt;
+    &lt;meta name="csrf-token" content="b7uLits0BhO18JPgzhL1rAiV7LxP8wxl4jq1lKq6"&gt;
+    
+&lt;/head&gt;
+&lt;body class='careers'&gt;
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+    &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC8WRV"
+                      height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+    &lt;!-- End Google Tag Manager (noscript) --&gt;
+    
+    &lt;nav&gt;
+    &lt;div class="mobile-nav-bar"&gt;
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="mobile-menu-btn"&gt;
+            &lt;img src="/img/global/menu-open-btn.svg" class="open-nav"&gt;
+            &lt;img src="/img/global/menu-close-btn.svg" class="close-nav"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-nav-wrapper"&gt;
+        
+
+        &lt;div class="logo-wrapper"&gt;
+            &lt;a href="/" title="Home page"&gt; &lt;img src="/img/global/NS_LOGO_text_RGB_v1.svg" alt="NS Pharma Logo"&gt; &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="nav-wrapper"&gt;
+            
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://twitter.com/NSPharmaInc" title="Twitter" target="_blank"&gt;
+                    &lt;svg id="twitter" xmlns="http://www.w3.org/2000/svg" width="19.73" height="16.184" viewBox="0 0 19.73 16.184"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="twitter-2" data-name="twitter" class="cls-1" d="M-436.3-246.494a8.869,8.869,0,0,0,5.672-1.618,4.444,4.444,0,0,1-3.546-2.821l1.506-.173a4.352,4.352,0,0,1-3-3.982l1.646.4a4.449,4.449,0,0,1-1.07-5.448,11.81,11.81,0,0,0,8.293,4.247,15.781,15.781,0,0,1,.1-1.616,3.985,3.985,0,0,1,6.02-2.771,2.345,2.345,0,0,0,2.719.13,1.126,1.126,0,0,1,.781-.106l-1.239,1.851,1.848-.462a5.332,5.332,0,0,1-.873,1.032c-1.065.684-1.1,1.711-1.251,2.835A11.458,11.458,0,0,1-436.3-246.494Z" transform="translate(436.299 260.899)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+                &lt;a href="https://www.linkedin.com/company/ns-pharma-inc/" title="LinkedIn" target="_blank"&gt;
+                    &lt;svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="16.352" height="16.391" viewBox="0 0 16.352 16.391"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="Path_28" data-name="Path 28" class="cls-1" d="M-123.344-253.182c0,2.207.006,4.413,0,6.619,0,1.133-.359,1.524-1.493,1.528q-6.669.024-13.339,0c-1.1,0-1.505-.424-1.508-1.533q-.015-6.67,0-13.339c0-1.127.373-1.5,1.511-1.5q6.669-.015,13.339,0c1.158,0,1.486.342,1.491,1.505C-123.337-257.662-123.344-255.422-123.344-253.182Zm-9.851-2.075v7.689h2.289c0-.468,0-.865,0-1.261.011-1.069-.01-2.14.051-3.207a1.263,1.263,0,0,1,1.442-1.313c.854.018,1.165.539,1.223,1.292.036.466.055.934.059,1.4.009,1.028,0,2.056,0,3.087h2.315c0-1.778.079-3.485-.019-5.181a2.709,2.709,0,0,0-4.151-2.361,9.424,9.424,0,0,0-.935.694l-.163-.841Zm-1.745,7.705v-7.672h-2.243v7.672Zm.268-10.1a1.418,1.418,0,0,0-1.211-1.474,1.435,1.435,0,0,0-1.541,1.25,1.443,1.443,0,0,0,1.318,1.484A1.417,1.417,0,0,0-134.672-257.648Z" transform="translate(139.694 261.413)"/&gt;
+&lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="main-nav"&gt;
+                
+                &lt;a href="/"
+                   class="nav-link "
+                   title="Home"&gt; HOME &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;a href="/who-we-are"
+                   class="nav-link "
+                   title="Who We Are"&gt; WHO WE ARE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/our-team"
+                   class="nav-link "
+                   title="Our Team"&gt; OUR TEAM &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/pipeline"
+                   class="nav-link "
+                   title="Pipeline"&gt; PIPELINE &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/partnership"
+                   class="nav-link "
+                   title="Partnership"&gt; PARTNERSHIP &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/contact"
+                   class="nav-link "
+                   title="Contact Us"&gt; CONTACT US &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/careers"
+                   class="nav-link  active "
+                   title="Careers"&gt; CAREERS &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+    
+    &lt;div class="content-wrapper"&gt;
+            &lt;section class="careers-section"&gt;
+        &lt;div class="max-width-wrapper"&gt;
+            &lt;h1 class="spacing blue padding-bottom"&gt;
+                CURRENT JOB OPPORTUNITIES
+            &lt;/h1&gt;
+            
+                            &lt;p class="content-copy"&gt;
+                    To apply for any of our current job opportunities, please submit a copy of your resume and include a cover letter. We do not accept telephone calls. NS Pharma, Inc. is an equal opportunity employer. &lt;a href="https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525" target="_blank" class="blue"&gt;Find our office.&lt;/a&gt;
+                &lt;/p&gt;
+                &lt;div class="careers-wrapper"&gt;
+                    
+                &lt;/div&gt;
+                &lt;div class="load-more button-wrapper"&gt;
+                    &lt;a class="load-more-button" title="Load More"&gt;
+                        LOAD MORE
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                        
+            
+            
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;/div&gt;
+    
+    &lt;footer&gt;
+    &lt;div class="flex-footnote-wrapper"&gt;
+        &lt;div class="footer-wrapper"&gt;
+            &lt;div class="logo mobile-only"&gt;
+                &lt;img src="/img/global/NS_Pharma_LOGO_KO.svg" alt="NS Pharma Logo"&gt;
+            &lt;/div&gt;
+            &lt;div class="footer-nav"&gt;
+                &lt;a href="/who-we-are" class="footer-nav-link" title="Who We Are"&gt;
+                    WHO WE ARE
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/our-team" class="footer-nav-link" title="Our Team"&gt;
+                    OUR TEAM
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/pipeline" class="footer-nav-link" title="Pipeline"&gt;
+                    PIPELINE
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/partnership" class="footer-nav-link" title="Partnership"&gt;
+                    PARTNERSHIP
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/contact" class="footer-nav-link" title="Contact Us"&gt;
+                    CONTACT US
+                &lt;/a&gt;
+                &lt;div class="nav-break"&gt;
+                    &lt;p&gt;
+                        &amp;bull;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;a href="/careers" class="footer-nav-link" title="Careers"&gt;
+                    CAREERS
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="social-links mobile-only"&gt;
+                &lt;a href="https://twitter.com/NSPharmaInc" title="Twitter" target="_blank"&gt;
+                    &lt;svg id="twitter" xmlns="http://www.w3.org/2000/svg" width="19.73" height="16.184" viewBox="0 0 19.73 16.184"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #c6c6c6;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;path id="twitter-2" data-name="twitter" class="cls-1" d="M-436.3-246.494a8.869,8.869,0,0,0,5.672-1.618,4.444,4.444,0,0,1-3.546-2.821l1.506-.173a4.352,4.352,0,0,1-3-3.982l1.646.4a4.449,4.449,0,0,1-1.07-5.448,11.81,11.81,0,0,0,8.293... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220405 15:17:39.015" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:37.178" endtime="20220405 15:17:39.015"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220405 15:17:39.015" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220405 15:17:39.015" endtime="20220405 15:17:39.015"/>
+</kw>
+<status status="PASS" starttime="20220405 15:17:37.178" endtime="20220405 15:17:39.015"/>
+</iter>
+<status status="PASS" starttime="20220405 15:17:28.808" endtime="20220405 15:17:39.015"/>
+</for>
+<status status="PASS" starttime="20220405 15:17:28.709" endtime="20220405 15:17:39.015"/>
+</kw>
+<status status="PASS" starttime="20220405 15:17:28.709" endtime="20220405 15:17:39.015"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${NSP_footerNav1}</arg>
+<arg>${NSP_eTextFoot1_list}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220405 15:17:39.029" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="f45c7037c9964c3942047a7c691b1e79", element="8d0028ea-9681-4b92-b70b-98dd57a6ca2c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220405 15:17:39.015" endtime="20220405 15:17:39.029"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${actualText_list}</var>
+<arg>[item.get_attribute('text') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220405 15:17:39.079" level="INFO">${actualText_list} = ['\n                    WHO WE ARE\n                ', '\n                    OUR TEAM\n                ', '\n                    PIPELINE\n                ', '\n                    PARTNERSHIP\n     ...</msg>
+<status status="PASS" starttime="20220405 15:17:39.029" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${newlist}</var>
+<arg>[x.replace('"','') for x in $expectedText_list ]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220405 15:17:39.079" level="INFO">${newlist} = ['WHO WE ARE', 'OUR TEAM', 'PIPELINE', 'PARTNERSHIP', 'CONTACT US', 'CAREERS']</msg>
+<status status="PASS" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${actualText_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220405 15:17:39.079" level="INFO">['\n                    WHO WE ARE\n                ', '\n                    OUR TEAM\n                ', '\n                    PIPELINE\n                ', '\n                    PARTNERSHIP\n                ', '\n                    CONTACT US\n                ', '\n                    CAREERS\n                ']</msg>
+<status status="PASS" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>@{newlist}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220405 15:17:39.079" level="FAIL">Invalid log level 'OUR TEAM'.</msg>
+<status status="FAIL" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${actualText_list}</arg>
+<arg>${newlist}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<status status="FAIL" starttime="20220405 15:17:39.015" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_mainNav}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${NSP_mainNav}</arg>
+<arg>${NSP_eTextMain_list}</arg>
+<status status="NOT RUN" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_footerNav2}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${NSP_footerNav2}</arg>
+<arg>${NSP_eTextFoot2_list}</arg>
+<status status="NOT RUN" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_topNav Social}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_footerSocial}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220405 15:17:39.079" endtime="20220405 15:17:39.079"/>
+</kw>
+<status status="FAIL" starttime="20220405 15:17:28.709" endtime="20220405 15:17:39.079"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220405 15:17:14.047" endtime="20220405 15:17:39.079">Invalid log level 'OUR TEAM'.</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220405 15:17:39.087" endtime="20220405 15:17:41.250"/>
+</kw>
+<status status="FAIL" starttime="20220405 15:17:13.779" endtime="20220405 15:17:41.250"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="NSPharma">NSPharma</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 14:28:58.908" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="OurFocusTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220401 14:28:59.224" level="INFO">
+</msg>
+<msg timestamp="20220401 14:28:59.224" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220401 14:29:00.346" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220401 14:29:00.346" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220401 14:29:00.804" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220401 14:29:04.326" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 14:29:04.326" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220401 14:29:04.326" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 14:29:04.326" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220401 14:28:59.224" endtime="20220401 14:29:04.326"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220401 14:29:04.326" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220401 14:29:04.326" endtime="20220401 14:29:08.015"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220401 14:29:08.016" level="INFO">Opening url 'https://www.interceptpharma.com/homepage-non-usa/'</msg>
+<status status="PASS" starttime="20220401 14:29:08.015" endtime="20220401 14:29:21.978"/>
+</kw>
+<status status="PASS" starttime="20220401 14:28:59.224" endtime="20220401 14:29:21.978"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220401 14:29:21.978" endtime="20220401 14:29:22.136"/>
+</kw>
+<kw name="Get OurFocusMeetBethPage validated" library="OurFocusPageICPT">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${ourFocus}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220401 14:29:22.136" endtime="20220401 14:29:22.204"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220401 14:29:22.204" level="INFO">Clicking element 'xpath://ul[@id='menu-primary-menu']//a[.='Our Focus']'.</msg>
+<status status="PASS" starttime="20220401 14:29:22.204" endtime="20220401 14:29:24.988"/>
+</kw>
+<status status="PASS" starttime="20220401 14:29:22.136" endtime="20220401 14:29:24.988"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${linkNASH}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220401 14:29:24.996" endtime="20220401 14:29:25.029"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220401 14:29:25.029" level="INFO">Clicking element 'xpath://aside//ul[@class='nav sidebar-menu']//a[.='NASH']'.</msg>
+<status status="PASS" starttime="20220401 14:29:25.029" endtime="20220401 14:29:27.384"/>
+</kw>
+<status status="PASS" starttime="20220401 14:29:24.988" endtime="20220401 14:29:27.384"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${linkMeetBeth}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220401 14:29:27.384" endtime="20220401 14:29:27.420"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220401 14:29:27.420" level="INFO">Clicking element 'xpath://aside//ul[@class='nav sidebar-menu']//a[.='Meet Beth']'.</msg>
+<status status="PASS" starttime="20220401 14:29:27.420" endtime="20220401 14:29:29.888"/>
+</kw>
+<status status="PASS" starttime="20220401 14:29:27.384" endtime="20220401 14:29:29.888"/>
+</kw>
+<kw name=" Validate the string" library="Generic">
+<arg>${breadCrumbs}</arg>
+<arg>${eBreadCrumbsMB}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${aResult}</var>
+<arg>${elementLocator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220401 14:29:29.923" level="INFO">${aResult} = Home &gt; Our Focus &gt; NASH &gt; Meet Beth</msg>
+<status status="PASS" starttime="20220401 14:29:29.888" endtime="20220401 14:29:29.923"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${aResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 14:29:29.923" level="INFO">Home &gt; Our Focus &gt; NASH &gt; Meet Beth</msg>
+<status status="PASS" starttime="20220401 14:29:29.923" endtime="20220401 14:29:29.923"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${eResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 14:29:29.932" level="INFO">Home &gt; Our Focus &gt; PBC &gt; Meet Beth</msg>
+<status status="PASS" starttime="20220401 14:29:29.923" endtime="20220401 14:29:29.932"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aResult}</arg>
+<arg>${eResult}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220401 14:29:29.932" level="FAIL">Home &gt; Our Focus &gt; NASH &gt; Meet Beth != Home &gt; Our Focus &gt; PBC &gt; Meet Beth</msg>
+<status status="FAIL" starttime="20220401 14:29:29.932" endtime="20220401 14:29:29.932"/>
+</kw>
+<status status="FAIL" starttime="20220401 14:29:29.888" endtime="20220401 14:29:29.932"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${contentLink}</arg>
+<status status="NOT RUN" starttime="20220401 14:29:29.938" endtime="20220401 14:29:29.938"/>
+</kw>
+<status status="FAIL" starttime="20220401 14:29:22.136" endtime="20220401 14:29:29.939"/>
+</kw>
+<tag>smoke</tag>
+<status status="FAIL" starttime="20220401 14:28:59.224" endtime="20220401 14:29:29.939">Home &gt; Our Focus &gt; NASH &gt; Meet Beth != Home &gt; Our Focus &gt; PBC &gt; Meet Beth</status>
+</test>
+<status status="FAIL" starttime="20220401 14:28:58.917" endtime="20220401 14:29:29.939"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

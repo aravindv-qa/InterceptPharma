@@ -1,0 +1,2 @@
+***Test Cases***,${Page},${FirstName},${LastName},${Email},${Radio},${Kits},${Credentials},${Npi},${Phone},${Delivery},${Fax},${Practise},${Institution},${Street},${City},${State},${Zip},${Primary},${AdditionalInfo},${Mailing},${Submit}
+GalleriTest KIT form_Providers,Providers,testProvidersFN,testProvidersLN,testProvidersFN@gmail.com,,1,MD,7845541257,9654781201,Fax,8748521040,Test practiceRC,RC inst,101 testkits dr,testkits city,Arizona,98516,Yes,Additional Information,Yes,Yes

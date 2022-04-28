@@ -1,0 +1,2069 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220406 17:24:28.080" rpa="false" schemaversion="2">
+<suite id="s1" name="NSPharma" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\NSPharma.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220406 17:24:28.389" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220406 17:24:28.389" endtime="20220406 17:24:28.389"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220406 17:24:28.389" level="INFO">
+</msg>
+<msg timestamp="20220406 17:24:28.389" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220406 17:24:29.094" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220406 17:24:29.094" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220406 17:24:29.581" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220406 17:24:32.577" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:24:32.577" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220406 17:24:32.577" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:24:32.577" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220406 17:24:28.389" endtime="20220406 17:24:32.577"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:24:32.577" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001A58D6DCD00&gt;</msg>
+<status status="PASS" starttime="20220406 17:24:32.577" endtime="20220406 17:24:32.577"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:24:32.577" endtime="20220406 17:24:32.577"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220406 17:24:32.577" endtime="20220406 17:24:32.577"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:24:32.577" endtime="20220406 17:24:32.577"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:24:32.577" endtime="20220406 17:24:32.577"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 17:24:32.577" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 17:24:32.577" endtime="20220406 17:24:33.914"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220406 17:24:33.914" endtime="20220406 17:24:34.033"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 17:24:34.033" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220406 17:24:34.033" endtime="20220406 17:24:39.263"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:24:39.512" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220406 17:24:39.512" level="INFO">c:\users\aravind.v\pycharmprojects\automationproject\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py:1315: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  warnings.warn("name used for saved screenshot does not match file "</msg>
+<status status="PASS" starttime="20220406 17:24:39.263" endtime="20220406 17:24:39.512"/>
+</kw>
+<status status="PASS" starttime="20220406 17:24:28.389" endtime="20220406 17:24:39.512"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 17:24:39.512" endtime="20220406 17:24:39.650"/>
+</kw>
+<kw name="Assert the logos in homepage" library="LoginPageNSP">
+<kw name="Wait Until element passed is located on Page and click button">
+<arg>${NSP_buttonAcceptCookies}</arg>
+<msg timestamp="20220406 17:24:39.658" level="FAIL">No keyword with name 'Wait Until element passed is located on Page and click button' found. Did you mean:
+    Generic.Wait Until Element Passed Is Located On Page And Click Buttom
+    Generic.Wait Until Element Passed Is Located On Page And Click Link
+    Generic.Wait Until Element Passed Is Located On Page And Click Element</msg>
+<status status="FAIL" starttime="20220406 17:24:39.658" endtime="20220406 17:24:39.658"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${NSP_header logo}</arg>
+<status status="NOT RUN" starttime="20220406 17:24:39.658" endtime="20220406 17:24:39.658"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${NSP_footer logo}</arg>
+<status status="NOT RUN" starttime="20220406 17:24:39.658" endtime="20220406 17:24:39.658"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:24:39.650" endtime="20220406 17:24:39.658"/>
+</kw>
+<kw name="Get All links in homepage and Validate it" library="LoginPageNSP">
+<status status="NOT RUN" starttime="20220406 17:24:39.666" endtime="20220406 17:24:39.666"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220406 17:24:28.389" endtime="20220406 17:24:39.666">No keyword with name 'Wait Until element passed is located on Page and click button' found. Did you mean:
+    Generic.Wait Until Element Passed Is Located On Page And Click Buttom
+    Generic.Wait Until Element Passed Is Located On Page And Click Link
+    Generic.Wait Until Element Passed Is Located On Page And Click Element</status>
+</test>
+<test id="s1-t2" name="WhoWeArePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220406 17:24:39.671" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220406 17:24:39.671" endtime="20220406 17:24:39.671"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220406 17:24:39.671" level="INFO">
+</msg>
+<msg timestamp="20220406 17:24:39.671" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220406 17:24:40.432" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220406 17:24:40.432" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220406 17:24:40.778" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220406 17:24:43.686" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:24:43.686" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220406 17:24:43.686" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220406 17:24:39.671" endtime="20220406 17:24:43.686"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:24:43.686" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001A58D6DB8E0&gt;</msg>
+<status status="PASS" starttime="20220406 17:24:43.686" endtime="20220406 17:24:43.686"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:24:43.686" endtime="20220406 17:24:43.686"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220406 17:24:43.686" endtime="20220406 17:24:43.686"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:24:43.686" endtime="20220406 17:24:43.686"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:24:43.686" endtime="20220406 17:24:43.686"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 17:24:43.686" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 17:24:43.686" endtime="20220406 17:24:45.030"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220406 17:24:45.031" endtime="20220406 17:24:45.143"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 17:24:45.143" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220406 17:24:45.143" endtime="20220406 17:25:10.295"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:25:10.636" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:10.295" endtime="20220406 17:25:10.636"/>
+</kw>
+<status status="PASS" starttime="20220406 17:24:39.666" endtime="20220406 17:25:10.636"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 17:25:10.636" endtime="20220406 17:25:10.781"/>
+</kw>
+<kw name="Get WhoWeArePage validated" library="WhoWeArePageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${WhoWeAre}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 17:25:10.781" endtime="20220406 17:25:10.818"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220406 17:25:10.818" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' WHO WE ARE ']'.</msg>
+<status status="PASS" starttime="20220406 17:25:10.818" endtime="20220406 17:25:17.607"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:25:18.075" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:17.609" endtime="20220406 17:25:18.075"/>
+</kw>
+<status status="PASS" starttime="20220406 17:25:10.781" endtime="20220406 17:25:18.075"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_contentLink}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220406 17:25:18.091" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="12d42619239257bc013f20964d14e665", element="ba6bcd4b-c649-473a-891a-6c6e291ad311")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220406 17:25:18.075" endtime="20220406 17:25:18.091"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:25:18.199" level="INFO">${href_list} = ['https://www.viltepso.com/', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information', 'https://www.n...</msg>
+<status status="PASS" starttime="20220406 17:25:18.091" endtime="20220406 17:25:18.200"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220406 17:25:18.201" level="INFO">['https://www.viltepso.com/', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information', 'https://www.nippon-shinyaku.co.jp/english/', 'https://www.nspharma.com/corporate-compliance']</msg>
+<status status="PASS" starttime="20220406 17:25:18.200" endtime="20220406 17:25:18.201"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220406 17:25:18.201" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220406 17:25:18.201" endtime="20220406 17:25:18.203"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:25:18.204" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220406 17:25:18.203" endtime="20220406 17:25:18.204"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:25:18.204" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220406 17:25:18.204" endtime="20220406 17:25:18.204"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220406 17:25:20.144" level="INFO">GET Request : url=https://www.viltepso.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220406 17:25:20.144" level="INFO">GET Response : url=https://www.viltepso.com/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.12.2', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.3.19', 'Cache-Control': 'no-cache, private', 'Date': 'Wed, 06 Apr 2022 11:55:19 GMT', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6ImVuUTlzdVdhSDY3QlkvaHJyMG5EaFE9PSIsInZhbHVlIjoiNitTY1J6V3VZdDlDdXpNcVltaWxncHluZUN1WUQ4dG0zZG1Wc2s1OU1xK0VKQm81V1BHSkR5bG5nQ3pKcVRVc2Rmby9Tc2FxVzVGNXRpNitHU24rMlpyWjZYdmJLTVVWSlJtWVhKMW9reUd3QmpEelA1VXVvU2hFOXo0a0h0dy8iLCJtYWMiOiI3NzZjZTNjNjU2ZjFjNjA4MTg0NTJlNDkwYzQzYzNmYTI2N2RjY2ZkNGUzZDU3NWRjYjkzNmZmZWRjN2UwZGI0In0%3D; expires=Wed, 06-Apr-2022 13:55:19 GMT; Max-Age=7200; path=/; samesite=lax, viltepso_session=eyJpdiI6Im50a0xYdVd4bFNOS2pSZndOMWxGdXc9PSIsInZhbHVlIjoialBPTWJDdGJPRmdnTjlHRnMvME9Pdk0yUU1mUmxuSTZuVURzOUcySWZQT1pVblRDeHVZS2Z4cHJWK1lxOVF5bTIrT3NmZFV5S3k1SnhYc1RGalMzelc2ODNReGJ1dlpTbHFpOWprRTlUSGc3RDJaYWR6UTBSRElPb0labHBNV1QiLCJtYWMiOiJlOWNmOGZkY2YzN2I5NDFkMDdlY2FhNzQ4ZmMxZmViZTk1ZGY5Yjk2ZjhhNGJjNWYyNWE0NGE3ODEwZmQwZTkyIn0%3D; expires=Wed, 06-Apr-2022 13:55:19 GMT; Max-Age=7200; path=/; httponly; samesite=lax'} 
+ body=&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;
+                    Viltepso A Treatment Against DMD - VILTEPSO
+            &lt;/title&gt;
+
+    
+    &lt;meta name="description" content=' VILTEPSO is a treatment for Duchenne muscular dystrophy (DMD) in patients amenable to exon 53 skipping. Learn more about the clinical benefits of VILTEPSO. '&gt;
+        &lt;link rel="canonical" href='https://www.viltepso.com'/&gt;
+    &lt;meta property="og:title" content='Viltepso A Treatment Against DMD - VILTEPSO' /&gt;
+      &lt;meta property='og:description' content="VILTEPSO is a treatment for Duchenne muscular dystrophy (DMD) in patients amenable to exon 53 skipping. Learn more about the clinical benefits of VILTEPSO." /&gt;    
+    &lt;!-- Google Tag Manager --&gt;
+    &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PTFBQ9J');&lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+
+    &lt;link rel="stylesheet" type="text/css" href="/fonts/MyFontsWebfontsKit.css"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&amp;display=swap" rel="stylesheet"&gt;
+
+    &lt;!-- NEW 'OPEN SANS' FONT LINKS --&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap" rel="stylesheet"&gt;
+    
+    &lt;link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"&gt;
+    &lt;link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png"&gt;
+    &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
+    &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
+    &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
+    &lt;link crossorigin="use-credentials" rel="manifest" href="/site.webmanifest"&gt;
+    &lt;link rel="shortcut icon"
+          type="image/png"
+          href="/favicon.png"&gt;
+
+    &lt;link rel="stylesheet" media="screen" href=/css/app.css?id=d3f293da20da3e058647&gt;
+    &lt;meta name="csrf-token" content="fSLoRKcz4psbRUniD50gqu0Vavz13HZYoVrannnT"&gt;
+    
+&lt;/head&gt;
+&lt;body id="body" class='home'&gt;
+&lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTFBQ9J"
+                  height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+
+    &lt;div class="content-wrapper"&gt;
+
+        
+    &lt;nav&gt;
+    &lt;div class="nav-container desktop"&gt;
+        &lt;a class="nav-logo" href="/"&gt;&lt;img src="/img/Viltepso_Logo_R_RGB.svg" alt="Viltepso (viltolarsen) injection"&gt;&lt;/a&gt;
+        &lt;div class="right-content"&gt;
+            &lt;div class="nav-pi"&gt;
+                This site is intended for US residents &amp;nbsp; &lt;span class="orange"&gt;|&lt;/span&gt; &amp;nbsp;
+                &lt;a href="/prescribing-information" target="_blank"&gt;Prescribing Information&lt;/a&gt; &amp;nbsp; &lt;span class="orange"&gt;|&lt;/span&gt; &amp;nbsp;
+                &lt;a class="isi-toggle"&gt;Important Safety Information&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="nav-link-wrapper"&gt;
+                &lt;div class="nav-link "&gt;
+                    &lt;a href="/hcp" class=" "&gt;
+                        &lt;p&gt;&lt;span style="white-space:nowrap"&gt;FOR Healthcare &lt;/span&gt;&lt;br&gt;Professionals&lt;/p&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="nav-link "&gt;
+                    &lt;a href="/patient" class=" "&gt;
+                        &lt;p&gt;&lt;span style="white-space:nowrap"&gt;FOR Patients +&lt;/span&gt;&lt;br&gt;Caregivers&lt;/p&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="nav-link "&gt;
+                    &lt;a href="/support" class=" "&gt;
+                        &lt;p&gt;&lt;span style="white-space:nowrap"&gt;NS Support +&lt;/span&gt;&lt;br&gt;Resources&lt;/p&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="nav-link "&gt;
+                    &lt;a href="/stay-informed" class=" "&gt;
+                        &lt;p&gt;Stay&lt;br&gt;Informed&lt;/p&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- &lt;div class="banner"&gt;
+        &lt;a href="/pdf/US-NS65C-0691_49782_ID01N_JCode_HCP_Factsheet.pdf" target="_blank"&gt;&lt;span class="bold"&gt;EFFECTIVE APRIL 1, 2021:&lt;/span&gt; Permanent &lt;span class="bold"&gt;J-code J1427&lt;/span&gt; (Injection, Viltolarsen, 10 mg) &lt;span class="bold"&gt;&lt;u&gt;Learn More &gt;&lt;/u&gt;&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt; --&gt;
+    &lt;div class="nav-container mobile"&gt;
+        &lt;div class="nav-pi"&gt;
+            &lt;p&gt;This site is intended for US residents&lt;/p&gt;
+            &lt;a href="/prescribing-information" target="_blank"&gt;Prescribing Information&lt;/a&gt; &amp;nbsp; &lt;span class="orange"&gt;|&lt;/span&gt; &amp;nbsp;
+            &lt;a class="isi-toggle"&gt;Important Safety Information&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;a class="nav-logo" href="/"&gt;&lt;img src="/img/Viltepso_Logo_R_RGB.svg" alt="Viltepso (viltolarsen) injection"&gt;&lt;/a&gt;
+            &lt;div class="nav-toggle-container"&gt;
+                &lt;div class="nav-toggle closed unopened"&gt;
+                    &lt;div class="bar" id="topBar"&gt;&lt;/div&gt;
+                    &lt;div class="bar" id="middleBar"&gt;&lt;/div&gt;
+                    &lt;div class="bar" id="bottomBar"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- MOBILE LAYOUT ONLY: COLORED BLOCK --&gt;
+    &lt;hr class="activeNavBlock     "&gt;
+&lt;/nav&gt;
+&lt;div class="dropdown-container closed"&gt;
+    &lt;div class="dropdown-nav hidden"&gt;
+        &lt;div class="nav-link-wrapper"&gt;
+            &lt;div class="nav-link hcp-nav-link mobile-main-links"&gt;
+                &lt;a href="/hcp" class="bold "&gt;FOR Healthcare Professionals&lt;/a&gt;
+                &lt;button class="subNavBtn" id="hcpSubNavBtn"&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="sub-dropdown-container hiddenSubNav" id="hcpSubNav"&gt;
+                &lt;div class="sub-dropdown-nav"&gt;
+                    &lt;div class="sub-nav-link-wrapper"&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#about" class="mobile-sub-nav-link" id='about-viltepso-mob-sub-nav-hcp'&gt;ABOUT VILTEPSO&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#exon-skipping" class="mobile-sub-nav-link" id='exon-skipping-mob-sub-nav-hcp'&gt;EXON-SKIPPING THERAPY&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#efficacy" class="mobile-sub-nav-link" id='efficacy-mob-sub-nav-hcp'&gt;EFFICACY&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#safety" class="mobile-sub-nav-link" id='safety-mob-sub-nav-hcp'&gt;SAFETY&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#dosing" class="mobile-sub-nav-link" id='dosing-mob-sub-nav-hcp'&gt;DOSING&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#register" class="mobile-sub-nav-link" id='request-rep-mob-sub-nav-hcp'&gt;REQUEST A REPRESENTATIVE&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; 
+            &lt;div class="nav-link patient-nav-link mobile-main-links"&gt;
+                &lt;a href="/patient" class="bold "&gt;FOR Patients + Caregivers&lt;/a&gt;
+                &lt;button class="subNavBtn" id="patientSubNavBtn"&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="sub-dropdown-container hiddenSubNav" id="patientSubNav"&gt;
+                &lt;div class="sub-dropdown-nav "&gt;
+                    &lt;div class="sub-nav-link-wrapper"&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/patient#about" class="mobile-sub-nav-link" id='how-mob-sub-nav-patient'&gt;HOW VILTEPSO WORKS&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/patient#efficacy" class="mobile-sub-nav-link" id='impact-mob-sub-nav-patient'&gt;IMPACT ON DYSTROPHIN LEVELS&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/patient#safety" class="mobile-sub-nav-link" id='safety-mob-sub-nav-patient'&gt;SAFETY&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/patient#dosing" class="mobile-sub-nav-link" id='dosing-mob-sub-nav-patient'&gt;DOSING&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="nav-link support-nav-link mobile-main-links"&gt;
+                &lt;a href="/support" class="bold "&gt;NS Support + Resources&lt;/a&gt;
+                &lt;button class="subNavBtn" id='supportSubNavBtn'&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="sub-dropdown-container hiddenSubNav" id="supportSubNav"&gt;
+                &lt;div class="sub-dropdown-nav"&gt;
+                    &lt;div class="sub-nav-link-wrapper"&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/support#support" class="mobile-sub-nav-link" id='support-mob-sub-nav-support'&gt;NS SUPPORT&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/support#resources" class="mobile-sub-nav-link" id='resources-mob-sub-nav-support'&gt;RESOURCES&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="nav-link register-nav-link mobile-main-links"&gt;
+    ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220406 17:25:20.144" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:18.204" endtime="20220406 17:25:20.144"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_linkedin} and</arg>
+<arg>${contains_mailto}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220406 17:25:20.144" level="FAIL">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</msg>
+<status status="FAIL" starttime="20220406 17:25:20.144" endtime="20220406 17:25:20.144"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:25:18.203" endtime="20220406 17:25:20.144"/>
+</iter>
+<status status="FAIL" starttime="20220406 17:25:18.203" endtime="20220406 17:25:20.144"/>
+</for>
+<status status="FAIL" starttime="20220406 17:25:18.075" endtime="20220406 17:25:20.151"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:25:18.075" endtime="20220406 17:25:20.151"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${WhoWeAre}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220406 17:25:20.168" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="12d42619239257bc013f20964d14e665", element="d57675f4-c342-46a4-a007-db24fd975e0f")&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:20.151" endtime="20220406 17:25:20.168"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220406 17:25:20.184" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:25:20.168" endtime="20220406 17:25:20.184"/>
+</kw>
+<msg timestamp="20220406 17:25:20.184" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:25:20.151" endtime="20220406 17:25:20.184"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220406 17:25:20.184" endtime="20220406 17:25:20.184"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:25:10.781" endtime="20220406 17:25:20.184"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220406 17:24:39.666" endtime="20220406 17:25:20.192">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</status>
+</test>
+<test id="s1-t3" name="OurTeamPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220406 17:25:20.192" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220406 17:25:20.192" endtime="20220406 17:25:20.192"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220406 17:25:20.192" level="INFO">
+</msg>
+<msg timestamp="20220406 17:25:20.192" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220406 17:25:21.149" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220406 17:25:21.149" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220406 17:25:21.519" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220406 17:25:24.594" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:25:24.595" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220406 17:25:24.595" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220406 17:25:20.192" endtime="20220406 17:25:24.595"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:25:24.595" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001A58D6B9790&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:24.595" endtime="20220406 17:25:24.595"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:25:24.595" endtime="20220406 17:25:24.595"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220406 17:25:24.595" endtime="20220406 17:25:24.595"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:25:24.595" endtime="20220406 17:25:24.595"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:25:24.595" endtime="20220406 17:25:24.595"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 17:25:24.603" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 17:25:24.595" endtime="20220406 17:25:26.044"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220406 17:25:26.044" endtime="20220406 17:25:26.173"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 17:25:26.174" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220406 17:25:26.174" endtime="20220406 17:25:30.655"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:25:31.004" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:30.655" endtime="20220406 17:25:31.004"/>
+</kw>
+<status status="PASS" starttime="20220406 17:25:20.192" endtime="20220406 17:25:31.004"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 17:25:31.004" endtime="20220406 17:25:31.138"/>
+</kw>
+<kw name="Get OurTeamPage validated" library="OurTeamPageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${OurTeam}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 17:25:31.138" endtime="20220406 17:25:31.187"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220406 17:25:31.195" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' OUR TEAM ']'.</msg>
+<status status="PASS" starttime="20220406 17:25:31.187" endtime="20220406 17:25:32.135"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:25:32.347" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:32.135" endtime="20220406 17:25:32.347"/>
+</kw>
+<status status="PASS" starttime="20220406 17:25:31.138" endtime="20220406 17:25:32.347"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${OurTeam}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220406 17:25:32.366" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="3994d656245dc5abd2886f9ab333df11", element="342aae25-9a36-4abb-9f21-66b12a8ac040")&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:32.347" endtime="20220406 17:25:32.366"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220406 17:25:32.376" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:25:32.366" endtime="20220406 17:25:32.376"/>
+</kw>
+<msg timestamp="20220406 17:25:32.376" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:25:32.347" endtime="20220406 17:25:32.376"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220406 17:25:32.376" endtime="20220406 17:25:32.376"/>
+</kw>
+<status status="PASS" starttime="20220406 17:25:31.138" endtime="20220406 17:25:32.376"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" starttime="20220406 17:25:20.192" endtime="20220406 17:25:32.376"/>
+</test>
+<test id="s1-t4" name="PipelinePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220406 17:25:32.376" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220406 17:25:32.376" endtime="20220406 17:25:32.376"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220406 17:25:32.376" level="INFO">
+</msg>
+<msg timestamp="20220406 17:25:32.376" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220406 17:25:33.556" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220406 17:25:33.556" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220406 17:25:33.926" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220406 17:25:37.097" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:25:37.097" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220406 17:25:37.097" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220406 17:25:32.376" endtime="20220406 17:25:37.097"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:25:37.097" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001A58E753DF0&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:37.097" endtime="20220406 17:25:37.097"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:25:37.097" endtime="20220406 17:25:37.097"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220406 17:25:37.097" endtime="20220406 17:25:37.097"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:25:37.097" endtime="20220406 17:25:37.097"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:25:37.097" endtime="20220406 17:25:37.097"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 17:25:37.097" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 17:25:37.097" endtime="20220406 17:25:38.698"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220406 17:25:38.698" endtime="20220406 17:25:38.827"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 17:25:38.827" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220406 17:25:38.827" endtime="20220406 17:25:51.377"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:25:51.516" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:51.378" endtime="20220406 17:25:51.516"/>
+</kw>
+<status status="PASS" starttime="20220406 17:25:32.376" endtime="20220406 17:25:51.516"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 17:25:51.524" endtime="20220406 17:25:51.651"/>
+</kw>
+<kw name="Get PipelinePage validated" library="PipelinePageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${Pipeline}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 17:25:51.651" endtime="20220406 17:25:51.684"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220406 17:25:51.684" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' PIPELINE ']'.</msg>
+<status status="PASS" starttime="20220406 17:25:51.684" endtime="20220406 17:25:54.793"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:25:55.131" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:54.793" endtime="20220406 17:25:55.131"/>
+</kw>
+<status status="PASS" starttime="20220406 17:25:51.651" endtime="20220406 17:25:55.131"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_contentLink}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220406 17:25:55.140" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="baf19fe9eb98a334b36a6155f668e8c3", element="3ac00687-db29-408b-9e2b-3774aed7174f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220406 17:25:55.131" endtime="20220406 17:25:55.140"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:25:55.173" level="INFO">${href_list} = ['https://www.viltepso.com/', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information']</msg>
+<status status="PASS" starttime="20220406 17:25:55.140" endtime="20220406 17:25:55.173"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220406 17:25:55.173" level="INFO">['https://www.viltepso.com/', 'https://www.viltepso.com/prescribing-information', 'https://www.viltepso.com/prescribing-information']</msg>
+<status status="PASS" starttime="20220406 17:25:55.173" endtime="20220406 17:25:55.173"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220406 17:25:55.173" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220406 17:25:55.173" endtime="20220406 17:25:55.173"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.viltepso.com/</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:25:55.173" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220406 17:25:55.173" endtime="20220406 17:25:55.173"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:25:55.173" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220406 17:25:55.173" endtime="20220406 17:25:55.173"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220406 17:25:57.607" level="INFO">GET Request : url=https://www.viltepso.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220406 17:25:57.607" level="INFO">GET Response : url=https://www.viltepso.com/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.12.2', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.3.19', 'Cache-Control': 'no-cache, private', 'Date': 'Wed, 06 Apr 2022 11:55:56 GMT', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6Ilo0Yzc1VnU3TjdSdTJhL2RScmFOTmc9PSIsInZhbHVlIjoiY0hDbzFJMzl3M0tybnM2bHkwcUtkVFdJRmU5U1ZpU1Y2KzZaVTRHYThLVEFNcWpPWnZ1OVJwNTJ4YVA4cThsTEdaL2NYRGlNeG5ZcDg3Y3Y5SVR4Qi92TnBrK0dwQmlINlR2Y0JiRFRJcGF2OGMyYVQ1d1p2cVI2VU5oWS9xSWYiLCJtYWMiOiI4N2VkMjcwZjdlMWExYjJlMTRiNWM2NDMyY2ZiNDM2Y2JhYzMyMTExYTZiMzBiODU2ZjZiOGU5OTIyMWEwYzM5In0%3D; expires=Wed, 06-Apr-2022 13:55:56 GMT; Max-Age=7200; path=/; samesite=lax, viltepso_session=eyJpdiI6InNXSDRaSUJYbnF1NkNSWmtyOHBGSHc9PSIsInZhbHVlIjoiV1hlRmwyT1JscnBJclUyVzdaQkVxQUVQWEVhcWN2ZldPOE85c1ZKZkFNbDZSdFlleGttejA2bEY5SFo3dWFYQjBCNlpHM283NTcxUGxRK3FIdFdMZDNtbXNrSXNFekx0eWRGN25US0NnVkppeEl0cEl5TGRpTk9VTGpmSzk4RU4iLCJtYWMiOiJlYjE2NzFiMDUyZTI5YmVjODUzZTY0ZTcyZjgxZDYyM2ViYTAyNDNhMWU0ZGMwNjI2ZDQzNjNmNjgxNDM3MzNiIn0%3D; expires=Wed, 06-Apr-2022 13:55:56 GMT; Max-Age=7200; path=/; httponly; samesite=lax'} 
+ body=&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;
+                    Viltepso A Treatment Against DMD - VILTEPSO
+            &lt;/title&gt;
+
+    
+    &lt;meta name="description" content=' VILTEPSO is a treatment for Duchenne muscular dystrophy (DMD) in patients amenable to exon 53 skipping. Learn more about the clinical benefits of VILTEPSO. '&gt;
+        &lt;link rel="canonical" href='https://www.viltepso.com'/&gt;
+    &lt;meta property="og:title" content='Viltepso A Treatment Against DMD - VILTEPSO' /&gt;
+      &lt;meta property='og:description' content="VILTEPSO is a treatment for Duchenne muscular dystrophy (DMD) in patients amenable to exon 53 skipping. Learn more about the clinical benefits of VILTEPSO." /&gt;    
+    &lt;!-- Google Tag Manager --&gt;
+    &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PTFBQ9J');&lt;/script&gt;
+    &lt;!-- End Google Tag Manager --&gt;
+
+    &lt;link rel="stylesheet" type="text/css" href="/fonts/MyFontsWebfontsKit.css"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&amp;display=swap" rel="stylesheet"&gt;
+
+    &lt;!-- NEW 'OPEN SANS' FONT LINKS --&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap" rel="stylesheet"&gt;
+    
+    &lt;link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"&gt;
+    &lt;link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png"&gt;
+    &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
+    &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;
+    &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;
+    &lt;link crossorigin="use-credentials" rel="manifest" href="/site.webmanifest"&gt;
+    &lt;link rel="shortcut icon"
+          type="image/png"
+          href="/favicon.png"&gt;
+
+    &lt;link rel="stylesheet" media="screen" href=/css/app.css?id=d3f293da20da3e058647&gt;
+    &lt;meta name="csrf-token" content="YaNIH6dILf3puH4jypM7kgGKs7gNlvcUQV39EtkW"&gt;
+    
+&lt;/head&gt;
+&lt;body id="body" class='home'&gt;
+&lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTFBQ9J"
+                  height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+
+    &lt;div class="content-wrapper"&gt;
+
+        
+    &lt;nav&gt;
+    &lt;div class="nav-container desktop"&gt;
+        &lt;a class="nav-logo" href="/"&gt;&lt;img src="/img/Viltepso_Logo_R_RGB.svg" alt="Viltepso (viltolarsen) injection"&gt;&lt;/a&gt;
+        &lt;div class="right-content"&gt;
+            &lt;div class="nav-pi"&gt;
+                This site is intended for US residents &amp;nbsp; &lt;span class="orange"&gt;|&lt;/span&gt; &amp;nbsp;
+                &lt;a href="/prescribing-information" target="_blank"&gt;Prescribing Information&lt;/a&gt; &amp;nbsp; &lt;span class="orange"&gt;|&lt;/span&gt; &amp;nbsp;
+                &lt;a class="isi-toggle"&gt;Important Safety Information&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="nav-link-wrapper"&gt;
+                &lt;div class="nav-link "&gt;
+                    &lt;a href="/hcp" class=" "&gt;
+                        &lt;p&gt;&lt;span style="white-space:nowrap"&gt;FOR Healthcare &lt;/span&gt;&lt;br&gt;Professionals&lt;/p&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="nav-link "&gt;
+                    &lt;a href="/patient" class=" "&gt;
+                        &lt;p&gt;&lt;span style="white-space:nowrap"&gt;FOR Patients +&lt;/span&gt;&lt;br&gt;Caregivers&lt;/p&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="nav-link "&gt;
+                    &lt;a href="/support" class=" "&gt;
+                        &lt;p&gt;&lt;span style="white-space:nowrap"&gt;NS Support +&lt;/span&gt;&lt;br&gt;Resources&lt;/p&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="nav-link "&gt;
+                    &lt;a href="/stay-informed" class=" "&gt;
+                        &lt;p&gt;Stay&lt;br&gt;Informed&lt;/p&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- &lt;div class="banner"&gt;
+        &lt;a href="/pdf/US-NS65C-0691_49782_ID01N_JCode_HCP_Factsheet.pdf" target="_blank"&gt;&lt;span class="bold"&gt;EFFECTIVE APRIL 1, 2021:&lt;/span&gt; Permanent &lt;span class="bold"&gt;J-code J1427&lt;/span&gt; (Injection, Viltolarsen, 10 mg) &lt;span class="bold"&gt;&lt;u&gt;Learn More &gt;&lt;/u&gt;&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt; --&gt;
+    &lt;div class="nav-container mobile"&gt;
+        &lt;div class="nav-pi"&gt;
+            &lt;p&gt;This site is intended for US residents&lt;/p&gt;
+            &lt;a href="/prescribing-information" target="_blank"&gt;Prescribing Information&lt;/a&gt; &amp;nbsp; &lt;span class="orange"&gt;|&lt;/span&gt; &amp;nbsp;
+            &lt;a class="isi-toggle"&gt;Important Safety Information&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;a class="nav-logo" href="/"&gt;&lt;img src="/img/Viltepso_Logo_R_RGB.svg" alt="Viltepso (viltolarsen) injection"&gt;&lt;/a&gt;
+            &lt;div class="nav-toggle-container"&gt;
+                &lt;div class="nav-toggle closed unopened"&gt;
+                    &lt;div class="bar" id="topBar"&gt;&lt;/div&gt;
+                    &lt;div class="bar" id="middleBar"&gt;&lt;/div&gt;
+                    &lt;div class="bar" id="bottomBar"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- MOBILE LAYOUT ONLY: COLORED BLOCK --&gt;
+    &lt;hr class="activeNavBlock     "&gt;
+&lt;/nav&gt;
+&lt;div class="dropdown-container closed"&gt;
+    &lt;div class="dropdown-nav hidden"&gt;
+        &lt;div class="nav-link-wrapper"&gt;
+            &lt;div class="nav-link hcp-nav-link mobile-main-links"&gt;
+                &lt;a href="/hcp" class="bold "&gt;FOR Healthcare Professionals&lt;/a&gt;
+                &lt;button class="subNavBtn" id="hcpSubNavBtn"&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="sub-dropdown-container hiddenSubNav" id="hcpSubNav"&gt;
+                &lt;div class="sub-dropdown-nav"&gt;
+                    &lt;div class="sub-nav-link-wrapper"&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#about" class="mobile-sub-nav-link" id='about-viltepso-mob-sub-nav-hcp'&gt;ABOUT VILTEPSO&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#exon-skipping" class="mobile-sub-nav-link" id='exon-skipping-mob-sub-nav-hcp'&gt;EXON-SKIPPING THERAPY&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#efficacy" class="mobile-sub-nav-link" id='efficacy-mob-sub-nav-hcp'&gt;EFFICACY&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#safety" class="mobile-sub-nav-link" id='safety-mob-sub-nav-hcp'&gt;SAFETY&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#dosing" class="mobile-sub-nav-link" id='dosing-mob-sub-nav-hcp'&gt;DOSING&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/hcp#register" class="mobile-sub-nav-link" id='request-rep-mob-sub-nav-hcp'&gt;REQUEST A REPRESENTATIVE&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; 
+            &lt;div class="nav-link patient-nav-link mobile-main-links"&gt;
+                &lt;a href="/patient" class="bold "&gt;FOR Patients + Caregivers&lt;/a&gt;
+                &lt;button class="subNavBtn" id="patientSubNavBtn"&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="sub-dropdown-container hiddenSubNav" id="patientSubNav"&gt;
+                &lt;div class="sub-dropdown-nav "&gt;
+                    &lt;div class="sub-nav-link-wrapper"&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/patient#about" class="mobile-sub-nav-link" id='how-mob-sub-nav-patient'&gt;HOW VILTEPSO WORKS&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/patient#efficacy" class="mobile-sub-nav-link" id='impact-mob-sub-nav-patient'&gt;IMPACT ON DYSTROPHIN LEVELS&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/patient#safety" class="mobile-sub-nav-link" id='safety-mob-sub-nav-patient'&gt;SAFETY&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/patient#dosing" class="mobile-sub-nav-link" id='dosing-mob-sub-nav-patient'&gt;DOSING&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="nav-link support-nav-link mobile-main-links"&gt;
+                &lt;a href="/support" class="bold "&gt;NS Support + Resources&lt;/a&gt;
+                &lt;button class="subNavBtn" id='supportSubNavBtn'&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="sub-dropdown-container hiddenSubNav" id="supportSubNav"&gt;
+                &lt;div class="sub-dropdown-nav"&gt;
+                    &lt;div class="sub-nav-link-wrapper"&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/support#support" class="mobile-sub-nav-link" id='support-mob-sub-nav-support'&gt;NS SUPPORT&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nav-link"&gt;
+                            &lt;a href="/support#resources" class="mobile-sub-nav-link" id='resources-mob-sub-nav-support'&gt;RESOURCES&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="nav-link register-nav-link mobile-main-links"&gt;
+    ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220406 17:25:57.607" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:55.173" endtime="20220406 17:25:57.607"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_linkedin} and</arg>
+<arg>${contains_mailto}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220406 17:25:57.607" level="FAIL">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</msg>
+<status status="FAIL" starttime="20220406 17:25:57.607" endtime="20220406 17:25:57.607"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:25:55.173" endtime="20220406 17:25:57.607"/>
+</iter>
+<status status="FAIL" starttime="20220406 17:25:55.173" endtime="20220406 17:25:57.607"/>
+</for>
+<status status="FAIL" starttime="20220406 17:25:55.131" endtime="20220406 17:25:57.615"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:25:55.131" endtime="20220406 17:25:57.615"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${Pipeline}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220406 17:25:57.628" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="baf19fe9eb98a334b36a6155f668e8c3", element="ac5ca913-5b69-406e-8948-e0a5be0a69c4")&gt;</msg>
+<status status="PASS" starttime="20220406 17:25:57.615" endtime="20220406 17:25:57.628"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220406 17:25:57.645" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:25:57.628" endtime="20220406 17:25:57.645"/>
+</kw>
+<msg timestamp="20220406 17:25:57.645" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:25:57.615" endtime="20220406 17:25:57.645"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220406 17:25:57.645" endtime="20220406 17:25:57.645"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:25:51.651" endtime="20220406 17:25:57.645"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220406 17:25:32.376" endtime="20220406 17:25:57.645">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</status>
+</test>
+<test id="s1-t5" name="PartnershipPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220406 17:25:57.652" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220406 17:25:57.652" endtime="20220406 17:25:57.652"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220406 17:25:57.652" level="INFO">
+</msg>
+<msg timestamp="20220406 17:25:57.652" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220406 17:25:58.388" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220406 17:25:58.388" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220406 17:25:58.708" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220406 17:26:01.509" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:26:01.509" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220406 17:26:01.509" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220406 17:25:57.652" endtime="20220406 17:26:01.509"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:01.509" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001A58E763D60&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:01.509" endtime="20220406 17:26:01.509"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:01.509" endtime="20220406 17:26:01.509"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220406 17:26:01.509" endtime="20220406 17:26:01.509"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:01.509" endtime="20220406 17:26:01.509"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:01.509" endtime="20220406 17:26:01.509"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 17:26:01.509" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 17:26:01.509" endtime="20220406 17:26:02.836"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220406 17:26:02.836" endtime="20220406 17:26:02.961"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 17:26:02.961" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220406 17:26:02.961" endtime="20220406 17:26:07.575"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:26:07.860" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:07.575" endtime="20220406 17:26:07.860"/>
+</kw>
+<status status="PASS" starttime="20220406 17:25:57.645" endtime="20220406 17:26:07.860"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 17:26:07.860" endtime="20220406 17:26:07.981"/>
+</kw>
+<kw name="Get PartnershipPage validated" library="PartnershipPageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${Partnership}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 17:26:07.981" endtime="20220406 17:26:08.014"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220406 17:26:08.014" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' PARTNERSHIP ']'.</msg>
+<status status="PASS" starttime="20220406 17:26:08.014" endtime="20220406 17:26:08.770"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:26:08.910" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:08.770" endtime="20220406 17:26:08.910"/>
+</kw>
+<status status="PASS" starttime="20220406 17:26:07.981" endtime="20220406 17:26:08.910"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_contentLink}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220406 17:26:08.918" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="5930bb2df112cfae6f278020851ce530", element="646de836-8520-400f-8809-0027e80f6817")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220406 17:26:08.910" endtime="20220406 17:26:08.918"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:08.953" level="INFO">${href_list} = ['https://www.nippon-shinyaku.co.jp/english/', 'mailto:kitayama@nspharma.com', 'mailto:kitayama@nspharma.com']</msg>
+<status status="PASS" starttime="20220406 17:26:08.918" endtime="20220406 17:26:08.953"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220406 17:26:08.961" level="INFO">['https://www.nippon-shinyaku.co.jp/english/', 'mailto:kitayama@nspharma.com', 'mailto:kitayama@nspharma.com']</msg>
+<status status="PASS" starttime="20220406 17:26:08.953" endtime="20220406 17:26:08.961"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220406 17:26:08.961" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220406 17:26:08.961" endtime="20220406 17:26:08.961"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.nippon-shinyaku.co.jp/english/</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:08.961" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220406 17:26:08.961" endtime="20220406 17:26:08.961"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:08.961" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220406 17:26:08.961" endtime="20220406 17:26:08.961"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220406 17:26:10.292" level="INFO">GET Request : url=https://www.nippon-shinyaku.co.jp/english/ 
+ path_url=/english/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220406 17:26:10.292" level="INFO">GET Response : url=https://www.nippon-shinyaku.co.jp/english/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Wed, 06 Apr 2022 11:56:09 GMT', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': 'PHPSESSID=jfhlhf8tqtp46974o0ilvhtngn; path=/', 'Expires': 'Thu, 19 Nov 1981 08:52:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Pragma': 'no-cache'} 
+ body=
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"&gt;
+&lt;!-- google tag manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NBTS97L');&lt;/script&gt;
+&lt;!-- end google tag manager --&gt;
+
+
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;We build a healthier future. | NIPPON SHINYAKU CO., LTD.&lt;/title&gt;
+&lt;meta name="description" content="Nippon Shinyaku has always devoted serious efforts to make people’s lives better.All these efforts have been made based on our strong belief that we should help create a world where all people can live happy lives.Today, when the future is uncertain, it is necessary to find a new form of happiness, or a new way of living."&gt;
+&lt;meta name="keywords" content="NIPPON SHINYAKU,Pharmaceuticals,Functional Food,Sustainability,R&amp;D,Who we are,Investor Relations"&gt;	
+&lt;link rel="stylesheet" media="all" href="/english/library/css/common.css"&gt;
+&lt;link rel="stylesheet" media="screen and (max-width: 970px)" href="/english/library/css/sp.css"&gt;
+&lt;link rel="stylesheet" media="print, screen and (min-width: 971px)" href="/english/library/css/pc.css"&gt;
+&lt;link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 970px)" href="/english/library/css/tb.css"&gt;
+&lt;link rel="stylesheet" media="print" href="/english/library/css/print.css"&gt;
+&lt;!-- favicon --&gt;
+&lt;link rel="shortcut icon" href="/favicon.ico"&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;
+&lt;link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"&gt;
+
+&lt;script src="//cdn1.readspeaker.com/script/5393/webReader/webReader.js?pids=wr&amp;amp;forceAdapter=ioshtml5&amp;amp;disable=translation,lookup" type="text/javascript"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" media="screen" href="/english/library/css/top.css"&gt;
+
+&lt;link href="/library/css/slick.css" rel="stylesheet"/&gt;
+&lt;link href="/library/css/slick-theme.css" rel="stylesheet"/&gt;
+&lt;link href="/library/css/animate.min.css" rel="stylesheet"/&gt;
+&lt;link href="/english/library/css/swiper_style.css" rel="stylesheet"/&gt;
+&lt;link href="/library/css/swiper.min.css" rel="stylesheet"/&gt;
+
+&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+&lt;script&gt;
+(function(){
+	var agent = window.navigator.userAgent.toLowerCase();
+	var ipad = agent.indexOf('ipad') &gt; -1 || agent.indexOf('macintosh') &gt; -1 &amp;&amp; 'ontouchend' in document;
+	if(ipad){
+		var metaDiscre = document.head.children;
+		var metaLength = metaDiscre.length;
+		for(var i = 0;i &lt; metaLength;i++){
+			var proper = metaDiscre[i].getAttribute('name');
+			if(proper === 'viewport'){
+				var dis = metaDiscre[i];
+				dis.setAttribute('content','width=1370');
+			}
+		}
+
+	}
+}());
+&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body id="topPage"&gt;
+&lt;!-- google tag manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBTS97L" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- end google tag manager (noscript) --&gt;
+
+	&lt;div id="wrapper"&gt;
+		&lt;header&gt;
+	&lt;div id="headerWrap" class="fitWidthFull"&gt;
+		&lt;div id="header"&gt;
+			&lt;div class="logo"&gt;&lt;a href="/english/"&gt;&lt;img src="/library/img/common/header/img_logo_en.png" alt="logo"&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;div class="headerSearchSp pcNone"&gt;
+					&lt;img src="/library/img/common/header/img_spsearch_en.jpg" alt=""&gt; 
+			&lt;/div&gt;
+			
+			&lt;div id="headerContents"&gt;
+				&lt;div id="headerFontSize" class="spNone tbNone"&gt;
+					&lt;span&gt;&lt;img src="/library/img/common/header/btn_font_en.png" alt="font size"&gt;&lt;/span&gt;
+					&lt;span&gt;&lt;a href="javascript:void(0);" id="normal"&gt;&lt;img src="/library/img/common/header/btn_font_normal_en.png" alt="Standard"&gt;&lt;/a&gt;&lt;/span&gt;
+					&lt;span&gt;&lt;a href="javascript:void(0);" id="up"&gt;&lt;img src="/library/img/common/header/btn_font_large_en.png" alt="Expansion"&gt;&lt;/a&gt;&lt;/span&gt;
+				&lt;/div&gt;
+
+				&lt;div id="headerContact" class="spNone tbNone"&gt;&lt;a href="/english/inquiry/input.php"&gt;&lt;img src="/library/img/common/header/btn_contact_en.png" alt="Contact"&gt;&lt;/a&gt;&lt;/div&gt;
+
+				&lt;div id="headerNews" class="spNone tbNone"&gt;&lt;a href="/english/news/news.php"&gt;&lt;img src="/library/img/common/header/btn_news_en.png" alt="Press Releases"&gt;&lt;/a&gt;&lt;/div&gt;
+			
+				&lt;div id="headerLanguage" class="spNone tbNone"&gt;&lt;a href="/index.php"&gt;&lt;img src="/library/img/common/header/btn_japanese.png" alt="Japanese"&gt;&lt;/a&gt;&lt;/div&gt;
+				&lt;div id="headerSearch" class="spNone tbNone"&gt;
+					&lt;form id="ss-form1" action="/english/search-results/" method="GET" accept-charset="UTF-8"&gt;
+					&lt;!--syncsearch--&gt;
+						&lt;input type="text" id="ss-query1" name="query" autocomplete="off" aria-autocomplete="none" placeholder="Search"&gt;
+						&lt;input class="btnSearch" type="submit" value="" onclick="document.characterSet='UTF-8';"&gt;
+					&lt;/form&gt;
+				&lt;/div&gt;
+
+			&lt;/div&gt;
+			&lt;div id="toggle"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div id="headerSearchSp" class="pcNone searchspNone"&gt;
+			&lt;form id="ss-form2" action="/search-results/" target="_blank" method="GET" accept-charset="UTF-8"&gt;
+			&lt;!--syncsearch--&gt;
+				&lt;input type="text" id="ss-query2" name="query" autocomplete="off" aria-autocomplete="none" placeholder="Search"&gt;
+				&lt;input class="btnSearch" type="submit" value="検索" onclick="document.characterSet='UTF-8';"&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+
+		&lt;nav id="globalNaviBox"&gt;
+			&lt;ul class="globalNavi"&gt;
+				
+				&lt;li class="g3"&gt;
+					&lt;a href="/english/ir/" class="g_navi megaMenuWrapSpNone"&gt;Investor Relations&lt;/a&gt;
+					&lt;p class="g_naviSp megaMenuWrapPcNone"&gt;Investor Relations&lt;/p&gt;
+
+					&lt;div class="megaMenuWrap"&gt;
+						&lt;div class="megaMenuLink"&gt;
+							&lt;div class="megaMenuLinkInner"&gt;
+							&lt;a href="/english/ir/" class="megaPankuzu"&gt;&lt;p class="megaMenuTtl headmb10"&gt;Investor Relations &amp;gt;&lt;/p&gt;&lt;/a&gt;
+								&lt;div class="stockWrap"&gt;
+									&lt;div class="stockBlock"&gt;
+										&lt;div class="btnArea"&gt;&lt;a href="/english/ir/managementpolicy/top_interview.php" class="topMessage"&gt;Message from the President&lt;/a&gt;&lt;/div&gt;
+										&lt;div class="btnArea"&gt;&lt;a href="/english/ir/ir_news/" class="icoNews"&gt;&lt;span&gt;IR News&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+									&lt;/div&gt;
+									&lt;div class="stockBlock"&gt;
+										&lt;div class="stockLeftBox"&gt;
+											&lt;div class="btnArea"&gt;&lt;a href="/english/ir/managementpolicy/" class="whiteBtn btnArrow business" &gt;&lt;span&gt;Management Policy &lt;br class="spNone"&gt;and Plan&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+											&lt;div class="btnArea"&gt;&lt;a href="/english/ir/financial/" class="whiteBtn btnArrow financial"&gt;&lt;span&gt;Business/&lt;br&gt;Financial Information&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+											&lt;div class="btnArea"&gt;&lt;a href="/english/ir/ir_library/" class="whiteBtn btnArrow library"&gt;&lt;span&gt;IR Library&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+											&lt;div class="btnArea"&gt;&lt;a href="/english/ir/esg_management/" class="whiteBtn btnArrow esg"&gt;&lt;span&gt;ESG Management&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+											&lt;div class="btnArea"&gt;&lt;a href="/english/ir/ir_stock/" class="whiteBtn btnArrow stock"&gt;&lt;span&gt;Stock and&lt;br class="spNone"&gt;Shareholder Information&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+											&lt;div class="btnArea"&gt;&lt;a href="/english/ir/Investor/" class="whiteBtn btnArrow investor"&gt;&lt;span&gt;To Our Individual Investors&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+										&lt;/div&gt;
+	
+										&lt;div class="stockRightBox"&gt;	
+											&lt;div class="stockLinkWrap"&gt;
+												&lt;div&gt;&lt;a href="/english/ir/calendar/"&gt;&amp;gt;&amp;nbsp; IR Calendar&lt;/a&gt;&lt;/div&gt;
+												&lt;div&gt;&lt;a href="/english/ir/stockprice.php"&gt;&amp;gt;&amp;nbsp; Stock Quotes&lt;/a&gt;&lt;/div&gt;
+												&lt;div&gt;&lt;a href="/english/ir/analyst_coverage.php"&gt;&amp;gt;&amp;nbsp; Analyst Coverage&lt;/a&gt;&lt;/div&gt;
+												&lt;div&gt;&lt;a href="/english/ir/announcement.php"&gt;&amp;gt;&amp;nbsp; Electronic Announcements&lt;/a&gt;&lt;/div&gt;
+												&lt;div&gt;&lt;a href="/english/ir/ir_policy.php"&gt;&amp;gt;&amp;nbsp; Information Disclosure Policy&lt;/a&gt;&lt;/div&gt;
+												&lt;div&gt;&lt;a href="/english/ir/ir_email.php"&gt;&amp;gt;&amp;nbsp; IR e-mail&lt;/a&gt;&lt;/div&gt;
+												&lt;div class="mbs"&gt;&lt;a href="/english/ir/ir_sitemap.php"&gt;&amp;gt;&amp;nbsp; IR Information Site Map&lt;/a&gt;&lt;/div&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+									&lt;/div&gt;
+
+								&lt;/div&gt;
+								
+							&lt;/div&gt;
+						&lt;/div&gt;&lt;!--/ megaMenuLink --&gt;
+					&lt;/div&gt;&lt;!--/ megaMenuWrap --&gt;
+				&lt;/li&gt;
+
+				&lt;li class="g5"&gt;
+					&lt;a href="/english/sustainability/" class="g_navi megaMenuWrapSpNone"&gt;Sustainability&lt;/a&gt;
+					&lt;p class="g_naviSp megaMenuWrapPcNone"&gt;Sustainability&lt;/p&gt;
+					&lt;div class="megaMenuWrap"&gt;
+
+						&lt;div class="megaMenuLink"&gt;
+							&lt;div class="megaMenuLinkInner"&gt;
+								&lt;a href="/english/sustainability/" class="megaPankuzu"&gt;&lt;p class="megaMenuTtl headmb10"&gt;Sustainability &amp;gt;&lt;/p&gt;&lt;/a&gt;
+								&lt;div id="megaSustainabilityWrap"&gt;
+									&lt;div class="sustainabilityInner"&gt;
+										&lt;div class="btnArea"&gt;&lt;a href="/english/sustainability/commitment.php" class="topMessage"&gt;Message from the Chairman&lt;/a&gt;&lt;/div&gt;
+										&lt;div class="btnArea"&gt;&lt;a href="/english/sustainability/basic_policy.php" class="basicPolicy"&gt;&lt;span&gt;How We View Sustainability&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+									&lt;/div&gt;
+									&lt;div class="sustainabilityInner"&gt;
+										&lt;div class="csrWrap"&gt;
+											&lt;div class="btnArea"&gt;&lt;a href="/english/sustainability/materiality.php" class="materiality"&gt;&lt;span&gt;Nippon Shinyaku Group’s&lt;br&gt; Issues of Materiality&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;											
+											&lt;div class="ovalBtnWrap spNone"&gt;
+												&lt;div class="btnArea"&gt;&lt;a href="/english/sustainability/esg/esg_data.php"&gt;&amp;gt;&amp;nbsp;ESG Data&lt;/a&gt;&lt;/div&gt;
+												&lt;div class="btnArea"&gt;&lt;a href="/english/sustainability/esg/related_info.php"&gt;&amp;gt;&amp;nbsp;ESG-related Information&lt;/a&gt;&lt;/div&gt;
+												&lt;div class="btnArea"&gt;&lt;a href="/english/ir/ir_library/annual_report.php"&gt;&amp;gt;&amp;nbsp;Annual Report&lt;/a&gt;&lt;/div&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										
+										&lt;div class="csrWrap"&gt;
+											&lt;div&gt;&lt;a href="/english/sustainability/esg/environment/"&gt;&lt;img src="/library/img/common/header/img_sustainability_02.jpg" alt="The Environment" class="megaMenuWrapSpNone"&gt;&lt;span class="csrTtl"&gt;The Environment&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+											&lt;div class="susSubLinkWrap"&gt;
+												&lt;div&gt;&lt;a... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220406 17:26:10.292" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:08.961" endtime="20220406 17:26:10.292"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_linkedin} and</arg>
+<arg>${contains_mailto}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220406 17:26:10.292" level="FAIL">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</msg>
+<status status="FAIL" starttime="20220406 17:26:10.292" endtime="20220406 17:26:10.292"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:08.961" endtime="20220406 17:26:10.292"/>
+</iter>
+<status status="FAIL" starttime="20220406 17:26:08.961" endtime="20220406 17:26:10.292"/>
+</for>
+<status status="FAIL" starttime="20220406 17:26:08.910" endtime="20220406 17:26:10.292"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:08.910" endtime="20220406 17:26:10.292"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${Partnership}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220406 17:26:10.300" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5930bb2df112cfae6f278020851ce530", element="5e798149-9a05-45ea-8222-13f61902a502")&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:10.292" endtime="20220406 17:26:10.300"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220406 17:26:10.308" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:26:10.300" endtime="20220406 17:26:10.308"/>
+</kw>
+<msg timestamp="20220406 17:26:10.308" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:26:10.292" endtime="20220406 17:26:10.308"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220406 17:26:10.308" endtime="20220406 17:26:10.308"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:07.981" endtime="20220406 17:26:10.317"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220406 17:25:57.645" endtime="20220406 17:26:10.317">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</status>
+</test>
+<test id="s1-t6" name="ContactUsPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220406 17:26:10.317" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220406 17:26:10.317" endtime="20220406 17:26:10.317"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220406 17:26:10.317" level="INFO">
+</msg>
+<msg timestamp="20220406 17:26:10.317" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220406 17:26:10.994" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220406 17:26:10.994" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220406 17:26:11.311" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220406 17:26:14.337" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:26:14.337" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220406 17:26:14.337" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220406 17:26:10.317" endtime="20220406 17:26:14.337"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:14.337" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001A58E76C1C0&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:14.337" endtime="20220406 17:26:14.337"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:14.337" endtime="20220406 17:26:14.337"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220406 17:26:14.337" endtime="20220406 17:26:14.337"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:14.337" endtime="20220406 17:26:14.337"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:14.337" endtime="20220406 17:26:14.337"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 17:26:14.337" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 17:26:14.337" endtime="20220406 17:26:15.592"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220406 17:26:15.593" endtime="20220406 17:26:15.712"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 17:26:15.712" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220406 17:26:15.712" endtime="20220406 17:26:21.071"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:26:21.432" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:21.071" endtime="20220406 17:26:21.432"/>
+</kw>
+<status status="PASS" starttime="20220406 17:26:10.317" endtime="20220406 17:26:21.432"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 17:26:21.439" endtime="20220406 17:26:21.580"/>
+</kw>
+<kw name="Get ContactUsPage validated" library="ContactUsPageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${Contact Us}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 17:26:21.580" endtime="20220406 17:26:21.646"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220406 17:26:21.649" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' CONTACT US ']'.</msg>
+<status status="PASS" starttime="20220406 17:26:21.646" endtime="20220406 17:26:22.555"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:26:22.728" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:22.555" endtime="20220406 17:26:22.728"/>
+</kw>
+<status status="PASS" starttime="20220406 17:26:21.580" endtime="20220406 17:26:22.728"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_contentLink}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220406 17:26:22.736" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="0f7218babe43bd7f0b470b3624ff7bbb", element="07a09830-a8e7-41cf-80ea-5bb4ed9fa866")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220406 17:26:22.728" endtime="20220406 17:26:22.736"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:22.784" level="INFO">${href_list} = ['https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e2...</msg>
+<status status="PASS" starttime="20220406 17:26:22.736" endtime="20220406 17:26:22.784"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220406 17:26:22.784" level="INFO">['https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525', 'mailto:info@nspharma.com', 'mailto:trialinfo@nspharma.com', 'tel:+18336778778']</msg>
+<status status="PASS" starttime="20220406 17:26:22.784" endtime="20220406 17:26:22.784"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220406 17:26:22.784" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220406 17:26:22.784" endtime="20220406 17:26:22.784"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22d...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:22.784" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220406 17:26:22.784" endtime="20220406 17:26:22.784"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:22.784" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220406 17:26:22.784" endtime="20220406 17:26:22.784"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220406 17:26:23.173" level="INFO">GET Request : url=https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525 
+ path_url=/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220406 17:26:23.173" level="INFO">GET Response : url=https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 06 Apr 2022 11:56:23 GMT', 'Expires': '-1', 'Cache-Control': 'private, max-age=0', 'Content-Type': 'text/html; charset=UTF-8', 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Content-Encoding': 'gzip', 'Server': 'gws', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Set-Cookie': '1P_JAR=2022-04-06-11; expires=Fri, 06-May-2022 11:56:23 GMT; path=/; domain=.google.com; Secure, NID=511=TnxC3m0WlsvK-VVlI2yEo6mJRxVzJWG1B4-_P_1RrYQLkE6Kth49DKYcyBRqaLj5Lbs6OtXInBnKCEjOP3mlCQC92eJaXB_dBsphrPU55KmXzp0td7d2yVf6Ky2Q5x8LZz-jVO2RYuuCpX0Y-kp77nBgHocbl_uCEAt2RH3YBUc; expires=Thu, 06-Oct-2022 11:56:23 GMT; path=/; domain=.google.com; HttpOnly', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'Transfer-Encoding': 'chunked'} 
+ body=&lt;!DOCTYPE html&gt;&lt;html itemscope="" itemtype="http://schema.org/Place" lang="en-IN"&gt; &lt;head&gt; &lt;link href="/maps/preview/opensearch.xml?hl=en" title="Google Maps" rel="search" type="application/opensearchdescription+xml"&gt; &lt;title&gt; Google Maps &lt;/title&gt; &lt;meta content="Find local businesses, view maps and get driving directions in Google Maps." name="Description"&gt;  &lt;meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport"&gt; &lt;meta content="chrome=1" http-equiv="X-UA-Compatible"&gt; &lt;meta content="notranslate" name="google"&gt; &lt;meta content="origin" name="referrer"&gt; &lt;meta content="ByHT0GXztW_RcGxS0o86DBf1WtNu02FfqlcT8njnSqU" name="google-site-verification"&gt; &lt;meta content="Diln__r3p9-tt39P2Cl2Amvx6oFB4PATnxuFBaw6ej8" name="google-site-verification"&gt;   &lt;meta content="Google Maps" itemprop="name"&gt; &lt;meta content="Google Maps" property="og:title"&gt; &lt;meta content="https://maps.google.com/maps/api/staticmap?center=40.9646904%2C-74.0708465&amp;amp;zoom=17&amp;amp;size=256x256&amp;amp;language=en&amp;amp;sensor=false&amp;amp;client=google-maps-frontend&amp;amp;signature=YwosilxCQNShSiRD9QTZaoG7rws" itemprop="image"&gt; &lt;meta content="https://maps.google.com/maps/api/staticmap?center=40.9646904%2C-74.0708465&amp;amp;zoom=17&amp;amp;size=256x256&amp;amp;language=en&amp;amp;sensor=false&amp;amp;client=google-maps-frontend&amp;amp;signature=YwosilxCQNShSiRD9QTZaoG7rws" property="og:image"&gt; &lt;meta content="256" property="og:image:width"&gt; &lt;meta content="256" property="og:image:height"&gt;  &lt;meta content="Find local businesses, view maps and get driving directions in Google Maps." itemprop="description"&gt; &lt;meta content="Find local businesses, view maps and get driving directions in Google Maps." property="og:description"&gt;  &lt;meta content="Google Maps" property="og:site_name"&gt; &lt;meta content="summary" name="twitter:card"&gt;      &lt;script nonce="/V6NV15FTQhPTKYR793WPA=="&gt;(function(){(function(){function c(d){this.t={};this.tick=function(g,e,f){e=void 0!=f?f:(new Date).getTime();this.t[g]=e};this.getStartTickTime=function(){return this.t.start};this.tick("start",null,d)}var b;if(window.performance)var a=(b=window.performance.timing)&amp;&amp;b.responseStart;var h=0&lt;a?new c(a):new c;window.tactilecsi={Timer:c,load:h};b&amp;&amp;(b=b.navigationStart,0&lt;b&amp;&amp;a&gt;=b&amp;&amp;(window.tactilecsi.srt=a-b));try{a=null,window.chrome&amp;&amp;window.chrome.csi&amp;&amp;(a=Math.floor(window.chrome.csi().pageT)),null==a&amp;&amp;window.gtbExternal&amp;&amp;
+(a=window.gtbExternal.pageT()),null==a&amp;&amp;window.external&amp;&amp;(a=window.external.pageT),a&amp;&amp;(window.tactilecsi.pt=a)}catch(d){}})();}).call(this);&lt;/script&gt; &lt;script nonce="/V6NV15FTQhPTKYR793WPA=="&gt;function tick(t){if (window.tactilecsi){window.tactilecsi.load.tick(t);}
+if (window['wtf']&amp;&amp; window['wtf']['trace']&amp;&amp;
+window['wtf']['trace']['timeStamp']){window['wtf']['trace']['timeStamp']('application.' + t);}
+}
+
+tick('start');tick('p0');&lt;/script&gt; &lt;script nonce="/V6NV15FTQhPTKYR793WPA=="&gt;(function(){
+'use strict';var b="click mousedown rightclick contextmenu keypress wheel".split(" ");function c(a){d.data={type:a.type,target:a.target,currentTarget:a.currentTarget,time:Date.now(),beforeAppLoad:!0};(a=d.dispose)&amp;&amp;a()}
+function e(){for(var a=0;a&lt;b.length;a++)document.removeEventListener(b[a],c);delete d.dispose}
+var f={},g=["globals","fua"],h=this||self;g[0]in h||"undefined"==typeof h.execScript||h.execScript("var "+g[0]);for(var k;g.length&amp;&amp;(k=g.shift());)g.length||void 0===f?h[k]&amp;&amp;h[k]!==Object.prototype[k]?h=h[k]:h=h[k]={}:h[k]=f;var d=globals.fua;d.install=function(){for(var a=0;a&lt;b.length;a++)document.addEventListener(b[a],c);d.dispose=e};}).call(this);&lt;/script&gt; &lt;script nonce="/V6NV15FTQhPTKYR793WPA=="&gt;globals.fua.install();&lt;/script&gt; &lt;script nonce="/V6NV15FTQhPTKYR793WPA=="&gt;(function(){
+'use strict';var l="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},p;if("function"==typeof Object.setPrototypeOf)p=Object.setPrototypeOf;else{var q;a:{var r={a:!0},u={};try{u.__proto__=r;q=u.a;break a}catch(a){}q=!1}p=q?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var v=p,w=function(){for(var a=Number(this),b=[],c=a;c&lt;arguments.length;c++)b[c-a]=arguments[c];return b},x=this||self,y=function(a,b,c){a=a.split(".");c=c||x;a[0]in c||"undefined"==typeof c.execScript||c.execScript("var "+a[0]);for(var d;a.length&amp;&amp;(d=a.shift());)a.length||void 0===b?c[d]&amp;&amp;c[d]!==Object.prototype[d]?c=c[d]:c=c[d]={}:c[d]=b},z=function(a){var b=typeof a;return"object"==b&amp;&amp;null!=a||"function"==b};function A(a,b){return x.setTimeout(function(){try{a()}catch(c){throw c;}},b)}
+;var B=/(?:@|\()([^:]*(:\/)?[^:]*(:\d+\/)?[^:]*):/;function C(a,b){var c=0;a.forEach(function(d){c+=d.length});b.forEach(function(d){c+=d.length});return 3*(a.length+b.length)+1.1*c}
+;var D=function(a,b,c,d){this.o=b;this.g=this.m=a;this.s=c||0;this.u=d||2};D.prototype.j=function(){return this.m};var E=function(a,b,c){D.call(this,a,b);this.v=c;this.l=null;this.h=this.i=0};E.prototype=l(D.prototype);E.prototype.constructor=E;if(v)v(E,D);else for(var F in D)if("prototype"!=F)if(Object.defineProperties){var G=Object.getOwnPropertyDescriptor(D,F);G&amp;&amp;Object.defineProperty(E,F,G)}else E[F]=D[F];var H=function(a){var b=Date.now();if(0==a.h)return a.h=b,!0;var c=b&gt;a.h+a.j();c&amp;&amp;(a.h=b,a.g=Math.min(a.o,a.g*a.u),a.m=Math.min(a.o,a.g+(a.s?Math.round(a.s*(Math.random()-.5)*2*a.g):0)));return c};E.prototype.j=function(){var a=D.prototype.j.call(this);this.l&amp;&amp;x.clearTimeout(this.l);this.l=A(this.v,2*a);return a};var I=function(){this.g={}};I.prototype.get=function(a){a=J(a);return this.g[a]};I.prototype.set=function(a,b){a=J(a);this.g[a]=b};var J=function(a){if("object"===typeof a){var b=[],c;for(c in a)a.hasOwnProperty(c)&amp;&amp;b.push(K(a[c].toString()));return b.join(" ")}return K(a.toString())},K=function(a){for(;":"==a.charAt(a.length-1);)a=a.slice(0,a.length-1);a=a.split(":");return a[a.length-1].trim()};var M=function(){var a="undefined"===typeof DEV_MODE?!1:DEV_MODE,b="undefined"===typeof LOGGING_ENDPOINT?"/maps/preview/log204":LOGGING_ENDPOINT,c="undefined"===typeof JS_VERSION?null:JS_VERSION,d="undefined"===typeof APP_OPTIONS?null:APP_OPTIONS[1],e="undefined"===typeof PRODUCT_ID?81:PRODUCT_ID,g=this;var f=void 0===f?x.location&amp;&amp;x.location.hostname:f;this.u=a;this.j=b;this.B=c;this.A=d;this.v=e;this.o=f;this.i=null;this.m=!1;this.s=this.h=null;this.g=new I;this.l=new I;var k=x.onerror;x.onerror=
+function(){var h=w.apply(0,arguments);k&amp;&amp;k.apply(null,h);L(g,h[0],h[1],h[2])}};M.prototype.listen=function(a){this.i=a};M.prototype.log=function(a,b){L(this,a,void 0,void 0,b);return a};var N=function(a,b){var c=a.g.get(b);c||(c=new E(6E4,36E5,function(){var d=a.g,e=J(b);delete d.g[e]}),a.g.set(b,c));c.i++;return c},Q=function(a,b,c,d,e,g){var f=O(z(b)?b.message:b,g||1);f.type="error";f.count=e.i;e.i=0;if(z(b)){if(c=b.file||"",f.file="string"===typeof c?c.substr(0,400):"",f.line=b.line||0,"string"===typeof b.stack){b=b.stack.split("\n");c=0;for(d=b.length;c&lt;d&amp;&amp;40&gt;c;++c)e=b[c].trim(),0&lt;e.length&amp;&amp;f.stack.push(e);f.stackUrls=[];b=f.stack;c=f.stackUrls;d=1700-(3+1.1*f.message.length);e={};for(var k=0,h=0;h&lt;b.length;++h){var m=b[h],n=m.match(B);if(n){n=n[1];if(e[n])var t=e[n];else t=".."+k+"..",e[n]=t,c.push(n),k++;b[h]=m.replace(n,t)}}m=e=C(b,c);h="";for(k=null;m&gt;d;){h=
+b.pop()||"";k=null;m=".."+(c.length-1)+"..";if(-1&lt;h.indexOf(m)){n=!1;for(t=b.length-1;0&lt;=t;t--)if(-1&lt;b[t].indexOf(m)){n=!0;break}n||(k=c.pop())}m=C(b,c)}0&gt;=Math.ceil(e-m)?b=0:(d=Math.floor(d-m),3&lt;d&amp;&amp;(h=h.length&gt;d?h.substr(0,d-3)+"...":h,b.push(h),d-=h.length,k&amp;&amp;3&lt;d&amp;&amp;c.push(k.length&gt;d?k.substr(0,d-3)+"...":k)),b=Math.ceil(e-C(b,c)));f.stackTruncation=b}}else f.file="string"===typeof c?c.substr(0,400):"",f.line=d||0;P(a,f,g)&amp;&amp;(f.errorType=9);return f},P=function(a,b,c){var d=b.message,e=navigator.userAgent;if(/HeadlessChrome/.test(e)||/Trident\/7\.0/.test(e)&amp;&amp;!/rv:11\.0/.test(e)||a.o&amp;&amp;!/\.google\./.test(a.o)||0&lt;=d.indexOf("zCommon")||0&lt;=d.indexOf("887a0005")||!c&amp;&amp;("Script error"==d||"Script error."==d)||-1!=d.indexOf("Not enough storage is available to complete this operation.")||0&lt;=d.indexOf("ArrayBuffer length minus the")||d.match(/new RegExp.*ludo_cid/)||0&lt;=d.indexOf("Cannot read property 'mute' of null"))return!0;a=b.stack;for(c=0;c&lt;a.length;++c)if(a[c].match(/phantomjs/i))return!0;a=function(g){return!g||
+0&lt;=g.indexOf("/maps")?!0:!1};if(0&lt;=d.indexOf("JSON syntax error")&amp;&amp;!a(b.file))return!0;d=function(g){return 0==g.indexOf("resource://")||0==g.indexOf("chrome-extension://")||0==g.indexOf("https://")&amp;&amp;8!=g.indexOf("www.google")&amp;&amp;8!=g.indexOf("maps.gstatic")&amp;&amp;8!=g.indexOf("www.gstatic")&amp;&amp;8!=g.indexOf("apis.google")?!1:!0};if(b=b.stackUrls)for(a=0;a&lt;b.length;++a)if(!d(b[a]))return!0;return!1},L=function(a,b,c,d,e){var g=z(b)?b.message:b,f=a.l.get(g);if(f)f&amp;&amp;g.length&gt;f.message.length&amp;&amp;(f.message=g);else if(f=N(a,g),H(f)){var k=Q(a,b,c,d,f,e);R(a,k);a.l.set(g,k);x.setTimeout(function(){a.i&amp;&amp;a.i(k);a.m||S(a,k);var h=a.l,m=J(g);delete h.g[m]},0)}},R=function(a,b){var c=b.message+"\n";for(var d=0,e=b.stack.length;d&lt;e;++d)c+=b.stack[d]+"\n";d=0;for(e=b.stackUrls.length;d&lt;e;++d)c+=".."+d+"..="+b.stackUrls[d]+"\n";a.h||(a.h=c);a.s=c},S=function(a,b){if(a.j){var c=2;b.count&amp;&amp;1&lt;b.count&amp;&amp;c++;var d=4;b.file&amp;&amp;d++;b.line&amp;&amp;d++;b.stack&amp;&amp;(d+=b.stack.length);0&lt;b.stackTruncation&amp;&amp;d++;b.stackUrls&amp;&amp;(d+=b.stackUrls.length);var e=[];e.push("!8m");e.push(""+(c+d));e.push("!2e6");b.count&amp;&amp;1&lt;b.count&amp;&amp;(e.push("!7i"),e.push(b.count));e.push("!9m");e.push(""+d);e.push("!1s");e.push(T(b.message));b.file&amp;&amp;(e.push("!2s"),e.push(T(b.file)));b.line&amp;&amp;(e.push("!3i"),e.push(b.line));if(b.stack)for(c=0,d=b.stack.length;c&lt;d;++c)e.push("!4s"),e.push(T(b.stack[c]));e.push("!6s");e.push(T(a.B));e.push("!8e"+b.errorType);0&lt;b.stackTruncation&amp;&amp;(e.push("!9i"),e.push(b.stackTruncation));if(b.stackUrls)for(c=0,d=b.stackUrls.length;c&lt;d;c++)e.push("!10s"),e.push(T(b.stackUrls[c]));e.push("!11s");e.push(T(a.A));e.push("!11m1");e.push("!7e");e.push(String(a.v||0));var g=a.j+(0&lt;=a.j.indexOf("?")?"&amp;":"?")+"pb="+e.join("");if(a.u)(a=x.console)&amp;&amp;a.log.ca... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220406 17:26:23.173" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:22.784" endtime="20220406 17:26:23.173"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_linkedin} and</arg>
+<arg>${contains_mailto}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220406 17:26:23.173" level="FAIL">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</msg>
+<status status="FAIL" starttime="20220406 17:26:23.173" endtime="20220406 17:26:23.173"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:22.784" endtime="20220406 17:26:23.173"/>
+</iter>
+<status status="FAIL" starttime="20220406 17:26:22.784" endtime="20220406 17:26:23.173"/>
+</for>
+<status status="FAIL" starttime="20220406 17:26:22.728" endtime="20220406 17:26:23.173"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:22.728" endtime="20220406 17:26:23.173"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${Contact Us}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220406 17:26:23.189" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0f7218babe43bd7f0b470b3624ff7bbb", element="5dca80d8-74d0-45d5-a3da-cb07ecb04bec")&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:23.173" endtime="20220406 17:26:23.189"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220406 17:26:23.207" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:26:23.189" endtime="20220406 17:26:23.207"/>
+</kw>
+<msg timestamp="20220406 17:26:23.207" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:26:23.173" endtime="20220406 17:26:23.207"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220406 17:26:23.207" endtime="20220406 17:26:23.207"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:21.580" endtime="20220406 17:26:23.207"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220406 17:26:10.317" endtime="20220406 17:26:23.207">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</status>
+</test>
+<test id="s1-t7" name="CareersPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220406 17:26:23.216" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220406 17:26:23.216" endtime="20220406 17:26:23.216"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220406 17:26:23.216" level="INFO">
+</msg>
+<msg timestamp="20220406 17:26:23.216" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220406 17:26:23.978" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220406 17:26:23.978" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220406 17:26:24.314" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220406 17:26:27.479" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220406 17:26:27.479" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220406 17:26:27.479" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220406 17:26:23.216" endtime="20220406 17:26:27.479"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:27.479" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001A58E78FC10&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:27.479" endtime="20220406 17:26:27.479"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:27.479" endtime="20220406 17:26:27.479"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220406 17:26:27.479" endtime="20220406 17:26:27.479"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:27.479" endtime="20220406 17:26:27.479"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220406 17:26:27.479" endtime="20220406 17:26:27.479"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220406 17:26:27.487" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220406 17:26:27.479" endtime="20220406 17:26:28.793"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220406 17:26:28.793" endtime="20220406 17:26:28.920"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220406 17:26:28.920" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220406 17:26:28.920" endtime="20220406 17:26:37.097"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:26:37.267" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:37.097" endtime="20220406 17:26:37.267"/>
+</kw>
+<status status="PASS" starttime="20220406 17:26:23.216" endtime="20220406 17:26:37.267"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220406 17:26:37.267" endtime="20220406 17:26:37.409"/>
+</kw>
+<kw name="Get CareersPage validated" library="CareersPageNSP">
+<kw name="Wait Until element passed is located on Page and click link" library="Generic">
+<arg>${Careers}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220406 17:26:37.409" endtime="20220406 17:26:37.442"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220406 17:26:37.442" level="INFO">Clicking link 'xpath://div[@class='main-nav']/a[.=' CAREERS ']'.</msg>
+<status status="PASS" starttime="20220406 17:26:37.442" endtime="20220406 17:26:43.824"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>linkfound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220406 17:26:44.001" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="linkfound"&gt;&lt;img src="linkfound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:43.824" endtime="20220406 17:26:44.009"/>
+</kw>
+<status status="PASS" starttime="20220406 17:26:37.409" endtime="20220406 17:26:44.009"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Get All links test</arg>
+<arg>${NSP_contentLink}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links test" library="Generic">
+<arg>${NSP_contentLink}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220406 17:26:44.017" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c86d5c632fb79ca419861d3c22656f4e", element="0cb6d00e-06f9-4159-a1bc-a1850ef91ca8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220406 17:26:44.009" endtime="20220406 17:26:44.017"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:44.116" level="INFO">${href_list} = ['https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e2...</msg>
+<status status="PASS" starttime="20220406 17:26:44.017" endtime="20220406 17:26:44.116"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220406 17:26:44.116" level="INFO">['https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525', 'https://www.nspharma.com/careers?job_id=1', 'mailto:nsphr@nspharma.com', 'https://www.nspharma.com/careers?job_id=2', 'mailto:nsphr@nspharma.com', 'https://www.nspharma.com/careers?job_id=3', 'mailto:nsphr@nspharma.com', 'https://www.nspharma.com/careers?job_id=4', 'mailto:nsphr@nspharma.com']</msg>
+<status status="PASS" starttime="20220406 17:26:44.116" endtime="20220406 17:26:44.116"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${baseUrl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220406 17:26:44.116" level="INFO">Creating Session using : alias=testing, url=https://www.nspharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220406 17:26:44.116" endtime="20220406 17:26:44.116"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22d...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_linkedin}</var>
+<arg>"linkedin" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:44.116" level="INFO">${contains_linkedin} = True</msg>
+<status status="PASS" starttime="20220406 17:26:44.116" endtime="20220406 17:26:44.116"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${contains_mailto}</var>
+<arg>"mailto" not in "${element_href}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220406 17:26:44.116" level="INFO">${contains_mailto} = True</msg>
+<status status="PASS" starttime="20220406 17:26:44.116" endtime="20220406 17:26:44.116"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220406 17:26:44.461" level="INFO">GET Request : url=https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525 
+ path_url=/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220406 17:26:44.461" level="INFO">GET Response : url=https://www.google.com/maps/place/NS+Pharma/@40.9646904,-74.0708465,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x0:0xa0e22db63e75de7f!2sNS+Pharma!8m2!3d40.9646904!4d-74.0686525!3m4!1s0x89c2e52cd2bfffff:0xa0e22db63e75de7f!8m2!3d40.9646904!4d-74.0686525 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 06 Apr 2022 11:56:44 GMT', 'Expires': '-1', 'Cache-Control': 'private, max-age=0', 'Content-Type': 'text/html; charset=UTF-8', 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Content-Encoding': 'gzip', 'Server': 'gws', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Set-Cookie': '1P_JAR=2022-04-06-11; expires=Fri, 06-May-2022 11:56:44 GMT; path=/; domain=.google.com; Secure, NID=511=P-eK64RCGbBg0qc0sQGcigtqqg_Y8RzMN-dSi80QEv1gN2QqJyAilUQtCoxFA3l3UykuhK3HNJI7h16_uR1MHw-5g22v3oqPv0cqP1cHHuJ2KrXcI9exmwDwHSDyIF3ec1xlMtlIMf_2B64H9w7CJYqGYVD0ASpMXEpQgxo7uAA; expires=Thu, 06-Oct-2022 11:56:44 GMT; path=/; domain=.google.com; HttpOnly', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'Transfer-Encoding': 'chunked'} 
+ body=&lt;!DOCTYPE html&gt;&lt;html itemscope="" itemtype="http://schema.org/Place" lang="en-IN"&gt; &lt;head&gt; &lt;link href="/maps/preview/opensearch.xml?hl=en" title="Google Maps" rel="search" type="application/opensearchdescription+xml"&gt; &lt;title&gt; Google Maps &lt;/title&gt; &lt;meta content="Find local businesses, view maps and get driving directions in Google Maps." name="Description"&gt;  &lt;meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport"&gt; &lt;meta content="chrome=1" http-equiv="X-UA-Compatible"&gt; &lt;meta content="notranslate" name="google"&gt; &lt;meta content="origin" name="referrer"&gt; &lt;meta content="ByHT0GXztW_RcGxS0o86DBf1WtNu02FfqlcT8njnSqU" name="google-site-verification"&gt; &lt;meta content="Diln__r3p9-tt39P2Cl2Amvx6oFB4PATnxuFBaw6ej8" name="google-site-verification"&gt;   &lt;meta content="Google Maps" itemprop="name"&gt; &lt;meta content="Google Maps" property="og:title"&gt; &lt;meta content="https://maps.google.com/maps/api/staticmap?center=40.9646904%2C-74.0708465&amp;amp;zoom=17&amp;amp;size=256x256&amp;amp;language=en&amp;amp;sensor=false&amp;amp;client=google-maps-frontend&amp;amp;signature=YwosilxCQNShSiRD9QTZaoG7rws" itemprop="image"&gt; &lt;meta content="https://maps.google.com/maps/api/staticmap?center=40.9646904%2C-74.0708465&amp;amp;zoom=17&amp;amp;size=256x256&amp;amp;language=en&amp;amp;sensor=false&amp;amp;client=google-maps-frontend&amp;amp;signature=YwosilxCQNShSiRD9QTZaoG7rws" property="og:image"&gt; &lt;meta content="256" property="og:image:width"&gt; &lt;meta content="256" property="og:image:height"&gt;  &lt;meta content="Find local businesses, view maps and get driving directions in Google Maps." itemprop="description"&gt; &lt;meta content="Find local businesses, view maps and get driving directions in Google Maps." property="og:description"&gt;  &lt;meta content="Google Maps" property="og:site_name"&gt; &lt;meta content="summary" name="twitter:card"&gt;      &lt;script nonce="DEKzmhw+4nNuDwA90GXdyw=="&gt;(function(){(function(){function c(d){this.t={};this.tick=function(g,e,f){e=void 0!=f?f:(new Date).getTime();this.t[g]=e};this.getStartTickTime=function(){return this.t.start};this.tick("start",null,d)}var b;if(window.performance)var a=(b=window.performance.timing)&amp;&amp;b.responseStart;var h=0&lt;a?new c(a):new c;window.tactilecsi={Timer:c,load:h};b&amp;&amp;(b=b.navigationStart,0&lt;b&amp;&amp;a&gt;=b&amp;&amp;(window.tactilecsi.srt=a-b));try{a=null,window.chrome&amp;&amp;window.chrome.csi&amp;&amp;(a=Math.floor(window.chrome.csi().pageT)),null==a&amp;&amp;window.gtbExternal&amp;&amp;
+(a=window.gtbExternal.pageT()),null==a&amp;&amp;window.external&amp;&amp;(a=window.external.pageT),a&amp;&amp;(window.tactilecsi.pt=a)}catch(d){}})();}).call(this);&lt;/script&gt; &lt;script nonce="DEKzmhw+4nNuDwA90GXdyw=="&gt;function tick(t){if (window.tactilecsi){window.tactilecsi.load.tick(t);}
+if (window['wtf']&amp;&amp; window['wtf']['trace']&amp;&amp;
+window['wtf']['trace']['timeStamp']){window['wtf']['trace']['timeStamp']('application.' + t);}
+}
+
+tick('start');tick('p0');&lt;/script&gt; &lt;script nonce="DEKzmhw+4nNuDwA90GXdyw=="&gt;(function(){
+'use strict';var b="click mousedown rightclick contextmenu keypress wheel".split(" ");function c(a){d.data={type:a.type,target:a.target,currentTarget:a.currentTarget,time:Date.now(),beforeAppLoad:!0};(a=d.dispose)&amp;&amp;a()}
+function e(){for(var a=0;a&lt;b.length;a++)document.removeEventListener(b[a],c);delete d.dispose}
+var f={},g=["globals","fua"],h=this||self;g[0]in h||"undefined"==typeof h.execScript||h.execScript("var "+g[0]);for(var k;g.length&amp;&amp;(k=g.shift());)g.length||void 0===f?h[k]&amp;&amp;h[k]!==Object.prototype[k]?h=h[k]:h=h[k]={}:h[k]=f;var d=globals.fua;d.install=function(){for(var a=0;a&lt;b.length;a++)document.addEventListener(b[a],c);d.dispose=e};}).call(this);&lt;/script&gt; &lt;script nonce="DEKzmhw+4nNuDwA90GXdyw=="&gt;globals.fua.install();&lt;/script&gt; &lt;script nonce="DEKzmhw+4nNuDwA90GXdyw=="&gt;(function(){
+'use strict';var l="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},p;if("function"==typeof Object.setPrototypeOf)p=Object.setPrototypeOf;else{var q;a:{var r={a:!0},u={};try{u.__proto__=r;q=u.a;break a}catch(a){}q=!1}p=q?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var v=p,w=function(){for(var a=Number(this),b=[],c=a;c&lt;arguments.length;c++)b[c-a]=arguments[c];return b},x=this||self,y=function(a,b,c){a=a.split(".");c=c||x;a[0]in c||"undefined"==typeof c.execScript||c.execScript("var "+a[0]);for(var d;a.length&amp;&amp;(d=a.shift());)a.length||void 0===b?c[d]&amp;&amp;c[d]!==Object.prototype[d]?c=c[d]:c=c[d]={}:c[d]=b},z=function(a){var b=typeof a;return"object"==b&amp;&amp;null!=a||"function"==b};function A(a,b){return x.setTimeout(function(){try{a()}catch(c){throw c;}},b)}
+;var B=/(?:@|\()([^:]*(:\/)?[^:]*(:\d+\/)?[^:]*):/;function C(a,b){var c=0;a.forEach(function(d){c+=d.length});b.forEach(function(d){c+=d.length});return 3*(a.length+b.length)+1.1*c}
+;var D=function(a,b,c,d){this.o=b;this.g=this.m=a;this.s=c||0;this.u=d||2};D.prototype.j=function(){return this.m};var E=function(a,b,c){D.call(this,a,b);this.v=c;this.l=null;this.h=this.i=0};E.prototype=l(D.prototype);E.prototype.constructor=E;if(v)v(E,D);else for(var F in D)if("prototype"!=F)if(Object.defineProperties){var G=Object.getOwnPropertyDescriptor(D,F);G&amp;&amp;Object.defineProperty(E,F,G)}else E[F]=D[F];var H=function(a){var b=Date.now();if(0==a.h)return a.h=b,!0;var c=b&gt;a.h+a.j();c&amp;&amp;(a.h=b,a.g=Math.min(a.o,a.g*a.u),a.m=Math.min(a.o,a.g+(a.s?Math.round(a.s*(Math.random()-.5)*2*a.g):0)));return c};E.prototype.j=function(){var a=D.prototype.j.call(this);this.l&amp;&amp;x.clearTimeout(this.l);this.l=A(this.v,2*a);return a};var I=function(){this.g={}};I.prototype.get=function(a){a=J(a);return this.g[a]};I.prototype.set=function(a,b){a=J(a);this.g[a]=b};var J=function(a){if("object"===typeof a){var b=[],c;for(c in a)a.hasOwnProperty(c)&amp;&amp;b.push(K(a[c].toString()));return b.join(" ")}return K(a.toString())},K=function(a){for(;":"==a.charAt(a.length-1);)a=a.slice(0,a.length-1);a=a.split(":");return a[a.length-1].trim()};var M=function(){var a="undefined"===typeof DEV_MODE?!1:DEV_MODE,b="undefined"===typeof LOGGING_ENDPOINT?"/maps/preview/log204":LOGGING_ENDPOINT,c="undefined"===typeof JS_VERSION?null:JS_VERSION,d="undefined"===typeof APP_OPTIONS?null:APP_OPTIONS[1],e="undefined"===typeof PRODUCT_ID?81:PRODUCT_ID,g=this;var f=void 0===f?x.location&amp;&amp;x.location.hostname:f;this.u=a;this.j=b;this.B=c;this.A=d;this.v=e;this.o=f;this.i=null;this.m=!1;this.s=this.h=null;this.g=new I;this.l=new I;var k=x.onerror;x.onerror=
+function(){var h=w.apply(0,arguments);k&amp;&amp;k.apply(null,h);L(g,h[0],h[1],h[2])}};M.prototype.listen=function(a){this.i=a};M.prototype.log=function(a,b){L(this,a,void 0,void 0,b);return a};var N=function(a,b){var c=a.g.get(b);c||(c=new E(6E4,36E5,function(){var d=a.g,e=J(b);delete d.g[e]}),a.g.set(b,c));c.i++;return c},Q=function(a,b,c,d,e,g){var f=O(z(b)?b.message:b,g||1);f.type="error";f.count=e.i;e.i=0;if(z(b)){if(c=b.file||"",f.file="string"===typeof c?c.substr(0,400):"",f.line=b.line||0,"string"===typeof b.stack){b=b.stack.split("\n");c=0;for(d=b.length;c&lt;d&amp;&amp;40&gt;c;++c)e=b[c].trim(),0&lt;e.length&amp;&amp;f.stack.push(e);f.stackUrls=[];b=f.stack;c=f.stackUrls;d=1700-(3+1.1*f.message.length);e={};for(var k=0,h=0;h&lt;b.length;++h){var m=b[h],n=m.match(B);if(n){n=n[1];if(e[n])var t=e[n];else t=".."+k+"..",e[n]=t,c.push(n),k++;b[h]=m.replace(n,t)}}m=e=C(b,c);h="";for(k=null;m&gt;d;){h=
+b.pop()||"";k=null;m=".."+(c.length-1)+"..";if(-1&lt;h.indexOf(m)){n=!1;for(t=b.length-1;0&lt;=t;t--)if(-1&lt;b[t].indexOf(m)){n=!0;break}n||(k=c.pop())}m=C(b,c)}0&gt;=Math.ceil(e-m)?b=0:(d=Math.floor(d-m),3&lt;d&amp;&amp;(h=h.length&gt;d?h.substr(0,d-3)+"...":h,b.push(h),d-=h.length,k&amp;&amp;3&lt;d&amp;&amp;c.push(k.length&gt;d?k.substr(0,d-3)+"...":k)),b=Math.ceil(e-C(b,c)));f.stackTruncation=b}}else f.file="string"===typeof c?c.substr(0,400):"",f.line=d||0;P(a,f,g)&amp;&amp;(f.errorType=9);return f},P=function(a,b,c){var d=b.message,e=navigator.userAgent;if(/HeadlessChrome/.test(e)||/Trident\/7\.0/.test(e)&amp;&amp;!/rv:11\.0/.test(e)||a.o&amp;&amp;!/\.google\./.test(a.o)||0&lt;=d.indexOf("zCommon")||0&lt;=d.indexOf("887a0005")||!c&amp;&amp;("Script error"==d||"Script error."==d)||-1!=d.indexOf("Not enough storage is available to complete this operation.")||0&lt;=d.indexOf("ArrayBuffer length minus the")||d.match(/new RegExp.*ludo_cid/)||0&lt;=d.indexOf("Cannot read property 'mute' of null"))return!0;a=b.stack;for(c=0;c&lt;a.length;++c)if(a[c].match(/phantomjs/i))return!0;a=function(g){return!g||
+0&lt;=g.indexOf("/maps")?!0:!1};if(0&lt;=d.indexOf("JSON syntax error")&amp;&amp;!a(b.file))return!0;d=function(g){return 0==g.indexOf("resource://")||0==g.indexOf("chrome-extension://")||0==g.indexOf("https://")&amp;&amp;8!=g.indexOf("www.google")&amp;&amp;8!=g.indexOf("maps.gstatic")&amp;&amp;8!=g.indexOf("www.gstatic")&amp;&amp;8!=g.indexOf("apis.google")?!1:!0};if(b=b.stackUrls)for(a=0;a&lt;b.length;++a)if(!d(b[a]))return!0;return!1},L=function(a,b,c,d,e){var g=z(b)?b.message:b,f=a.l.get(g);if(f)f&amp;&amp;g.length&gt;f.message.length&amp;&amp;(f.message=g);else if(f=N(a,g),H(f)){var k=Q(a,b,c,d,f,e);R(a,k);a.l.set(g,k);x.setTimeout(function(){a.i&amp;&amp;a.i(k);a.m||S(a,k);var h=a.l,m=J(g);delete h.g[m]},0)}},R=function(a,b){var c=b.message+"\n";for(var d=0,e=b.stack.length;d&lt;e;++d)c+=b.stack[d]+"\n";d=0;for(e=b.stackUrls.length;d&lt;e;++d)c+=".."+d+"..="+b.stackUrls[d]+"\n";a.h||(a.h=c);a.s=c},S=function(a,b){if(a.j){var c=2;b.count&amp;&amp;1&lt;b.count&amp;&amp;c++;var d=4;b.file&amp;&amp;d++;b.line&amp;&amp;d++;b.stack&amp;&amp;(d+=b.stack.length);0&lt;b.stackTruncation&amp;&amp;d++;b.stackUrls&amp;&amp;(d+=b.stackUrls.length);var e=[];e.push("!8m");e.push(""+(c+d));e.push("!2e6");b.count&amp;&amp;1&lt;b.count&amp;&amp;(e.push("!7i"),e.push(b.count));e.push("!9m");e.push(""+d);e.push("!1s");e.push(T(b.message));b.file&amp;&amp;(e.push("!2s"),e.push(T(b.file)));b.line&amp;&amp;(e.push("!3i"),e.push(b.line));if(b.stack)for(c=0,d=b.stack.length;c&lt;d;++c)e.push("!4s"),e.push(T(b.stack[c]));e.push("!6s");e.push(T(a.B));e.push("!8e"+b.errorType);0&lt;b.stackTruncation&amp;&amp;(e.push("!9i"),e.push(b.stackTruncation));if(b.stackUrls)for(c=0,d=b.stackUrls.length;c&lt;d;c++)e.push("!10s"),e.push(T(b.stackUrls[c]));e.push("!11s");e.push(T(a.A));e.push("!11m1");e.push("!7e");e.push(String(a.v||0));var g=a.j+(0&lt;=a.j.indexOf("?")?"&amp;":"?")+"pb="+e.join("");if(a.u)(a=x.console)&amp;&amp;a.log.ca... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220406 17:26:44.461" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:44.116" endtime="20220406 17:26:44.461"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${contains_linkedin} and</arg>
+<arg>${contains_mailto}</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220406 17:26:44.461" level="FAIL">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</msg>
+<status status="FAIL" starttime="20220406 17:26:44.461" endtime="20220406 17:26:44.461"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:44.116" endtime="20220406 17:26:44.461"/>
+</iter>
+<status status="FAIL" starttime="20220406 17:26:44.116" endtime="20220406 17:26:44.461"/>
+</for>
+<status status="FAIL" starttime="20220406 17:26:44.009" endtime="20220406 17:26:44.461"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:44.009" endtime="20220406 17:26:44.461"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${aColorHighlighted}</var>
+<arg>${Careers}</arg>
+<arg>${css-attributeGlobal}</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${css}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220406 17:26:44.477" level="INFO">${css} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c86d5c632fb79ca419861d3c22656f4e", element="a112d5c1-3ded-44ba-a0e8-1608852a47c9")&gt;</msg>
+<status status="PASS" starttime="20220406 17:26:44.469" endtime="20220406 17:26:44.477"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${prop_val}</var>
+<arg>${css}</arg>
+<arg>value_of_css_property</arg>
+<arg>${attribute name}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220406 17:26:44.486" level="INFO">${prop_val} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:26:44.477" endtime="20220406 17:26:44.486"/>
+</kw>
+<msg timestamp="20220406 17:26:44.486" level="INFO">${aColorHighlighted} = rgba(29, 197, 186, 1)</msg>
+<status status="PASS" starttime="20220406 17:26:44.461" endtime="20220406 17:26:44.486"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aColorHighlighted}</arg>
+<arg>${eColorHighlightedGlobal}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220406 17:26:44.486" endtime="20220406 17:26:44.486"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:26:37.409" endtime="20220406 17:26:44.486"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220406 17:26:23.216" endtime="20220406 17:26:44.492">Evaluating expression 'True and' failed: SyntaxError: unexpected EOF while parsing (&lt;string&gt;, line 1)</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220406 17:26:44.492" endtime="20220406 17:26:59.816"/>
+</kw>
+<status status="FAIL" starttime="20220406 17:24:28.083" endtime="20220406 17:26:59.816"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="6" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="6" skip="0" id="s1" name="NSPharma">NSPharma</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

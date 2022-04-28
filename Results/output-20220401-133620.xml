@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 13:36:20.476" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="OurFocusTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220401 13:36:20.803" level="INFO">
+</msg>
+<msg timestamp="20220401 13:36:20.803" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220401 13:36:21.560" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220401 13:36:21.560" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220401 13:36:21.909" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220401 13:36:25.501" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 13:36:25.501" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220401 13:36:25.501" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 13:36:25.501" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220401 13:36:20.803" endtime="20220401 13:36:25.501"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220401 13:36:25.509" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220401 13:36:25.501" endtime="20220401 13:36:26.850"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220401 13:36:26.850" level="INFO">Opening url 'https://www.interceptpharma.com/homepage-non-usa/'</msg>
+<status status="PASS" starttime="20220401 13:36:26.850" endtime="20220401 13:36:39.237"/>
+</kw>
+<status status="PASS" starttime="20220401 13:36:20.803" endtime="20220401 13:36:39.237"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220401 13:36:39.237" endtime="20220401 13:36:39.375"/>
+</kw>
+<kw name="Get All links in OurFoucusPage and Validate it" library="OurFocusPageICPT">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${ourFocus}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220401 13:36:39.383" endtime="20220401 13:36:39.457"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220401 13:36:39.457" level="INFO">Clicking element 'xpath://ul[@id='menu-primary-menu']//a[.='Our Focus']'.</msg>
+<status status="PASS" starttime="20220401 13:36:39.457" endtime="20220401 13:36:42.021"/>
+</kw>
+<status status="PASS" starttime="20220401 13:36:39.375" endtime="20220401 13:36:42.021"/>
+</kw>
+<kw name=" Validate the string" library="Generic">
+<arg>${breadCrumbs}</arg>
+<arg>${eBreadCrumbs}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${aResult}</var>
+<arg>${elementLocator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220401 13:36:42.064" level="INFO">${aResult} = Home &gt; Our Focus</msg>
+<status status="PASS" starttime="20220401 13:36:42.021" endtime="20220401 13:36:42.064"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aResult}</arg>
+<arg>${eResult}.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220401 13:36:42.064" level="FAIL">Home &gt; Our Focus != Home &gt; Our Focus.</msg>
+<status status="FAIL" starttime="20220401 13:36:42.064" endtime="20220401 13:36:42.064"/>
+</kw>
+<status status="FAIL" starttime="20220401 13:36:42.021" endtime="20220401 13:36:42.064"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${sideBar}</arg>
+<status status="NOT RUN" starttime="20220401 13:36:42.064" endtime="20220401 13:36:42.064"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${sideBar}</arg>
+<arg>${eSidebarList}</arg>
+<status status="NOT RUN" starttime="20220401 13:36:42.064" endtime="20220401 13:36:42.064"/>
+</kw>
+<status status="FAIL" starttime="20220401 13:36:39.375" endtime="20220401 13:36:42.064"/>
+</kw>
+<tag>smoke</tag>
+<status status="FAIL" starttime="20220401 13:36:20.795" endtime="20220401 13:36:42.064">Home &gt; Our Focus != Home &gt; Our Focus.</status>
+</test>
+<status status="FAIL" starttime="20220401 13:36:20.476" endtime="20220401 13:36:42.072"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

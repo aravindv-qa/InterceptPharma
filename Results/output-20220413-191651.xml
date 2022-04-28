@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220413 19:16:51.130" rpa="false" schemaversion="2">
+<suite id="s1" name="InterceptPharmaMed" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSPMED}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 19:16:51.562" endtime="20220413 19:16:51.562"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220413 19:16:51.562" level="INFO">${baseUrl} = https://www.interceptmedinfo.com/</msg>
+<status status="PASS" starttime="20220413 19:16:51.562" endtime="20220413 19:16:51.562"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220413 19:16:51.562" level="INFO">
+</msg>
+<msg timestamp="20220413 19:16:51.562" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220413 19:16:52.317" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220413 19:16:52.317" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220413 19:16:53.187" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220413 19:17:01.394" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 19:17:01.394" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220413 19:17:01.394" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220413 19:17:01.394" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220413 19:16:51.562" endtime="20220413 19:17:01.394"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220413 19:17:01.394" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000018870BF2F10&gt;</msg>
+<status status="PASS" starttime="20220413 19:17:01.394" endtime="20220413 19:17:01.394"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 19:17:01.394" endtime="20220413 19:17:01.394"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220413 19:17:01.394" endtime="20220413 19:17:01.394"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 19:17:01.394" endtime="20220413 19:17:01.394"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220413 19:17:01.394" endtime="20220413 19:17:01.394"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220413 19:17:01.394" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220413 19:17:01.394" endtime="20220413 19:17:02.709"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220413 19:17:02.709" endtime="20220413 19:17:02.836"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 19:17:02.836" level="INFO">Opening url 'https://www.interceptmedinfo.com/'</msg>
+<status status="PASS" starttime="20220413 19:17:02.836" endtime="20220413 19:17:14.466"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 19:17:15.069" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220413 19:17:15.069" level="INFO">c:\users\aravind.v\pycharmprojects\automationproject\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py:1315: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  warnings.warn("name used for saved screenshot does not match file "</msg>
+<status status="PASS" starttime="20220413 19:17:14.466" endtime="20220413 19:17:15.070"/>
+</kw>
+<status status="PASS" starttime="20220413 19:16:51.559" endtime="20220413 19:17:15.070"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 19:17:15.071" endtime="20220413 19:17:15.206"/>
+</kw>
+<kw name="Assert the logos in homepage" library="LoginPageICPTMED">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${linkIamLicensed}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 19:17:15.206" endtime="20220413 19:17:15.230"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 19:17:15.230" endtime="20220413 19:17:15.248"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220413 19:17:15.257" level="INFO">Clicking element 'xpath://a[contains(text(),'I AM A LICENSED')]'.</msg>
+<status status="PASS" starttime="20220413 19:17:15.248" endtime="20220413 19:17:15.319"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>elementFound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 19:17:15.776" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="elementFound"&gt;&lt;img src="elementFound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 19:17:15.319" endtime="20220413 19:17:15.776"/>
+</kw>
+<status status="PASS" starttime="20220413 19:17:15.206" endtime="20220413 19:17:15.783"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${chkboxPrivacyPolicy}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 19:17:15.784" endtime="20220413 19:17:15.818"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 19:17:15.818" endtime="20220413 19:17:15.835"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220413 19:17:15.835" level="INFO">Clicking element 'css:input[type='checkbox']'.</msg>
+<status status="PASS" starttime="20220413 19:17:15.835" endtime="20220413 19:17:15.898"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>elementFound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 19:17:16.625" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="elementFound"&gt;&lt;img src="elementFound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 19:17:15.898" endtime="20220413 19:17:16.625"/>
+</kw>
+<status status="PASS" starttime="20220413 19:17:15.783" endtime="20220413 19:17:16.625"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${header logo}</arg>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220413 19:17:17.398" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220413 19:17:17.420" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C658+837208]
+	Ordinal0 [0x0102F064+847972]
+	Ordinal0 [0x0102EF22+847650]
+	Ordinal0 [0x0102F1B0+848304]
+	Ordinal0 [0x01058EF2+1019634]
+	Ordinal0 [0x0105949B+1021083]
+	Ordinal0 [0x0108606C+1204332]
+	Ordinal0 [0x01074194+1130900]
+	Ordinal0 [0x01084302+1196802]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220413 19:17:16.625" endtime="20220413 19:17:17.420"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220413 19:17:17.420" endtime="20220413 19:17:17.420"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${beforetitle}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="NOT RUN" starttime="20220413 19:17:17.420" endtime="20220413 19:17:17.420"/>
+</kw>
+<kw name="Click Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220413 19:17:17.420" endtime="20220413 19:17:17.420"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${beforetitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" starttime="20220413 19:17:17.420" endtime="20220413 19:17:17.420"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" starttime="20220413 19:17:17.420" endtime="20220413 19:17:17.420"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>logo</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20220413 19:17:17.420" endtime="20220413 19:17:17.420"/>
+</kw>
+<status status="FAIL" starttime="20220413 19:17:16.625" endtime="20220413 19:17:17.420"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${footer logo}</arg>
+<status status="NOT RUN" starttime="20220413 19:17:17.420" endtime="20220413 19:17:17.420"/>
+</kw>
+<status status="FAIL" starttime="20220413 19:17:15.206" endtime="20220413 19:17:17.420"/>
+</kw>
+<kw name="Get All links in homepage and Validate it" library="LoginPageICPTMED">
+<status status="NOT RUN" starttime="20220413 19:17:17.420" endtime="20220413 19:17:17.420"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220413 19:16:51.551" endtime="20220413 19:17:17.420">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011A7413+2389011]
+	Ordinal0 [0x01139F61+1941345]
+	Ordinal0 [0x0102C658+837208]
+	Ordinal0 [0x0102F064+847972]
+	Ordinal0 [0x0102EF22+847650]
+	Ordinal0 [0x0102F1B0+848304]
+	Ordinal0 [0x01058EF2+1019634]
+	Ordinal0 [0x0105949B+1021083]
+	Ordinal0 [0x0108606C+1204332]
+	Ordinal0 [0x01074194+1130900]
+	Ordinal0 [0x01084302+1196802]
+	Ordinal0 [0x01073F66+1130342]
+	Ordinal0 [0x0104E546+976198]
+	Ordinal0 [0x0104F456+980054]
+	GetHandleVerifier [0x01359632+1727522]
+	GetHandleVerifier [0x0140BA4D+2457661]
+	GetHandleVerifier [0x0123EB81+569713]
+	GetHandleVerifier [0x0123DD76+566118]
+	Ordinal0 [0x01140B2B+1968939]
+	Ordinal0 [0x01145988+1989000]
+	Ordinal0 [0x01145A75+1989237]
+	Ordinal0 [0x0114ECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220413 19:17:17.428" endtime="20220413 19:17:20.129"/>
+</kw>
+<status status="FAIL" starttime="20220413 19:16:51.130" endtime="20220413 19:17:20.129"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="InterceptPharmaMed">InterceptPharmaMed</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220413 19:16:51.547" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 6: Resource file '..\ICPTMED_PO\OurFocusPageICPT.robot' does not exist.</msg>
+<msg timestamp="20220413 19:16:51.549" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 7: Resource file '..\ICPTMED_PO\OurResearchPageICPT.robot' does not exist.</msg>
+<msg timestamp="20220413 19:16:51.551" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 8: Resource file '..\ICPTMED_PO\OurStoryPageICPT.robot' does not exist.</msg>
+<msg timestamp="20220413 19:16:51.551" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 9: Resource file '..\ICPTMED_PO\CareersPageICPT.robot' does not exist.</msg>
+<msg timestamp="20220413 19:16:51.551" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 10: Resource file '..\ICPTMED_PO\ContactUsPageICPT.robot' does not exist.</msg>
+</errors>
+</robot>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 17:33:43.208" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="GoogleTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${urlTest}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220401 17:33:43.562" level="INFO">
+</msg>
+<msg timestamp="20220401 17:33:43.562" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220401 17:33:44.239" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220401 17:33:44.239" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220401 17:33:44.596" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220401 17:33:48.068" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 17:33:48.068" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220401 17:33:48.068" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 17:33:48.068" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220401 17:33:43.562" endtime="20220401 17:33:48.068"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220401 17:33:48.068" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220401 17:33:48.068" endtime="20220401 17:33:49.441"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220401 17:33:49.441" level="INFO">Opening url 'https://www.redbus.in/'</msg>
+<status status="PASS" starttime="20220401 17:33:49.441" endtime="20220401 17:33:53.528"/>
+</kw>
+<status status="PASS" starttime="20220401 17:33:43.562" endtime="20220401 17:33:53.528"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>css:nav.product-nav.fl a</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220401 17:33:53.547" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="0791d73e5c23f14a86990680eaa0f3d3", element="216d688c-caf1-4f2a-888c-21a8d0a0491e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220401 17:33:53.530" endtime="20220401 17:33:53.547"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 17:33:53.618" level="INFO">${href_list} = ['https://www.redbus.in/bus-tickets/', 'https://www.redbus.in/ryde/', 'https://www.redbus.in/redRail', 'https://www.redbus.in/rPool/']</msg>
+<status status="PASS" starttime="20220401 17:33:53.547" endtime="20220401 17:33:53.618"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 17:33:53.618" level="INFO">['https://www.redbus.in/bus-tickets/', 'https://www.redbus.in/ryde/', 'https://www.redbus.in/redRail', 'https://www.redbus.in/rPool/']</msg>
+<status status="PASS" starttime="20220401 17:33:53.618" endtime="20220401 17:33:53.618"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220401 17:33:53.618" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220401 17:33:53.618" endtime="20220401 17:33:53.618"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.redbus.in/bus-tickets/</var>
+<kw name="Get ${element_href}">
+<var>${response}=</var>
+<msg timestamp="20220401 17:33:53.626" level="FAIL">No keyword with name 'Get ${element_href}' found.</msg>
+<status status="FAIL" starttime="20220401 17:33:53.626" endtime="20220401 17:33:53.626"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220401 17:33:53.626" endtime="20220401 17:33:53.626"/>
+</kw>
+<status status="FAIL" starttime="20220401 17:33:53.618" endtime="20220401 17:33:53.626"/>
+</iter>
+<status status="FAIL" starttime="20220401 17:33:53.618" endtime="20220401 17:33:53.626"/>
+</for>
+<status status="FAIL" starttime="20220401 17:33:53.528" endtime="20220401 17:33:53.634"/>
+</kw>
+<status status="FAIL" starttime="20220401 17:33:43.554" endtime="20220401 17:33:53.634">No keyword with name 'Get ${element_href}' found.</status>
+</test>
+<status status="FAIL" starttime="20220401 17:33:43.230" endtime="20220401 17:33:53.634"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

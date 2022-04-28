@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 17:23:31.741" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="GoogleTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url1}</arg>
+<msg timestamp="20220401 17:23:32.054" level="FAIL">Variable '${url1}' not found. Did you mean:
+    ${url}</msg>
+<status status="FAIL" starttime="20220401 17:23:32.054" endtime="20220401 17:23:32.054"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>css:div.EIaa9b a</arg>
+<status status="NOT RUN" starttime="20220401 17:23:32.054" endtime="20220401 17:23:32.054"/>
+</kw>
+<status status="FAIL" starttime="20220401 17:23:32.054" endtime="20220401 17:23:32.054">Variable '${url1}' not found. Did you mean:
+    ${url}</status>
+</test>
+<status status="FAIL" starttime="20220401 17:23:31.741" endtime="20220401 17:23:32.062"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

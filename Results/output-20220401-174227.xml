@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220401 17:42:27.292" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220401 17:42:27.579" level="INFO">
+</msg>
+<msg timestamp="20220401 17:42:27.579" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220401 17:42:28.259" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220401 17:42:28.259" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220401 17:42:28.835" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220401 17:42:33.188" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 17:42:33.190" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220401 17:42:33.190" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220401 17:42:33.190" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220401 17:42:27.579" endtime="20220401 17:42:33.190"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220401 17:42:33.191" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220401 17:42:33.190" endtime="20220401 17:42:34.526"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220401 17:42:34.526" level="INFO">Opening url 'https://www.interceptpharma.com/'</msg>
+<status status="PASS" starttime="20220401 17:42:34.526" endtime="20220401 17:42:51.678"/>
+</kw>
+<status status="PASS" starttime="20220401 17:42:27.579" endtime="20220401 17:42:51.678"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220401 17:42:51.682" endtime="20220401 17:42:51.813"/>
+</kw>
+<kw name="Assert the logos in homepage" library="LoginPageICPT">
+<kw name="Assert the logos" library="Generic">
+<arg>${header logo}</arg>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220401 17:42:51.874" level="INFO">Current page contains image 'xpath://nav//a/img[@class='logo']'.</msg>
+<status status="PASS" starttime="20220401 17:42:51.821" endtime="20220401 17:42:51.874"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220401 17:42:51.898" level="INFO">Element 'xpath://nav//a/img[@class='logo']' is displayed.</msg>
+<status status="PASS" starttime="20220401 17:42:51.874" endtime="20220401 17:42:51.898"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${beforetitle}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220401 17:42:51.898" level="INFO">${beforetitle} = Homepage - Non USA - Intercept Pharmaceuticals</msg>
+<status status="PASS" starttime="20220401 17:42:51.898" endtime="20220401 17:42:51.898"/>
+</kw>
+<kw name="Click Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<msg timestamp="20220401 17:42:51.898" level="INFO">Clicking image 'xpath://nav//a/img[@class='logo']'.</msg>
+<status status="PASS" starttime="20220401 17:42:51.898" endtime="20220401 17:43:00.743"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${beforetitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220401 17:43:00.765" level="INFO">Page title is 'Homepage - Non USA - Intercept Pharmaceuticals'.</msg>
+<status status="PASS" starttime="20220401 17:43:00.743" endtime="20220401 17:43:00.765"/>
+</kw>
+<status status="PASS" starttime="20220401 17:42:51.813" endtime="20220401 17:43:00.765"/>
+</kw>
+<kw name="Assert the logos" library="Generic">
+<arg>${footer logo}</arg>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220401 17:43:00.797" level="INFO">Current page contains image 'xpath://footer//a/img[@class='footer-logo']'.</msg>
+<status status="PASS" starttime="20220401 17:43:00.765" endtime="20220401 17:43:00.797"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220401 17:43:00.831" level="INFO">Element 'xpath://footer//a/img[@class='footer-logo']' is displayed.</msg>
+<status status="PASS" starttime="20220401 17:43:00.797" endtime="20220401 17:43:00.831"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${beforetitle}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220401 17:43:00.848" level="INFO">${beforetitle} = Homepage - Non USA - Intercept Pharmaceuticals</msg>
+<status status="PASS" starttime="20220401 17:43:00.831" endtime="20220401 17:43:00.848"/>
+</kw>
+<kw name="Click Image" library="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<msg timestamp="20220401 17:43:00.848" level="INFO">Clicking image 'xpath://footer//a/img[@class='footer-logo']'.</msg>
+<status status="PASS" starttime="20220401 17:43:00.848" endtime="20220401 17:43:10.523"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${beforetitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220401 17:43:10.554" level="INFO">Page title is 'Homepage - Non USA - Intercept Pharmaceuticals'.</msg>
+<status status="PASS" starttime="20220401 17:43:10.523" endtime="20220401 17:43:10.554"/>
+</kw>
+<status status="PASS" starttime="20220401 17:43:00.765" endtime="20220401 17:43:10.554"/>
+</kw>
+<status status="PASS" starttime="20220401 17:42:51.813" endtime="20220401 17:43:10.554"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>LoginPageICPT.Get All links in homepage and Validate it</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Get All links in homepage and Validate it" library="LoginPageICPT">
+<kw name="Get All links test" library="Generic">
+<arg>${mainNav}</arg>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${nav}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220401 17:43:10.574" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="4da88a2210c632c893aeaa21db17236a", element="f02eb58b-83ae-45ab-affe-cbc18ef8cddd")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220401 17:43:10.556" endtime="20220401 17:43:10.574"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${href_list}</var>
+<arg>[item.get_attribute('href') for item in $element_list]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220401 17:43:10.647" level="INFO">${href_list} = ['https://www.interceptpharma.com/our-focus/', 'https://www.interceptpharma.com/our-research/', 'http://www.ocaliva.com/', 'https://www.interceptpharma.com/our-story/']</msg>
+<status status="PASS" starttime="20220401 17:43:10.574" endtime="20220401 17:43:10.647"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${href_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220401 17:43:10.650" level="INFO">['https://www.interceptpharma.com/our-focus/', 'https://www.interceptpharma.com/our-research/', 'http://www.ocaliva.com/', 'https://www.interceptpharma.com/our-story/']</msg>
+<status status="PASS" starttime="20220401 17:43:10.648" endtime="20220401 17:43:10.650"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testing</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220401 17:43:10.651" level="INFO">Creating Session using : alias=testing, url=https://www.interceptpharma.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220401 17:43:10.650" endtime="20220401 17:43:10.651"/>
+</kw>
+<for flavor="IN">
+<var>${element_href}</var>
+<value>@{href_list}</value>
+<iter>
+<var name="${element_href}">https://www.interceptpharma.com/our-focus/</var>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${element_href}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220401 17:43:12.976" level="INFO">GET Request : url=https://www.interceptpharma.com/our-focus/ 
+ path_url=/our-focus/ 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220401 17:43:12.976" level="INFO">GET Response : url=https://www.interceptpharma.com/our-focus/ 
+ status=403, reason=Forbidden 
+ headers={'Server': 'nginx', 'Date': 'Fri, 01 Apr 2022 12:13:11 GMT', 'Content-Type': 'text/html', 'Content-Length': '146', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Vary': 'Accept-Encoding'} 
+ body=&lt;html&gt;
+&lt;head&gt;&lt;title&gt;403 Forbidden&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;403 Forbidden&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220401 17:43:12.982" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/our-focus/</msg>
+<status status="FAIL" starttime="20220401 17:43:10.651" endtime="20220401 17:43:12.983"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220401 17:43:12.983" endtime="20220401 17:43:12.983"/>
+</kw>
+<status status="FAIL" starttime="20220401 17:43:10.651" endtime="20220401 17:43:12.983"/>
+</iter>
+<status status="FAIL" starttime="20220401 17:43:10.651" endtime="20220401 17:43:12.983"/>
+</for>
+<status status="FAIL" starttime="20220401 17:43:10.556" endtime="20220401 17:43:12.983"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${mainNav}</arg>
+<arg>${eTextMain_list}</arg>
+<status status="NOT RUN" starttime="20220401 17:43:12.984" endtime="20220401 17:43:12.984"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${footerNav_href}</arg>
+<status status="NOT RUN" starttime="20220401 17:43:12.984" endtime="20220401 17:43:12.984"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${footerNav}</arg>
+<arg>${eTextFoot_list}</arg>
+<status status="NOT RUN" starttime="20220401 17:43:12.984" endtime="20220401 17:43:12.984"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${topNav~search}</arg>
+<status status="NOT RUN" starttime="20220401 17:43:12.984" endtime="20220401 17:43:12.984"/>
+</kw>
+<kw name="Validate Text from links" library="Generic">
+<arg>${tn~social/search}</arg>
+<arg>${eTextTop_list}</arg>
+<status status="NOT RUN" starttime="20220401 17:43:12.984" endtime="20220401 17:43:12.984"/>
+</kw>
+<kw name="Get All links test" library="Generic">
+<arg>${contentLink}</arg>
+<status status="NOT RUN" starttime="20220401 17:43:12.984" endtime="20220401 17:43:12.984"/>
+</kw>
+<status status="FAIL" starttime="20220401 17:43:10.556" endtime="20220401 17:43:12.984"/>
+</kw>
+<status status="FAIL" starttime="20220401 17:43:10.555" endtime="20220401 17:43:12.984"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220401 17:42:27.579" endtime="20220401 17:43:12.985">HTTPError: 403 Client Error: Forbidden for url: https://www.interceptpharma.com/our-focus/</status>
+</test>
+<status status="FAIL" starttime="20220401 17:42:27.300" endtime="20220401 17:43:12.987"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

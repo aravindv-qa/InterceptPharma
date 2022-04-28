@@ -1,0 +1,3 @@
+***Test Cases***,${MainPage},${SubPage},${FirstName},${LastName},${Email},${Phone},${WhatContent},${Institution},${City},${State},${Zip},${Additionalmessage}
+GalleriTest KeepInTheKnow form_Patients,Patients,Support,testPatientsFN,testPatientsLN,testPatientsFN@gmail.com,7373252303,Test results support,,,,95001,Additional message providers
+GalleriTest KeepInTheKnow form_Providers,Providers,Support,testProvidersFN,testProvidersLN,testProvidersFN@gmail.com,7373252303,Check order status,RCProvidersInstituion,First City,Alabama,95001,Additional message providers

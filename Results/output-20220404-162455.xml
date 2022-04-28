@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220404 16:24:55.771" rpa="false" schemaversion="2">
+<suite id="s1" name="InterceptPharma" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharma.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220404 16:24:56.095" level="INFO">
+</msg>
+<msg timestamp="20220404 16:24:56.096" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220404 16:24:56.733" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220404 16:24:56.733" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220404 16:25:08.171" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220404 16:25:10.637" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 16:25:10.638" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220404 16:25:10.638" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 16:25:10.639" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220404 16:24:56.095" endtime="20220404 16:25:10.639"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20220404 16:25:10.641" level="FAIL">Variable '${chrome_options}' not found.</msg>
+<status status="FAIL" starttime="20220404 16:25:10.639" endtime="20220404 16:25:10.641"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" starttime="20220404 16:25:10.641" endtime="20220404 16:25:10.641"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" starttime="20220404 16:25:10.641" endtime="20220404 16:25:10.641"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" starttime="20220404 16:25:10.641" endtime="20220404 16:25:10.641"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="NOT RUN" starttime="20220404 16:25:10.641" endtime="20220404 16:25:10.642"/>
+</kw>
+<kw name="Set Window Size ${1400} ${600}">
+<status status="NOT RUN" starttime="20220404 16:25:10.645" endtime="20220404 16:25:10.645"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20220404 16:25:10.645" endtime="20220404 16:25:10.645"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>loginpage</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<status status="NOT RUN" starttime="20220404 16:25:10.645" endtime="20220404 16:25:10.645"/>
+</kw>
+<status status="FAIL" starttime="20220404 16:24:56.095" endtime="20220404 16:25:10.645"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220404 16:25:10.646" endtime="20220404 16:25:10.646"/>
+</kw>
+<kw name="Assert the logos in homepage" library="LoginPageICPT">
+<status status="NOT RUN" starttime="20220404 16:25:10.646" endtime="20220404 16:25:10.646"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220404 16:24:56.094" endtime="20220404 16:25:10.647">Variable '${chrome_options}' not found.</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220404 16:25:10.649" endtime="20220404 16:25:10.649"/>
+</kw>
+<status status="FAIL" starttime="20220404 16:24:55.773" endtime="20220404 16:25:10.649"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="InterceptPharma">InterceptPharma</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

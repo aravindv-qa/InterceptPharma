@@ -1,0 +1,1629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220418 19:04:24.257" rpa="false" schemaversion="2">
+<suite id="s1" name="NSPharma" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\NSPharma.robot">
+<test id="s1-t1" name="HomePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220418 19:04:25.174" endtime="20220418 19:04:25.174"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220418 19:04:25.174" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220418 19:04:25.174" endtime="20220418 19:04:25.174"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220418 19:04:25.174" level="INFO">
+</msg>
+<msg timestamp="20220418 19:04:25.174" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220418 19:04:25.992" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220418 19:04:25.992" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220418 19:04:26.427" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220418 19:04:28.809" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 19:04:28.809" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220418 19:04:28.809" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 19:04:28.815" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220418 19:04:25.174" endtime="20220418 19:04:28.815"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220418 19:04:28.815" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001FE37F7CF70&gt;</msg>
+<status status="PASS" starttime="20220418 19:04:28.815" endtime="20220418 19:04:28.815"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:28.815" endtime="20220418 19:04:28.815"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220418 19:04:28.815" endtime="20220418 19:04:28.815"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:28.815" endtime="20220418 19:04:28.815"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:28.815" endtime="20220418 19:04:28.815"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220418 19:04:28.815" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220418 19:04:28.815" endtime="20220418 19:04:30.221"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220418 19:04:30.221" endtime="20220418 19:04:30.339"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220418 19:04:30.339" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220418 19:04:30.339" endtime="20220418 19:04:32.376"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220418 19:04:32.385" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:04:32.392" level="INFO">c:\users\aravind.v\pycharmprojects\automationproject\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py:1315: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  warnings.warn("name used for saved screenshot does not match file "</msg>
+<msg timestamp="20220418 19:04:32.397" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220418 19:04:32.377" endtime="20220418 19:04:32.397"/>
+</kw>
+<status status="FAIL" starttime="20220418 19:04:25.174" endtime="20220418 19:04:32.398"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220418 19:04:32.398" endtime="20220418 19:04:32.398"/>
+</kw>
+<kw name="Assert the logos in homepage" library="LoginPageNSP">
+<status status="NOT RUN" starttime="20220418 19:04:32.398" endtime="20220418 19:04:32.398"/>
+</kw>
+<kw name="Get All links in homepage and Validate it" library="LoginPageNSP">
+<status status="NOT RUN" starttime="20220418 19:04:32.398" endtime="20220418 19:04:32.398"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220418 19:04:25.167" endtime="20220418 19:04:32.398">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<test id="s1-t2" name="WhoWeArePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220418 19:04:32.425" endtime="20220418 19:04:32.426"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220418 19:04:32.427" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220418 19:04:32.427" endtime="20220418 19:04:32.427"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220418 19:04:32.428" level="INFO">
+</msg>
+<msg timestamp="20220418 19:04:32.428" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220418 19:04:33.260" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220418 19:04:33.260" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220418 19:04:33.524" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220418 19:04:36.947" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 19:04:36.947" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220418 19:04:36.947" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220418 19:04:32.427" endtime="20220418 19:04:36.947"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220418 19:04:36.947" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001FE37F7C0A0&gt;</msg>
+<status status="PASS" starttime="20220418 19:04:36.947" endtime="20220418 19:04:36.947"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:36.947" endtime="20220418 19:04:36.947"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220418 19:04:36.947" endtime="20220418 19:04:36.955"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:36.955" endtime="20220418 19:04:36.955"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:36.955" endtime="20220418 19:04:36.955"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220418 19:04:36.955" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220418 19:04:36.955" endtime="20220418 19:04:38.322"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220418 19:04:38.322" endtime="20220418 19:04:38.445"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220418 19:04:38.445" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<msg timestamp="20220418 19:04:43.576" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC520+836896]
+	Ordinal0 [0x003C0682+788098]
+	Ordinal0 [0x003C0EB8+790200]
+	Ordinal0 [0x003C2752+796498]
+	Ordinal0 [0x003BC0D9+770265]
+	Ordinal0 [0x003CD9D0+842192]
+	Ordinal0 [0x00423AE2+1194722]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:04:43.584" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003BE87E+780414]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003C8C20+822304]
+	Ordinal0 [0x003BE27D+778877]
+	Ordinal0 [0x003BEE3D+781885]
+	Ordinal0 [0x003BE48A+779402]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCE6D+773741]
+	Ordinal0 [0x003CDE5A+843354]
+	Ordinal0 [0x004249BD+1198525]
+	Ordinal0 [0x0041414C+1130828]
+	Ordinal0 [0x00424302+1196802]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220418 19:04:38.445" endtime="20220418 19:04:43.584"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20220418 19:04:43.584" endtime="20220418 19:04:43.584"/>
+</kw>
+<status status="FAIL" starttime="20220418 19:04:32.419" endtime="20220418 19:04:43.584"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220418 19:04:43.584" endtime="20220418 19:04:43.584"/>
+</kw>
+<kw name="Get WhoWeArePage validated" library="WhoWeArePageNSP">
+<status status="NOT RUN" starttime="20220418 19:04:43.593" endtime="20220418 19:04:43.593"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220418 19:04:32.417" endtime="20220418 19:04:43.594">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003BE87E+780414]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003C8C20+822304]
+	Ordinal0 [0x003BE27D+778877]
+	Ordinal0 [0x003BEE3D+781885]
+	Ordinal0 [0x003BE48A+779402]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCE6D+773741]
+	Ordinal0 [0x003CDE5A+843354]
+	Ordinal0 [0x004249BD+1198525]
+	Ordinal0 [0x0041414C+1130828]
+	Ordinal0 [0x00424302+1196802]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<test id="s1-t3" name="OurTeamPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220418 19:04:43.610" endtime="20220418 19:04:43.610"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220418 19:04:43.618" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220418 19:04:43.610" endtime="20220418 19:04:43.618"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220418 19:04:43.618" level="INFO">
+</msg>
+<msg timestamp="20220418 19:04:43.618" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220418 19:04:44.562" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220418 19:04:44.562" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220418 19:04:44.891" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220418 19:04:47.854" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 19:04:47.854" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220418 19:04:47.854" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220418 19:04:43.618" endtime="20220418 19:04:47.854"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220418 19:04:47.862" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001FE38FF3C40&gt;</msg>
+<status status="PASS" starttime="20220418 19:04:47.854" endtime="20220418 19:04:47.862"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:47.862" endtime="20220418 19:04:47.862"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220418 19:04:47.862" endtime="20220418 19:04:47.865"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:47.865" endtime="20220418 19:04:47.865"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:47.865" endtime="20220418 19:04:47.865"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220418 19:04:47.865" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220418 19:04:47.865" endtime="20220418 19:04:49.321"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220418 19:04:49.321" endtime="20220418 19:04:49.444"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220418 19:04:49.444" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<msg timestamp="20220418 19:04:54.678" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC520+836896]
+	Ordinal0 [0x003C0682+788098]
+	Ordinal0 [0x003C0EB8+790200]
+	Ordinal0 [0x003C2752+796498]
+	Ordinal0 [0x003BC0D9+770265]
+	Ordinal0 [0x003CD9D0+842192]
+	Ordinal0 [0x00423AE2+1194722]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:04:54.686" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003BE87E+780414]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003C8C20+822304]
+	Ordinal0 [0x003BE27D+778877]
+	Ordinal0 [0x003BEE3D+781885]
+	Ordinal0 [0x003BE48A+779402]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCE6D+773741]
+	Ordinal0 [0x003CDE5A+843354]
+	Ordinal0 [0x004249BD+1198525]
+	Ordinal0 [0x0041414C+1130828]
+	Ordinal0 [0x00424302+1196802]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220418 19:04:49.444" endtime="20220418 19:04:54.686"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20220418 19:04:54.686" endtime="20220418 19:04:54.686"/>
+</kw>
+<status status="FAIL" starttime="20220418 19:04:43.602" endtime="20220418 19:04:54.686"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220418 19:04:54.686" endtime="20220418 19:04:54.686"/>
+</kw>
+<kw name="Get OurTeamPage validated" library="OurTeamPageNSP">
+<status status="NOT RUN" starttime="20220418 19:04:54.686" endtime="20220418 19:04:54.686"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220418 19:04:43.602" endtime="20220418 19:04:54.686">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003BE87E+780414]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003C8C20+822304]
+	Ordinal0 [0x003BE27D+778877]
+	Ordinal0 [0x003BEE3D+781885]
+	Ordinal0 [0x003BE48A+779402]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCE6D+773741]
+	Ordinal0 [0x003CDE5A+843354]
+	Ordinal0 [0x004249BD+1198525]
+	Ordinal0 [0x0041414C+1130828]
+	Ordinal0 [0x00424302+1196802]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<test id="s1-t4" name="PipelinePageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220418 19:04:54.702" endtime="20220418 19:04:54.702"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220418 19:04:54.702" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220418 19:04:54.702" endtime="20220418 19:04:54.702"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220418 19:04:54.702" level="INFO">
+</msg>
+<msg timestamp="20220418 19:04:54.702" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220418 19:04:55.614" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220418 19:04:55.614" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220418 19:04:55.848" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220418 19:04:59.140" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 19:04:59.140" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220418 19:04:59.140" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220418 19:04:54.702" endtime="20220418 19:04:59.140"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220418 19:04:59.140" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001FE38FFCF40&gt;</msg>
+<status status="PASS" starttime="20220418 19:04:59.140" endtime="20220418 19:04:59.140"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:59.140" endtime="20220418 19:04:59.140"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220418 19:04:59.140" endtime="20220418 19:04:59.140"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:59.140" endtime="20220418 19:04:59.140"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:04:59.140" endtime="20220418 19:04:59.148"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220418 19:04:59.148" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220418 19:04:59.148" endtime="20220418 19:05:00.535"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220418 19:05:00.535" endtime="20220418 19:05:00.661"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220418 19:05:00.661" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<msg timestamp="20220418 19:05:06.024" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC520+836896]
+	Ordinal0 [0x003C0682+788098]
+	Ordinal0 [0x003C0EB8+790200]
+	Ordinal0 [0x003C2752+796498]
+	Ordinal0 [0x003BC0D9+770265]
+	Ordinal0 [0x003CD9D0+842192]
+	Ordinal0 [0x00423AE2+1194722]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:05:06.024" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003BE87E+780414]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003C8C20+822304]
+	Ordinal0 [0x003BE27D+778877]
+	Ordinal0 [0x003BEE3D+781885]
+	Ordinal0 [0x003BE48A+779402]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCE6D+773741]
+	Ordinal0 [0x003CDE5A+843354]
+	Ordinal0 [0x004249BD+1198525]
+	Ordinal0 [0x0041414C+1130828]
+	Ordinal0 [0x00424302+1196802]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220418 19:05:00.661" endtime="20220418 19:05:06.024"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20220418 19:05:06.032" endtime="20220418 19:05:06.032"/>
+</kw>
+<status status="FAIL" starttime="20220418 19:04:54.694" endtime="20220418 19:05:06.032"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220418 19:05:06.034" endtime="20220418 19:05:06.034"/>
+</kw>
+<kw name="Get PipelinePage validated" library="PipelinePageNSP">
+<status status="NOT RUN" starttime="20220418 19:05:06.034" endtime="20220418 19:05:06.034"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220418 19:04:54.694" endtime="20220418 19:05:06.034">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003BE87E+780414]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003C8C20+822304]
+	Ordinal0 [0x003BE27D+778877]
+	Ordinal0 [0x003BEE3D+781885]
+	Ordinal0 [0x003BE48A+779402]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCE6D+773741]
+	Ordinal0 [0x003CDE5A+843354]
+	Ordinal0 [0x004249BD+1198525]
+	Ordinal0 [0x0041414C+1130828]
+	Ordinal0 [0x00424302+1196802]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<test id="s1-t5" name="PartnershipPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220418 19:05:06.044" endtime="20220418 19:05:06.052"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220418 19:05:06.054" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220418 19:05:06.052" endtime="20220418 19:05:06.054"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220418 19:05:06.054" level="INFO">
+</msg>
+<msg timestamp="20220418 19:05:06.054" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220418 19:05:06.906" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220418 19:05:06.906" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220418 19:05:07.209" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220418 19:05:09.816" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 19:05:09.817" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220418 19:05:09.817" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220418 19:05:06.054" endtime="20220418 19:05:09.817"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220418 19:05:09.817" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001FE38FFC280&gt;</msg>
+<status status="PASS" starttime="20220418 19:05:09.817" endtime="20220418 19:05:09.817"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:09.817" endtime="20220418 19:05:09.817"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220418 19:05:09.817" endtime="20220418 19:05:09.817"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:09.817" endtime="20220418 19:05:09.817"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:09.817" endtime="20220418 19:05:09.817"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220418 19:05:09.817" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220418 19:05:09.817" endtime="20220418 19:05:11.150"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220418 19:05:11.151" endtime="20220418 19:05:11.265"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220418 19:05:11.265" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220418 19:05:11.265" endtime="20220418 19:05:15.015"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220418 19:05:15.023" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:05:15.032" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220418 19:05:15.015" endtime="20220418 19:05:15.032"/>
+</kw>
+<status status="FAIL" starttime="20220418 19:05:06.044" endtime="20220418 19:05:15.033"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220418 19:05:15.034" endtime="20220418 19:05:15.034"/>
+</kw>
+<kw name="Get PartnershipPage validated" library="PartnershipPageNSP">
+<status status="NOT RUN" starttime="20220418 19:05:15.034" endtime="20220418 19:05:15.034"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220418 19:05:06.042" endtime="20220418 19:05:15.035">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<test id="s1-t6" name="ContactUsPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220418 19:05:15.043" endtime="20220418 19:05:15.057"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220418 19:05:15.058" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220418 19:05:15.057" endtime="20220418 19:05:15.058"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220418 19:05:15.059" level="INFO">
+</msg>
+<msg timestamp="20220418 19:05:15.059" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220418 19:05:15.878" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220418 19:05:15.878" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220418 19:05:16.128" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220418 19:05:19.244" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 19:05:19.246" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220418 19:05:19.246" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220418 19:05:15.058" endtime="20220418 19:05:19.246"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220418 19:05:19.246" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001FE39003160&gt;</msg>
+<status status="PASS" starttime="20220418 19:05:19.246" endtime="20220418 19:05:19.246"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:19.246" endtime="20220418 19:05:19.246"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220418 19:05:19.246" endtime="20220418 19:05:19.246"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:19.246" endtime="20220418 19:05:19.246"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:19.246" endtime="20220418 19:05:19.246"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220418 19:05:19.246" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220418 19:05:19.246" endtime="20220418 19:05:20.669"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220418 19:05:20.669" endtime="20220418 19:05:20.789"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220418 19:05:20.789" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<status status="PASS" starttime="20220418 19:05:20.789" endtime="20220418 19:05:25.676"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220418 19:05:25.686" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:05:25.691" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220418 19:05:25.676" endtime="20220418 19:05:25.691"/>
+</kw>
+<status status="FAIL" starttime="20220418 19:05:15.041" endtime="20220418 19:05:25.692"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220418 19:05:25.693" endtime="20220418 19:05:25.693"/>
+</kw>
+<kw name="Get ContactUsPage validated" library="ContactUsPageNSP">
+<status status="NOT RUN" starttime="20220418 19:05:25.695" endtime="20220418 19:05:25.696"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220418 19:05:15.038" endtime="20220418 19:05:25.697">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</status>
+</test>
+<test id="s1-t7" name="CareersPageTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSP}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220418 19:05:25.708" endtime="20220418 19:05:25.723"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220418 19:05:25.725" level="INFO">${baseUrl} = https://www.nspharma.com/</msg>
+<status status="PASS" starttime="20220418 19:05:25.724" endtime="20220418 19:05:25.725"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220418 19:05:25.725" level="INFO">
+</msg>
+<msg timestamp="20220418 19:05:25.726" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220418 19:05:26.528" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220418 19:05:26.528" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220418 19:05:26.791" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220418 19:05:30.876" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 19:05:30.876" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220418 19:05:30.876" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220418 19:05:25.725" endtime="20220418 19:05:30.876"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220418 19:05:30.876" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001FE39018D90&gt;</msg>
+<status status="PASS" starttime="20220418 19:05:30.876" endtime="20220418 19:05:30.876"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:30.876" endtime="20220418 19:05:30.876"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220418 19:05:30.876" endtime="20220418 19:05:30.876"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:30.876" endtime="20220418 19:05:30.876"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 19:05:30.876" endtime="20220418 19:05:30.876"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220418 19:05:30.876" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220418 19:05:30.876" endtime="20220418 19:05:32.292"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220418 19:05:32.292" endtime="20220418 19:05:32.420"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220418 19:05:32.421" level="INFO">Opening url 'https://www.nspharma.com/'</msg>
+<msg timestamp="20220418 19:05:37.886" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC520+836896]
+	Ordinal0 [0x003C0682+788098]
+	Ordinal0 [0x003C0EB8+790200]
+	Ordinal0 [0x003C2752+796498]
+	Ordinal0 [0x003BC0D9+770265]
+	Ordinal0 [0x003CD9D0+842192]
+	Ordinal0 [0x00423AE2+1194722]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:05:37.886" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003BE87E+780414]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003BCF28+773928]
+	Ordinal0 [0x003C2C56+797782]
+	Ordinal0 [0x003C2E99+798361]
+	Ordinal0 [0x003BE16D+778605]
+	Ordinal0 [0x003BE685+779909]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003C8C20+822304]
+	Ordinal0 [0x003BE27D+778877]
+	Ordinal0 [0x003BEE3D+781885]
+	Ordinal0 [0x003BE48A+779402]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCE6D+773741]
+	Ordinal0 [0x003CDE5A+843354]
+	Ordinal0 [0x004249BD+1198525]
+	Ordinal0 [0x0041414C+1130828]
+	Ordinal0 [0x00424302+1196802]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<status status="FAIL" starttime="20220418 19:05:32.420" endtime="20220418 19:05:37.886"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20220418 19:05:37.886" endtime="20220418 19:05:37.886"/>
+</kw>
+<status status="FAIL" starttime="20220418 19:05:25.705" endtime="20220418 19:05:37.895"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220418 19:05:37.897" endtime="20220418 19:05:37.897"/>
+</kw>
+<kw name="Get CareersPage validated" library="CareersPageNSP">
+<status status="NOT RUN" starttime="20220418 19:05:37.897" endtime="20220418 19:05:37.897"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220418 19:05:25.703" endtime="20220418 19:05:37.897">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003BE87E+780414]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCF98+774040]
+	Ordinal0 [0x003BCF28+773928]
+	Ordinal0 [0x003C2C56+797782]
+	Ordinal0 [0x003C2E99+798361]
+	Ordinal0 [0x003BE16D+778605]
+	Ordinal0 [0x003BE685+779909]
+	Ordinal0 [0x003BE46F+779375]
+	Ordinal0 [0x003BDA86+776838]
+    [ Message content over the limit has been removed. ]
+	Ordinal0 [0x003BC995+772501]
+	Ordinal0 [0x003BCE6D+773741]
+	Ordinal0 [0x003CDE5A+843354]
+	Ordinal0 [0x004249BD+1198525]
+	Ordinal0 [0x0041414C+1130828]
+	Ordinal0 [0x00424302+1196802]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]</status>
+</test>
+<status status="FAIL" starttime="20220418 19:04:24.267" endtime="20220418 19:05:37.897"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="7" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="7" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="7" skip="0" id="s1" name="NSPharma">NSPharma</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220418 19:04:24.648" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\NSP_PO\LoginPageNSP.robot' on line 4: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 19:04:24.648" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\NSP_PO\WhoWeArePageNSP.robot' on line 3: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 19:04:24.656" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\NSP_PO\OurTeamPageNSP.robot' on line 3: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 19:04:24.664" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\NSP_PO\PipelinePageNSP.robot' on line 3: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 19:04:24.666" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\NSP_PO\PartnershipPageNSP.robot' on line 3: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 19:04:24.674" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\NSP_PO\CareersPageNSP.robot' on line 3: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 19:04:24.676" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\NSP_PO\ContactUsPageNSP.robot' on line 3: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 19:04:25.158" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\NSPharma.robot", line 0</msg>
+<msg timestamp="20220418 19:04:25.158" level="ERROR">In source file:
+  File "/Users/aravind.v/PycharmProjects/pythonProject1/Resources/data.xlsx", line 0</msg>
+<msg timestamp="20220418 19:04:25.167" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ImportError: Requirements (pandas, openpyxl) for XLSX support are not installed.
+    Use 'pip install -U robotframework-datadriver[XLS]' to install XLSX support.</msg>
+<msg timestamp="20220418 19:04:32.385" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:04:43.576" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC520+836896]
+	Ordinal0 [0x003C0682+788098]
+	Ordinal0 [0x003C0EB8+790200]
+	Ordinal0 [0x003C2752+796498]
+	Ordinal0 [0x003BC0D9+770265]
+	Ordinal0 [0x003CD9D0+842192]
+	Ordinal0 [0x00423AE2+1194722]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:04:54.678" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC520+836896]
+	Ordinal0 [0x003C0682+788098]
+	Ordinal0 [0x003C0EB8+790200]
+	Ordinal0 [0x003C2752+796498]
+	Ordinal0 [0x003BC0D9+770265]
+	Ordinal0 [0x003CD9D0+842192]
+	Ordinal0 [0x00423AE2+1194722]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:05:06.024" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC520+836896]
+	Ordinal0 [0x003C0682+788098]
+	Ordinal0 [0x003C0EB8+790200]
+	Ordinal0 [0x003C2752+796498]
+	Ordinal0 [0x003BC0D9+770265]
+	Ordinal0 [0x003CD9D0+842192]
+	Ordinal0 [0x00423AE2+1194722]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:05:15.023" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:05:25.686" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC658+837208]
+	Ordinal0 [0x003B4480+738432]
+	Ordinal0 [0x00416999+1141145]
+	Ordinal0 [0x00423AA2+1194658]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+<msg timestamp="20220418 19:05:37.886" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00547413+2389011]
+	Ordinal0 [0x004D9F61+1941345]
+	Ordinal0 [0x003CC520+836896]
+	Ordinal0 [0x003C0682+788098]
+	Ordinal0 [0x003C0EB8+790200]
+	Ordinal0 [0x003C2752+796498]
+	Ordinal0 [0x003BC0D9+770265]
+	Ordinal0 [0x003CD9D0+842192]
+	Ordinal0 [0x00423AE2+1194722]
+	Ordinal0 [0x00413F66+1130342]
+	Ordinal0 [0x003EE546+976198]
+	Ordinal0 [0x003EF456+980054]
+	GetHandleVerifier [0x006F9632+1727522]
+	GetHandleVerifier [0x007ABA4D+2457661]
+	GetHandleVerifier [0x005DEB81+569713]
+	GetHandleVerifier [0x005DDD76+566118]
+	Ordinal0 [0x004E0B2B+1968939]
+	Ordinal0 [0x004E5988+1989000]
+	Ordinal0 [0x004E5A75+1989237]
+	Ordinal0 [0x004EECB1+2026673]
+	BaseThreadInitThunk [0x76B6FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A4E+238]
+</msg>
+</errors>
+</robot>

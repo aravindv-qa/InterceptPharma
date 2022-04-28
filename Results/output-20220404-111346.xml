@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220404 11:13:46.814" rpa="false" schemaversion="2">
+<suite id="s1" name="TC1" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\TC1.robot">
+<test id="s1-t1" name="OurFocusTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${Browser1}</arg>
+<arg>${url}</arg>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220404 11:13:47.299" level="INFO">
+</msg>
+<msg timestamp="20220404 11:13:47.300" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220404 11:13:48.899" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220404 11:13:48.899" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220404 11:13:49.430" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220404 11:13:52.277" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 11:13:52.277" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220404 11:13:52.277" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220404 11:13:52.278" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220404 11:13:47.299" endtime="20220404 11:13:52.279"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220404 11:13:52.279" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220404 11:13:52.279" endtime="20220404 11:13:56.570"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220404 11:13:56.571" level="INFO">Opening url 'https://www.interceptpharma.com/'</msg>
+<status status="PASS" starttime="20220404 11:13:56.570" endtime="20220404 11:14:32.445"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>loginpage</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20220404 11:14:32.555" level="INFO" html="true">&lt;a href="loginpage_2.jpg"&gt;&lt;img src="loginpage_2.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220404 11:14:32.445" endtime="20220404 11:14:32.555"/>
+</kw>
+<status status="PASS" starttime="20220404 11:13:47.299" endtime="20220404 11:14:32.555"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220404 11:14:32.556" endtime="20220404 11:14:32.677"/>
+</kw>
+<kw name="Get OurFocusHomePage validated" library="OurFocusPageICPT">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${ourFocus}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220404 11:14:32.680" level="FAIL">ValueError: Argument 'timeout' got value 'timeout=10' that cannot be converted to timedelta or None.</msg>
+<status status="FAIL" starttime="20220404 11:14:32.678" endtime="20220404 11:14:32.680"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220404 11:14:32.681" endtime="20220404 11:14:32.681"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<arg>elementfound</arg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<status status="NOT RUN" starttime="20220404 11:14:32.681" endtime="20220404 11:14:32.681"/>
+</kw>
+<status status="FAIL" starttime="20220404 11:14:32.678" endtime="20220404 11:14:32.683"/>
+</kw>
+<kw name="Validate the string" library="Generic">
+<arg>${breadCrumbs}</arg>
+<arg>${eBreadCrumbsHome}</arg>
+<status status="NOT RUN" starttime="20220404 11:14:32.683" endtime="20220404 11:14:32.683"/>
+</kw>
+<kw name="Get CSS Property Value" library="Generic">
+<var>${value}</var>
+<arg>${ourFocus}</arg>
+<arg>border-bottom</arg>
+<doc>Get the CSS property value of an Element.</doc>
+<status status="NOT RUN" starttime="20220404 11:14:32.683" endtime="20220404 11:14:32.684"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220404 11:14:32.684" endtime="20220404 11:14:32.684"/>
+</kw>
+<status status="FAIL" starttime="20220404 11:14:32.677" endtime="20220404 11:14:32.685"/>
+</kw>
+<tag>smoke</tag>
+<status status="FAIL" starttime="20220404 11:13:47.298" endtime="20220404 11:14:32.686">ValueError: Argument 'timeout' got value 'timeout=10' that cannot be converted to timedelta or None.</status>
+</test>
+<status status="FAIL" starttime="20220404 11:13:46.818" endtime="20220404 11:14:32.689"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.9 on win32)" generated="20220418 18:21:38.166" rpa="false" schemaversion="2">
+<suite id="s1" name="InterceptPharmaMed" source="C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot">
+<test id="s1-t1" name="MIRFormSubmissionTest">
+<kw name="open the browser and navigate to the url" library="Generic">
+<arg>${properties.Browser1}</arg>
+<arg>${properties.urlNSPMED}</arg>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220418 18:21:38.581" endtime="20220418 18:21:38.581"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${baseUrl}</arg>
+<arg>${url}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220418 18:21:38.581" level="INFO">${baseUrl} = https://www.interceptmedinfo.com/</msg>
+<status status="PASS" starttime="20220418 18:21:38.581" endtime="20220418 18:21:38.581"/>
+</kw>
+<kw name="Get Driver Path" library="DriverSync">
+<var>${driver_path}</var>
+<arg>${browser_name}</arg>
+<msg timestamp="20220418 18:21:38.581" level="INFO">
+</msg>
+<msg timestamp="20220418 18:21:38.581" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20220418 18:21:39.460" level="INFO">Current google-chrome version is 100.0.4896</msg>
+<msg timestamp="20220418 18:21:39.460" level="INFO">Get LATEST chromedriver version for 100.0.4896 google-chrome</msg>
+<msg timestamp="20220418 18:21:39.716" level="INFO">Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip</msg>
+<msg timestamp="20220418 18:21:42.184" level="INFO">Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 18:21:42.184" level="INFO">C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<msg timestamp="20220418 18:21:42.184" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 100.0.4896
+Get LATEST chromedriver version for 100.0.4896 google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60]</msg>
+<msg timestamp="20220418 18:21:42.184" level="INFO">${driver_path} = C:\Users\aravind.v\.wdm\drivers\chromedriver\win32\100.0.4896.60\chromedriver.exe</msg>
+<status status="PASS" starttime="20220418 18:21:38.581" endtime="20220418 18:21:42.184"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220418 18:21:42.184" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001D45854BD90&gt;</msg>
+<status status="PASS" starttime="20220418 18:21:42.184" endtime="20220418 18:21:42.184"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 18:21:42.184" endtime="20220418 18:21:42.184"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${properties.headless}</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220418 18:21:42.184" endtime="20220418 18:21:42.184"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 18:21:42.184" endtime="20220418 18:21:42.184"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220418 18:21:42.184" endtime="20220418 18:21:42.184"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220418 18:21:42.193" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220418 18:21:42.184" endtime="20220418 18:21:43.577"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>1280</arg>
+<arg>577</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220418 18:21:43.577" endtime="20220418 18:21:43.708"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220418 18:21:43.709" level="INFO">Opening url 'https://www.interceptmedinfo.com/'</msg>
+<status status="PASS" starttime="20220418 18:21:43.708" endtime="20220418 18:21:53.723"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>loginpage</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220418 18:21:54.442" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="loginpage"&gt;&lt;img src="loginpage" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220418 18:21:54.442" level="INFO">c:\users\aravind.v\pycharmprojects\automationproject\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py:1315: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  warnings.warn("name used for saved screenshot does not match file "</msg>
+<status status="PASS" starttime="20220418 18:21:53.723" endtime="20220418 18:21:54.446"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:38.579" endtime="20220418 18:21:54.446"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220418 18:21:54.446" endtime="20220418 18:21:54.593"/>
+</kw>
+<kw name="Get MIRFormsSubmissionPage validated" library="MedicalInformationRequestPageICPTMED">
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${linkIamLicensed}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220418 18:21:54.596" endtime="20220418 18:21:54.665"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220418 18:21:54.665" endtime="20220418 18:21:54.712"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:54.712" level="INFO">Clicking element 'xpath://a[contains(text(),'I AM A LICENSED')]'.</msg>
+<status status="PASS" starttime="20220418 18:21:54.712" endtime="20220418 18:21:54.901"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>elementFound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220418 18:21:55.430" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="elementFound"&gt;&lt;img src="elementFound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220418 18:21:54.901" endtime="20220418 18:21:55.430"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:54.596" endtime="20220418 18:21:55.431"/>
+</kw>
+<kw name="Wait Until element passed is located on Page and click element" library="Generic">
+<arg>${linkMIR}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220418 18:21:55.433" endtime="20220418 18:21:55.461"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220418 18:21:55.462" endtime="20220418 18:21:55.483"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:55.483" level="INFO">Clicking element 'xpath://a[.='Medical Information Request']'.</msg>
+<status status="PASS" starttime="20220418 18:21:55.483" endtime="20220418 18:21:56.948"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>elementFound</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220418 18:21:57.130" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="elementFound"&gt;&lt;img src="elementFound" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220418 18:21:56.948" endtime="20220418 18:21:57.130"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:55.432" endtime="20220418 18:21:57.130"/>
+</kw>
+<kw name="Validate the string" library="Generic">
+<arg>${textMIR}</arg>
+<arg>${eText}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${aResult}</var>
+<arg>${elementLocator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220418 18:21:57.165" level="INFO">${aResult} = MEDICAL INFORMATION REQUESTS</msg>
+<status status="PASS" starttime="20220418 18:21:57.130" endtime="20220418 18:21:57.165"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${aResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220418 18:21:57.170" level="INFO">MEDICAL INFORMATION REQUESTS</msg>
+<status status="PASS" starttime="20220418 18:21:57.165" endtime="20220418 18:21:57.170"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${eResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220418 18:21:57.170" level="INFO">MEDICAL INFORMATION REQUESTS</msg>
+<status status="PASS" starttime="20220418 18:21:57.170" endtime="20220418 18:21:57.170"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${aResult}</arg>
+<arg>${eResult}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220418 18:21:57.170" endtime="20220418 18:21:57.170"/>
+</kw>
+<status status="PASS" starttime="20220418 18:21:57.130" endtime="20220418 18:21:57.170"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${selectCountry}</arg>
+<arg>${Country}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220418 18:21:57.178" level="FAIL">Variable '${Country}' not found.</msg>
+<status status="FAIL" starttime="20220418 18:21:57.170" endtime="20220418 18:21:57.178"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputSalutation}</arg>
+<arg>${Salutation}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220418 18:21:57.178" endtime="20220418 18:21:57.178"/>
+</kw>
+<status status="FAIL" starttime="20220418 18:21:54.596" endtime="20220418 18:21:57.178"/>
+</kw>
+<tag>Regression</tag>
+<status status="FAIL" starttime="20220418 18:21:38.577" endtime="20220418 18:21:57.183">Variable '${Country}' not found.</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220418 18:21:57.184" endtime="20220418 18:21:59.641"/>
+</kw>
+<status status="FAIL" starttime="20220418 18:21:38.166" endtime="20220418 18:21:59.641"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="InterceptPharmaMed">InterceptPharmaMed</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220418 18:21:38.526" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\ICPTMED_PO\LoginPageICPTMED.robot' on line 4: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 18:21:38.530" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\PO\ICPTMED_PO\MedicalInformationRequestPageICPTMED.robot' on line 3: Resource file '..\Resources\Generic.robot' does not exist.</msg>
+<msg timestamp="20220418 18:21:38.551" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 7: Resource file '..\PO\ICPTMED_PO\OurResearchPageICPT.robot' does not exist.</msg>
+<msg timestamp="20220418 18:21:38.551" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 8: Resource file '..\PO\ICPTMED_PO\OurStoryPageICPT.robot' does not exist.</msg>
+<msg timestamp="20220418 18:21:38.561" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 9: Resource file '..\PO\ICPTMED_PO\CareersPageICPT.robot' does not exist.</msg>
+<msg timestamp="20220418 18:21:38.561" level="ERROR">Error in file 'C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot' on line 10: Resource file '..\PO\ICPTMED_PO\ContactUsPageICPT.robot' does not exist.</msg>
+<msg timestamp="20220418 18:21:38.571" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\InterceptPharmaMed.robot", line 0</msg>
+<msg timestamp="20220418 18:21:38.571" level="ERROR">In source file:
+  File "C:\Users\aravind.v\PycharmProjects\pythonProject1\TestCases\../Resources/data.xlsx", line 0</msg>
+<msg timestamp="20220418 18:21:38.577" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ImportError: Requirements (pandas, openpyxl) for XLSX support are not installed.
+    Use 'pip install -U robotframework-datadriver[XLS]' to install XLSX support.</msg>
+</errors>
+</robot>
