@@ -9,27 +9,27 @@ Resource     ../Galleri_PO/HealthSystemsPageGalleri.robot
 Suite Teardown   Close All Browsers
 
 *** Test Cases ***
-#HomePageTest
-#    [Tags]  Regression  GalleriUI
-#    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGalleri}
-#    maximize browser window
-#    LoginPageGalleri.Assert the logos in Landing
-#    LoginPageGalleri.Get All links in homepage and Validate it
-#    LoginPageGalleri.Validate search icon
-#    LoginPageGalleri.Get MenusInPatientsPage validated
-#
-#ProvidersPageTest
-#    [Tags]  Regression  GalleriUI
-#    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGalleri}
-#    maximize browser window
-#    ProvidersPageGalleri.Get All links in ProvidersPage and Validate it
-#    ProvidersPageGalleri.Get MenusInProvidersPage validated
+HomePageTest
+    [Tags]  Regression  GalleriUI
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGalleri}
+    maximize browser window
+    LoginPageGalleri.Assert the logos in Landing
+    LoginPageGalleri.Get All links in homepage and Validate it
+    LoginPageGalleri.Validate search icon
+    LoginPageGalleri.Get MenusInPatientsPage validated
 
-#EmployersPageTest
-#    [Tags]  Regression  GalleriUI
-#    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGalleri}
-#    maximize browser window
-#    EmployersPageGalleri.Get All links in EmployersPage and Validate it
+ProvidersPageTest
+    [Tags]  Regression  GalleriUI
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGalleri}
+    maximize browser window
+    ProvidersPageGalleri.Get All links in ProvidersPage and Validate it
+    ProvidersPageGalleri.Get MenusInProvidersPage validated
+
+EmployersPageTest
+    [Tags]  Regression  GalleriUI
+    Generic.open the browser and navigate to the url    ${properties.Browser1}    ${properties.urlGalleri}
+    maximize browser window
+    EmployersPageGalleri.Get All links in EmployersPage and Validate it
 
 HealthSystemsPageTest
     [Tags]  Regression  GalleriUI
